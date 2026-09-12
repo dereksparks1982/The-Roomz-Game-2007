@@ -1,0 +1,172 @@
+name: Recover historical Flashgames.it Roomz embeds
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-flashgames-it-roomz-history.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover archived Flashgames.it Roomz page and embedded game URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urljoin
+          from urllib.error import HTTPError,URLError
+          import json,re,html,time,csv,hashlib
+
+          ROOT=Path('research/external-leads/flashgames-it-history');ROOT.mkdir(parents=True,exist_ok=True)
+          PAGES=ROOT/'pages';PAGES.mkdir(exist_ok=True)
+          REC=ROOT/'recovered';REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          page_urls=[
+            'http://www.flashgames.it/the.roomz.html','http://flashgames.it/the.roomz.html',
+            'https://www.flashgames.it/the.roomz.html','https://flashgames.it/the.roomz.html'
+          ]
+
+          def get(u,tries=3,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl(),dict(r.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(1.2*(n+1))
+              except (URLError,TimeoutError) as e:last=e;time.sleep(1.2*(n+1))
+            raise RuntimeError(repr(last))
+
+          captures=[];fails=[]
+          for u in page_urls:
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','from':'2006','to':'2011','collapse':'digest'})
+            try:
+              b,final,h=get(q,tries=2,timeout=25);data=json.loads(b)
+              if data:
+                hdr=data[0]
+                for row in data[1:]:captures.append(dict(zip(hdr,row)))
+            except Exception as e:fails.append(['cdx',u,'',repr(e)])
+
+          uniq=[];seen=set()
+          for r in sorted(captures,key=lambda x:x.get('timestamp','')):
+            k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+            if k not in seen:seen.add(k);uniq.append(r)
+
+          refs=[];manifest=[];swf_candidates=[]
+          attr_re=re.compile(r'''(?i)(?:src|href|movie|value|flashvars)\s*=\s*["']([^"']+)["']''')
+          url_re=re.compile(r'''(?i)(?:https?:)?//[^\s"'<>]+|[A-Za-z0-9_./%-]+\.swf(?:\?[^\s"'<>]*)?''')
+          for r in uniq:
+            ts=r['timestamp'];orig=r['original'];arc=f'https://web.archive.org/web/{ts}id_/{orig}'
+            try:
+              b,final,h=get(arc);sha=hashlib.sha256(b).hexdigest();fn=f'{ts}__{sha[:12]}.html';(PAGES/fn).write_bytes(b)
+              s=b.decode('latin1','replace')
+              found=[]
+              for m in attr_re.finditer(s):found.append(html.unescape(m.group(1)))
+              for m in url_re.finditer(s):found.append(html.unescape(m.group(0)))
+              for x in found:
+                x=x.strip().rstrip(');,')
+                if not x:continue
+                resolved=urljoin(orig,x)
+                if any(k in resolved.lower() for k in ('.swf','theroomz','roomz','flashgames','game','yoyo','dreamward','freehost')):
+                  refs.append([ts,orig,fn,x,resolved])
+                  if '.swf' in resolved.lower():swf_candidates.append((ts,resolved))
+              manifest.append([ts,orig,len(b),sha,fn,final])
+            except Exception as e:fails.append(['replay-page',orig,ts,repr(e)])
+
+          # Add likely historical game/CDN patterns extracted from source, dedupe, and fetch live/Wayback exact.
+          ded_swf=[];sset=set()
+          for ts,u in swf_candidates:
+            key=u.lower()
+            if key not in sset:sset.add(key);ded_swf.append((ts,u))
+
+          existing={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:existing[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except:pass
+          recovered=[]
+          for source_ts,u in ded_swf:
+            bodies=[]
+            try:
+              b,final,h=get(u,tries=2);bodies.append(('live','',b,final))
+            except Exception as e:fails.append(['live-swf',u,'',repr(e)])
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','from':'2006','to':'2012','collapse':'digest'})
+            try:
+              qb,qf,qh=get(q,tries=2,timeout=25);data=json.loads(qb)
+              if data:
+                hdr=data[0]
+                for rr in data[1:]:
+                  ar=dict(zip(hdr,rr));ts=ar['timestamp'];o=ar['original']
+                  try:
+                    bb,ff,hh=get(f'https://web.archive.org/web/{ts}id_/{o}',tries=2);bodies.append(('wayback',ts,bb,ff))
+                  except Exception as e:fails.append(['replay-swf',o,ts,repr(e)])
+            except Exception as e:fails.append(['cdx-swf',u,'',repr(e)])
+            bseen=set()
+            for kind,ts,b,final in bodies:
+              sha=hashlib.sha256(b).hexdigest()
+              if sha in bseen:continue
+              bseen.add(sha)
+              valid=len(b)>100 and b[:3] in (b'FWS',b'CWS',b'ZWS')
+              status=('NEW' if sha not in existing else 'already:'+existing[sha]) if valid else 'invalid'
+              fn=''
+              if valid:
+                fn=f'{kind}__{ts or "current"}__{sha[:12]}.swf';(REC/fn).write_bytes(b)
+              recovered.append([source_ts,u,kind,ts,len(b),sha,status,fn,final])
+
+          def ded(data,key):
+            out=[];s=set()
+            for r in data:
+              k=key(r)
+              if k not in s:s.add(k);out.append(r)
+            return out
+          refs=ded(refs,lambda r:(r[0],r[4].lower()))
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          tsv('page-manifest.tsv',['timestamp','original','bytes','sha256','file','final_url'],manifest)
+          tsv('references.tsv',['timestamp','page_url','page_file','raw_reference','resolved_reference'],refs)
+          tsv('swf-results.tsv',['page_timestamp','candidate_url','source','swf_timestamp','bytes','sha256','status','file','final_url'],recovered)
+          tsv('failures.tsv',['stage','target','timestamp','error'],fails)
+          good=[r for r in recovered if r[6].startswith(('NEW','already:'))]
+          summary=['# Historical Flashgames.it Roomz recovery','',f'- Distinct archived page bodies: {len(uniq)}',f'- Pages replayed: {len(manifest)}',f'- Interesting references: {len(refs)}',f'- Distinct SWF candidate URLs: {len(ded_swf)}',f'- Valid SWFs recovered: {len(good)}',f'- New SWFs: {sum(r[6]=="NEW" for r in good)}',f'- Failures: {len(fails)}','','## SWF candidates','']
+          summary += [f'- `{u}` (found in page capture {ts})' for ts,u in ded_swf] or ['- None.']
+          summary += ['','## Valid SWFs','']+[f'- **{r[6]}** `{r[1]}` {r[2]} {r[3] or "current"}: {r[4]} bytes sha256 `{r[5]}`' for r in good] if good else ['','## Valid SWFs','','- None.']
+          summary += ['','## Roomz-related references','']+[f'- {r[0]} `{r[4]}`' for r in refs if 'roomz' in r[4].lower()][:250]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:900]))
+          PY
+      - name: Promote new portal SWFs and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/external-leads/flashgames-it-history');out=Path('originals/recovered/portal-mirrors');out.mkdir(parents=True,exist_ok=True)
+          p=root/'swf-results.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('status')=='NEW' and r.get('file'):
+                  src=root/'recovered'/r['file'];dst=out/r['file']
+                  if src.exists() and not dst.exists():shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/external-leads/flashgames-it-history originals/recovered/portal-mirrors
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover historical Flashgames.it Roomz embeds"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
