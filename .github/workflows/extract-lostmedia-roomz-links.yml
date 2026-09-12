@@ -22,55 +22,103 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           from urllib.request import Request,urlopen
-          from urllib.error import HTTPError,URLError
           import json,re,html,time,csv
 
           ROOT=Path('research/external-leads/lostmedia-2022')
           ROOT.mkdir(parents=True,exist_ok=True)
           UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
-          urls=[
+
+          def fetch_json(u,timeout=30):
+              req=Request(u,headers={'User-Agent':UA,'Accept':'application/json'})
+              with urlopen(req,timeout=timeout) as r:
+                  return r.read()
+
+          errs=[]; comments=[]; sources=[]
+
+          # Reddit itself may reject hosted runners, so try it first then use PullPush archive.
+          reddit_urls=[
             'https://www.reddit.com/r/lostmedia/comments/z11xux.json?raw_json=1',
-            'https://old.reddit.com/r/lostmedia/comments/z11xux/.json?raw_json=1',
-            'https://www.reddit.com/r/lostmedia/comments/z11xux/partially_lost_a_flash_game_by_the_name_of_the/.json?raw_json=1'
+            'https://old.reddit.com/r/lostmedia/comments/z11xux/.json?raw_json=1'
           ]
-          raw=None; used=''; errs=[]
-          for u in urls:
+          for u in reddit_urls:
               try:
-                  req=Request(u,headers={'User-Agent':UA,'Accept':'application/json'})
-                  with urlopen(req,timeout=30) as r: raw=r.read()
-                  used=u; break
-              except Exception as e: errs.append([u,repr(e)])
-          links=[]; comments=[]
-          if raw:
-              (ROOT/'thread.json').write_bytes(raw)
-              try:data=json.loads(raw)
-              except Exception:data=None
-              def walk(x):
-                  if isinstance(x,dict):
-                      d=x.get('data',{}) if isinstance(x.get('data'),dict) else {}
-                      body=d.get('body')
-                      if body:
-                          comments.append(body)
-                          for m in re.finditer(r'\[([^\]]+)\]\((https?://[^)]+)\)',body):
-                              links.append([m.group(1),html.unescape(m.group(2)),body])
-                          for m in re.finditer(r'https?://[^\s<>\]]+',body):
-                              u=m.group(0).rstrip(').,;\'"')
-                              links.append(['bare',html.unescape(u),body])
-                      for v in x.values(): walk(v)
-                  elif isinstance(x,list):
-                      for v in x: walk(v)
-              if data is not None: walk(data)
-          # Dedupe URLs.
+                  raw=fetch_json(u)
+                  (ROOT/'reddit-thread.json').write_bytes(raw)
+                  data=json.loads(raw)
+                  def walk(x):
+                      if isinstance(x,dict):
+                          d=x.get('data',{}) if isinstance(x.get('data'),dict) else {}
+                          body=d.get('body')
+                          if body: comments.append(('reddit',d.get('author',''),d.get('score',''),body))
+                          for v in x.values(): walk(v)
+                      elif isinstance(x,list):
+                          for v in x: walk(v)
+                  walk(data)
+                  sources.append(u)
+                  break
+              except Exception as e:
+                  errs.append(['reddit',u,repr(e)])
+
+          # PullPush preserves archived public comments and accepts a Reddit topic's base36 id.
+          pp_urls=[
+            'https://api.pullpush.io/comment?link_id=z11xux&size=100&sort=asc',
+            'https://api.pullpush.io/reddit/search/comment/?link_id=z11xux&size=100&sort=asc'
+          ]
+          for u in pp_urls:
+              try:
+                  raw=fetch_json(u)
+                  (ROOT/'pullpush-comments.json').write_bytes(raw)
+                  data=json.loads(raw)
+                  arr=data.get('data',[]) if isinstance(data,dict) else []
+                  if arr:
+                      for d in arr:
+                          body=d.get('body')
+                          if body: comments.append(('pullpush',d.get('author',''),d.get('score',''),body))
+                      sources.append(u)
+                      break
+              except Exception as e:
+                  errs.append(['pullpush',u,repr(e)])
+
+          # Deduplicate comment bodies then extract Markdown and bare URLs.
+          dc=[]; seen=set()
+          for source,author,score,body in comments:
+              key=body.strip()
+              if key not in seen:
+                  seen.add(key); dc.append((source,author,score,body))
+
+          links=[]
+          md=re.compile(r'\[([^\]]+)\]\((https?://[^)]+)\)')
+          bare=re.compile(r'https?://[^\s<>\]]+')
+          for source,author,score,body in dc:
+              for m in md.finditer(body):
+                  links.append([m.group(1),html.unescape(m.group(2)),source,author,str(score),body])
+              for m in bare.finditer(body):
+                  u=m.group(0).rstrip(').,;\'"')
+                  links.append(['bare',html.unescape(u),source,author,str(score),body])
+
           out=[]; seen=set()
-          for label,u,body in links:
+          for label,u,source,author,score,body in links:
               if u not in seen:
-                  seen.add(u);out.append([label,u,re.sub(r'\s+',' ',body)[:3000]])
+                  seen.add(u); out.append([label,u,source,author,score,re.sub(r'\s+',' ',body)[:4000]])
+
+          with (ROOT/'comments.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['source','author','score','body']); w.writerows(dc)
           with (ROOT/'links.tsv').open('w',newline='',encoding='utf-8') as f:
-              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['label','url','comment_context']);w.writerows(out)
+              w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['label','url','source','author','score','comment_context']); w.writerows(out)
           with (ROOT/'failures.tsv').open('w',newline='',encoding='utf-8') as f:
-              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['url','error']);w.writerows(errs)
-          summary=['# 2022 Lost Media Roomz thread link extraction','',f'- Reddit endpoint used: `{used or "none"}`',f'- Comments extracted: {len(comments)}',f'- Distinct outbound URLs: {len(out)}',f'- Endpoint failures: {len(errs)}','', '## Outbound links','']
-          summary += [f'- **{r[0]}**: {r[1]}' for r in out] or ['- None recovered.']
+              w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['source','url','error']); w.writerows(errs)
+
+          hot=[r for r in out if re.search(r'archive|flashkit|roomz|yoyo|dreamward|forumer|flashpoint',r[0]+' '+r[1],re.I)]
+          summary=['# 2022 Lost Media Roomz thread link extraction','',
+                   f'- Sources successfully queried: {len(sources)}',
+                   f'- Distinct comments recovered: {len(dc)}',
+                   f'- Distinct outbound URLs: {len(out)}',
+                   f'- High-value archive/Roomz URLs: {len(hot)}',
+                   f'- Endpoint failures: {len(errs)}','',
+                   '## High-value outbound links','']
+          summary += [f'- **{r[0]}**: {r[1]}' for r in hot] or ['- None recovered.']
+          summary += ['', '## All outbound links','']
+          summary += [f'- **{r[0]}**: {r[1]}' for r in out]
           (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
           print('\n'.join(summary))
           PY
@@ -82,6 +130,10 @@ jobs:
           git config user.email "dereksparks1982@gmail.com"
           git add research/external-leads/lostmedia-2022
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Extract source links from Roomz Lost Media thread"
-          git pull --rebase origin main || true
-          git push
+          git commit -m "Recover source links from Roomz Lost Media thread"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
