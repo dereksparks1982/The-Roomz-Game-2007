@@ -1,0 +1,99 @@
+# Full Roomz archived-path inventory
+
+- Unique captured URL/digest records: 179
+- Unique historical host paths: 98
+- High-priority untracked paths: 64
+- Recovery attempts: 43
+- Objects recovered in this pass: 20
+- Recovered objects not byte-identical to existing originals: 20
+- Recovery failures: 23
+
+## Highest-priority untracked paths
+
+- score 11 `dreamwardgames.com/theroomz/back.gif` [image/gif] lengths=1510
+- score 11 `dreamwardgames.com/theroomz/tricon.ico` [application/octet-stream] lengths=509
+- score 11 `dreamwardgames.com/theroomzproject/images/banner-bg.png` [image/png] lengths=1179
+- score 11 `dreamwardgames.com/theroomzproject/images/close.gif` [image/gif] lengths=517
+- score 11 `dreamwardgames.com/theroomzproject/images/content-bg.jpg` [image/jpeg] lengths=154816
+- score 11 `dreamwardgames.com/theroomzproject/images/logo.png` [image/png] lengths=11076
+- score 11 `dreamwardgames.com/theroomzproject/images/marker-1.png` [image/png] lengths=3538
+- score 11 `dreamwardgames.com/theroomzproject/images/menu-spacer.gif` [image/gif] lengths=508
+- score 11 `dreamwardgames.com/theroomzproject/images/pagin-1.png` [image/png] lengths=4220
+- score 11 `dreamwardgames.com/theroomzproject/images/pagination-a.png` [image/png] lengths=1430
+- score 11 `dreamwardgames.com/theroomzproject/images/pic-2.gif` [image/gif] lengths=460
+- score 11 `dreamwardgames.com/theroomzproject/images/pic-3.gif` [image/gif] lengths=468
+- score 11 `dreamwardgames.com/theroomzproject/images/slider-bg.png` [image/png] lengths=10153
+- score 11 `dreamwardgames.com/theroomzproject/images/slider-img1.jpg` [image/jpeg] lengths=95179
+- score 11 `dreamwardgames.com/theroomzproject/images/slider-img2.jpg` [image/jpeg] lengths=137822
+- score 11 `dreamwardgames.com/theroomzproject/images/slider-img3.jpg` [image/jpeg] lengths=145533
+- score 11 `dreamwardgames.com/theroomzproject/images/social-icons.png` [image/png] lengths=2472
+- score 11 `dreamwardgames.com/theroomzproject/images/support.png` [image/png] lengths=17913
+- score 11 `dreamwardgames.com/theroomzproject/images/tr-mini.png` [image/png] lengths=63936
+- score 11 `dreamwardgames.com/theroomzproject/images/trap-mini.png` [image/png] lengths=37356
+- score 11 `dreamwardgames.com/theroomzproject/images/tre-mini.png` [image/png] lengths=60043
+- score 11 `theroomz.yoyo.pl/roomers-online2.gif` [text/html] lengths=423
+- score 11 `www.theroomz.yoyo.pl/newroomers.jpg` [image/jpeg] lengths=6634
+- score 11 `www.theroomz.yoyo.pl:80/cannon.txt` [text/plain] lengths=469
+- score 7 `www.theroomz.yoyo.pl/back.gif` [image/gif] lengths=1396;1521
+- score 7 `www.theroomz.yoyo.pl/geninfo.jpg` [image/jpeg] lengths=6949
+- score 7 `www.theroomz.yoyo.pl/hist.jpg` [image/jpeg] lengths=5267
+- score 7 `www.theroomz.yoyo.pl/logo2.jpg` [image/jpeg] lengths=48759
+- score 7 `www.theroomz.yoyo.pl/scr/angelav.jpg` [image/jpeg] lengths=12062
+- score 7 `www.theroomz.yoyo.pl/scr/ban.gif` [image/gif] lengths=437
+- score 7 `www.theroomz.yoyo.pl/scr/devilav.jpg` [image/jpeg] lengths=13229
+- score 7 `www.theroomz.yoyo.pl/tricon.ico` [image/x-icon] lengths=520
+- score 7 `www.theroomz.yoyo.pl:80/logo.jpg` [image/jpeg] lengths=29587
+- score 7 `www.theroomz.yoyo.pl:80/scr/scr01.jpg` [image/jpeg] lengths=73185
+- score 7 `www.theroomz.yoyo.pl:80/scr/scr02.jpg` [image/jpeg] lengths=69353
+- score 6 `dreamwardgames.com/theroomz//robots.txt` [text/plain] lengths=423
+- score 6 `dreamwardgames.com/theroomzproject/css/font/IstokWeb-Regular-webfont.woff` [application/octet-stream] lengths=19959
+- score 5 `dreamward.home.pl:80/theroomz/` [text/html] lengths=1731
+- score 5 `dreamwardgames.com/theroomz/` [text/html] lengths=1954
+- score 5 `dreamwardgames.com/theroomzproject/` [text/html] lengths=2710;2715
+- score 5 `dreamwardgames.com:80/theroomz` [text/html] lengths=393
+- score 5 `dreamwardgames.com:80/theroomzproject/` [text/html] lengths=2574
+- score 5 `www.theroomz.yoyo.pl/danger/` [text/html] lengths=10791;7860
+- score 4 `dreamwardgames.com/theroomz/AC_RunActiveContent.js` [application/javascript] lengths=2778
+- score 4 `dreamwardgames.com/theroomzproject/css/layout.css` [text/css] lengths=612
+- score 4 `dreamwardgames.com/theroomzproject/css/reset.css` [text/css] lengths=887
+- score 4 `dreamwardgames.com/theroomzproject/css/style.css` [text/css] lengths=3264
+- score 4 `dreamwardgames.com/theroomzproject/js/cufon-replace.js` [application/javascript] lengths=533
+- score 4 `dreamwardgames.com/theroomzproject/js/cufon-yui.js` [application/javascript] lengths=7885
+- score 4 `dreamwardgames.com/theroomzproject/js/FF-cash.js` [application/javascript] lengths=563
+- score 4 `dreamwardgames.com/theroomzproject/js/jquery-1.6.3.min.js` [application/javascript] lengths=32536
+- score 4 `dreamwardgames.com/theroomzproject/js/jquery.easing.1.3.js` [application/javascript] lengths=2377
+- score 4 `dreamwardgames.com/theroomzproject/js/NewsGoth_400.font.js` [application/javascript] lengths=15029
+- score 4 `dreamwardgames.com/theroomzproject/js/NewsGoth_700.font.js` [application/javascript] lengths=14912
+- score 4 `dreamwardgames.com/theroomzproject/js/tms-0.3.js` [application/javascript] lengths=3569
+- score 4 `dreamwardgames.com/theroomzproject/js/tms_presets.js` [application/javascript] lengths=2784
+- score 4 `dreamwardgames.com/theroomzproject/js/Vegur_300.font.js` [application/javascript] lengths=6038
+- score 4 `dreamwardgames.com/theroomzproject/support.html` [text/html] lengths=4026
+- score 4 `dreamwardgames.com:80/theroomzproject/about.html` [text/html] lengths=2804
+- score 4 `dreamwardgames.com:80/theroomzproject/index.html` [text/html] lengths=1467;2564
+- score 4 `dreamwardgames.com:80/theroomzproject/support.html` [text/html] lengths=2055;3885
+- score 4 `www.theroomz.yoyo.pl/danger/map.htm/` [text/html] lengths=10930;7894
+- score 4 `www.theroomz.yoyo.pl/roomz.htm` [text/html] lengths=2085;7468;7505;7510;7638
+- score 4 `www.theroomz.yoyo.pl:80/roomz.htm` [text/html] lengths=1062;1090;1336;1338;1394;1413;1424;1426;1429;1430;810;865
+
+## Newly recovered objects
+
+- `dreamwardgames.com/theroomzproject/images/marker-1.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_marker-1.png__20160924233330` (3012 bytes, sha256 `b2811f4187e0cc6231d9b5c320e3ba7ce7388de2f865841a2a86bef7091fdc35`)
+- `dreamwardgames.com/theroomzproject/images/menu-spacer.gif` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_menu-spacer.gif__20160924233330` (72 bytes, sha256 `c7766a73b5e32d3b825694c6685ae0fbb479170d396578cf2ebb4f09644c63c5`)
+- `dreamwardgames.com/theroomz/tricon.ico` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomz_tricon.ico__20150125012323` (1406 bytes, sha256 `202afedd2d51666f26a9223d7e89d0464b29223eb5c39495fea6df28e607b74f`)
+- `dreamwardgames.com/theroomzproject/images/logo.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_logo.png__20160924233330` (10604 bytes, sha256 `5725560869fadbf4add3a4e220dae57b7bcdefa2fc9cadae7ac243ea17e41a47`)
+- `dreamwardgames.com/theroomz/back.gif` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomz_back.gif__20150125031515` (1415 bytes, sha256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`)
+- `dreamwardgames.com/theroomzproject/images/close.gif` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_close.gif__20170324104857` (69 bytes, sha256 `344d021b26f4840f919eccbc1c15e417fafddbba303238f6b83046257eac74f4`)
+- `dreamwardgames.com/theroomzproject/images/content-bg.jpg` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_content-bg.jpg__20160924233330` (160894 bytes, sha256 `ff30a2d4b098efbd3983ec05963eb68f85d876e0cd3e8c9418723798f2b2978e`)
+- `dreamwardgames.com/theroomzproject/images/pagination-a.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_pagination-a.png__20170324104854` (1030 bytes, sha256 `502b8a2e54b537350275f85adfff46e2e03adc560d4fb03a0c3dcd4391f17737`)
+- `dreamwardgames.com/theroomzproject/images/banner-bg.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_banner-bg.png__20170324104855` (1557 bytes, sha256 `c86ac3235a9ac44a59ecf112f6061225a3bb474c642d115f311051404ea557cc`)
+- `dreamwardgames.com/theroomzproject/images/pic-2.gif` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_pic-2.gif__20160924233330` (43 bytes, sha256 `a2f9b2d50e39f4bbbdf1081e839938305cb48bdafc9fbe48fc0cb202c199560a`)
+- `dreamwardgames.com/theroomzproject/images/slider-bg.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_slider-bg.png__20170324104853` (11775 bytes, sha256 `44da3fce740096edc9c42ed6954772246214a331a6b5fb12c6f05822027c3ff9`)
+- `dreamwardgames.com/theroomzproject/images/pic-3.gif` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_pic-3.gif__20170324104853` (43 bytes, sha256 `182925b58595637bb703e1475e4756a128a182f93ad474bce1c6e88071a1266b`)
+- `dreamwardgames.com/theroomzproject/images/pagin-1.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_pagin-1.png__20170324104853` (3681 bytes, sha256 `3a6fc36c954bc80fc53cb7154c96d8177ae75b58c800d10076eb6ae210bc2800`)
+- `dreamwardgames.com/theroomzproject/images/social-icons.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_social-icons.png__20160924233330` (1940 bytes, sha256 `4239634df33836545dc217cc55e386751083016a6447748808ddee4e0561e120`)
+- `dreamwardgames.com/theroomzproject/images/support.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_support.png__20160924233330` (17468 bytes, sha256 `301bb1c88280b053a312a0c162610a2e0c2b66aa43580d6bde82647c976d1a8a`)
+- `dreamwardgames.com/theroomzproject/images/trap-mini.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_trap-mini.png__20170324104837` (36785 bytes, sha256 `8309ae02d5591f7582a8088a59dab62df1e0c9aa87525fcb64a7e7f8c0680d79`)
+- `dreamwardgames.com/theroomzproject/images/slider-img1.jpg` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_slider-img1.jpg__20170324104854` (107027 bytes, sha256 `4099954d0e2732bc9cfa01eca1338057d9cd193fd112887d8b61796f132d0caf`)
+- `dreamwardgames.com/theroomzproject/images/slider-img2.jpg` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_slider-img2.jpg__20170324104854` (148349 bytes, sha256 `ac478eea2d32b488f8de9666d7faa0b0917bd76acbd5f5b8418e1932f6f3c12a`)
+- `dreamwardgames.com/theroomzproject/images/slider-img3.jpg` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_slider-img3.jpg__20170324104854` (157307 bytes, sha256 `13a30ceeee38f29d1ebc88c5edea25b21345399ebbdca8f480f075d17dff9f82`)
+- `dreamwardgames.com/theroomzproject/images/tr-mini.png` -> `research/full-path-inventory/recovered-untracked/dreamwardgames.com__theroomzproject_images_tr-mini.png__20170324104837` (63405 bytes, sha256 `a34c687fbb67c64946621dc1810b0726b842fa229bbef2e52bd5c7d21890f072`)
