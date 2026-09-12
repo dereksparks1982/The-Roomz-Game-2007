@@ -1,0 +1,173 @@
+name: Fast exact Common Crawl Roomz recovery
+
+on:
+  push:
+    paths:
+      - '.github/workflows/commoncrawl-fast-exact-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-commoncrawl-exact-fast
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query exact historical Roomz asset URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,gzip,hashlib,json,re,time
+
+          ROOT=Path('research/commoncrawl-fast-exact')
+          REC=ROOT/'recovered'
+          ROOT.mkdir(parents=True,exist_ok=True); REC.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          crawls=['CC-MAIN-2008-2009','CC-MAIN-2009-2010','CC-MAIN-2013-20','CC-MAIN-2014-10','CC-MAIN-2015-06','CC-MAIN-2016-07']
+          bases=[
+            'www.theroomz.yoyo.pl/','theroomz.yoyo.pl/',
+            'dreamward.home.pl/theroomz/','dreamwardgames.com/theroomz/',
+            'www.theroomz.org/','theroomz.org/'
+          ]
+          targets=[
+            'check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf',
+            'ile.txt','bonus.txt','paper/BlackAndWhite.swf','BlackAndWhite.swf','hof.swf',
+            'Redirect.swf','RRR.swf','rrr.swf','cannon.txt','yoyo.pnq'
+          ]
+          urls=list(dict.fromkeys(b+t for b in bases for t in targets))
+
+          def get(url,timeout=20,tries=2,headers=None):
+              last=None
+              h={'User-Agent':UA}
+              if headers:h.update(headers)
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers=h),timeout=timeout) as r:
+                          return r.read(),dict(r.headers)
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(.8*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          hits=[]; failures=[]
+          def query_one(cid,u):
+              q=f'https://index.commoncrawl.org/{cid}-index?'+urlencode({'url':u,'output':'json'})
+              b,_=get(q,timeout=18,tries=1)
+              out=[]
+              for line in b.decode('utf-8','replace').splitlines():
+                  line=line.strip()
+                  if not line.startswith('{'):continue
+                  try:r=json.loads(line)
+                  except Exception:continue
+                  r['_crawl']=cid;r['_query']=u;out.append(r)
+              return out
+
+          with ThreadPoolExecutor(max_workers=20) as ex:
+              futs={ex.submit(query_one,c,u):(c,u) for c in crawls for u in urls}
+              for fut in as_completed(futs):
+                  c,u=futs[fut]
+                  try:hits.extend(fut.result())
+                  except Exception as e: failures.append(['query',c,u,repr(e)])
+
+          # Dedupe by crawl/timestamp/url/digest.
+          ded=[];seen=set()
+          for r in hits:
+              k=(r.get('_crawl',''),r.get('timestamp',''),r.get('url',''),r.get('digest',''))
+              if k not in seen:seen.add(k);ded.append(r)
+
+          # Recover bodies directly from WARC ranges when possible.
+          recovered=[]
+          known={}
+          for p in Path('originals').rglob('*'):
+              if p.is_file():
+                  try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+                  except Exception:pass
+
+          def recover(r):
+              fn=r.get('filename'); off=r.get('offset'); ln=r.get('length')
+              if not fn or off is None or ln is None:return None,'missing WARC coordinates'
+              start=int(off); length=int(ln); end=start+length-1
+              u='https://data.commoncrawl.org/'+fn
+              try:
+                  blob,_=get(u,timeout=30,tries=2,headers={'Range':f'bytes={start}-{end}'})
+                  try:raw=gzip.decompress(blob)
+                  except Exception:raw=blob
+                  # WARC header -> embedded HTTP response -> payload.
+                  parts=raw.split(b'\r\n\r\n',2)
+                  if len(parts)>=3: body=parts[2]
+                  else:
+                      parts=raw.split(b'\n\n',2); body=parts[2] if len(parts)>=3 else raw
+                  # Strip an HTTP response header if still present.
+                  if body.startswith(b'HTTP/'):
+                      q=body.find(b'\r\n\r\n')
+                      body=body[q+4:] if q>=0 else body
+                  return body,None
+              except Exception as e:return None,repr(e)
+
+          with ThreadPoolExecutor(max_workers=8) as ex:
+              futs={ex.submit(recover,r):r for r in ded}
+              for fut in as_completed(futs):
+                  r=futs[fut]
+                  body,err=fut.result()
+                  if body is None:
+                      failures.append(['recover',r.get('_crawl',''),r.get('url',''),err]);continue
+                  sha=hashlib.sha256(body).hexdigest(); sig=body[:3].decode('latin1','replace')
+                  name=Path(urlparse(r.get('url','')).path).name or 'object.bin'
+                  safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)
+                  out=REC/f"{r.get('_crawl','')}__{r.get('timestamp','')}__{sha[:12]}__{safe}"
+                  out.write_bytes(body)
+                  recovered.append([r.get('_crawl',''),r.get('timestamp',''),r.get('url',''),len(body),sha,sig,known.get(sha,''),str(out)])
+
+          def tsv(path,header,rows):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(rows)
+
+          tsv(ROOT/'hits.tsv',['crawl','query','timestamp','url','status','mime','digest','warc','offset','length'],[
+              [r.get('_crawl',''),r.get('_query',''),r.get('timestamp',''),r.get('url',''),r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('filename',''),r.get('offset',''),r.get('length','')] for r in ded])
+          tsv(ROOT/'recovered.tsv',['crawl','timestamp','url','bytes','sha256','signature','exact_repo_match','saved_file'],recovered)
+          tsv(ROOT/'failures.tsv',['stage','crawl','target','error'],failures)
+
+          valid=[r for r in recovered if r[5] in ('FWS','CWS','ZWS') or r[2].lower().endswith(('.txt','.pnq'))]
+          new=[r for r in valid if not r[6]]
+          summary=['# Fast exact Common Crawl Roomz recovery','',
+                   f'- Exact asset URL variants: {len(urls)}',
+                   f'- Crawl indexes queried: {len(crawls)}',
+                   f'- Distinct Common Crawl hits: {len(ded)}',
+                   f'- WARC bodies recovered: {len(recovered)}',
+                   f'- Valid SWF/text-ish objects: {len(valid)}',
+                   f'- Valid objects new vs current originals: {len(new)}',
+                   f'- Failures: {len(failures)}','',
+                   '## Hits','']
+          summary += [f"- {r.get('_crawl','')} {r.get('timestamp','')} {r.get('status','')} {r.get('mime','')} {r.get('url','')}" for r in ded] or ['- None.']
+          summary += ['', '## New recovered objects','']
+          summary += [f'- `{r[2]}` {r[3]} bytes sha256 `{r[4]}` saved `{r[7]}`' for r in new] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:300]))
+          PY
+
+      - name: Commit exact-query results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/commoncrawl-fast-exact
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run exact Common Crawl recovery for Roomz assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
