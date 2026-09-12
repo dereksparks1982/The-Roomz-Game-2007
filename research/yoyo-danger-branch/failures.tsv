@@ -1,0 +1,2 @@
+stage	target	error
+replay	http://www.theroomz.yoyo.pl:80/roomz.htm	RuntimeError('<urlopen error timed out>')
