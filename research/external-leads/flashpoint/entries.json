@@ -1,0 +1,22 @@
+[
+  {
+    "id": "8751e07b-e906-4bc2-a5ae-52c583db0a5d",
+    "title": "Spalanie metali w tlenie",
+    "alternateTitles": "Burning Metals in Oxygen",
+    "developer": "Jadwiga Stachura",
+    "publisher": "Interkl@sa",
+    "platform": "Flash",
+    "source": "http://www.interklasa.pl/portal/index/strony?mainSP=subjectpages&mainSRV=chemia&methid=924823654&page=article&article_id=318556",
+    "library": "theatre",
+    "status": "Playable",
+    "version": "",
+    "releaseDate": "",
+    "notes": "",
+    "originalDescription": "Wirtualna lekcja Spalanie metali w tlenie dla I klasy gimnazjum uczy jakie przemiany chemiczne zachodzą podczs spalania metali (magnezu i miedzi) w tlenie. Dowiesz się też, jak zapisać te przemiany.\n\nLEKCJA DLA I KLASY GIMNAZJUM \nNa poprzednich lekcjach poznałeś metody otrzymywania i właściwości tlenu, wodoru i dwutlenku węgla. Dziś nowy temat - spalanie substancji w tlenie. Zaczynamy od metali.\n\nSpalanie magnezu\nW laboratorium wykonaj następujące czynności:\n1. zapal palnik; \n2. na łyżkę do spalań nabierz wiórki magnezowe; \n3. przygotuj cylinder napełniony tlenem; \n4. podgrzej wiórki magnezowe, tak aby zapoczątkować spalanie; \n5. włóż łyżkę do spalań do cylindra z tlenem; \n6. obserwuj.\n\nPrzemianę można zapisać:\nmagnez + tlen -> tlenek magnezu\n2Mg + O2 -> 2MgO",
+    "dateAdded": "2021-06-29T22:55:03.775Z",
+    "dateModified": "2023-04-26T21:28:17.68027Z",
+    "applicationPath": "FPSoftware\\Flash\\flashplayer_32_sa.exe",
+    "launchCommand": "http://eduseek.interklasa.pl/pictures/artykuly/a_1123/chemia10.swf",
+    "zipped": true
+  }
+]
