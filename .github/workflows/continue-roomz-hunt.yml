@@ -1,0 +1,355 @@
+name: Continue Roomz archive hunt
+
+on:
+  push:
+    paths:
+      - '.github/workflows/continue-roomz-hunt.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-research-writes
+  cancel-in-progress: false
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sweep public archives and mine Forumer leads
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError, URLError
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import csv, hashlib, html, json, re, time
+
+          ROOT = Path('research/continued-hunt')
+          PUB = ROOT / 'public-archives'
+          FORUM = ROOT / 'forumer'
+          TOPICS = FORUM / 'topic-pages'
+          for p in (ROOT, PUB, FORUM, TOPICS):
+              p.mkdir(parents=True, exist_ok=True)
+
+          UA = 'The-Roomz-2007-preservation/2.0 (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          TARGETS = ['check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt']
+          HOST_PATTERNS = [
+              'theroomz.yoyo.pl/*', 'www.theroomz.yoyo.pl/*',
+              'dreamward.home.pl/theroomz/*', 'dreamwardgames.com/theroomz/*',
+              'theroomz.org/*', 'www.theroomz.org/*'
+          ]
+          ASSET_RE = re.compile(r'(?:' + '|'.join(re.escape(x) for x in TARGETS) + r'|\.swf(?:$|[?#])|\.zip(?:$|[?#])|\.rar(?:$|[?#])|\.7z(?:$|[?#])|\.txt(?:$|[?#]))', re.I)
+          TOPIC_RE = re.compile(r'check\.swf|sciemka\.swf|about\.swf|rules\.swf|solutions\.swf|tescik\.swf|download|mirror|full\s*(?:game|version)|room\s*4[0-5]|bonus\s*(?:room\s*)?5|\.swf\b|\.zip\b|\.rar\b|\.7z\b|source|files?', re.I)
+          URL_RE = re.compile(r'https?://[^\s<>"\']+', re.I)
+
+          def get(url, tries=3, timeout=25):
+              last = None
+              for n in range(tries):
+                  try:
+                      req = Request(url, headers={'User-Agent': UA})
+                      with urlopen(req, timeout=timeout) as r:
+                          return r.read()
+                  except (HTTPError, URLError, TimeoutError) as e:
+                      last = e
+                      if isinstance(e, HTTPError) and e.code not in (429,500,502,503,504):
+                          raise
+                      time.sleep(1.5 * (n + 1))
+              raise RuntimeError(f'{url}: {last}')
+
+          def clean_text(x):
+              x = html.unescape(x or '')
+              x = re.sub(r'<br\s*/?>', '\n', x, flags=re.I)
+              x = re.sub(r'<[^>]+>', ' ', x)
+              x = re.sub(r'\r', '', x)
+              x = re.sub(r'[ \t]+', ' ', x)
+              x = re.sub(r'\n\s+', '\n', x)
+              return x.strip()
+
+          def write_tsv(path, header, rows):
+              with path.open('w', newline='', encoding='utf-8') as f:
+                  w = csv.writer(f, delimiter='\t', lineterminator='\n')
+                  w.writerow(header)
+                  w.writerows(rows)
+
+          failures = []
+          public_hits = []
+
+          # 1) Wayback CDX inventory for every known Roomz host/path.
+          def wayback_inventory(pattern):
+              base = pattern[:-1] if pattern.endswith('*') else pattern
+              q = 'https://web.archive.org/cdx/search/cdx?' + urlencode({
+                  'url': base,
+                  'matchType': 'prefix',
+                  'output': 'json',
+                  'fl': 'timestamp,original,statuscode,mimetype,digest,length',
+                  'filter': 'statuscode:200',
+                  'collapse': 'digest'
+              })
+              raw = get(q)
+              data = json.loads(raw)
+              hdr = data[0] if data else []
+              rows = [dict(zip(hdr, r)) for r in data[1:]] if hdr else []
+              return pattern, raw, rows
+
+          with ThreadPoolExecutor(max_workers=6) as ex:
+              futs = {ex.submit(wayback_inventory, p): p for p in HOST_PATTERNS}
+              for fut in as_completed(futs):
+                  pat = futs[fut]
+                  try:
+                      _, raw, rows = fut.result()
+                      safe = re.sub(r'[^A-Za-z0-9._-]+','_',pat)
+                      (PUB / f'wayback__{safe}.json').write_bytes(raw)
+                      for r in rows:
+                          u = html.unescape(r.get('original',''))
+                          if ASSET_RE.search(u):
+                              public_hits.append(['wayback','',r.get('timestamp',''),u,r.get('statuscode',''),r.get('mimetype',''),r.get('digest',''),r.get('length','')])
+                  except Exception as e:
+                      failures.append(['wayback',pat,repr(e)])
+
+          # 2) Common Crawl, one representative crawl per year, in parallel.
+          try:
+              colls = json.loads(get('https://index.commoncrawl.org/collinfo.json'))
+          except Exception as e:
+              colls = []
+              failures.append(['commoncrawl','collinfo',repr(e)])
+          by_year = {}
+          for c in colls:
+              m = re.search(r'CC-MAIN-(\d{4})-', c.get('id',''))
+              if m and 2008 <= int(m.group(1)) <= 2018:
+                  by_year.setdefault(int(m.group(1)), []).append(c)
+          selected = [sorted(v, key=lambda c:c['id'])[-1] for y,v in sorted(by_year.items())]
+
+          def cc_query(c, pat):
+              cid = c['id']
+              api = c.get('cdx-api') or f'https://index.commoncrawl.org/{cid}-index'
+              q = api + '?' + urlencode({'url':pat,'output':'json','filter':'status:200'})
+              raw = get(q, tries=2, timeout=18)
+              return cid, pat, raw
+
+          jobs = [(c,p) for c in selected for p in HOST_PATTERNS]
+          with ThreadPoolExecutor(max_workers=12) as ex:
+              futs = {ex.submit(cc_query,c,p):(c['id'],p) for c,p in jobs}
+              for fut in as_completed(futs):
+                  cid, pat = futs[fut]
+                  try:
+                      cid, pat, raw = fut.result()
+                      text = raw.decode('utf-8','replace')
+                      safe = re.sub(r'[^A-Za-z0-9._-]+','_',pat)
+                      (PUB / f'{cid}__{safe}.jsonl').write_text(text,encoding='utf-8')
+                      for line in text.splitlines():
+                          line=line.strip()
+                          if not line.startswith('{'): continue
+                          try: r=json.loads(line)
+                          except Exception: continue
+                          u=html.unescape(r.get('url',''))
+                          if ASSET_RE.search(u):
+                              public_hits.append(['commoncrawl',cid,r.get('timestamp',''),u,r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('length','')])
+                  except Exception as e:
+                      failures.append(['commoncrawl',f'{cid} {pat}',repr(e)])
+
+          # 3) Arquivo.pt inventories.
+          def arq_query(pat):
+              q='https://arquivo.pt/wayback/cdx?' + urlencode({'url':pat,'output':'json','filter':'statuscode:200','collapse':'urlkey'})
+              return pat,get(q,tries=2,timeout=20)
+          with ThreadPoolExecutor(max_workers=6) as ex:
+              futs={ex.submit(arq_query,p):p for p in HOST_PATTERNS}
+              for fut in as_completed(futs):
+                  pat=futs[fut]
+                  try:
+                      pat,raw=fut.result()
+                      safe=re.sub(r'[^A-Za-z0-9._-]+','_',pat)
+                      (PUB/f'arquivo__{safe}.json').write_bytes(raw)
+                      text=raw.decode('utf-8','replace')
+                      try: data=json.loads(text)
+                      except Exception: data=None
+                      parsed=[]
+                      if isinstance(data,list) and data:
+                          if isinstance(data[0],list):
+                              hdr=data[0]; parsed=[dict(zip(hdr,v)) for v in data[1:]]
+                          elif isinstance(data[0],dict): parsed=data
+                      for r in parsed:
+                          u=html.unescape(r.get('original') or r.get('url') or '')
+                          if ASSET_RE.search(u):
+                              public_hits.append(['arquivo.pt','',r.get('timestamp',''),u,r.get('statuscode',''),r.get('mimetype',''),r.get('digest',''),str(r.get('length',''))])
+                  except Exception as e:
+                      failures.append(['arquivo.pt',pat,repr(e)])
+
+          # Dedupe public archive hits and identify exact missing filenames.
+          dedup=[]; seen=set()
+          for r in public_hits:
+              k=tuple(str(x) for x in r)
+              if k not in seen:
+                  seen.add(k); dedup.append(r)
+          exact=[]
+          for r in dedup:
+              path=r[3].lower().split('?',1)[0].split('#',1)[0]
+              if any(path.endswith('/'+t.lower()) for t in TARGETS): exact.append(r)
+          write_tsv(PUB/'interesting-hits.tsv',['archive','crawl','timestamp','url','status','mime','digest','length'],dedup)
+          write_tsv(PUB/'exact-missing-file-hits.tsv',['archive','crawl','timestamp','url','status','mime','digest','length'],exact)
+
+          # 4) Deep mine the old Forumer archive. First get one CDX domain inventory.
+          cdx_url=('https://web.archive.org/cdx/search/cdx?'
+                   'url=theroomz.19.forumer.com&matchType=domain&output=json&'
+                   'fl=timestamp,original,statuscode,mimetype,digest,length')
+          raw=get(cdx_url)
+          (FORUM/'domain-all.json').write_bytes(raw)
+          data=json.loads(raw)
+          hdr=data[0]
+          rows=[dict(zip(hdr,r)) for r in data[1:]]
+
+          def param_id(url,key):
+              m=re.search(r'(?:[?&])'+re.escape(key)+r'=(\d+)',html.unescape(url),re.I)
+              return m.group(1) if m else ''
+          def unique_digest(seq):
+              out=[]; seen=set()
+              for r in sorted(seq,key=lambda x:(x['timestamp'],x['original'])):
+                  k=r.get('digest') or (r['timestamp'],r['original'])
+                  if k not in seen: seen.add(k); out.append(r)
+              return out
+          def archive_url(r):
+              return f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+
+          forum_rows=unique_digest([r for r in rows if r['statuscode']=='200' and 'viewforum.php?' in html.unescape(r['original']) and param_id(r['original'],'f')])
+
+          def fetch_forum(r):
+              body=get(archive_url(r),tries=3,timeout=30)
+              s=body.decode('utf-8','replace')
+              fid=param_id(r['original'],'f')
+              title=''
+              mt=re.search(r'<title[^>]*>(.*?)</title>',s,re.I|re.S)
+              if mt: title=clean_text(mt.group(1))
+              name=''
+              mn=re.search(r'<a[^>]+href=["\']viewforum\.php\?f='+re.escape(fid)+r'(?:&[^"\']*)?["\'][^>]*>(.*?)</a>',s,re.I|re.S)
+              if mn: name=clean_text(mn.group(1))
+              if not name: name=title
+              topics=[]
+              for m in re.finditer(r'href=["\']([^"\']*viewtopic\.php\?[^"\']*\bt=(\d+)[^"\']*)["\'][^>]*>(.*?)</a>',s,re.I|re.S):
+                  tt=clean_text(m.group(3))
+                  if tt: topics.append((fid,name,m.group(2),tt,html.unescape(m.group(1)),r['timestamp']))
+              return r,fid,name,body,topics
+
+          forum_topics=set(); forum_manifest=[]
+          with ThreadPoolExecutor(max_workers=6) as ex:
+              futs={ex.submit(fetch_forum,r):r for r in forum_rows}
+              for fut in as_completed(futs):
+                  r=futs[fut]
+                  try:
+                      rr,fid,name,body,topics=fut.result()
+                      sha=hashlib.sha256(body).hexdigest()
+                      forum_manifest.append([rr['timestamp'],fid,rr['original'],rr.get('digest',''),len(body),sha,name])
+                      for t in topics: forum_topics.add(t)
+                  except Exception as e:
+                      failures.append(['forumer-viewforum',r['original'],repr(e)])
+
+          forum_topics=sorted(forum_topics,key=lambda x:(int(x[0]),int(x[2]),x[5]))
+          write_tsv(FORUM/'forum-topic-map.tsv',['forum_id','forum_name','topic_id','topic_title','href','timestamp'],forum_topics)
+          write_tsv(FORUM/'viewforum-manifest.tsv',['timestamp','forum_id','original','cdx_digest','bytes','sha256','forum_name'],forum_manifest)
+          high_topics=[t for t in forum_topics if TOPIC_RE.search(t[3])]
+          write_tsv(FORUM/'topic-title-high-value-hits.tsv',['forum_id','forum_name','topic_id','topic_title','href','timestamp'],high_topics)
+
+          # 5) Cross-reference mapped topics against archived viewtopic snapshots already in the CDX inventory.
+          title_by_tid={t[2]:t[3] for t in forum_topics}
+          viewtopic_rows=[]
+          for r in rows:
+              u=html.unescape(r['original'])
+              tid=param_id(u,'t')
+              if r['statuscode']=='200' and 'viewtopic.php?' in u and tid:
+                  viewtopic_rows.append([tid,title_by_tid.get(tid,''),r['timestamp'],u,r.get('digest',''),r.get('length','')])
+          write_tsv(FORUM/'viewtopic-availability.tsv',['topic_id','mapped_title','timestamp','original','digest','length'],viewtopic_rows)
+
+          high_ids={t[2] for t in high_topics}
+          candidates=[]; seen_capture=set()
+          for r in rows:
+              u=html.unescape(r['original'])
+              tid=param_id(u,'t')
+              if r['statuscode']=='200' and 'viewtopic.php?' in u and tid in high_ids:
+                  k=r.get('digest') or (tid,r['timestamp'])
+                  if k not in seen_capture:
+                      seen_capture.add(k); candidates.append(r)
+          candidates=candidates[:160]
+
+          def fetch_topic(r):
+              body=get(archive_url(r),tries=3,timeout=30)
+              tid=param_id(r['original'],'t')
+              s=body.decode('utf-8','replace')
+              text=clean_text(s)
+              urls=[]
+              for m in URL_RE.finditer(html.unescape(s)):
+                  u=m.group(0).rstrip(').,;\'"')
+                  if u not in urls: urls.append(u)
+              file_urls=[u for u in urls if ASSET_RE.search(u) or re.search(r'\.(?:zip|rar|7z|swf|txt)(?:$|[?#])',u,re.I)]
+              return tid,r,body,text,urls,file_urls
+
+          evidence=[]; file_url_hits=[]
+          with ThreadPoolExecutor(max_workers=6) as ex:
+              futs={ex.submit(fetch_topic,r):r for r in candidates}
+              for fut in as_completed(futs):
+                  r=futs[fut]
+                  try:
+                      tid,rr,body,text,urls,file_urls=fut.result()
+                      fname=f"{rr['timestamp']}_t{tid}_{(rr.get('digest') or 'nodigest')[:12]}.html"
+                      (TOPICS/fname).write_bytes(body)
+                      contexts=[]
+                      for m in TOPIC_RE.finditer(text):
+                          a=max(0,m.start()-220); b=min(len(text),m.end()+420)
+                          contexts.append(re.sub(r'\s+',' ',text[a:b]))
+                      evidence.append([tid,title_by_tid.get(tid,''),rr['timestamp'],rr['original'],fname,' || '.join(contexts[:12])])
+                      for u in file_urls:
+                          file_url_hits.append([tid,title_by_tid.get(tid,''),rr['timestamp'],u,rr['original']])
+                  except Exception as e:
+                      failures.append(['forumer-viewtopic',r['original'],repr(e)])
+
+          write_tsv(FORUM/'topic-evidence.tsv',['topic_id','mapped_title','timestamp','original','file','context'],evidence)
+          write_tsv(FORUM/'topic-file-url-hits.tsv',['topic_id','mapped_title','timestamp','url','source'],file_url_hits)
+          write_tsv(ROOT/'failures.tsv',['source','query','error'],failures)
+
+          summary=[
+              '# Continued Roomz hunt', '',
+              f'- Public archive asset/archive hits: {len(dedup)}',
+              f'- Exact hits for currently missing filenames: {len(exact)}',
+              f'- Forumer CDX rows inspected: {len(rows)}',
+              f'- Forumer viewforum snapshots recovered: {len(forum_manifest)}',
+              f'- Forum topic links mapped: {len(forum_topics)}',
+              f'- High-value topic-title leads: {len(high_topics)}',
+              f'- Archived viewtopic snapshots indexed: {len(viewtopic_rows)}',
+              f'- High-value topic snapshots fetched: {len(evidence)}',
+              f'- Direct file/archive URLs extracted from those topics: {len(file_url_hits)}',
+              f'- Failures: {len(failures)}', '',
+              '## Exact missing-file hits',''
+          ]
+          summary += [f'- {r[0]} {r[2]} {r[3]}' for r in exact[:100]] or ['- None found in this pass.']
+          summary += ['', '## Direct file/archive URL hits from Forumer topics','']
+          summary += [f'- t={r[0]} {r[1]} :: {r[3]}' for r in file_url_hits[:200]] or ['- None extracted in this pass.']
+          summary += ['', '## High-value topic-title leads','']
+          summary += [f'- t={r[2]} [{r[1]}] {r[3]}' for r in high_topics[:200]]
+          (ROOT/'SUMMARY.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:260]))
+          PY
+
+      - name: Commit hunt results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/continued-hunt
+          if git diff --cached --quiet; then
+            echo "No new hunt material to commit."
+            exit 0
+          fi
+          git commit -m "Add continued Roomz archive and Forumer hunt results"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main || true
+            if git push; then
+              exit 0
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "Could not push hunt results after retries" >&2
+          exit 1
