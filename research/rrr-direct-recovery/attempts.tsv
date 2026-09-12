@@ -1,0 +1,69 @@
+method	original	timestamp	status_or_available	signature_or_capture_ts	final_or_capture_url	detail
+availability	http://www.theroomz.yoyo.pl/RRR.swf	20121102214345	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl/RRR.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl/rrr.swf	20121102214345	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl/rrr.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl:80/RRR.swf	20121102214345				
+availability	http://www.theroomz.yoyo.pl:80/RRR.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl:80/rrr.swf	20121102214345	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://www.theroomz.yoyo.pl:80/rrr.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://theroomz.yoyo.pl/RRR.swf	20121102214345	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://theroomz.yoyo.pl/RRR.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://theroomz.yoyo.pl/rrr.swf	20121102214345	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+availability	http://theroomz.yoyo.pl/rrr.swf	20121102	True	20121102214347	http://web.archive.org/web/20121102214347/http://www.theroomz.yoyo.pl/RRR.swf	
+replay	http://www.theroomz.yoyo.pl/RRR.swf	20121102214345	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	20121102	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2012	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2011	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2010	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2009	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2008	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/RRR.swf	2007	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/rrr.swf	20121102214345	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/rrr.swf	20121102	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2012				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2011				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2010				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2009				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2008				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl/rrr.swf	2007				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	20121102214345				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	20121102				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2012				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2011				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2010				URLError(TimeoutError('_ssl.c:983: The handshake operation timed out'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2009				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2008				URLError(TimeoutError('_ssl.c:983: The handshake operation timed out'))
+replay	http://www.theroomz.yoyo.pl:80/RRR.swf	2007				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	20121102214345	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	20121102				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2012				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2011				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2010				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2009				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2008				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://www.theroomz.yoyo.pl:80/rrr.swf	2007				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/RRR.swf	20121102214345				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/RRR.swf	20121102				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/RRR.swf	2012				URLError(TimeoutError('_ssl.c:983: The handshake operation timed out'))
+replay	http://theroomz.yoyo.pl/RRR.swf	2011	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/RRR.swf	2010	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/RRR.swf	2009	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/RRR.swf	2008	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/RRR.swf	2007	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/rrr.swf	20121102214345	200	CWS	https://web.archive.org/web/20121102214347id_/http://www.theroomz.yoyo.pl/RRR.swf	17061 bytes sha256=c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5
+replay	http://theroomz.yoyo.pl/rrr.swf	20121102				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2012				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2011				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2010				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2009				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2008				URLError(ConnectionRefusedError(111, 'Connection refused'))
+replay	http://theroomz.yoyo.pl/rrr.swf	2007				URLError(ConnectionRefusedError(111, 'Connection refused'))
+cdx	http://www.theroomz.yoyo.pl/RRR.swf					URLError(ConnectionRefusedError(111, 'Connection refused'))
+cdx	http://www.theroomz.yoyo.pl/rrr.swf		200		https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.theroomz.yoyo.pl%2Frrr.swf&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength	"[[""timestamp"",""original"",""statuscode"",""mimetype"",""digest"",""length""],
+[""20121102214347"",""http://www.theroomz.yoyo.pl/RRR.swf"",""200"",""application/x-shockwave-flash"",""JAKUUTRY5DMTNLJA7RLEFZHZRARZKO2O"",""17444""]]
+"
+cdx	http://www.theroomz.yoyo.pl:80/RRR.swf					URLError(ConnectionRefusedError(111, 'Connection refused'))
+cdx	http://www.theroomz.yoyo.pl:80/rrr.swf					URLError(ConnectionRefusedError(111, 'Connection refused'))
+cdx	http://theroomz.yoyo.pl/RRR.swf					URLError(ConnectionRefusedError(111, 'Connection refused'))
+cdx	http://theroomz.yoyo.pl/rrr.swf					URLError(ConnectionRefusedError(111, 'Connection refused'))
