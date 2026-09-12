@@ -1,0 +1,158 @@
+name: Probe Memento federation for Roomz check.swf
+
+on:
+  push:
+    paths:
+      - '.github/workflows/memento-check-swf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query Memento Time Travel and direct archive timemaps
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import quote
+          from urllib.error import HTTPError,URLError
+          import json,time,csv,re,hashlib
+
+          ROOT=Path('research/memento-check-swf');ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          urls=[
+            'http://theroomz.freehost.pl/check.swf','http://www.theroomz.freehost.pl/check.swf',
+            'http://theroomz.yoyo.pl/check.swf','http://www.theroomz.yoyo.pl/check.swf',
+            'http://theroomz.org/check.swf','http://www.theroomz.org/check.swf',
+            'http://dreamward.home.pl/theroomz/check.swf','http://dreamwardgames.com/theroomz/check.swf'
+          ]
+          years=['2006','2007','2008','2010','2012','2015','2016']
+
+          def get(u,tries=2,timeout=25):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:
+                  return r.read(),r.geturl(),getattr(r,'status',200),dict(r.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(n+1)
+              except (URLError,TimeoutError) as e:
+                last=e;time.sleep(n+1)
+            raise RuntimeError(repr(last))
+
+          rows=[];fails=[];memento_urls=[]
+          bases=['https://timetravel.mementoweb.org','http://timetravel.mementoweb.org']
+          for orig in urls:
+            for year in years:
+              for base in bases:
+                api=f'{base}/api/json/{year}/{orig}'
+                try:
+                  b,final,st,h=get(api)
+                  txt=b.decode('utf-8','replace')
+                  data=json.loads(txt)
+                  mem=data.get('mementos') or {}
+                  for rel,v in mem.items():
+                    if not isinstance(v,dict):continue
+                    dt=str(v.get('datetime',''))
+                    uris=v.get('uri') or []
+                    if isinstance(uris,str):uris=[uris]
+                    for mu in uris:
+                      rows.append([orig,year,base,rel,dt,mu])
+                      memento_urls.append((orig,dt,mu))
+                except Exception as e:fails.append(['memento-api',orig,year,base,repr(e)])
+
+          # Query generic timemap JSON as a second federation route.
+          for orig in urls:
+            for base in bases:
+              api=f'{base}/timemap/json/{orig}'
+              try:
+                b,final,st,h=get(api)
+                txt=b.decode('utf-8','replace')
+                data=json.loads(txt)
+                mem=data.get('mementos') or data
+                if isinstance(mem,dict):
+                  lst=mem.get('list') or []
+                  if isinstance(lst,list):
+                    for x in lst:
+                      if not isinstance(x,dict):continue
+                      dt=str(x.get('datetime',''));uris=x.get('uri') or []
+                      if isinstance(uris,str):uris=[uris]
+                      for mu in uris:
+                        rows.append([orig,'',base,'timemap',dt,mu]);memento_urls.append((orig,dt,mu))
+              except Exception as e:fails.append(['timemap',orig,'',base,repr(e)])
+
+          # Recover any discovered memento whose body is actually Flash.
+          rec=ROOT/'recovered';rec.mkdir(exist_ok=True)
+          recovered=[];seen=set()
+          existing={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:existing[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except:pass
+          for orig,dt,mu in memento_urls:
+            if mu in seen:continue
+            seen.add(mu)
+            try:
+              b,final,st,h=get(mu,tries=3,timeout=35)
+              sha=hashlib.sha256(b).hexdigest();valid=len(b)>100 and b[:3] in (b'FWS',b'CWS',b'ZWS')
+              status=('NEW' if sha not in existing else 'already:'+existing[sha]) if valid else 'invalid'
+              fn=''
+              if valid:
+                safe=re.sub(r'[^0-9A-Za-z._-]','_',dt)[:40] or 'unknown'
+                fn=f'{safe}__{sha[:12]}__check.swf';(rec/fn).write_bytes(b)
+              recovered.append([orig,dt,mu,len(b),sha,final,status,fn])
+            except Exception as e:fails.append(['memento-replay',orig,dt,mu,repr(e)])
+
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          # Dedupe discovery rows.
+          ded=[];s=set()
+          for r in rows:
+            k=tuple(r)
+            if k not in s:s.add(k);ded.append(r)
+          tsv('mementos.tsv',['original','requested_year','service','relation','datetime','memento_url'],ded)
+          tsv('recovered.tsv',['original','datetime','memento_url','bytes','sha256','final_url','status','file'],recovered)
+          tsv('failures.tsv',['stage','target','when','service_or_url','error'],fails)
+          good=[r for r in recovered if r[6].startswith(('NEW','already:'))]
+          summary=['# Memento federation check.swf probe','',f'- Discovery rows: {len(ded)}',f'- Distinct memento URLs attempted: {len(seen)}',f'- Valid Flash bodies: {len(good)}',f'- New check.swf bodies: {sum(r[6]=="NEW" for r in good)}',f'- Failures: {len(fails)}','','## Archive discoveries','']
+          summary += [f'- {r[4]} `{r[5]}` for `{r[0]}` via {r[2]} ({r[3]})' for r in ded[:300]] or ['- None.']
+          summary += ['','## Valid Flash','']+[f'- **{r[6]}** `{r[2]}` {r[3]} bytes sha256 `{r[4]}`' for r in good] if good else ['','## Valid Flash','','- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:700]))
+          PY
+      - name: Promote any new check.swf and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/memento-check-swf');out=Path('originals/recovered/runtime-data');out.mkdir(parents=True,exist_ok=True)
+          p=root/'recovered.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('status')=='NEW' and r.get('file'):
+                  src=root/'recovered'/r['file'];dst=out/r['file']
+                  if src.exists() and not dst.exists():shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/memento-check-swf originals/recovered/runtime-data
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Probe federated archives for Roomz check.swf"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
