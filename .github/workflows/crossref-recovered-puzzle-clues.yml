@@ -1,0 +1,68 @@
+name: Cross-reference recovered puzzle clues
+
+on:
+  push:
+    paths:
+      - '.github/workflows/crossref-recovered-puzzle-clues.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crossref:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search recovered forum corpus for puzzle-artifact language
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,re,html
+          ROOT=Path('research/puzzle-crossrefs'); ROOT.mkdir(parents=True,exist_ok=True)
+          terms=[
+            r'cannon',r'Black\s*(?:and|&|/)\s*White',r'BlackAndWhite',r'paper',r'chess',
+            r'Victory',r'Dawn',r'lesson',r'square',r'yoyo\.pnq',r'hof\.swf',r'Redirect\.swf',
+            r'f5',r'Qh5',r'Nd7',r'Ne5',r'Qe3',r'Qf2'
+          ]
+          rx=re.compile('|'.join(f'(?:{x})' for x in terms),re.I)
+          rows=[]
+          roots=[Path('research/continued-hunt/forumer/topic-pages'),Path('research/mirror-leads/gamershood')]
+          for base in roots:
+              if not base.exists(): continue
+              for p in base.rglob('*'):
+                  if not p.is_file() or p.stat().st_size>2_000_000: continue
+                  try: raw=p.read_text(encoding='utf-8',errors='replace')
+                  except Exception: continue
+                  text=html.unescape(re.sub(r'<[^>]+>',' ',raw))
+                  text=re.sub(r'\s+',' ',text)
+                  for m in rx.finditer(text):
+                      a=max(0,m.start()-350); z=min(len(text),m.end()+700)
+                      rows.append([m.group(0),str(p),text[a:z]])
+          # dedupe repeated template/context hits
+          out=[]; seen=set()
+          for r in rows:
+              k=(r[0].lower(),r[1],r[2])
+              if k not in seen: seen.add(k); out.append(r)
+          with (ROOT/'crossrefs.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['match','file','context']); w.writerows(out)
+          summary=['# Recovered puzzle-artifact cross-references','',f'- Distinct contextual matches: {len(out)}','']
+          for r in out[:250]: summary.append(f'- **{r[0]}** in `{r[1]}`: {r[2][:1400]}')
+          if not out: summary.append('- No matches in the currently recovered forum corpus.')
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:200]))
+          PY
+
+      - name: Commit cross-reference results
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/puzzle-crossrefs
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Cross-reference recovered Roomz puzzle artifacts"
+          git pull --rebase origin main || true
+          git push
