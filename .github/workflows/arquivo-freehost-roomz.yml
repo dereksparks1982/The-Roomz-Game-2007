@@ -1,0 +1,135 @@
+name: Search Arquivo.pt for freehost.pl Roomz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/arquivo-freehost-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query Arquivo.pt for freehost era captures
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          import json,csv,re,time,hashlib
+
+          ROOT=Path('research/arquivo-freehost');REC=ROOT/'recovered';ROOT.mkdir(parents=True,exist_ok=True);REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          patterns=['theroomz.freehost.pl/*','www.theroomz.freehost.pl/*']
+          targets=['RoomzMain.swf','UnderTR.swf','Intro.swf','interface.swf','loadRoom.swf','frame.swf','check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','roomz.htm','index.htm','index.html']
+          failures=[];rows=[]
+          def get(u,tries=4,timeout=45):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl()
+              except (HTTPError,URLError,TimeoutError) as e:last=e;time.sleep(1.5*(n+1))
+            raise RuntimeError(str(last))
+
+          def parse(raw):
+            text=raw.decode('utf-8','replace')
+            try:d=json.loads(text)
+            except Exception:d=None
+            out=[]
+            if isinstance(d,list) and d:
+              if isinstance(d[0],list):
+                h=d[0];out=[dict(zip(h,x)) for x in d[1:]]
+              elif isinstance(d[0],dict):out=d
+            elif isinstance(d,dict):
+              # Arquivo APIs sometimes wrap responses.
+              for k in ('response_items','items','results'):
+                if isinstance(d.get(k),list):out=d[k];break
+            return out
+
+          for pat in patterns:
+            q='https://arquivo.pt/wayback/cdx?'+urlencode({'url':pat,'output':'json','filter':'statuscode:200','collapse':'digest'})
+            try:
+              b,_=get(q);(ROOT/(re.sub(r'\W+','_',pat)+'.json')).write_bytes(b);rows+=parse(b)
+            except Exception as e:failures.append(['wildcard',pat,repr(e)])
+          for base in ('theroomz.freehost.pl/','www.theroomz.freehost.pl/'):
+            for name in targets:
+              u=base+name
+              q='https://arquivo.pt/wayback/cdx?'+urlencode({'url':u,'output':'json','filter':'statuscode:200'})
+              try:rows+=parse(get(q,tries=2,timeout=30)[0])
+              except Exception as e:failures.append(['exact',u,repr(e)])
+
+          norm=[];seen=set()
+          for r in rows:
+            orig=r.get('original') or r.get('url') or ''
+            ts=str(r.get('timestamp',''))
+            k=(ts,orig,r.get('digest',''))
+            if orig and k not in seen:seen.add(k);norm.append(r)
+
+          interesting=[]
+          for r in norm:
+            orig=r.get('original') or r.get('url') or ''
+            if urlparse(orig).path.lower().endswith(('.swf','.txt','.xml','.dat','.ini','.cfg','.zip','.rar','.7z','.htm','.html','.php')) or urlparse(orig).path in ('','/'):
+              interesting.append(r)
+
+          known={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception:pass
+          recovered=[]
+          for r in interesting:
+            orig=r.get('original') or r.get('url') or '';ts=str(r.get('timestamp',''))
+            # Arquivo replay endpoint accepts timestamp/original.
+            replay=f'https://arquivo.pt/wayback/{ts}id_/{orig}'
+            try:
+              b,final=get(replay,tries=2,timeout=35)
+              sha=hashlib.sha256(b).hexdigest();sig=b[:3].decode('latin1','replace')
+              name=Path(urlparse(orig).path).name or 'root.html';safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)
+              out=REC/f'{ts}__{sha[:12]}__{safe}';out.write_bytes(b)
+              recovered.append([ts,orig,r.get('mimetype',''),len(b),sha,sig,known.get(sha,''),str(out),final])
+            except Exception as e:failures.append(['replay',f'{ts} {orig}',repr(e)])
+
+          def tsv(n,h,data):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(data)
+          tsv('captures.tsv',['timestamp','original','mimetype','statuscode','digest','length'],[[r.get('timestamp',''),r.get('original') or r.get('url',''),r.get('mimetype',''),r.get('statuscode',''),r.get('digest',''),r.get('length','')] for r in norm])
+          tsv('recovered.tsv',['timestamp','original','mimetype','bytes','sha256','signature','exact_repo_match','saved_file','final_url'],recovered)
+          tsv('failures.tsv',['stage','target','error'],failures)
+          swf=[r for r in recovered if r[5] in ('FWS','CWS','ZWS')];new=[r for r in swf if not r[6]]
+          summary=['# Arquivo.pt freehost.pl recovery','',f'- Distinct captures: {len(norm)}',f'- Interesting captures replayed: {len(recovered)}',f'- Valid SWFs: {len(swf)}',f'- SWFs new vs repo: {len(new)}',f'- Failures: {len(failures)}','', '## SWFs','']
+          summary += [f'- `{r[1]}` @ {r[0]}: {r[3]} bytes sha256 `{r[4]}` match `{r[6] or "NEW"}`' for r in swf] or ['- None.']
+          summary += ['', '## All capture URLs','']+[f'- {r.get("timestamp","")} `{r.get("original") or r.get("url","")}`' for r in norm[:500]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:650]))
+          PY
+      - name: Promote new SWFs and commit
+        shell: bash
+        run: |
+          mkdir -p originals/recovered/freehost-arquivo
+          if [ -f research/arquivo-freehost/recovered.tsv ]; then
+            tail -n +2 research/arquivo-freehost/recovered.tsv | while IFS=$'\t' read -r ts orig mime bytes sha sig match file final; do
+              if [[ "$sig" =~ ^(FWS|CWS|ZWS)$ ]] && [ -z "$match" ] && [ -f "$file" ]; then
+                base="$(basename "${orig%%\?*}")"; [ -n "$base" ] || base="unknown.swf"
+                dest="originals/recovered/freehost-arquivo/$base"; [ -e "$dest" ] && dest="originals/recovered/freehost-arquivo/${ts}_$base"
+                cp "$file" "$dest"
+              fi
+            done
+          fi
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/arquivo-freehost originals/recovered/freehost-arquivo
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Search Arquivo.pt for freehost-era Roomz assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
