@@ -1,0 +1,4 @@
+stage	target	error
+exact	theroomz.freehost.pl/bonus.txt	RuntimeError('<urlopen error [Errno 101] Network is unreachable>')
+exact	theroomz.freehost.pl/roomz.htm	RuntimeError('<urlopen error [Errno 101] Network is unreachable>')
+exact	theroomz.freehost.pl/index.htm	RuntimeError('<urlopen error [Errno 101] Network is unreachable>')
