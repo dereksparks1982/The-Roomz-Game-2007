@@ -1,0 +1,164 @@
+name: Recover freehost.pl era Roomz assets
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-freehost-era.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory and recover the earliest known Roomz host
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,json,re,hashlib,time
+
+          ROOT=Path('research/freehost-era'); REC=ROOT/'recovered'; HTML=ROOT/'pages'
+          for p in (ROOT,REC,HTML):p.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          def get(u,tries=5,timeout=50):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl(),dict(r.headers)
+              except (HTTPError,URLError,TimeoutError) as e:
+                last=e
+                if isinstance(e,HTTPError) and e.code not in (429,500,502,503,504):break
+                time.sleep(2*(n+1))
+            raise RuntimeError(f'{u}: {last}')
+
+          # Earliest known public mentions are Oct 2006, so keep the query tight.
+          params={'url':'theroomz.freehost.pl/*','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','from':'2006','to':'2008','collapse':'digest'}
+          cdx='https://web.archive.org/cdx/search/cdx?'+urlencode(params)
+          failures=[]
+          try:
+            raw,_,_=get(cdx,tries=8,timeout=70);(ROOT/'cdx.json').write_bytes(raw);data=json.loads(raw)
+          except Exception as e:
+            failures.append(['cdx',cdx,repr(e)]);data=[]
+
+          rows=[]
+          if isinstance(data,list) and data:
+            h=data[0]
+            for r in data[1:]: rows.append(dict(zip(h,r)))
+
+          # Supplement with exact likely filenames in case wildcard CDX is rate-limited or incomplete.
+          names=['RoomzMain.swf','UnderTR.swf','Intro.swf','interface.swf','loadRoom.swf','frame.swf','check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','roomz.htm','index.htm','index.html','data.swf','RRR.swf']
+          exact=[]
+          for name in names:
+            u='http://theroomz.freehost.pl/'+name
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','from':'2006','to':'2008'})
+            try:
+              b,_,_=get(q,tries=3,timeout=35);d=json.loads(b)
+              if isinstance(d,list) and d:
+                h=d[0]
+                exact.extend(dict(zip(h,x)) for x in d[1:])
+            except Exception as e:failures.append(['exact-cdx',u,repr(e)])
+            time.sleep(.5)
+
+          # Deduplicate captures.
+          allrows=[];seen=set()
+          for r in rows+exact:
+            k=(r.get('timestamp',''),r.get('original',''),r.get('digest',''))
+            if k not in seen:seen.add(k);allrows.append(r)
+
+          known={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception:pass
+
+          interesting=[]
+          for r in allrows:
+            u=r.get('original','');path=urlparse(u).path.lower()
+            if path.endswith(('.swf','.txt','.xml','.dat','.ini','.cfg','.zip','.rar','.7z','.htm','.html','.php')) or path in ('','/'):
+              interesting.append(r)
+
+          recovered=[]
+          def fetch_capture(r):
+            arc=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+            b,final,h=get(arc,tries=4,timeout=45)
+            sha=hashlib.sha256(b).hexdigest();path=urlparse(r['original']).path
+            name=Path(path).name or 'root.html'
+            safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)
+            out=(REC if name.lower().endswith(('.swf','.txt','.xml','.dat','.ini','.cfg','.zip','.rar','.7z')) else HTML)/f"{r['timestamp']}__{sha[:12]}__{safe}"
+            out.write_bytes(b)
+            return [r.get('timestamp',''),r.get('original',''),r.get('mimetype',''),len(b),sha,b[:3].decode('latin1','replace'),known.get(sha,''),str(out)]
+
+          with ThreadPoolExecutor(max_workers=6) as ex:
+            fs={ex.submit(fetch_capture,r):r for r in interesting}
+            for f in as_completed(fs):
+              r=fs[f]
+              try:recovered.append(f.result())
+              except Exception as e:failures.append(['replay',r.get('original',''),repr(e)])
+
+          # Mine recovered HTML for additional assets and URLs.
+          refs=[]
+          refre=re.compile(rb'(?i)(?:https?://[^\x00-\x20"\'<>]+|[A-Za-z0-9_./%+~-]{1,180}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|mp3|wav|zip|rar|7z|htm|html|php))')
+          for p in HTML.iterdir():
+            if not p.is_file():continue
+            b=p.read_bytes()
+            for m in refre.finditer(b):
+              s=m.group().decode('latin1','replace').rstrip(').,;\'"')
+              refs.append([p.name,s])
+          dr=[];ss=set()
+          for r in refs:
+            k=(r[0],r[1].lower())
+            if k not in ss:ss.add(k);dr.append(r)
+
+          def tsv(name,header,data):
+            with (ROOT/name).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(data)
+          tsv('captures.tsv',['timestamp','original','statuscode','mimetype','digest','length'],[[r.get(x,'') for x in ('timestamp','original','statuscode','mimetype','digest','length')] for r in allrows])
+          tsv('recovered.tsv',['timestamp','original','mimetype','bytes','sha256','signature','exact_repo_match','saved_file'],recovered)
+          tsv('page-refs.tsv',['source_file','reference'],dr)
+          tsv('failures.tsv',['stage','target','error'],failures)
+
+          swf=[r for r in recovered if r[5] in ('FWS','CWS','ZWS')]
+          new=[r for r in swf if not r[6]]
+          summary=['# freehost.pl era Roomz recovery','',f'- Distinct CDX captures found: {len(allrows)}',f'- Interesting captures replayed: {len(recovered)}',f'- Valid SWFs recovered: {len(swf)}',f'- SWFs new vs current repository: {len(new)}',f'- HTML/page references extracted: {len(dr)}',f'- Failures: {len(failures)}','', '## Recovered SWFs','']
+          summary += [f'- `{r[1]}` @ {r[0]}: {r[3]} bytes, sha256 `{r[4]}`, repo match `{r[6] or "NEW"}`' for r in swf] or ['- None.']
+          summary += ['', '## New SWFs','']+[f'- `{r[1]}` -> `{r[7]}`' for r in new] or ['- None.']
+          summary += ['', '## References from recovered pages','']+[f'- `{r[1]}`' for r in dr[:400]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:500]))
+          PY
+      - name: Promote new original SWFs and commit
+        shell: bash
+        run: |
+          mkdir -p originals/recovered/freehost
+          if [ -f research/freehost-era/recovered.tsv ]; then
+            tail -n +2 research/freehost-era/recovered.tsv | while IFS=$'\t' read -r ts orig mime bytes sha sig match file; do
+              if [[ "$sig" =~ ^(FWS|CWS|ZWS)$ ]] && [ -z "$match" ] && [ -f "$file" ]; then
+                base="$(basename "${orig%%\?*}")"
+                [ -n "$base" ] || base="unknown.swf"
+                dest="originals/recovered/freehost/$base"
+                if [ -e "$dest" ]; then dest="originals/recovered/freehost/${ts}_$base"; fi
+                cp "$file" "$dest"
+              fi
+            done
+          fi
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/freehost-era originals/recovered/freehost
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover earliest freehost.pl Roomz assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
