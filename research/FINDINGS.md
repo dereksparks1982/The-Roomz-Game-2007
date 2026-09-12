@@ -43,6 +43,14 @@ and waits for `koniec` before setting `_root.showRtotal = true`.
 
 The TXT files are therefore likely runtime status/configuration data associated with the normal/bonus room totals, although their exact variable contents have not yet been recovered.
 
+### Runtime-data archive checks
+
+The local preserved Yoyo/CDX inventories contain no references to either `ile.txt` or `bonus.txt`.
+
+Exact Wayback CDX checks of the known historical paths currently return no captures for the TXT files. The latest retries for `www.theroomz.yoyo.pl/ile.txt` and `dreamwardgames.com/theroomz/ile.txt` both returned `[]`; known `bonus.txt` paths likewise returned `[]`. Wayback Availability fallback requests hit HTTP 429 rate limiting, so those fallback responses are not evidence of absence.
+
+The defensible conclusion is: the files are proven to have existed by authentic `Intro.swf` code, but no archived copies have yet been found at the exact known host paths.
+
 ## `frame.swf`
 
 Recovered authentic `frame.swf` explicitly contains:
