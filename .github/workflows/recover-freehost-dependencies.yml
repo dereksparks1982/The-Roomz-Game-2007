@@ -1,0 +1,118 @@
+name: Recover dated freehost Roomz dependencies
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-freehost-dependencies.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe exact dependency URLs around known loader captures
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import json,csv,re,time,hashlib
+
+          ROOT=Path('research/freehost-dependency-recovery');REC=ROOT/'recovered'
+          ROOT.mkdir(parents=True,exist_ok=True);REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          hosts=['http://theroomz.freehost.pl/','http://theroomz.freehost.pl:80/','http://www.theroomz.freehost.pl/','http://www.theroomz.freehost.pl:80/']
+          names=['Intro.swf','frame.swf','loadRoom.swf','interface.swf','UnderTR.swf','check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt']
+          stamps=['20061026205422','20061028171955','20061030085831','20061102133024','20061111092143','20061116133440','20061209212524','20070105070255']
+
+          known={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception:pass
+
+          def get(u,timeout=25):
+            with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl(),getattr(r,'status',200)
+
+          attempts=[];recovered=[]
+          # Availability API, scoped to historical timestamps.
+          def availability(orig,ts):
+            q='https://archive.org/wayback/available?'+urlencode({'url':orig,'timestamp':ts})
+            try:
+              b,final,status=get(q,20);d=json.loads(b);s=(d.get('archived_snapshots') or {}).get('closest') or {}
+              return ['availability',orig,ts,str(s.get('available','')),s.get('timestamp',''),s.get('url',''),'']
+            except Exception as e:return ['availability',orig,ts,'','','',repr(e)]
+
+          combos=[(h+n,ts) for h in hosts for n in names for ts in stamps]
+          with ThreadPoolExecutor(max_workers=16) as ex:
+            fs={ex.submit(availability,o,t):(o,t) for o,t in combos}
+            for f in as_completed(fs):attempts.append(f.result())
+
+          # Gather unique availability hits, then replay the exact captured timestamp.
+          hits=[];seen=set()
+          for r in attempts:
+            if r[0]=='availability' and r[3]=='True' and r[4] and r[5]:
+              k=(r[1],r[4],r[5])
+              if k not in seen:seen.add(k);hits.append(r)
+
+          def replay(r):
+            orig=r[1];capts=r[4]
+            # Prefer id_ replay using original URL so binary arrives untouched.
+            u=f'https://web.archive.org/web/{capts}id_/{orig}'
+            try:
+              b,final,status=get(u,35);sha=hashlib.sha256(b).hexdigest();sig=b[:3].decode('latin1','replace')
+              name=Path(urlparse(orig).path).name or 'object.bin';safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)
+              out=REC/f'{capts}__{sha[:12]}__{safe}';out.write_bytes(b)
+              return [orig,capts,final,status,len(b),sha,sig,known.get(sha,''),str(out),'']
+            except Exception as e:return [orig,capts,'','',0,'','','','',repr(e)]
+
+          with ThreadPoolExecutor(max_workers=8) as ex:
+            fs=[ex.submit(replay,r) for r in hits]
+            for f in as_completed(fs):recovered.append(f.result())
+
+          def tsv(name,header,rows):
+            with (ROOT/name).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(rows)
+          tsv('availability.tsv',['method','original','requested_timestamp','available','capture_timestamp','capture_url','error'],attempts)
+          tsv('recovered.tsv',['original','capture_timestamp','final_url','status','bytes','sha256','signature','repo_match','saved_file','error'],recovered)
+
+          valid=[r for r in recovered if r[6] in ('FWS','CWS','ZWS') or r[0].lower().endswith('.txt')]
+          new=[r for r in valid if not r[7]]
+          summary=['# Dated freehost dependency recovery','',f'- Availability probes: {len(attempts)}',f'- Unique archive hits: {len(hits)}',f'- Valid recovered objects: {len(valid)}',f'- New vs current originals: {len(new)}','', '## Archive hits','']
+          summary += [f'- `{r[1]}` requested {r[2]} -> capture **{r[4]}** {r[5]}' for r in hits] or ['- None.']
+          summary += ['', '## New recovered objects','']
+          summary += [f'- `{r[0]}` @ {r[1]}: {r[4]} bytes, sha256 `{r[5]}`, saved `{r[8]}`' for r in new] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:500]))
+          PY
+      - name: Promote new originals and commit
+        shell: bash
+        run: |
+          mkdir -p originals/recovered/freehost-dependencies
+          if [ -f research/freehost-dependency-recovery/recovered.tsv ]; then
+            tail -n +2 research/freehost-dependency-recovery/recovered.tsv | while IFS=$'\t' read -r orig ts final status bytes sha sig match file err; do
+              if [ -z "$match" ] && [ -f "$file" ] && { [[ "$sig" =~ ^(FWS|CWS|ZWS)$ ]] || [[ "$orig" == *.txt ]]; }; then
+                base="$(basename "${orig%%\?*}")"; dest="originals/recovered/freehost-dependencies/${ts}_${base}"
+                cp "$file" "$dest"
+              fi
+            done
+          fi
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/freehost-dependency-recovery originals/recovered/freehost-dependencies
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Probe dated freehost Roomz dependencies"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
