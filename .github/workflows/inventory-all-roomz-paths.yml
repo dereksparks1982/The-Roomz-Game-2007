@@ -1,0 +1,211 @@
+name: Inventory every archived Roomz path
+
+on:
+  push:
+    paths:
+      - '.github/workflows/inventory-all-roomz-paths.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-path-inventory
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enumerate all archived host paths and recover untracked assets
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urlparse, unquote
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import csv, hashlib, html, json, mimetypes, re, time
+
+          SRC=Path('research/continued-hunt/public-archives')
+          ROOT=Path('research/full-path-inventory')
+          REC=ROOT/'recovered-untracked'
+          ROOT.mkdir(parents=True,exist_ok=True); REC.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          known_urls=set(); known_basenames=set(); known_sha={}
+          for p in Path('originals/recovered').rglob('*'):
+              if p.is_file():
+                  known_basenames.add(p.name.lower())
+                  try: known_sha[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+                  except Exception: pass
+
+          rows=[]
+          for jf in sorted(SRC.glob('wayback__*.json')):
+              try:
+                  data=json.loads(jf.read_text(encoding='utf-8'))
+              except Exception:
+                  continue
+              if not isinstance(data,list) or not data: continue
+              hdr=data[0] if isinstance(data[0],list) else None
+              vals=data[1:] if hdr else data
+              for v in vals:
+                  r=dict(zip(hdr,v)) if hdr and isinstance(v,list) else v
+                  if not isinstance(r,dict): continue
+                  u=html.unescape(r.get('original',''))
+                  if not u: continue
+                  pr=urlparse(u)
+                  path=unquote(pr.path or '/')
+                  base=Path(path.rstrip('/')).name if path.rstrip('/') else '/'
+                  ext=Path(base).suffix.lower()
+                  rows.append({
+                    'source_file':jf.name,
+                    'timestamp':r.get('timestamp',''),
+                    'url':u,
+                    'host':pr.netloc.lower(),
+                    'path':path,
+                    'basename':base,
+                    'extension':ext,
+                    'mime':r.get('mimetype',''),
+                    'status':r.get('statuscode',''),
+                    'digest':r.get('digest',''),
+                    'length':str(r.get('length','')),
+                  })
+
+          # Deduplicate URL+digest, then create path-level inventory with earliest/latest capture.
+          unique=[]; seen=set()
+          for r in sorted(rows,key=lambda x:(x['url'].lower(),x['timestamp'])):
+              k=(r['url'].lower(),r['digest'])
+              if k not in seen: seen.add(k); unique.append(r)
+
+          bypath={}
+          for r in unique:
+              k=(r['host'],r['path'])
+              z=bypath.setdefault(k,{'host':r['host'],'path':r['path'],'basename':r['basename'],'extension':r['extension'],'mimes':set(),'captures':0,'earliest':r['timestamp'],'latest':r['timestamp'],'urls':set(),'digests':set(),'lengths':set()})
+              z['captures']+=1; z['mimes'].add(r['mime']); z['urls'].add(r['url']); z['digests'].add(r['digest']); z['lengths'].add(r['length'])
+              z['earliest']=min(z['earliest'],r['timestamp']); z['latest']=max(z['latest'],r['timestamp'])
+
+          paths=[]
+          boring_names={'robots.txt','favicon.ico'}
+          boring_ext={'.html','.htm','.php','.asp','.aspx','.css','.js','.xml'}
+          asset_ext={'.swf','.txt','.dat','.data','.bin','.zip','.rar','.7z','.jpg','.jpeg','.png','.gif','.bmp','.mp3','.wav','.flv','.ico','.pdf','.doc','.rtf','.xml'}
+          priority_re=re.compile(r'room|bonus|check|rule|solut|intro|frame|load|interface|data|cannon|test|tesc|about|sciem|danger|map|hint|pass|level|game|download|source',re.I)
+
+          for z in bypath.values():
+              known_name=z['basename'].lower() in known_basenames
+              ext=z['extension']
+              score=0
+              if ext in asset_ext: score+=5
+              if priority_re.search(z['path']): score+=4
+              if not ext and z['basename'] not in ('/',''): score+=1
+              if ext and ext not in boring_ext: score+=2
+              if z['basename'].lower() in boring_names: score-=5
+              if known_name: score-=3
+              paths.append({**z,'known_basename':known_name,'score':score})
+          paths.sort(key=lambda z:(-z['score'],z['host'],z['path'].lower()))
+
+          def sjoin(v): return ';'.join(sorted(str(x) for x in v if x is not None))
+          with (ROOT/'all-paths.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['score','host','path','basename','extension','known_basename','captures','earliest','latest','mimes','lengths','digests','urls'])
+              for z in paths:
+                  w.writerow([z['score'],z['host'],z['path'],z['basename'],z['extension'],z['known_basename'],z['captures'],z['earliest'],z['latest'],sjoin(z['mimes']),sjoin(z['lengths']),sjoin(z['digests']),sjoin(z['urls'])])
+
+          candidates=[z for z in paths if z['score']>=4 and not z['known_basename'] and z['basename'] not in ('/','')]
+          with (ROOT/'high-priority-untracked-paths.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['score','host','path','basename','extension','captures','earliest','latest','mimes','lengths','urls'])
+              for z in candidates:
+                  w.writerow([z['score'],z['host'],z['path'],z['basename'],z['extension'],z['captures'],z['earliest'],z['latest'],sjoin(z['mimes']),sjoin(z['lengths']),sjoin(z['urls'])])
+
+          # Recover a conservative set of high-priority untracked objects using an exact archived capture.
+          # Skip obvious HTML/script pages and anything > 10MB by indexed length.
+          recover_jobs=[]
+          for z in candidates:
+              if z['extension'] in boring_ext: continue
+              lengths=[]
+              for x in z['lengths']:
+                  try: lengths.append(int(x))
+                  except Exception: pass
+              if lengths and max(lengths)>10_000_000: continue
+              # choose earliest exact capture row for this path
+              matches=[r for r in unique if r['host']==z['host'] and r['path']==z['path']]
+              if not matches: continue
+              r=sorted(matches,key=lambda x:x['timestamp'])[0]
+              recover_jobs.append((z,r))
+          recover_jobs=recover_jobs[:120]
+
+          def fetch_one(z,r):
+              au=f"https://web.archive.org/web/{r['timestamp']}id_/{r['url']}"
+              last=None
+              for n in range(3):
+                  try:
+                      with urlopen(Request(au,headers={'User-Agent':UA}),timeout=35) as resp:
+                          b=resp.read(10_500_000)
+                      if len(b)>10_000_000: raise RuntimeError('object exceeds 10MB cap')
+                      return z,r,au,b,None
+                  except (HTTPError,URLError,TimeoutError,RuntimeError) as e:
+                      last=e; time.sleep(1.2*(n+1))
+              return z,r,au,None,repr(last)
+
+          recovered=[]; failures=[]
+          with ThreadPoolExecutor(max_workers=8) as ex:
+              futs=[ex.submit(fetch_one,z,r) for z,r in recover_jobs]
+              for fut in as_completed(futs):
+                  z,r,au,b,err=fut.result()
+                  if b is None:
+                      failures.append([z['host'],z['path'],r['timestamp'],au,err]); continue
+                  sha=hashlib.sha256(b).hexdigest()
+                  match=known_sha.get(sha,'')
+                  safe_host=re.sub(r'[^A-Za-z0-9._-]+','_',z['host'])
+                  safe_path=re.sub(r'[^A-Za-z0-9._-]+','_',z['path'].strip('/')) or 'root'
+                  out=REC/f'{safe_host}__{safe_path}__{r["timestamp"]}'
+                  out.write_bytes(b)
+                  recovered.append([z['host'],z['path'],r['timestamp'],r['url'],len(b),sha,match,str(out)])
+
+          with (ROOT/'recovered-untracked.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['host','path','timestamp','original_url','bytes','sha256','exact_repo_match','saved_file']); w.writerows(recovered)
+          with (ROOT/'recovery-failures.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['host','path','timestamp','archive_url','error']); w.writerows(failures)
+
+          # Flag genuinely new binary/data objects after hash comparison.
+          new=[r for r in recovered if not r[6]]
+          summary=[
+            '# Full Roomz archived-path inventory','',
+            f'- Unique captured URL/digest records: {len(unique)}',
+            f'- Unique historical host paths: {len(paths)}',
+            f'- High-priority untracked paths: {len(candidates)}',
+            f'- Recovery attempts: {len(recover_jobs)}',
+            f'- Objects recovered in this pass: {len(recovered)}',
+            f'- Recovered objects not byte-identical to existing originals: {len(new)}',
+            f'- Recovery failures: {len(failures)}','',
+            '## Highest-priority untracked paths',''
+          ]
+          for z in candidates[:150]:
+              summary.append(f"- score {z['score']} `{z['host']}{z['path']}` [{sjoin(z['mimes'])}] lengths={sjoin(z['lengths'])}")
+          summary += ['', '## Newly recovered objects','']
+          summary += [f'- `{r[0]}{r[1]}` -> `{r[7]}` ({r[4]} bytes, sha256 `{r[5]}`)' for r in new[:150]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:250]))
+          PY
+
+      - name: Commit inventory and recovered leads safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/full-path-inventory
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Inventory all archived Roomz paths and recover untracked assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
