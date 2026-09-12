@@ -1,0 +1,125 @@
+name: Analyze RoomzMain lineage
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-roomzmain-lineage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare historical RoomzMain versions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,re,zlib,csv,shutil
+
+          ROOT=Path('research/roomzmain-lineage'); ROOT.mkdir(parents=True,exist_ok=True)
+          candidates=[
+            ('2006-10-26','research/freehost-era/recovered/20061026205422__4593da9c40a6__RoomzMain.swf'),
+            ('2006-10-28','research/freehost-era/recovered/20061028171955__9cf314a10519__RoomzMain.swf'),
+            ('2006-11-11','research/freehost-era/recovered/20061111092143__69d526b7669b__RoomzMain.swf'),
+            ('2007-yoyo','originals/recovered/yoyo/RoomzMain_2007.swf'),
+            ('2011-yoyo','originals/recovered/yoyo/RoomzMain_2011.swf'),
+          ]
+          file_pat=re.compile(r'(?i)[A-Za-z0-9_./%+~@-]{1,180}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|ico|mp3|wav|flv|htm|html|php)')
+          url_pat=re.compile(r'(?i)https?://[^\x00-\x20"\'<>]{3,260}')
+          printable=re.compile(rb'[\x20-\x7e]{3,}')
+
+          def decompress_swf(b):
+            if b[:3]==b'CWS': return b'FWS'+b[3:8]+zlib.decompress(b[8:])
+            return b
+
+          versions=[]; all_tokens={}; all_strings={}
+          for label,path in candidates:
+            p=Path(path)
+            if not p.exists(): continue
+            b=p.read_bytes(); raw=decompress_swf(b)
+            strs=[m.group().decode('latin1','replace') for m in printable.finditer(raw)]
+            tokens=[]
+            for s in strs:
+              for m in file_pat.finditer(s):
+                t=m.group(0)
+                if t not in tokens:tokens.append(t)
+              for m in url_pat.finditer(s):
+                t=m.group(0)
+                if t not in tokens:tokens.append(t)
+            # Also pick likely AS constants and semantic loader strings.
+            semantic=[]
+            for s in strs:
+              low=s.lower()
+              if any(k in low for k in ('loadmovie','loadvariables','loadclip','room','intro','interface','frame','undertr','check','rules','solution','about','sciem','tescik','bonus','quick','pass','level','forum','forumer','freehost','yoyo','dreamward')):
+                if s not in semantic:semantic.append(s)
+            all_tokens[label]=set(tokens); all_strings[label]=set(semantic)
+            versions.append([label,path,len(b),hashlib.sha256(b).hexdigest(),b[:3].decode('latin1','replace'),len(strs),len(tokens),len(semantic)])
+            (ROOT/f'{label}-tokens.txt').write_text('\n'.join(tokens)+'\n',encoding='utf-8')
+            (ROOT/f'{label}-semantic-strings.txt').write_text('\n'.join(semantic)+'\n',encoding='utf-8')
+
+          labels=[r[0] for r in versions]
+          first_seen=[]
+          seen=set()
+          for label in labels:
+            for t in sorted(all_tokens[label],key=str.lower):
+              if t.lower() not in seen:
+                first_seen.append([label,t]);seen.add(t.lower())
+          unique=[]
+          for label in labels:
+            others=set().union(*(all_tokens[x] for x in labels if x!=label)) if len(labels)>1 else set()
+            for t in sorted(all_tokens[label]-others,key=str.lower):unique.append([label,t])
+
+          sem_changes=[]
+          for i,label in enumerate(labels):
+            prev=labels[i-1] if i else None
+            if prev:
+              added=sorted(all_strings[label]-all_strings[prev])
+              removed=sorted(all_strings[prev]-all_strings[label])
+              for x in added:sem_changes.append([prev,label,'added',x])
+              for x in removed:sem_changes.append([prev,label,'removed',x])
+
+          def tsv(n,h,rows):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(rows)
+          tsv('versions.tsv',['label','path','bytes','sha256','signature','printable_strings','asset_url_tokens','semantic_strings'],versions)
+          tsv('first-seen-tokens.tsv',['first_seen_version','token'],first_seen)
+          tsv('version-unique-tokens.tsv',['version','token'],unique)
+          tsv('semantic-changes.tsv',['from','to','change','string'],sem_changes)
+
+          # Promote one canonical copy of each unique 2006 binary into originals.
+          OUT=Path('originals/recovered/freehost-era');OUT.mkdir(parents=True,exist_ok=True)
+          for label,path in candidates[:3]:
+            p=Path(path)
+            if p.exists():shutil.copy2(p,OUT/f'RoomzMain_{label}.swf')
+
+          summary=['# RoomzMain lineage analysis','',f'- Versions compared: {len(versions)}','', '## Versions','']
+          for r in versions: summary.append(f'- **{r[0]}**: {r[2]} bytes, SHA-256 `{r[3]}`, {r[6]} asset/URL tokens')
+          summary += ['', '## Asset/URL tokens by first appearance','']
+          summary += [f'- **{r[0]}**: `{r[1]}`' for r in first_seen] or ['- None.']
+          summary += ['', '## Tokens unique to one version','']
+          summary += [f'- **{r[0]}**: `{r[1]}`' for r in unique] or ['- None.']
+          summary += ['', '## Semantic changes between successive versions','']
+          summary += [f'- {r[0]} → {r[1]} **{r[2]}** `{r[3]}`' for r in sem_changes[:500]] or ['- None detected by printable-string comparison.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:700]))
+          PY
+      - name: Commit lineage analysis and promoted originals
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/roomzmain-lineage originals/recovered/freehost-era
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Preserve and compare 2006 RoomzMain versions"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
