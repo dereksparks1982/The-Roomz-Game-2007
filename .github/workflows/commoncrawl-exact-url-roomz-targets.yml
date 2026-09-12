@@ -1,0 +1,131 @@
+name: Retry Common Crawl with exact Roomz URLs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/commoncrawl-exact-url-roomz-targets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-commoncrawl-exact
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query exact URLs instead of slow wildcard prefixes
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,json,re,time
+
+          ROOT=Path('research/commoncrawl-exact-url-scan'); ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          names=['check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','BlackAndWhite.swf','hof.swf','Redirect.swf','yoyo.pnq','cannon.txt']
+          roots=['theroomz.yoyo.pl/','www.theroomz.yoyo.pl/','theroomz.org/','www.theroomz.org/','dreamward.home.pl/theroomz/','dreamwardgames.com/theroomz/']
+          urls=[]
+          for root in roots:
+              for name in names:
+                  urls.append(root+name)
+                  if name=='BlackAndWhite.swf': urls.append(root+'paper/'+name)
+          urls=list(dict.fromkeys(urls))
+
+          def get(url,tries=2,timeout=18):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(0.8*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          colls=json.loads(get('https://index.commoncrawl.org/collinfo.json',tries=3,timeout=30))
+          # Focus all available indexes from 2008-2016 but cap to first/last per year.
+          by={}
+          for c in colls:
+              m=re.search(r'CC-MAIN-(\d{4})-',c.get('id',''))
+              if m and 2008<=int(m.group(1))<=2016: by.setdefault(int(m.group(1)),[]).append(c)
+          selected=[]
+          for y,v in sorted(by.items()):
+              v=sorted(v,key=lambda x:x['id'])
+              selected += v if len(v)<=2 else [v[0],v[-1]]
+          tmp=[]; seen=set()
+          for c in selected:
+              if c['id'] not in seen: seen.add(c['id']);tmp.append(c)
+          selected=tmp
+
+          def query(c,u):
+              api=c.get('cdx-api') or f"https://index.commoncrawl.org/{c['id']}-index"
+              qs=urlencode({'url':u,'matchType':'exact','output':'json'})
+              b=get(api+'?'+qs,tries=1,timeout=12)
+              return c['id'],u,b
+
+          rows=[]; failures=[]; zero=0
+          jobs=[(c,u) for c in selected for u in urls]
+          with ThreadPoolExecutor(max_workers=24) as ex:
+              futs={ex.submit(query,c,u):(c['id'],u) for c,u in jobs}
+              for fut in as_completed(futs):
+                  cid,u=futs[fut]
+                  try:
+                      cid,u,b=fut.result(); text=b.decode('utf-8','replace'); count=0
+                      for line in text.splitlines():
+                          line=line.strip()
+                          if not line.startswith('{'):continue
+                          try:r=json.loads(line)
+                          except Exception:continue
+                          count+=1
+                          rows.append([cid,u,r.get('timestamp',''),r.get('url',''),r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('filename',''),r.get('offset',''),r.get('length','')])
+                      if not count: zero+=1
+                  except Exception as e:
+                      failures.append([cid,u,repr(e)])
+
+          # dedupe actual captures
+          dr=[]; seen=set()
+          for r in rows:
+              k=tuple(r[2:])
+              if k not in seen:seen.add(k);dr.append(r)
+          def tsv(path,header,data):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(data)
+          hdr=['crawl','query_url','timestamp','captured_url','status','mime','digest','warc_file','offset','length']
+          tsv(ROOT/'hits.tsv',hdr,dr)
+          tsv(ROOT/'failures.tsv',['crawl','query_url','error'],failures)
+          summary=['# Common Crawl exact-URL Roomz scan','',
+                   f'- Crawl indexes selected: {len(selected)}',
+                   f'- Exact historical URL variants: {len(urls)}',
+                   f'- Exact queries attempted: {len(jobs)}',
+                   f'- Distinct capture hits: {len(dr)}',
+                   f'- Zero-result successful queries: {zero}',
+                   f'- Query failures: {len(failures)}','',
+                   '## Capture hits','']
+          summary += [f'- {r[0]} {r[2]} {r[4]} {r[5]} `{r[3]}` WARC={r[7]} offset={r[8]} length={r[9]}' for r in dr] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+
+      - name: Commit exact-query results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/commoncrawl-exact-url-scan
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Retry Common Crawl with exact Roomz asset URLs"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
