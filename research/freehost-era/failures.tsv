@@ -1,0 +1,6 @@
+stage	target	error
+exact-cdx	http://theroomz.freehost.pl/rules.swf	RuntimeError('https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftheroomz.freehost.pl%2Frules.swf&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&from=2006&to=2008: <urlopen error timed out>')
+exact-cdx	http://theroomz.freehost.pl/tescik.swf	RuntimeError('https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftheroomz.freehost.pl%2Ftescik.swf&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&from=2006&to=2008: <urlopen error timed out>')
+replay	http://theroomz.freehost.pl:80/RoomzMain.swf	RuntimeError('https://web.archive.org/web/20061121182647id_/http://theroomz.freehost.pl:80/RoomzMain.swf: <urlopen error timed out>')
+replay	http://theroomz.freehost.pl:80/RoomzMain.swf	RuntimeError('https://web.archive.org/web/20061128162959id_/http://theroomz.freehost.pl:80/RoomzMain.swf: <urlopen error timed out>')
+replay	http://theroomz.freehost.pl:80/RoomzMain.swf	RuntimeError('https://web.archive.org/web/20061123073614id_/http://theroomz.freehost.pl:80/RoomzMain.swf: <urlopen error timed out>')
