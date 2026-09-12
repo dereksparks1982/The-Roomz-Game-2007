@@ -1,0 +1,75 @@
+name: Analyze recovered RRR and data SWFs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-rrr-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decompress and mine SWFs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,re,zlib,csv
+
+          ROOT=Path('research/rrr-data-analysis'); ROOT.mkdir(parents=True,exist_ok=True)
+          files=[Path('originals/recovered/yoyo/RRR.swf'),Path('originals/recovered/yoyo/data.swf')]
+          lead_re=re.compile(rb'(?i)(?:[A-Za-z0-9_./%+~-]{1,160}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|mp3|wav|htm|html|php)|https?://[^\x00-\x20"\'<>]{4,300}|(?:loadMovie(?:Num)?|loadVariables|loadClip|getURL|gotoAnd(?:Play|Stop)|HSsprawdz|adressCH|room\d+|bonus|password|quickpass|theroomz|dreamward|yoyo)[^\x00]{0,180})')
+          printable=re.compile(rb'[\x20-\x7e]{4,}')
+          rows=[]; summaries=[]
+
+          for p in files:
+              b=p.read_bytes(); sig=b[:3]; ver=b[3]; declared=int.from_bytes(b[4:8],'little')
+              if sig==b'CWS':
+                  body=b'FWS'+b[3:8]+zlib.decompress(b[8:])
+              elif sig==b'FWS': body=b
+              else: body=b
+              dec=ROOT/(p.stem+'-decompressed.swf'); dec.write_bytes(body)
+              strings=[m.group().decode('latin1','replace') for m in printable.finditer(body)]
+              (ROOT/(p.stem+'-strings.txt')).write_text('\n'.join(strings)+'\n',encoding='utf-8')
+              leads=[]
+              for m in lead_re.finditer(body):
+                  s=m.group().decode('latin1','replace').replace('\r',' ').replace('\n',' ')
+                  if s not in leads: leads.append(s)
+              (ROOT/(p.stem+'-leads.txt')).write_text('\n'.join(leads)+'\n',encoding='utf-8')
+              # Compact ASCII string list likely to include AS1/AS2 constant pool values.
+              interesting=[]
+              for s in strings:
+                  low=s.lower()
+                  if any(k in low for k in ('.swf','.txt','.xml','.dat','.php','.htm','http','room','bonus','load','url','pass','quick','yoyo','dream','data','rrr','redirect','check','interface','intro')):
+                      if s not in interesting: interesting.append(s)
+              rows.extend([[p.name,s] for s in interesting])
+              summaries += [f'## {p.name}','',f'- Bytes: {len(b)}',f'- Signature: {sig.decode("latin1")}',f'- SWF version byte: {ver}',f'- Declared uncompressed length: {declared}',f'- SHA-256: `{hashlib.sha256(b).hexdigest()}`',f'- Printable strings: {len(strings)}',f'- Lead-pattern matches: {len(leads)}','', '### Interesting strings','']
+              summaries += [f'- `{s}`' for s in interesting[:300]] or ['- None.']
+              summaries += ['', '### Lead-pattern matches','']+[f'- `{s}`' for s in leads[:300]]+['']
+
+          with (ROOT/'interesting-strings.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['swf','string']);w.writerows(rows)
+          out=['# RRR.swf + data.swf analysis','',*summaries]
+          (ROOT/'RESULT.md').write_text('\n'.join(out)+'\n',encoding='utf-8')
+          print('\n'.join(out[:500]))
+          PY
+      - name: Commit analysis safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/rrr-data-analysis
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Analyze recovered RRR and data SWFs"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
