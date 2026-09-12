@@ -1,0 +1,253 @@
+name: Mine original Forumer archive
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-forumer-deep.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  recover-forumer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover quote pages and forum indexes
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urlsplit, parse_qs, unquote
+          import csv, hashlib, html, json, re, time
+
+          ROOT = Path('research/forumer-deep-recovery')
+          QUOTES = ROOT / 'quote-pages'
+          FORUMS = ROOT / 'viewforum-pages'
+          ROOT.mkdir(parents=True, exist_ok=True)
+          QUOTES.mkdir(parents=True, exist_ok=True)
+          FORUMS.mkdir(parents=True, exist_ok=True)
+
+          UA = 'The-Roomz-2007-preservation/1.0 (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          def get_bytes(url, tries=8, base_delay=4):
+              last = None
+              for attempt in range(tries):
+                  try:
+                      req = Request(url, headers={'User-Agent': UA})
+                      with urlopen(req, timeout=60) as r:
+                          return r.read()
+                  except HTTPError as e:
+                      last = e
+                      if e.code in (429, 500, 502, 503, 504):
+                          time.sleep(base_delay * (attempt + 1))
+                          continue
+                      raise
+                  except (URLError, TimeoutError) as e:
+                      last = e
+                      time.sleep(base_delay * (attempt + 1))
+              raise RuntimeError(f'failed after retries: {url}: {last}')
+
+          cdx_url = ('https://web.archive.org/cdx/search/cdx?'
+                     'url=theroomz.19.forumer.com&matchType=domain&output=json&'
+                     'fl=timestamp,original,statuscode,mimetype,digest,length')
+          raw = get_bytes(cdx_url)
+          (ROOT / 'domain-all.json').write_bytes(raw)
+          data = json.loads(raw)
+          header = data[0]
+          rows = [dict(zip(header, r)) for r in data[1:]]
+
+          def is_quote(r):
+              u = html.unescape(r['original'])
+              return (r['statuscode'] == '200' and 'posting.php?' in u and
+                      re.search(r'(?:[?&])mode=quote(?:&|$)', u, re.I) and
+                      re.search(r'(?:[?&])p=\d+', u, re.I))
+
+          def is_viewforum(r):
+              u = html.unescape(r['original'])
+              return (r['statuscode'] == '200' and 'viewforum.php?' in u and
+                      re.search(r'(?:[?&])f=\d+', u, re.I))
+
+          quote_rows = [r for r in rows if is_quote(r)]
+          forum_rows = [r for r in rows if is_viewforum(r)]
+
+          # Keep each unique archived body. CDX digest is the best archive-level dedupe key.
+          def dedupe_digest(seq):
+              out, seen = [], set()
+              for r in sorted(seq, key=lambda x: (x['timestamp'], x['original'])):
+                  key = r.get('digest') or (r['timestamp'], r['original'])
+                  if key in seen:
+                      continue
+                  seen.add(key)
+                  out.append(r)
+              return out
+
+          quote_rows = dedupe_digest(quote_rows)
+          forum_rows = dedupe_digest(forum_rows)
+
+          failures = []
+
+          def archive_url(r):
+              return f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+
+          def safe_id(url, key):
+              m = re.search(r'(?:[?&])' + re.escape(key) + r'=(\d+)', html.unescape(url), re.I)
+              return m.group(1) if m else 'unknown'
+
+          def clean_text(x):
+              x = html.unescape(x or '')
+              x = re.sub(r'<br\s*/?>', '\n', x, flags=re.I)
+              x = re.sub(r'<[^>]+>', ' ', x)
+              x = re.sub(r'\r', '', x)
+              x = re.sub(r'[ \t]+', ' ', x)
+              x = re.sub(r'\n\s+', '\n', x)
+              return x.strip()
+
+          def title_from_page(s):
+              m = re.search(r'<title[^>]*>(.*?)</title>', s, re.I | re.S)
+              return clean_text(m.group(1)) if m else ''
+
+          # Quote-page recovery
+          quote_manifest = []
+          quote_extracts = []
+          quote_hits = []
+          url_re = re.compile(r'https?://[^\s<>"\']+', re.I)
+          high_re = re.compile(r'check\.swf|sciemka\.swf|about\.swf|rules\.swf|solutions\.swf|tescik\.swf|\.swf\b|\.zip\b|\.rar\b|\.7z\b|download|mirror|full\s+game|full\s+version|room\s*4[0-5]|bonus\s*(?:room\s*)?5', re.I)
+
+          for n, r in enumerate(quote_rows, 1):
+              pid = safe_id(r['original'], 'p')
+              fname = f"{r['timestamp']}_p{pid}_{(r.get('digest') or 'nodigest')[:12]}.html"
+              out = QUOTES / fname
+              try:
+                  body = get_bytes(archive_url(r))
+                  out.write_bytes(body)
+                  sha = hashlib.sha256(body).hexdigest()
+                  s = body.decode('utf-8', 'replace')
+                  title = title_from_page(s)
+
+                  # phpBB2 quote/reply forms normally store the quoted body in textarea name=message.
+                  mm = re.search(r'<textarea[^>]+name=["\']message["\'][^>]*>(.*?)</textarea>', s, re.I | re.S)
+                  quoted = clean_text(mm.group(1)) if mm else ''
+                  if not quoted:
+                      # Preserve useful page text even if archive returned a login/error form.
+                      main = re.search(r'<body[^>]*>(.*?)</body>', s, re.I | re.S)
+                      quoted = clean_text(main.group(1) if main else s)
+
+                  quote_manifest.append([r['timestamp'], pid, r['original'], r.get('digest',''), len(body), sha, fname, title])
+                  quote_extracts.append([pid, r['timestamp'], title, quoted, r['original'], fname])
+
+                  low = quoted.lower()
+                  if high_re.search(quoted):
+                      contexts = []
+                      for m in high_re.finditer(quoted):
+                          a, b = max(0, m.start()-180), min(len(quoted), m.end()+260)
+                          contexts.append(re.sub(r'\s+', ' ', quoted[a:b]))
+                      quote_hits.append([pid, r['timestamp'], title, ' || '.join(contexts[:12]), r['original']])
+
+                  time.sleep(0.7)
+              except Exception as e:
+                  failures.append(['quote', r['timestamp'], r['original'], repr(e)])
+
+          # Forum index recovery and topic mapping
+          forum_manifest = []
+          forum_index = {}
+          forum_topics = set()
+
+          for n, r in enumerate(forum_rows, 1):
+              fid = safe_id(r['original'], 'f')
+              fname = f"{r['timestamp']}_f{fid}_{(r.get('digest') or 'nodigest')[:12]}.html"
+              out = FORUMS / fname
+              try:
+                  body = get_bytes(archive_url(r))
+                  out.write_bytes(body)
+                  sha = hashlib.sha256(body).hexdigest()
+                  s = body.decode('utf-8', 'replace')
+                  title = title_from_page(s)
+                  # Prefer canonical forum-title links when present.
+                  forum_name = ''
+                  mname = re.search(r'<a[^>]+href=["\']viewforum\.php\?f=' + re.escape(fid) + r'(?:&[^"\']*)?["\'][^>]*>(.*?)</a>', s, re.I | re.S)
+                  if mname:
+                      forum_name = clean_text(mname.group(1))
+                  if not forum_name:
+                      mname = re.search(r'FoROOM\s*~\s*View Forum\s*-\s*(.*?)\s*</title>', s, re.I | re.S)
+                      forum_name = clean_text(mname.group(1)) if mname else title
+                  forum_index.setdefault(fid, set()).add(forum_name)
+
+                  for mt in re.finditer(r'href=["\']([^"\']*viewtopic\.php\?[^"\']*\bt=(\d+)[^"\']*)["\'][^>]*>(.*?)</a>', s, re.I | re.S):
+                      topic_id = mt.group(2)
+                      topic_title = clean_text(mt.group(3))
+                      href = html.unescape(mt.group(1))
+                      if topic_title:
+                          forum_topics.add((fid, forum_name, topic_id, topic_title, href, r['timestamp'], fname))
+
+                  forum_manifest.append([r['timestamp'], fid, r['original'], r.get('digest',''), len(body), sha, fname, forum_name, title])
+                  time.sleep(0.7)
+              except Exception as e:
+                  failures.append(['viewforum', r['timestamp'], r['original'], repr(e)])
+
+          def write_tsv(path, header, rows):
+              with path.open('w', newline='', encoding='utf-8') as f:
+                  w = csv.writer(f, delimiter='\t', lineterminator='\n')
+                  w.writerow(header)
+                  w.writerows(rows)
+
+          write_tsv(ROOT/'quote-manifest.tsv',
+                    ['timestamp','post_id','original','cdx_digest','bytes','sha256','file','title'], quote_manifest)
+          write_tsv(ROOT/'quote-posts.tsv',
+                    ['post_id','timestamp','title','quoted_text','original','file'], quote_extracts)
+          write_tsv(ROOT/'quote-high-value-hits.tsv',
+                    ['post_id','timestamp','title','context','original'], quote_hits)
+          write_tsv(ROOT/'viewforum-manifest.tsv',
+                    ['timestamp','forum_id','original','cdx_digest','bytes','sha256','file','forum_name','page_title'], forum_manifest)
+          forum_rows_out = []
+          for fid in sorted(forum_index, key=lambda x: int(x)):
+              names = ' | '.join(sorted(n for n in forum_index[fid] if n))
+              forum_rows_out.append([fid, names])
+          write_tsv(ROOT/'forum-index.tsv', ['forum_id','names'], forum_rows_out)
+          write_tsv(ROOT/'forum-topic-map.tsv',
+                    ['forum_id','forum_name','topic_id','topic_title','href','timestamp','source_file'],
+                    sorted(forum_topics, key=lambda x: (int(x[0]), int(x[2]), x[5])))
+          write_tsv(ROOT/'failures.tsv', ['kind','timestamp','original','error'], failures)
+
+          summary = [
+              '# Original Forumer deep-recovery results',
+              '',
+              f'- CDX rows inspected: {len(rows)}',
+              f'- Unique HTTP-200 quote-page bodies selected: {len(quote_rows)}',
+              f'- Quote pages recovered: {len(quote_manifest)}',
+              f'- Quote pages with high-value hits: {len(quote_hits)}',
+              f'- Unique HTTP-200 viewforum bodies selected: {len(forum_rows)}',
+              f'- Viewforum pages recovered: {len(forum_manifest)}',
+              f'- Forum IDs mapped: {len(forum_index)}',
+              f'- Topic links mapped from forum indexes: {len(forum_topics)}',
+              f'- Failures: {len(failures)}',
+              '',
+              '## Forum map',
+              ''
+          ]
+          for fid, names in forum_rows_out:
+              summary.append(f'- f={fid}: {names or "(name not parsed)"}')
+          summary += ['', '## High-value quote hits', '']
+          for row in quote_hits[:100]:
+              summary.append(f'- p={row[0]} ({row[1]}) {row[2]}: {row[3][:500]}')
+          (ROOT/'SUMMARY.md').write_text('\n'.join(summary) + '\n', encoding='utf-8')
+
+          print('\n'.join(summary[:120]))
+          PY
+
+      - name: Commit recovered archive material
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/forumer-deep-recovery
+          if git diff --cached --quiet; then
+            echo "No new recovery material to commit."
+          else
+            git commit -m "Recover original Forumer quote and forum archive pages"
+            git push
+          fi
