@@ -1,0 +1,80 @@
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0000 ConstantPool ['arr', ',', 'System', 'capabilities', 'version', 'split', 'ver', 'length', 'charAt', 'SRR', 'showRedrawRegions', 'k', 'setInterval', '', '_root', '_url', 'http://theroomz.freehost.pl', 'http://www.theroomz.freehost.pl']
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0001 Stop
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0002 Push [('const8', 'arr'), ('const8', ','), ('int', 1), ('const8', 'System')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0003 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0004 Push [('const8', 'capabilities')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0005 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0006 Push [('const8', 'version')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0007 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0008 ToString
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0009 Push [('const8', 'split')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0010 CallMethod
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0011 DefineLocal
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0012 Push [('const8', 'ver'), ('const8', 'arr')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0013 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0014 Push [('double', 0.0)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0015 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0016 Push [('const8', 'length')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0017 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0018 Push [('int', 1)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0019 Subtract
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0020 Push [('int', 1), ('const8', 'arr')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0021 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0022 Push [('double', 0.0)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0023 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0024 ToString
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0025 Push [('const8', 'charAt')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0026 CallMethod
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0027 ToNumber
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0028 DefineLocal
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0029 Push [('const8', 'ver')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0030 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0031 Push [('int', 8)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0032 Less2
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0033 Not
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0034 Not
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0035 If data=1601
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0036 Push [('const8', 'SRR')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0037 DefineFunction
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0038 Push [('bool', False), ('int', 1), ('const8', 'showRedrawRegions')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0039 CallFunction
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0040 Pop
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0041 SetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0042 Push [('const8', 'k'), ('int', 1000), ('const8', 'SRR')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0043 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0044 Push [('int', 2), ('const8', 'setInterval')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0045 CallFunction
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0046 SetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0047 Push [('const8', ''), ('int', 17), ('bool', False)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0048 SetProperty
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0049 GetURL url='FSCommand:showmenu' target='false'
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0050 Push [('const8', '_root')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0051 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0052 Push [('const8', '_url')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0053 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0054 Push [('double', 0.0), ('int', 27)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0055 StringExtract
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0056 Push [('const8', 'http://theroomz.freehost.pl')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0057 Equals2
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0058 PushDuplicate
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0059 If data=2500
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0060 Pop
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0061 Push [('const8', '_root')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0062 GetVariable
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0063 Push [('const8', '_url')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0064 GetMember
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0065 Push [('double', 0.0), ('int', 31)]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0066 StringExtract
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0067 Push [('const8', 'http://www.theroomz.freehost.pl')]
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0068 Equals2
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0069 Not
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0070 If data=3300
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0071 GetURL url='Intro.swf' target='_level105'
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0072 GetURL url='frame.swf' target='_level110'
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0073 Jump data=2b00
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0074 GotoFrame data=0200
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0075 GetURL url='http://theroomz.freehost.pl' target='_blank'
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0076 Jump data=0500
+RoomzMain_2006-11-11.swf/tag3:code12/DoAction A0077 GotoFrame data=0100
+RoomzMain_2006-11-11.swf/tag5:code12/DoAction A0000 Stop
+RoomzMain_2006-11-11.swf/tag12:code12/DoAction A0000 Stop

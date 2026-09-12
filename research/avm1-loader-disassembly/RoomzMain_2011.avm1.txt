@@ -1,0 +1,84 @@
+RoomzMain_2011.swf/tag3:code12/DoAction A0000 ConstantPool ['arr', ' ', ',', 'System', 'capabilities', 'version', 'split', 'ver', 'SRR', 'showRedrawRegions', 'k', 'setInterval', '', '_level0', 'zamowienie', '_level105']
+RoomzMain_2011.swf/tag3:code12/DoAction A0001 Stop
+RoomzMain_2011.swf/tag3:code12/DoAction A0002 Push [('const8', 'arr'), ('const8', ' '), ('int', 1), ('const8', ','), ('int', 1), ('const8', 'System')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0003 GetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0004 Push [('const8', 'capabilities')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0005 GetMember
+RoomzMain_2011.swf/tag3:code12/DoAction A0006 Push [('const8', 'version')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0007 GetMember
+RoomzMain_2011.swf/tag3:code12/DoAction A0008 ToString
+RoomzMain_2011.swf/tag3:code12/DoAction A0009 Push [('const8', 'split')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0010 CallMethod
+RoomzMain_2011.swf/tag3:code12/DoAction A0011 Push [('double', 0.0)]
+RoomzMain_2011.swf/tag3:code12/DoAction A0012 GetMember
+RoomzMain_2011.swf/tag3:code12/DoAction A0013 ToString
+RoomzMain_2011.swf/tag3:code12/DoAction A0014 Push [('const8', 'split')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0015 CallMethod
+RoomzMain_2011.swf/tag3:code12/DoAction A0016 DefineLocal
+RoomzMain_2011.swf/tag3:code12/DoAction A0017 Push [('const8', 'ver'), ('const8', 'arr')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0018 GetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0019 Push [('int', 1)]
+RoomzMain_2011.swf/tag3:code12/DoAction A0020 GetMember
+RoomzMain_2011.swf/tag3:code12/DoAction A0021 ToNumber
+RoomzMain_2011.swf/tag3:code12/DoAction A0022 DefineLocal
+RoomzMain_2011.swf/tag3:code12/DoAction A0023 Push [('const8', 'ver')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0024 GetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0025 Push [('int', 8)]
+RoomzMain_2011.swf/tag3:code12/DoAction A0026 Less2
+RoomzMain_2011.swf/tag3:code12/DoAction A0027 Not
+RoomzMain_2011.swf/tag3:code12/DoAction A0028 Not
+RoomzMain_2011.swf/tag3:code12/DoAction A0029 If data=b900
+RoomzMain_2011.swf/tag3:code12/DoAction A0030 Push [('const8', 'SRR')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0031 DefineFunction
+RoomzMain_2011.swf/tag3:code12/DoAction A0032 Push [('bool', False), ('int', 1), ('const8', 'showRedrawRegions')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0033 CallFunction
+RoomzMain_2011.swf/tag3:code12/DoAction A0034 Pop
+RoomzMain_2011.swf/tag3:code12/DoAction A0035 SetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0036 Push [('const8', 'k'), ('int', 1000), ('const8', 'SRR')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0037 GetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0038 Push [('int', 2), ('const8', 'setInterval')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0039 CallFunction
+RoomzMain_2011.swf/tag3:code12/DoAction A0040 SetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0041 Push [('const8', ''), ('int', 17), ('bool', False)]
+RoomzMain_2011.swf/tag3:code12/DoAction A0042 SetProperty
+RoomzMain_2011.swf/tag3:code12/DoAction A0043 GetURL url='FSCommand:showmenu' target='false'
+RoomzMain_2011.swf/tag3:code12/DoAction A0044 Push [('const8', '_level0')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0045 GetVariable
+RoomzMain_2011.swf/tag3:code12/DoAction A0046 Push [('const8', 'zamowienie'), ('const8', '_level105')]
+RoomzMain_2011.swf/tag3:code12/DoAction A0047 SetMember
+RoomzMain_2011.swf/tag3:code12/DoAction A0048 GetURL url='loadRoom.swf' target='_level107'
+RoomzMain_2011.swf/tag3:code12/DoAction A0049 GetURL url='Intro.swf' target='_level105'
+RoomzMain_2011.swf/tag3:code12/DoAction A0050 GetURL url='frame.swf' target='_level110'
+RoomzMain_2011.swf/tag3:code12/DoAction A0051 Jump data=0500
+RoomzMain_2011.swf/tag3:code12/DoAction A0052 GotoFrame data=0100
+RoomzMain_2011.swf/tag5:code12/DoAction A0000 ConstantPool ['ver', 'arr', 'length', 'charAt', 'player', '_visible']
+RoomzMain_2011.swf/tag5:code12/DoAction A0001 Stop
+RoomzMain_2011.swf/tag5:code12/DoAction A0002 Push [('const8', 'ver'), ('const8', 'arr')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0003 GetVariable
+RoomzMain_2011.swf/tag5:code12/DoAction A0004 Push [('double', 0.0)]
+RoomzMain_2011.swf/tag5:code12/DoAction A0005 GetMember
+RoomzMain_2011.swf/tag5:code12/DoAction A0006 Push [('const8', 'length')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0007 GetMember
+RoomzMain_2011.swf/tag5:code12/DoAction A0008 Push [('int', 1)]
+RoomzMain_2011.swf/tag5:code12/DoAction A0009 Subtract
+RoomzMain_2011.swf/tag5:code12/DoAction A0010 Push [('int', 1), ('const8', 'arr')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0011 GetVariable
+RoomzMain_2011.swf/tag5:code12/DoAction A0012 Push [('double', 0.0)]
+RoomzMain_2011.swf/tag5:code12/DoAction A0013 GetMember
+RoomzMain_2011.swf/tag5:code12/DoAction A0014 ToString
+RoomzMain_2011.swf/tag5:code12/DoAction A0015 Push [('const8', 'charAt')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0016 CallMethod
+RoomzMain_2011.swf/tag5:code12/DoAction A0017 ToNumber
+RoomzMain_2011.swf/tag5:code12/DoAction A0018 DefineLocal
+RoomzMain_2011.swf/tag5:code12/DoAction A0019 Push [('const8', 'ver')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0020 GetVariable
+RoomzMain_2011.swf/tag5:code12/DoAction A0021 Push [('int', 8)]
+RoomzMain_2011.swf/tag5:code12/DoAction A0022 Less2
+RoomzMain_2011.swf/tag5:code12/DoAction A0023 Not
+RoomzMain_2011.swf/tag5:code12/DoAction A0024 Not
+RoomzMain_2011.swf/tag5:code12/DoAction A0025 If data=0e00
+RoomzMain_2011.swf/tag5:code12/DoAction A0026 Push [('const8', 'player')]
+RoomzMain_2011.swf/tag5:code12/DoAction A0027 GetVariable
+RoomzMain_2011.swf/tag5:code12/DoAction A0028 Push [('const8', '_visible'), ('bool', False)]
+RoomzMain_2011.swf/tag5:code12/DoAction A0029 SetMember
+RoomzMain_2011.swf/tag15:code12/DoAction A0000 Stop
