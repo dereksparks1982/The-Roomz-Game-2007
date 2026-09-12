@@ -1,0 +1,115 @@
+name: Low-rate Common Crawl probe for Roomz check.swf
+
+on:
+  push:
+    paths:
+      - '.github/workflows/commoncrawl-check-swf-lowrate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query old Common Crawl indexes serially
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          import json,re,time,csv
+
+          ROOT=Path('research/commoncrawl-check-lowrate');ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          urls=[
+            'theroomz.yoyo.pl/check.swf','www.theroomz.yoyo.pl/check.swf',
+            'theroomz.org/check.swf','www.theroomz.org/check.swf',
+            'theroomz.freehost.pl/check.swf','www.theroomz.freehost.pl/check.swf',
+            'dreamward.home.pl/theroomz/check.swf','dreamwardgames.com/theroomz/check.swf'
+          ]
+
+          def get(u,tries=5,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA,'Accept':'application/json'}),timeout=timeout) as r:return r.read(),getattr(r,'status',200)
+              except HTTPError as e:
+                last=e
+                if e.code in (429,500,502,503,504):
+                  time.sleep(3*(n+1));continue
+                break
+              except (URLError,TimeoutError) as e:last=e;time.sleep(3*(n+1))
+            raise RuntimeError(repr(last))
+
+          failures=[];rows=[]
+          try:
+            b,st=get('https://index.commoncrawl.org/collinfo.json',tries=4)
+            colls=json.loads(b)
+          except Exception as e:
+            colls=[];failures.append(['collinfo','','',repr(e)])
+
+          # Old crawl coverage is sparse. Pick at most two indexes per year, 2008-2016.
+          by={}
+          for c in colls:
+            m=re.search(r'CC-MAIN-(\d{4})-',c.get('id',''))
+            if m and 2008<=int(m.group(1))<=2016:by.setdefault(int(m.group(1)),[]).append(c)
+          selected=[]
+          for y,v in sorted(by.items()):
+            v=sorted(v,key=lambda x:x['id'])
+            selected += v if len(v)<=2 else [v[0],v[-1]]
+          seen=set();selected=[c for c in selected if not (c['id'] in seen or seen.add(c['id']))]
+
+          for c in selected:
+            api=c.get('cdx-api') or f"https://index.commoncrawl.org/{c['id']}-index"
+            for u in urls:
+              q=api+'?'+urlencode({'url':u,'matchType':'exact','output':'json'})
+              try:
+                b,st=get(q,tries=4,timeout=30)
+                txt=b.decode('utf-8','replace');count=0
+                for line in txt.splitlines():
+                  line=line.strip()
+                  if not line.startswith('{'):continue
+                  try:r=json.loads(line)
+                  except:continue
+                  count+=1
+                  rows.append([c['id'],u,r.get('timestamp',''),r.get('url',''),r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('filename',''),r.get('offset',''),r.get('length','')])
+                print(c['id'],u,'hits',count,flush=True)
+              except Exception as e:
+                failures.append(['query',c['id'],u,repr(e)]);print(c['id'],u,'FAIL',repr(e),flush=True)
+              time.sleep(2.5)
+
+          # Dedupe captures.
+          out=[];s=set()
+          for r in rows:
+            k=tuple(r[2:])
+            if k not in s:s.add(k);out.append(r)
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          tsv('hits.tsv',['crawl','query_url','timestamp','captured_url','status','mime','digest','warc_file','offset','length'],out)
+          tsv('failures.tsv',['stage','crawl','query_url','error'],failures)
+          summary=['# Low-rate Common Crawl check.swf probe','',f'- Crawl indexes selected: {len(selected)}',f'- Exact URL variants: {len(urls)}',f'- Queries attempted: {len(selected)*len(urls)}',f'- Capture hits: {len(out)}',f'- Failures: {len(failures)}','','## Hits','']
+          summary += [f'- {r[0]} {r[2]} status {r[4]} `{r[3]}` WARC `{r[7]}` offset `{r[8]}` length `{r[9]}`' for r in out] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary),flush=True)
+          PY
+      - name: Commit Common Crawl evidence
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/commoncrawl-check-lowrate
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Retry Common Crawl gently for Roomz check.swf"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
