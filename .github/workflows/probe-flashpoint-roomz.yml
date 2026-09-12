@@ -1,0 +1,126 @@
+name: Probe Flashpoint for The Roomz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-flashpoint-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query Flashpoint database and inspect GameZIP contents
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          import json,csv,re,time,zipfile,io,hashlib
+
+          ROOT=Path('research/external-leads/flashpoint');ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered';REC.mkdir(exist_ok=True)
+          API='https://db-api.unstable.life'
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          failures=[]
+          def get(u,timeout=45):
+            with urlopen(Request(u,headers={'User-Agent':UA,'Accept':'application/json,*/*'}),timeout=timeout) as r:return r.read(),dict(r.headers)
+
+          queries=[
+            {'title':'The Roomz'},
+            {'smartSearch':'The Roomz'},
+            {'developer':'xSTACHUx'},
+            {'developer':'Stachu'},
+            {'source':'theroomz'},
+            {'source':'theroomz.freehost.pl'},
+            {'source':'theroomz.yoyo.pl'},
+            {'source':'theroomz.org'},
+          ]
+          fields='id,title,alternateTitles,developer,publisher,platform,source,library,status,version,releaseDate,notes,originalDescription,dateAdded,dateModified,applicationPath,launchCommand,zipped'
+          entries={}
+          raw_queries=[]
+          for q in queries:
+            u=API+'/search?'+urlencode({**q,'fields':fields})
+            try:
+              b,h=get(u);data=json.loads(b)
+              raw_queries.append([q,u,len(data)])
+              for e in data:
+                gid=e.get('id')
+                if gid:entries[gid]=e
+            except Exception as e:failures.append(['search',u,repr(e)])
+
+          # Keep only plausible Roomz entries after broad creator/source searches.
+          plausible=[]
+          for e in entries.values():
+            blob=' '.join(str(e.get(k,'')) for k in ('title','alternateTitles','developer','publisher','source','notes','originalDescription','launchCommand')).lower()
+            if 'roomz' in blob or 'stachu' in blob or 'dreamward' in blob:
+              plausible.append(e)
+
+          file_rows=[]; downloaded=[]
+          known={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception:pass
+
+          for e in plausible:
+            gid=e['id']
+            try:
+              b,h=get(API+'/files?'+urlencode({'id':gid})); files=json.loads(b)
+              for f in files:file_rows.append([gid,e.get('title',''),e.get('developer',''),e.get('launchCommand',''),f])
+              interesting=any(re.search(r'(?i)(?:check|sciemka|about|rules|solutions|tescik|ile|bonus|roomzmain|interface|intro|loadroom|frame|theroomz|freehost|yoyo|dreamward)',str(f)) for f in files)
+              # Download GameZIP when it looks related, or when there are multiple web assets worth inspecting.
+              if e.get('zipped') and (interesting or len(files)>1):
+                try:
+                  zbytes,zh=get(API+'/get?'+urlencode({'id':gid}),timeout=90)
+                  z=zipfile.ZipFile(io.BytesIO(zbytes))
+                  for zi in z.infolist():
+                    if not zi.filename.startswith('content/') or zi.is_dir():continue
+                    body=z.read(zi)
+                    rel=zi.filename[len('content/'):]
+                    sha=hashlib.sha256(body).hexdigest()
+                    if rel.lower().endswith(('.swf','.txt','.xml','.dat','.ini','.cfg','.htm','.html','.php')):
+                      safe=re.sub(r'[^A-Za-z0-9._-]+','_',rel)
+                      out=REC/f'{gid}__{safe}'
+                      out.write_bytes(body)
+                      downloaded.append([gid,e.get('title',''),rel,len(body),sha,body[:3].decode('latin1','replace'),known.get(sha,''),str(out)])
+                except Exception as x:failures.append(['get',gid,repr(x)])
+            except Exception as e2:failures.append(['files',gid,repr(e2)])
+
+          (ROOT/'entries.json').write_text(json.dumps(plausible,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          def tsv(n,h,rows):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(rows)
+          tsv('queries.tsv',['query','url','result_count'],raw_queries)
+          tsv('files.tsv',['id','title','developer','launch_command','file'],file_rows)
+          tsv('recovered.tsv',['id','title','file','bytes','sha256','signature','exact_repo_match','saved_file'],downloaded)
+          tsv('failures.tsv',['stage','target','error'],failures)
+
+          summary=['# Flashpoint Roomz probe','',f'- Plausible database entries: {len(plausible)}',f'- Packaged file paths listed: {len(file_rows)}',f'- Relevant packaged files extracted: {len(downloaded)}',f'- Failures: {len(failures)}','', '## Entries','']
+          for e in plausible:
+            summary += [f"### {e.get('title','(untitled)')}",f"- ID: `{e.get('id','')}`",f"- Developer: {e.get('developer','')}",f"- Source: `{e.get('source','')}`",f"- Launch command: `{e.get('launchCommand','')}`",f"- Platform: {e.get('platform','')}",f"- GameZIP: {e.get('zipped','')}",'']
+          summary += ['## Packaged files','']+[f'- `{r[4]}` ({r[1]})' for r in file_rows[:500]]
+          summary += ['', '## Extracted files','']+[f'- `{r[2]}` {r[3]} bytes sha256 `{r[4]}` repo match `{r[6] or "NEW"}`' for r in downloaded[:500]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:700]))
+          PY
+      - name: Commit Flashpoint evidence safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/external-leads/flashpoint
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Probe Flashpoint preservation database for The Roomz"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
