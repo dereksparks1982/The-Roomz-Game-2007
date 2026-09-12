@@ -1,0 +1,142 @@
+name: Deep Common Crawl Roomz target scan
+
+on:
+  push:
+    paths:
+      - '.github/workflows/commoncrawl-exact-roomz-targets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-commoncrawl-targets
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan early Common Crawl indexes for missing and newly discovered assets
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,json,re,time
+
+          ROOT=Path('research/commoncrawl-target-scan'); ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          exact=['check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','BlackAndWhite.swf','hof.swf','Redirect.swf']
+          interesting=re.compile(r'(?:'+'|'.join(re.escape(x) for x in exact)+r'|cannon\.txt|yoyo\.pnq|/paper/|/this/|/danger/|\.zip(?:$|[?#])|\.rar(?:$|[?#])|\.7z(?:$|[?#]))',re.I)
+          patterns=['theroomz.yoyo.pl/*','www.theroomz.yoyo.pl/*','theroomz.org/*','www.theroomz.org/*','dreamward.home.pl/theroomz/*','dreamwardgames.com/theroomz/*']
+
+          def get(url,tries=2,timeout=22):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1+n)
+              raise RuntimeError(f'{url}: {last}')
+
+          colls=json.loads(get('https://index.commoncrawl.org/collinfo.json',tries=3,timeout=30))
+          by_year={}
+          for c in colls:
+              m=re.search(r'CC-MAIN-(\d{4})-',c.get('id',''))
+              if not m: continue
+              y=int(m.group(1))
+              if 2008<=y<=2016: by_year.setdefault(y,[]).append(c)
+          selected=[]
+          for y,v in sorted(by_year.items()):
+              v=sorted(v,key=lambda x:x['id'])
+              if y<=2012:
+                  selected.extend(v if len(v)<=2 else [v[0],v[-1]])
+              else:
+                  selected.append(v[0])
+          # dedupe collections
+          temp=[]; seen=set()
+          for c in selected:
+              if c['id'] not in seen: seen.add(c['id']); temp.append(c)
+          selected=temp
+
+          hits=[]; failures=[]; inventory=[]
+          def query(c,pat):
+              api=c.get('cdx-api') or f"https://index.commoncrawl.org/{c['id']}-index"
+              q=api+'?'+urlencode({'url':pat,'output':'json','filter':'status:200'})
+              return c['id'],pat,get(q)
+
+          jobs=[(c,p) for c in selected for p in patterns]
+          with ThreadPoolExecutor(max_workers=16) as ex:
+              futs={ex.submit(query,c,p):(c['id'],p) for c,p in jobs}
+              for fut in as_completed(futs):
+                  cid,pat=futs[fut]
+                  try:
+                      cid,pat,b=fut.result(); text=b.decode('utf-8','replace')
+                      n=0
+                      for line in text.splitlines():
+                          line=line.strip()
+                          if not line.startswith('{'): continue
+                          try:r=json.loads(line)
+                          except Exception:continue
+                          n+=1; u=r.get('url','')
+                          if interesting.search(u):
+                              hits.append([cid,r.get('timestamp',''),u,r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('filename',''),r.get('offset',''),r.get('length','')])
+                      inventory.append([cid,pat,n])
+                  except Exception as e:
+                      failures.append([cid,pat,repr(e)])
+
+          # dedupe and mark exact target basename matches
+          dh=[]; seen=set()
+          for r in hits:
+              k=tuple(r)
+              if k not in seen:seen.add(k);dh.append(r)
+          exact_rows=[]
+          for r in dh:
+              u=r[2].lower().split('?',1)[0].split('#',1)[0]
+              base=u.rsplit('/',1)[-1]
+              if base in {x.lower() for x in exact}: exact_rows.append(r)
+
+          def tsv(path,header,rows):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(rows)
+          hdr=['crawl','timestamp','url','status','mime','digest','warc_file','offset','length']
+          tsv(ROOT/'interesting-hits.tsv',hdr,dh)
+          tsv(ROOT/'exact-target-hits.tsv',hdr,exact_rows)
+          tsv(ROOT/'query-inventory.tsv',['crawl','pattern','row_count'],inventory)
+          tsv(ROOT/'failures.tsv',['crawl','pattern','error'],failures)
+          summary=['# Common Crawl exact Roomz target scan','',
+                   f'- Crawl indexes sampled: {len(selected)}',
+                   f'- Host-prefix queries: {len(jobs)}',
+                   f'- Successful query inventories: {len(inventory)}',
+                   f'- Interesting historical URL hits: {len(dh)}',
+                   f'- Exact missing/new target filename hits: {len(exact_rows)}',
+                   f'- Query failures: {len(failures)}','',
+                   '## Exact target hits','']
+          summary += [f'- {r[0]} {r[1]} {r[2]} WARC={r[6]} offset={r[7]} length={r[8]}' for r in exact_rows] or ['- None.']
+          summary += ['', '## Other interesting hits','']
+          summary += [f'- {r[0]} {r[1]} {r[2]}' for r in dh[:250]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:250]))
+          PY
+
+      - name: Commit scan results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/commoncrawl-target-scan
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Deep scan Common Crawl for missing Roomz assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
