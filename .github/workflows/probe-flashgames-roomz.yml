@@ -1,0 +1,177 @@
+name: Probe Flashgames.it Roomz history
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-flashgames-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-flashgames-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mine archived Flashgames.it Roomz pages and SWF references
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlencode, urljoin
+          from urllib.error import HTTPError, URLError
+          import csv, hashlib, html, json, re, time
+
+          ROOT=Path('research/mirror-leads/flashgames-it')
+          PAGES=ROOT/'pages'; SWFS=ROOT/'swfs'
+          PAGES.mkdir(parents=True,exist_ok=True); SWFS.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          def get(url,tries=4,timeout=35,referer=None):
+              last=None
+              for n in range(tries):
+                  try:
+                      h={'User-Agent':UA}
+                      if referer: h['Referer']=referer
+                      with urlopen(Request(url,headers=h),timeout=timeout) as r:
+                          return r.read(), dict(r.headers), r.geturl()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.5*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          targets=[
+            'http://www.flashgames.it/the.roomz.html',
+            'https://www.flashgames.it/the.roomz.html',
+            'http://flashgames.it/the.roomz.html',
+            'https://flashgames.it/the.roomz.html'
+          ]
+          failures=[]; captures=[]; refs=[]
+
+          for target in targets:
+              q='https://web.archive.org/cdx/search/cdx?'+urlencode({
+                  'url':target,'matchType':'exact','output':'json',
+                  'fl':'timestamp,original,statuscode,mimetype,digest,length',
+                  'filter':'statuscode:200','collapse':'digest'
+              })
+              try:
+                  raw,_,_=get(q)
+                  data=json.loads(raw)
+                  if not data: continue
+                  hdr=data[0]
+                  for vals in data[1:]:
+                      r=dict(zip(hdr,vals)); captures.append(r)
+              except Exception as e:
+                  failures.append(['cdx',target,repr(e)])
+
+          # Dedupe captures and fetch a broad timeline of unique bodies.
+          uniq=[]; seen=set()
+          for r in sorted(captures,key=lambda x:x.get('timestamp','')):
+              k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+              if k not in seen:
+                  seen.add(k); uniq.append(r)
+
+          for i,r in enumerate(uniq[:80]):
+              au=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+              try:
+                  body,headers,final=get(au,tries=3,timeout=40)
+                  fn=f"{r['timestamp']}_{i:03d}.html"
+                  (PAGES/fn).write_bytes(body)
+                  text=body.decode('utf-8','replace')
+                  # Direct SWF-ish URLs and movie/embed assignments.
+                  found=[]
+                  pats=[
+                    r'''(?:src|value|movie|file|flashvars)\s*=\s*["']([^"']+\.swf(?:\?[^"']*)?)["']''',
+                    r'''["']([^"']+\.swf(?:\?[^"']*)?)["']''',
+                    r'''https?://[^\s<>"']+\.swf(?:\?[^\s<>"']*)?'''
+                  ]
+                  for pat in pats:
+                      for m in re.finditer(pat,text,re.I):
+                          x=m.group(1) if m.lastindex else m.group(0)
+                          x=html.unescape(x).replace('\\/','/').strip()
+                          if x not in found: found.append(x)
+                  for x in found:
+                      absolute=urljoin(r['original'],x)
+                      refs.append([r['timestamp'],r['original'],fn,x,absolute])
+              except Exception as e:
+                  failures.append(['page',au,repr(e)])
+
+          # Dedupe SWF refs and attempt retrieval from live URL, then Wayback at the referring timestamp.
+          swf_rows=[]; seen_url=set()
+          known={}
+          for p in Path('originals').rglob('*.swf'):
+              try: known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception: pass
+
+          for ts,source,fn,rawref,u in refs:
+              key=u.split('#',1)[0]
+              if key in seen_url: continue
+              seen_url.add(key)
+              attempts=[u, f'https://web.archive.org/web/{ts}id_/{u}']
+              got=None; got_from=''; err=''
+              for cand in attempts:
+                  try:
+                      b,h,final=get(cand,tries=2,timeout=45,referer=source)
+                      if b[:3] in (b'FWS',b'CWS',b'ZWS'):
+                          got=b; got_from=cand; break
+                  except Exception as e:
+                      err=repr(e)
+              if got is None:
+                  swf_rows.append([ts,u,'','','','fetch-failed',err])
+                  continue
+              sha=hashlib.sha256(got).hexdigest(); size=len(got)
+              out=SWFS/f'{sha[:16]}.swf'; out.write_bytes(got)
+              match=known.get(sha,'NEW/UNMATCHED')
+              swf_rows.append([ts,u,str(size),sha,str(out),match,got_from])
+
+          def write_tsv(path,header,rows):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(header); w.writerows(rows)
+          write_tsv(ROOT/'captures.tsv',['timestamp','original','statuscode','mimetype','digest','length'],[[r.get(k,'') for k in ['timestamp','original','statuscode','mimetype','digest','length']] for r in uniq])
+          write_tsv(ROOT/'swf-references.tsv',['timestamp','page','saved_page','raw_ref','absolute_url'],refs)
+          write_tsv(ROOT/'swf-fetches.tsv',['timestamp','url','bytes','sha256','saved_file','repo_match','fetched_from_or_error'],swf_rows)
+          write_tsv(ROOT/'failures.tsv',['stage','target','error'],failures)
+
+          new=[r for r in swf_rows if r[2] and r[5]=='NEW/UNMATCHED']
+          matches=[r for r in swf_rows if r[2] and r[5] != 'NEW/UNMATCHED']
+          summary=[
+            '# Flashgames.it Roomz historical probe','',
+            f'- Unique archived page bodies found: {len(uniq)}',
+            f'- SWF references extracted: {len(refs)}',
+            f'- Distinct SWF URLs tested: {len(seen_url)}',
+            f'- SWFs successfully recovered: {len([r for r in swf_rows if r[2]])}',
+            f'- New/unmatched SWFs: {len(new)}',
+            f'- Exact matches to existing recovered SWFs: {len(matches)}',
+            f'- Failures: {len(failures)}','',
+            '## New/unmatched SWFs',''
+          ]
+          summary += [f'- {r[3]} {r[2]} bytes :: {r[1]}' for r in new] or ['- None.']
+          summary += ['', '## Existing matches','']
+          summary += [f'- {r[5]} :: {r[1]}' for r in matches] or ['- None.']
+          summary += ['', '## Extracted SWF references','']
+          summary += [f'- {r[0]} {r[4]}' for r in refs[:250]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+
+      - name: Commit probe results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/mirror-leads/flashgames-it
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine Flashgames.it history for Roomz SWF mirrors"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
