@@ -1,0 +1,305 @@
+name: Fresh Wayback recheck for all missing Roomz files
+
+on:
+  push:
+    paths:
+      - '.github/workflows/wayback-recheck-all-missing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recheck every known missing file across all Roomz hosts
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlencode, urlsplit, urlunsplit
+          from urllib.error import HTTPError, URLError
+          import csv, hashlib, json, re, time
+
+          ROOT = Path('research/wayback-full-missing-recheck')
+          REC = ROOT / 'recovered'
+          ROOT.mkdir(parents=True, exist_ok=True)
+          REC.mkdir(parents=True, exist_ok=True)
+
+          UA = 'Mozilla/5.0 Roomz-preservation recheck (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          # Confirmed missing runtime dependencies plus later site assets proven by recovered HTML.
+          targets = [
+              'check.swf',
+              'sciemka.swf',
+              'about.swf',
+              'rules.swf',
+              'solutions.swf',
+              'tescik.swf',
+              'ile.txt',
+              'bonus.txt',
+              'BlackAndWhite.swf',
+              'hof.swf',
+              'Redirect.swf',
+              'female.jpg',
+              'male.jpg',
+          ]
+
+          # Full known host lineage, including the pre-Yoyo 2006 freehost.pl era.
+          host_roots = [
+              'theroomz.freehost.pl/',
+              'www.theroomz.freehost.pl/',
+              'theroomz.yoyo.pl/',
+              'www.theroomz.yoyo.pl/',
+              'theroomz.org/',
+              'www.theroomz.org/',
+              'dreamward.home.pl/theroomz/',
+              'www.dreamward.home.pl/theroomz/',
+              'dreamwardgames.com/theroomz/',
+              'www.dreamwardgames.com/theroomz/',
+          ]
+
+          # Known non-root placement discovered from archived HTML.
+          special_paths = {
+              'BlackAndWhite.swf': ['paper/BlackAndWhite.swf', 'paper/blackandwhite.swf'],
+          }
+
+          def get(url, tries=5, timeout=40):
+              last = None
+              for attempt in range(tries):
+                  try:
+                      req = Request(url, headers={'User-Agent': UA, 'Accept': '*/*'})
+                      with urlopen(req, timeout=timeout) as r:
+                          return r.read(), r.geturl(), getattr(r, 'status', 200), dict(r.headers)
+                  except HTTPError as e:
+                      last = e
+                      if e.code not in (429, 500, 502, 503, 504):
+                          break
+                      time.sleep(2.0 + attempt * 2.0)
+                  except (URLError, TimeoutError) as e:
+                      last = e
+                      time.sleep(2.0 + attempt * 2.0)
+              raise RuntimeError(repr(last))
+
+          def cdx(url, match='exact'):
+              params = {
+                  'url': url,
+                  'matchType': match,
+                  'output': 'json',
+                  'fl': 'timestamp,original,statuscode,mimetype,digest,length,redirect',
+                  'collapse': 'digest',
+                  'from': '2005',
+                  'to': '2026',
+              }
+              q = 'https://web.archive.org/cdx/search/cdx?' + urlencode(params)
+              b, _, _, _ = get(q, tries=6)
+              try:
+                  data = json.loads(b)
+              except Exception:
+                  return []
+              if not data or not isinstance(data, list) or len(data) < 2:
+                  return []
+              hdr = data[0]
+              return [dict(zip(hdr, row)) for row in data[1:]]
+
+          queries = []
+          # Canonical exact checks, HTTP/HTTPS, explicit :80, lowercase/case-preserving,
+          # and the odd trailing slash form that already mattered for danger/map.htm/.
+          for root in host_roots:
+              for name in targets:
+                  names = {name, name.lower()}
+                  if name.lower().endswith('.swf'):
+                      names.add(name[:-4] + '.SWF')
+                  paths = set(names)
+                  for p in special_paths.get(name, []):
+                      paths.add(p)
+                  for path in paths:
+                      for scheme in ('http', 'https'):
+                          queries.append((name, f'{scheme}://{root}{path}', 'exact'))
+                          queries.append((name, f'{scheme}://{root}{path}/', 'exact'))
+                          host, slash, prefix = root.partition('/')
+                          # Explicit port 80 was common in historical CDX originals.
+                          if scheme == 'http' and ':80' not in host:
+                              portroot = host + ':80/' + prefix
+                              queries.append((name, f'http://{portroot}{path}', 'exact'))
+
+          # De-duplicate exact queries while preserving order.
+          seenq = set(); q2 = []
+          for x in queries:
+              if x[1] not in seenq:
+                  seenq.add(x[1]); q2.append(x)
+          queries = q2
+
+          rows = []
+          failures = []
+          for i, (wanted, url, match) in enumerate(queries, 1):
+              try:
+                  got = cdx(url, match)
+                  for r in got:
+                      r['wanted'] = wanted
+                      r['query_url'] = url
+                      r['query_kind'] = 'exact'
+                      rows.append(r)
+              except Exception as e:
+                  failures.append(['cdx-exact', wanted, url, repr(e)])
+              # Be intentionally gentle with Wayback to reduce 429/503 noise.
+              time.sleep(0.22)
+
+          # Second pass: inventory each host tree once and scan locally for target basenames.
+          # This catches odd subdirectories/casing/query forms that exact URL guesses miss.
+          target_low = {x.lower() for x in targets}
+          for root in host_roots:
+              host = root.split('/')[0]
+              prefix = root[len(host):].lstrip('/')
+              inv_url = f'http://{host}/{prefix}*'
+              try:
+                  inv = cdx(inv_url, 'prefix')
+                  for r in inv:
+                      orig = r.get('original','')
+                      try:
+                          path = urlsplit(orig).path.rstrip('/')
+                      except Exception:
+                          path = orig
+                      base = path.rsplit('/',1)[-1].lower()
+                      if base in target_low:
+                          r['wanted'] = next((t for t in targets if t.lower() == base), base)
+                          r['query_url'] = inv_url
+                          r['query_kind'] = 'host-inventory'
+                          rows.append(r)
+              except Exception as e:
+                  failures.append(['cdx-inventory', '*', inv_url, repr(e)])
+              time.sleep(1.0)
+
+          # Unique candidate rows.
+          uniq = []
+          seen = set()
+          for r in rows:
+              key = (r.get('timestamp',''), r.get('original',''), r.get('digest',''), r.get('statuscode',''))
+              if key not in seen:
+                  seen.add(key); uniq.append(r)
+
+          def valid_for(name, body):
+              low = name.lower()
+              if low.endswith('.swf'):
+                  return len(body) >= 8 and body[:3] in (b'FWS', b'CWS', b'ZWS')
+              if low.endswith('.jpg'):
+                  return len(body) >= 4 and body[:2] == b'\xff\xd8'
+              if low.endswith('.txt'):
+                  # Avoid accepting Wayback error HTML as text data.
+                  head = body[:300].lower()
+                  return len(body) > 0 and b'<html' not in head and b'wayback machine' not in head
+              return False
+
+          recovered = []
+          redirects = []
+          replay_failures = []
+          seen_digest = set()
+
+          for r in sorted(uniq, key=lambda x: (x.get('wanted',''), x.get('timestamp',''))):
+              status = str(r.get('statuscode',''))
+              if status.startswith('3') or r.get('redirect'):
+                  redirects.append([
+                      r.get('wanted',''), r.get('timestamp',''), r.get('original',''),
+                      status, r.get('redirect',''), r.get('query_kind','')
+                  ])
+              if status != '200':
+                  continue
+              ts = r.get('timestamp','')
+              orig = r.get('original','')
+              wanted = r.get('wanted','')
+              if not ts or not orig:
+                  continue
+              arc = f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                  body, final, _, headers = get(arc, tries=5, timeout=50)
+                  if not valid_for(wanted, body):
+                      replay_failures.append(['invalid-body', wanted, ts, orig, str(len(body)), body[:32].hex()])
+                      continue
+                  sha = hashlib.sha256(body).hexdigest()
+                  if sha in seen_digest:
+                      continue
+                  seen_digest.add(sha)
+                  safe = re.sub(r'[^A-Za-z0-9._-]+', '_', wanted)
+                  out = REC / f'{ts}__{sha[:12]}__{safe}'
+                  out.write_bytes(body)
+                  recovered.append([
+                      wanted, ts, orig, r.get('mimetype',''), len(body), sha,
+                      str(out), final, r.get('query_kind','')
+                  ])
+              except Exception as e:
+                  replay_failures.append(['replay', wanted, ts, orig, '', repr(e)])
+              time.sleep(0.5)
+
+          def write_tsv(name, header, data):
+              with (ROOT / name).open('w', newline='', encoding='utf-8') as f:
+                  w = csv.writer(f, delimiter='\t', lineterminator='\n')
+                  w.writerow(header); w.writerows(data)
+
+          write_tsv('capture-records.tsv',
+                    ['wanted','timestamp','original','statuscode','mimetype','digest','length','redirect','query_kind','query_url'],
+                    [[r.get(k,'') for k in ('wanted','timestamp','original','statuscode','mimetype','digest','length','redirect','query_kind','query_url')] for r in uniq])
+          write_tsv('redirects.tsv', ['wanted','timestamp','original','status','redirect','query_kind'], redirects)
+          write_tsv('recovered.tsv', ['wanted','timestamp','original','mimetype','bytes','sha256','file','final_url','query_kind'], recovered)
+          write_tsv('failures.tsv', ['stage','wanted','url','error'], failures)
+          write_tsv('replay-failures.tsv', ['stage','wanted','timestamp','original','detail','error_or_prefix'], replay_failures)
+
+          by_target = {t: [] for t in targets}
+          for r in uniq:
+              by_target.setdefault(r.get('wanted',''), []).append(r)
+
+          summary = [
+              '# Fresh Wayback recheck of all known missing Roomz files', '',
+              f'- Missing targets checked: {len(targets)}',
+              f'- Exact URL variants queried: {len(queries)}',
+              f'- Unique Wayback capture rows found: {len(uniq)}',
+              f'- Redirect/status clues found: {len(redirects)}',
+              f'- Valid recovered objects: {len(recovered)}',
+              f'- CDX/query failures: {len(failures)}',
+              f'- Replay/validation failures: {len(replay_failures)}', '',
+              '## Per-target result', ''
+          ]
+          recovered_names = {r[0] for r in recovered}
+          for t in targets:
+              rs = by_target.get(t, [])
+              n200 = sum(1 for r in rs if str(r.get('statuscode','')) == '200')
+              nredir = sum(1 for r in rs if str(r.get('statuscode','')).startswith('3') or r.get('redirect'))
+              rec = sum(1 for r in recovered if r[0] == t)
+              summary.append(f'- `{t}`: {len(rs)} archive row(s), {n200} status-200, {nredir} redirect(s), {rec} valid object(s) recovered')
+
+          summary += ['', '## Recovered objects', '']
+          if recovered:
+              for r in recovered:
+                  summary.append(f'- **{r[0]}** `{r[1]}` `{r[2]}` — {r[4]} bytes, sha256 `{r[5]}` -> `{r[6]}`')
+          else:
+              summary.append('- None.')
+
+          summary += ['', '## Redirect clues', '']
+          if redirects:
+              for r in redirects[:100]:
+                  summary.append(f'- `{r[0]}` {r[1]} `{r[2]}` status {r[3]} -> `{r[4]}`')
+          else:
+              summary.append('- None.')
+
+          (ROOT / 'RESULT.md').write_text('\n'.join(summary) + '\n', encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+
+      - name: Commit fresh Wayback evidence
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/wayback-full-missing-recheck
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record fresh Wayback recheck of all missing Roomz files"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
