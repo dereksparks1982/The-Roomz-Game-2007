@@ -1,0 +1,129 @@
+name: Recover original FlashKit Roomz thread
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-flashkit-thread.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover archived FlashKit thread and mine developer links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          import json,re,csv,html,time,hashlib
+
+          ROOT=Path('research/external-leads/flashkit-708493');PAGES=ROOT/'pages'
+          ROOT.mkdir(parents=True,exist_ok=True);PAGES.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          variants=[
+            'http://board.flashkit.com/board/showthread.php?708493-game-The-Roomz',
+            'https://board.flashkit.com/board/showthread.php?708493-game-The-Roomz',
+            'http://board.flashkit.com/board/showthread.php?t=708493',
+            'http://board.flashkit.com/board/showthread.php?708493-The-Roomz',
+          ]
+          failures=[];captures=[]
+          def get(u,tries=5,timeout=45):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl()
+              except (HTTPError,URLError,TimeoutError) as e:
+                last=e;time.sleep(2*(n+1))
+            raise RuntimeError(str(last))
+
+          for orig in variants:
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':orig,'output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','collapse':'digest'})
+            try:
+              b,_=get(q,tries=4);d=json.loads(b)
+              if isinstance(d,list) and d:
+                h=d[0];captures += [dict(zip(h,r)) for r in d[1:]]
+            except Exception as e:failures.append(['cdx',orig,repr(e)])
+
+          # Also probe known post-era timestamps directly; Wayback will redirect to nearest capture.
+          direct=[]
+          for orig in variants[:2]:
+            for ts in ('2006','200610','200611','2007','2008','2010','2012'):
+              u=f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                b,final=get(u,tries=2,timeout=30)
+                if len(b)>1000:direct.append([ts,orig,final,b])
+              except Exception as e:failures.append(['replay-probe',u,repr(e)])
+
+          # Replay CDX captures plus useful direct successes.
+          replay=[]
+          for r in captures:
+            u=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+            try:
+              b,final=get(u,tries=3);replay.append([r.get('timestamp',''),r.get('original',''),final,b])
+            except Exception as e:failures.append(['replay',u,repr(e)])
+          replay += direct
+          uniq=[];seen=set()
+          for ts,orig,final,b in replay:
+            sha=hashlib.sha256(b).hexdigest()
+            if sha not in seen:seen.add(sha);uniq.append([ts,orig,final,b,sha])
+
+          links=[];tokens=[];contexts=[]
+          urlre=re.compile(r'https?://[^\s<>"\']+',re.I)
+          filere=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+~-]{1,180}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|mp3|wav|zip|rar|7z|htm|html|php))(?:[?#][^\s"\'<>]*)?')
+          keyre=re.compile(r'(?i)roomz|freehost|yoyo|dreamward|flash|source|download|mirror|swf|actionscript|loadmovie|loadvariables|attachment|zip|rar')
+          manifests=[]
+          for i,(ts,orig,final,b,sha) in enumerate(uniq):
+            p=PAGES/f'{ts or "probe"}_{sha[:12]}.html';p.write_bytes(b)
+            s=html.unescape(b.decode('utf-8','replace'))
+            text=re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',s))
+            manifests.append([ts,orig,final,len(b),sha,str(p)])
+            for m in urlre.finditer(s):
+              u=m.group(0).rstrip(').,;\'"')
+              if any(k in u.lower() for k in ('roomz','freehost','yoyo','dreamward','swf','zip','rar','attachment','download')):links.append([p.name,u])
+            for m in filere.finditer(text):tokens.append([p.name,m.group(1),text[max(0,m.start()-250):min(len(text),m.end()+500)]])
+            for m in keyre.finditer(text):contexts.append([p.name,m.group(0),text[max(0,m.start()-350):min(len(text),m.end()+700)]])
+
+          def ded(rows,key):
+            out=[];s=set()
+            for r in rows:
+              k=key(r)
+              if k not in s:s.add(k);out.append(r)
+            return out
+          links=ded(links,lambda r:(r[0],r[1].lower()));tokens=ded(tokens,lambda r:(r[0],r[1].lower()));contexts=ded(contexts,lambda r:(r[0],r[2]))
+          def tsv(n,h,rows):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(rows)
+          tsv('manifest.tsv',['timestamp','original','final_url','bytes','sha256','file'],manifests)
+          tsv('links.tsv',['source_file','url'],links)
+          tsv('file-tokens.tsv',['source_file','token','context'],tokens)
+          tsv('contexts.tsv',['source_file','keyword','context'],contexts)
+          tsv('failures.tsv',['stage','target','error'],failures)
+          summary=['# Original FlashKit Roomz thread recovery','',f'- Distinct archived page bodies recovered: {len(uniq)}',f'- High-value links: {len(links)}',f'- File tokens: {len(tokens)}',f'- Context snippets: {len(contexts)}',f'- Failures: {len(failures)}','', '## High-value links','']
+          summary += [f'- `{r[1]}`' for r in links] or ['- None.']
+          summary += ['', '## File tokens','']+[f'- `{r[1]}`: {r[2][:800]}' for r in tokens[:200]]
+          summary += ['', '## Developer/thread contexts','']+[f'- {r[2][:1100]}' for r in contexts[:120]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:350]))
+          PY
+      - name: Commit recovered thread safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/external-leads/flashkit-708493
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover original FlashKit Roomz development thread"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
