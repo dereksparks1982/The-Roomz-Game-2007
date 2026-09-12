@@ -1,0 +1,5 @@
+Trying https://www.jeuxclic.com/jeux/4f38429db014a.swf
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  6  458k    6 32768    0     0  36137      0  0:00:13 --:--:--  0:00:13 36127100  458k  100  458k    0     0   284k      0  0:00:01  0:00:01 --:--:--  285k
+Signature=CWS bytes=469970
