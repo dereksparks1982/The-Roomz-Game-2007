@@ -1,0 +1,42 @@
+frame.swf/tag3:code12/DoAction A0000 ConstantPool ['mcLoader', 'MovieClipLoader', 'listener', 'Object', 'onLoadProgress', 'onLoadInit', 'addListener', '_root', 'getNextHighestDepth', 'nowy', 'createEmptyMovieClip', 'tescik.swf', 'loadClip']
+frame.swf/tag3:code12/DoAction A0001 Push [('const8', 'mcLoader'), ('double', 0.0), ('const8', 'MovieClipLoader')]
+frame.swf/tag3:code12/DoAction A0002 NewObject
+frame.swf/tag3:code12/DoAction A0003 DefineLocal
+frame.swf/tag3:code12/DoAction A0004 Push [('const8', 'listener'), ('double', 0.0), ('const8', 'Object')]
+frame.swf/tag3:code12/DoAction A0005 NewObject
+frame.swf/tag3:code12/DoAction A0006 DefineLocal
+frame.swf/tag3:code12/DoAction A0007 Push [('const8', 'listener')]
+frame.swf/tag3:code12/DoAction A0008 GetVariable
+frame.swf/tag3:code12/DoAction A0009 Push [('const8', 'onLoadProgress')]
+frame.swf/tag3:code12/DoAction A0010 DefineFunction
+frame.swf/tag3:code12/DoAction A0011 SetMember
+frame.swf/tag3:code12/DoAction A0012 Push [('const8', 'listener')]
+frame.swf/tag3:code12/DoAction A0013 GetVariable
+frame.swf/tag3:code12/DoAction A0014 Push [('const8', 'onLoadInit')]
+frame.swf/tag3:code12/DoAction A0015 DefineFunction
+frame.swf/tag3:code12/DoAction A0016 SetMember
+frame.swf/tag3:code12/DoAction A0017 Push [('const8', 'listener')]
+frame.swf/tag3:code12/DoAction A0018 GetVariable
+frame.swf/tag3:code12/DoAction A0019 Push [('int', 1), ('const8', 'mcLoader')]
+frame.swf/tag3:code12/DoAction A0020 GetVariable
+frame.swf/tag3:code12/DoAction A0021 Push [('const8', 'addListener')]
+frame.swf/tag3:code12/DoAction A0022 CallMethod
+frame.swf/tag3:code12/DoAction A0023 Pop
+frame.swf/tag3:code12/DoAction A0024 Push [('double', 0.0), ('const8', '_root')]
+frame.swf/tag3:code12/DoAction A0025 GetVariable
+frame.swf/tag3:code12/DoAction A0026 Push [('const8', 'getNextHighestDepth')]
+frame.swf/tag3:code12/DoAction A0027 CallMethod
+frame.swf/tag3:code12/DoAction A0028 Push [('const8', 'nowy'), ('int', 2), ('const8', '_root')]
+frame.swf/tag3:code12/DoAction A0029 GetVariable
+frame.swf/tag3:code12/DoAction A0030 Push [('const8', 'createEmptyMovieClip')]
+frame.swf/tag3:code12/DoAction A0031 CallMethod
+frame.swf/tag3:code12/DoAction A0032 Pop
+frame.swf/tag3:code12/DoAction A0033 Push [('const8', '_root')]
+frame.swf/tag3:code12/DoAction A0034 GetVariable
+frame.swf/tag3:code12/DoAction A0035 Push [('const8', 'nowy')]
+frame.swf/tag3:code12/DoAction A0036 GetMember
+frame.swf/tag3:code12/DoAction A0037 Push [('const8', 'tescik.swf'), ('int', 2), ('const8', 'mcLoader')]
+frame.swf/tag3:code12/DoAction A0038 GetVariable
+frame.swf/tag3:code12/DoAction A0039 Push [('const8', 'loadClip')]
+frame.swf/tag3:code12/DoAction A0040 CallMethod
+frame.swf/tag3:code12/DoAction A0041 Pop

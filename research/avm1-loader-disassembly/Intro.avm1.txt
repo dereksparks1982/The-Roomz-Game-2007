@@ -1,0 +1,420 @@
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0000 Stop
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0001 Push [('str', '_root')]
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0002 GetVariable
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0003 Push [('str', 'showRtotal')]
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0004 GetMember
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0005 Push [('bool', True)]
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0006 Equals2
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0007 Not
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0008 If data=0100
+Intro.swf/tag121:code39/DefineSprite/tag2:code12/DoAction A0009 Play
+Intro.swf/tag121:code39/DefineSprite/tag36:code12/DoAction A0000 Stop
+Intro.swf/tag145:code39/DefineSprite/tag393:code12/DoAction A0000 GotoFrame data=0400
+Intro.swf/tag145:code39/DefineSprite/tag393:code12/DoAction A0001 Play
+Intro.swf/tag223:code39/DefineSprite/tag62:code12/DoAction A0000 Stop
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0000 ConstantPool ['aktualizujCzas', 'Date', 'min', 'getMinutes', 'hour', 'getHours', 'sec', 'getSeconds', 's1', '_rotation', 'm1', 'h1', 'intCzas', 'setInterval', 'j', 'krops', 'krs', 'attachMovie', '_x', '_y', 'k', 'kropb', 'krb']
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0001 Push [('const8', 'aktualizujCzas')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0002 DefineFunction2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0003 Push [('double', 0.0), ('const8', 'Date')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0004 NewObject
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0005 StoreRegister data=01
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0006 Pop
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0007 Push [('const8', 'min'), ('double', 0.0), ('register', 1), ('const8', 'getMinutes')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0008 CallMethod
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0009 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0010 Push [('const8', 'hour'), ('double', 0.0), ('register', 1), ('const8', 'getHours')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0011 CallMethod
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0012 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0013 Push [('const8', 'sec'), ('double', 0.0), ('register', 1), ('const8', 'getSeconds')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0014 CallMethod
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0015 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0016 Push [('const8', 's1')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0017 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0018 Push [('const8', '_rotation'), ('const8', 'sec')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0019 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0020 Push [('int', 6)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0021 Multiply
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0022 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0023 Push [('const8', 'm1')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0024 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0025 Push [('const8', '_rotation'), ('const8', 'min')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0026 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0027 Push [('int', 6)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0028 Multiply
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0029 Push [('const8', 'sec')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0030 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0031 Push [('int', 10)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0032 Divide
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0033 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0034 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0035 Push [('const8', 'h1')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0036 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0037 Push [('const8', '_rotation'), ('const8', 'hour')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0038 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0039 Push [('int', 30)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0040 Multiply
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0041 Push [('const8', 'min')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0042 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0043 Push [('int', 2)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0044 Divide
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0045 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0046 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0047 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0048 Push [('const8', 'intCzas'), ('int', 100), ('const8', 'aktualizujCzas')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0049 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0050 Push [('int', 2), ('const8', 'setInterval')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0051 CallFunction
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0052 DefineLocal
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0053 Push [('double', 0.0), ('const8', 'aktualizujCzas')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0054 CallFunction
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0055 Pop
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0056 Push [('const8', 'j'), ('double', 0.0)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0057 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0058 Push [('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0059 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0060 Push [('int', 59)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0061 Greater
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0062 Not
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0063 Not
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0064 If data=7a00
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0065 Push [('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0066 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0067 Push [('const8', 'krops'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0068 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0069 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0070 Push [('const8', 'krs'), ('int', 3), ('const8', 'attachMovie')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0071 CallFunction
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0072 Pop
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0073 Push [('const8', 'krops'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0074 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0075 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0076 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0077 Push [('const8', '_x'), ('double', 0.0)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0078 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0079 Push [('const8', 'krops'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0080 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0081 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0082 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0083 Push [('const8', '_y'), ('double', 0.0)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0084 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0085 Push [('const8', 'krops'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0086 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0087 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0088 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0089 Push [('const8', '_rotation'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0090 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0091 Push [('int', 6)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0092 Multiply
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0093 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0094 Push [('const8', 'j'), ('const8', 'j')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0095 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0096 Increment
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0097 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0098 Jump data=70ff
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0099 Push [('const8', 'k'), ('int', 60)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0100 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0101 Push [('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0102 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0103 Push [('int', 71)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0104 Greater
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0105 Not
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0106 Not
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0107 If data=7a00
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0108 Push [('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0109 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0110 Push [('const8', 'kropb'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0111 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0112 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0113 Push [('const8', 'krb'), ('int', 3), ('const8', 'attachMovie')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0114 CallFunction
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0115 Pop
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0116 Push [('const8', 'kropb'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0117 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0118 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0119 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0120 Push [('const8', '_x'), ('double', 0.0)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0121 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0122 Push [('const8', 'kropb'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0123 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0124 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0125 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0126 Push [('const8', '_y'), ('double', 0.0)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0127 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0128 Push [('const8', 'kropb'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0129 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0130 Add2
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0131 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0132 Push [('const8', '_rotation'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0133 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0134 Push [('int', 30)]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0135 Multiply
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0136 SetMember
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0137 Push [('const8', 'k'), ('const8', 'k')]
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0138 GetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0139 Increment
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0140 SetVariable
+Intro.swf/tag224:code39/DefineSprite/tag2:code12/DoAction A0141 Jump data=70ff
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0000 Push [('str', 'gogo')]
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0001 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0002 Push [('str', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0003 DefineFunction
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0004 GotoFrame data=7601
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0005 Play
+Intro.swf/tag259:code39/DefineSprite/tag2:code12/DoAction A0006 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0000 ConstantPool ['snd', '_root', 'intro', 'Sound', 'intrMus', 'attachSound', 'onSoundComplete', 'start']
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0001 Push [('const8', 'snd'), ('const8', '_root')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0002 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0003 Push [('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0004 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0005 Push [('int', 1), ('const8', 'Sound')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0006 NewObject
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0007 DefineLocal
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0008 Push [('const8', 'intrMus'), ('int', 1), ('const8', 'snd')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0009 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0010 Push [('const8', 'attachSound')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0011 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0012 Pop
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0013 Push [('const8', 'snd')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0014 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0015 Push [('const8', 'onSoundComplete')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0016 DefineFunction
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0017 Push [('const8', 'intrMus'), ('int', 1), ('const8', 'snd')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0018 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0019 Push [('const8', 'attachSound')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0020 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0021 Pop
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0022 Push [('int', 99), ('double', 0.0), ('int', 2), ('const8', 'snd')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0023 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0024 Push [('const8', 'start')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0025 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0026 Pop
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0027 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0028 Push [('double', 0.0), ('const8', 'snd')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0029 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0030 Push [('const8', 'start')]
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0031 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag192:code12/DoAction A0032 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0000 ConstantPool ['st', 'onRelease', 'zaladuj', '_level0', 'zamowienie', '_level106', 'intro', '_visible', 'sciema', 'gotoAndPlay', 'dzwiek', 'stop', 'cred', '_level10', 'forum', 'hof', 'go', 'play', 'rules', 'solutions', 'gbook', 'http://users4.smartgb.com/g/g.php?a=s&i=g40-04528-7a', '_blank']
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0001 Stop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0002 Push [('const8', 'st')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0003 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0004 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0005 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0006 Push [('register', 1), ('const8', 'zaladuj')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0007 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0008 Push [('const8', '_level0')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0009 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0010 Push [('const8', 'zamowienie'), ('const8', '_level106')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0011 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0012 GetURL url='loadRoom.swf' target='_level107'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0013 GetURL url='sciemka.swf' target='_level106'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0014 Push [('register', 1), ('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0015 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0016 Push [('const8', '_visible'), ('bool', False)]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0017 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0018 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0019 Push [('int', 1), ('int', 1), ('register', 1), ('const8', 'sciema')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0020 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0021 Push [('const8', 'gotoAndPlay')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0022 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0023 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0024 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0025 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0026 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0027 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0028 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0029 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0030 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0031 Push [('const8', 'cred')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0032 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0033 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0034 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0035 Push [('register', 1), ('const8', 'zaladuj')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0036 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0037 Push [('const8', '_level0')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0038 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0039 Push [('const8', 'zamowienie'), ('const8', '_level10')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0040 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0041 GetURL url='loadRoom.swf' target='_level11'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0042 GetURL url='about.swf' target='_level10'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0043 Push [('register', 1), ('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0044 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0045 Push [('const8', '_visible'), ('bool', False)]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0046 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0047 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0048 Push [('int', 1), ('int', 1), ('register', 1), ('const8', 'sciema')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0049 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0050 Push [('const8', 'gotoAndPlay')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0051 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0052 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0053 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0054 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0055 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0056 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0057 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0058 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0059 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0060 Push [('const8', 'forum')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0061 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0062 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0063 DefineFunction
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0064 GetURL url='http://theroomz.19.forumer.com' target='_blank'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0065 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0066 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0067 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0068 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0069 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0070 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0071 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0072 Push [('const8', 'hof')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0073 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0074 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0075 DefineFunction
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0076 GetURL url='http://dreamward.home.pl/theroomz/hof.htm' target='_blank'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0077 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0078 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0079 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0080 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0081 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0082 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0083 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0084 Push [('const8', 'go')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0085 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0086 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0087 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0088 Push [('register', 1), ('const8', 'zaladuj')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0089 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0090 Push [('const8', '_level0')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0091 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0092 Push [('const8', 'zamowienie'), ('const8', '_level10')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0093 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0094 GetURL url='loadRoom.swf' target='_level11'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0095 GetURL url='check.swf' target='_level10'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0096 Push [('register', 1), ('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0097 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0098 Push [('const8', '_visible'), ('bool', False)]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0099 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0100 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0101 Push [('double', 0.0), ('register', 1), ('const8', 'sciema')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0102 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0103 Push [('const8', 'play')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0104 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0105 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0106 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0107 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0108 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0109 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0110 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0111 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0112 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0113 Push [('const8', 'rules')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0114 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0115 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0116 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0117 Push [('register', 1), ('const8', 'zaladuj')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0118 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0119 GetURL url='loadRoom.swf' target='_level3'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0120 GetURL url='rules.swf' target='_level1'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0121 GetURL url='interface.swf' target='_level100'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0122 Push [('register', 1), ('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0123 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0124 Push [('const8', '_visible'), ('bool', False)]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0125 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0126 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0127 Push [('double', 0.0), ('register', 1), ('const8', 'sciema')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0128 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0129 Push [('const8', 'play')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0130 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0131 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0132 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0133 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0134 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0135 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0136 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0137 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0138 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0139 Push [('const8', 'solutions')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0140 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0141 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0142 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0143 Push [('register', 1), ('const8', 'zaladuj')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0144 DefineFunction2
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0145 Push [('const8', '_level0')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0146 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0147 Push [('const8', 'zamowienie'), ('const8', '_level10')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0148 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0149 GetURL url='loadRoom.swf' target='_level11'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0150 GetURL url='solutions.swf' target='_level10'
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0151 Push [('register', 1), ('const8', 'intro')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0152 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0153 Push [('const8', '_visible'), ('bool', False)]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0154 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0155 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0156 Push [('double', 0.0), ('register', 1), ('const8', 'sciema')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0157 GetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0158 Push [('const8', 'play')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0159 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0160 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0161 StopSounds
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0162 Push [('double', 0.0), ('const8', 'dzwiek')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0163 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0164 Push [('const8', 'stop')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0165 CallMethod
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0166 Pop
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0167 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0168 Push [('const8', 'gbook')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0169 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0170 Push [('const8', 'onRelease')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0171 DefineFunction
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0172 Push [('const8', 'http://users4.smartgb.com/g/g.php?a=s&i=g40-04528-7a'), ('const8', '_blank')]
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0173 GetVariable
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0174 GetURL2 flags=0x00
+Intro.swf/tag259:code39/DefineSprite/tag908:code12/DoAction A0175 SetMember
+Intro.swf/tag259:code39/DefineSprite/tag935:code12/DoAction A0000 Stop
+Intro.swf/tag262:code12/DoAction A0000 Stop
+Intro.swf/tag266:code12/DoAction A0000 ConstantPool ['ile.txt', '_root', 'bonus.txt', 't', 'onEnterFrame', 'koniec', 'showRtotal']
+Intro.swf/tag266:code12/DoAction A0001 Push [('const8', 'ile.txt'), ('const8', '_root')]
+Intro.swf/tag266:code12/DoAction A0002 GetVariable
+Intro.swf/tag266:code12/DoAction A0003 GetURL2 flags=0xc0
+Intro.swf/tag266:code12/DoAction A0004 Push [('const8', 'bonus.txt'), ('const8', '_root')]
+Intro.swf/tag266:code12/DoAction A0005 GetVariable
+Intro.swf/tag266:code12/DoAction A0006 GetURL2 flags=0xc0
+Intro.swf/tag266:code12/DoAction A0007 Push [('const8', 't'), ('double', 0.0)]
+Intro.swf/tag266:code12/DoAction A0008 DefineLocal
+Intro.swf/tag266:code12/DoAction A0009 Push [('const8', 'onEnterFrame')]
+Intro.swf/tag266:code12/DoAction A0010 DefineFunction2
+Intro.swf/tag266:code12/DoAction A0011 Push [('const8', 't'), ('const8', 't')]
+Intro.swf/tag266:code12/DoAction A0012 GetVariable
+Intro.swf/tag266:code12/DoAction A0013 Increment
+Intro.swf/tag266:code12/DoAction A0014 SetVariable
+Intro.swf/tag266:code12/DoAction A0015 Push [('const8', 'koniec')]
+Intro.swf/tag266:code12/DoAction A0016 GetVariable
+Intro.swf/tag266:code12/DoAction A0017 Push [('undefined', None)]
+Intro.swf/tag266:code12/DoAction A0018 Equals2
+Intro.swf/tag266:code12/DoAction A0019 Not
+Intro.swf/tag266:code12/DoAction A0020 Not
+Intro.swf/tag266:code12/DoAction A0021 If data=1600
+Intro.swf/tag266:code12/DoAction A0022 Push [('register', 1), ('const8', 'showRtotal'), ('bool', True)]
+Intro.swf/tag266:code12/DoAction A0023 SetMember
+Intro.swf/tag266:code12/DoAction A0024 Push [('const8', 'onEnterFrame')]
+Intro.swf/tag266:code12/DoAction A0025 Delete2
+Intro.swf/tag266:code12/DoAction A0026 Pop
+Intro.swf/tag266:code12/DoAction A0027 Jump data=1c00
+Intro.swf/tag266:code12/DoAction A0028 Push [('const8', 't')]
+Intro.swf/tag266:code12/DoAction A0029 GetVariable
+Intro.swf/tag266:code12/DoAction A0030 Push [('int', 500)]
+Intro.swf/tag266:code12/DoAction A0031 Greater
+Intro.swf/tag266:code12/DoAction A0032 Not
+Intro.swf/tag266:code12/DoAction A0033 If data=0700
+Intro.swf/tag266:code12/DoAction A0034 Push [('const8', 'onEnterFrame')]
+Intro.swf/tag266:code12/DoAction A0035 Delete2
+Intro.swf/tag266:code12/DoAction A0036 Pop
+Intro.swf/tag266:code12/DoAction A0037 SetVariable
+Intro.swf/tag268:code39/DefineSprite/tag2:code12/DoAction A0000 Stop
+Intro.swf/tag273:code39/DefineSprite/tag2:code12/DoAction A0000 Stop
+Intro.swf/tag273:code39/DefineSprite/tag42:code12/DoAction A0000 Push [('double', 0.0), ('str', '_root')]
+Intro.swf/tag273:code39/DefineSprite/tag42:code12/DoAction A0001 GetVariable
+Intro.swf/tag273:code39/DefineSprite/tag42:code12/DoAction A0002 Push [('str', 'zaladuj')]
+Intro.swf/tag273:code39/DefineSprite/tag42:code12/DoAction A0003 CallMethod
+Intro.swf/tag273:code39/DefineSprite/tag42:code12/DoAction A0004 Pop
+Intro.swf/tag273:code39/DefineSprite/tag91:code12/DoAction A0000 GotoFrame data=0000

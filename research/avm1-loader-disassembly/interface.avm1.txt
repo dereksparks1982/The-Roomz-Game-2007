@@ -1,0 +1,1698 @@
+interface.swf/tag35:code39/DefineSprite/tag20:code12/DoAction A0000 Stop
+interface.swf/tag35:code39/DefineSprite/tag20:code12/DoAction A0001 Push [('str', '_root')]
+interface.swf/tag35:code39/DefineSprite/tag20:code12/DoAction A0002 GetVariable
+interface.swf/tag35:code39/DefineSprite/tag20:code12/DoAction A0003 Push [('str', 'dezaktywujeLoope'), ('undefined', None)]
+interface.swf/tag35:code39/DefineSprite/tag20:code12/DoAction A0004 SetMember
+interface.swf/tag37:code12/DoAction A0000 ConstantPool ['adressCH', 'loader', 'onEnterFrame', '_alpha', 'percent', 'getBytesLoaded', 'getBytesTotal', 'Math', 'floor', 'per', '%', 'pas', '_width', '_visible', 'gotoAndStop', 'ZcpXX']
+interface.swf/tag37:code12/DoAction A0001 Push [('const8', 'adressCH')]
+interface.swf/tag37:code12/DoAction A0002 DefineFunction
+interface.swf/tag37:code12/DoAction A0003 SetVariable
+interface.swf/tag37:code12/DoAction A0004 Push [('const8', 'loader')]
+interface.swf/tag37:code12/DoAction A0005 GetVariable
+interface.swf/tag37:code12/DoAction A0006 Push [('const8', 'onEnterFrame')]
+interface.swf/tag37:code12/DoAction A0007 DefineFunction2
+interface.swf/tag37:code12/DoAction A0008 Push [('register', 1), ('const8', '_alpha')]
+interface.swf/tag37:code12/DoAction A0009 GetMember
+interface.swf/tag37:code12/DoAction A0010 Push [('int', 100)]
+interface.swf/tag37:code12/DoAction A0011 Equals2
+interface.swf/tag37:code12/DoAction A0012 Not
+interface.swf/tag37:code12/DoAction A0013 If data=6f00
+interface.swf/tag37:code12/DoAction A0014 Push [('register', 1), ('const8', 'percent'), ('double', 0.0), ('register', 2), ('const8', 'getBytesLoaded')]
+interface.swf/tag37:code12/DoAction A0015 CallMethod
+interface.swf/tag37:code12/DoAction A0016 Push [('double', 0.0), ('register', 2), ('const8', 'getBytesTotal')]
+interface.swf/tag37:code12/DoAction A0017 CallMethod
+interface.swf/tag37:code12/DoAction A0018 Divide
+interface.swf/tag37:code12/DoAction A0019 Push [('int', 100)]
+interface.swf/tag37:code12/DoAction A0020 Multiply
+interface.swf/tag37:code12/DoAction A0021 Push [('int', 1), ('const8', 'Math')]
+interface.swf/tag37:code12/DoAction A0022 GetVariable
+interface.swf/tag37:code12/DoAction A0023 Push [('const8', 'floor')]
+interface.swf/tag37:code12/DoAction A0024 CallMethod
+interface.swf/tag37:code12/DoAction A0025 SetMember
+interface.swf/tag37:code12/DoAction A0026 Push [('register', 1), ('const8', 'per'), ('register', 1), ('const8', 'percent')]
+interface.swf/tag37:code12/DoAction A0027 GetMember
+interface.swf/tag37:code12/DoAction A0028 ToString
+interface.swf/tag37:code12/DoAction A0029 Push [('const8', '%')]
+interface.swf/tag37:code12/DoAction A0030 Add2
+interface.swf/tag37:code12/DoAction A0031 SetMember
+interface.swf/tag37:code12/DoAction A0032 Push [('register', 1), ('const8', 'pas')]
+interface.swf/tag37:code12/DoAction A0033 GetMember
+interface.swf/tag37:code12/DoAction A0034 Push [('const8', '_width'), ('int', 3), ('register', 1), ('const8', 'percent')]
+interface.swf/tag37:code12/DoAction A0035 GetMember
+interface.swf/tag37:code12/DoAction A0036 Multiply
+interface.swf/tag37:code12/DoAction A0037 SetMember
+interface.swf/tag37:code12/DoAction A0038 Push [('double', 0.0), ('register', 2), ('const8', 'getBytesLoaded')]
+interface.swf/tag37:code12/DoAction A0039 CallMethod
+interface.swf/tag37:code12/DoAction A0040 Push [('double', 0.0), ('register', 2), ('const8', 'getBytesTotal')]
+interface.swf/tag37:code12/DoAction A0041 CallMethod
+interface.swf/tag37:code12/DoAction A0042 Divide
+interface.swf/tag37:code12/DoAction A0043 Push [('int', 1)]
+interface.swf/tag37:code12/DoAction A0044 Less2
+interface.swf/tag37:code12/DoAction A0045 Not
+interface.swf/tag37:code12/DoAction A0046 Not
+interface.swf/tag37:code12/DoAction A0047 If data=e600
+interface.swf/tag37:code12/DoAction A0048 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+interface.swf/tag37:code12/DoAction A0049 GetMember
+interface.swf/tag37:code12/DoAction A0050 Push [('int', 8)]
+interface.swf/tag37:code12/DoAction A0051 Subtract
+interface.swf/tag37:code12/DoAction A0052 SetMember
+interface.swf/tag37:code12/DoAction A0053 Push [('register', 1), ('const8', '_alpha')]
+interface.swf/tag37:code12/DoAction A0054 GetMember
+interface.swf/tag37:code12/DoAction A0055 Push [('double', 0.0)]
+interface.swf/tag37:code12/DoAction A0056 Greater
+interface.swf/tag37:code12/DoAction A0057 Not
+interface.swf/tag37:code12/DoAction A0058 Not
+interface.swf/tag37:code12/DoAction A0059 If data=b400
+interface.swf/tag37:code12/DoAction A0060 Push [('register', 1), ('const8', '_alpha'), ('double', 0.0)]
+interface.swf/tag37:code12/DoAction A0061 SetMember
+interface.swf/tag37:code12/DoAction A0062 Push [('register', 1), ('const8', '_visible'), ('bool', False)]
+interface.swf/tag37:code12/DoAction A0063 SetMember
+interface.swf/tag37:code12/DoAction A0064 Push [('int', 2), ('int', 1), ('register', 2), ('const8', 'gotoAndStop')]
+interface.swf/tag37:code12/DoAction A0065 CallMethod
+interface.swf/tag37:code12/DoAction A0066 Pop
+interface.swf/tag37:code12/DoAction A0067 Push [('double', 0.0), ('const8', 'adressCH')]
+interface.swf/tag37:code12/DoAction A0068 CallFunction
+interface.swf/tag37:code12/DoAction A0069 Pop
+interface.swf/tag37:code12/DoAction A0070 Push [('const8', 'ZcpXX')]
+interface.swf/tag37:code12/DoAction A0071 GetVariable
+interface.swf/tag37:code12/DoAction A0072 Push [('const8', 'onEnterFrame')]
+interface.swf/tag37:code12/DoAction A0073 DefineFunction2
+interface.swf/tag37:code12/DoAction A0074 Push [('register', 1), ('const8', '_alpha')]
+interface.swf/tag37:code12/DoAction A0075 GetMember
+interface.swf/tag37:code12/DoAction A0076 Push [('double', 0.0)]
+interface.swf/tag37:code12/DoAction A0077 Greater
+interface.swf/tag37:code12/DoAction A0078 Not
+interface.swf/tag37:code12/DoAction A0079 Not
+interface.swf/tag37:code12/DoAction A0080 If data=2400
+interface.swf/tag37:code12/DoAction A0081 Push [('register', 1), ('const8', '_alpha'), ('double', 0.0)]
+interface.swf/tag37:code12/DoAction A0082 SetMember
+interface.swf/tag37:code12/DoAction A0083 Push [('register', 1), ('const8', '_visible'), ('bool', False)]
+interface.swf/tag37:code12/DoAction A0084 SetMember
+interface.swf/tag37:code12/DoAction A0085 Push [('register', 1), ('const8', 'onEnterFrame'), ('undefined', None)]
+interface.swf/tag37:code12/DoAction A0086 SetMember
+interface.swf/tag37:code12/DoAction A0087 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+interface.swf/tag37:code12/DoAction A0088 GetMember
+interface.swf/tag37:code12/DoAction A0089 Push [('int', 8)]
+interface.swf/tag37:code12/DoAction A0090 Subtract
+interface.swf/tag37:code12/DoAction A0091 SetMember
+interface.swf/tag37:code12/DoAction A0092 SetMember
+interface.swf/tag37:code12/DoAction A0093 Push [('register', 1), ('const8', 'onEnterFrame')]
+interface.swf/tag37:code12/DoAction A0094 Delete
+interface.swf/tag37:code12/DoAction A0095 Pop
+interface.swf/tag37:code12/DoAction A0096 SetMember
+interface.swf/tag37:code12/DoAction A0097 Stop
+interface.swf/tag56:code12/DoAction A0000 ConstantPool ['_root', 'skala', 'skala2', 'suwak', 'lapka', 'onPress', 'suwka', '_height', 'startDrag', 'onMouseMove', '_y', 'Math', 'round', '_level1', 'zawieracz', 'zmienSkale', 'zmienPozycje', 'updateAfterEvent', 'onMouseUp', 'stopDrag']
+interface.swf/tag56:code12/DoAction A0001 Push [('const8', '_root')]
+interface.swf/tag56:code12/DoAction A0002 GetVariable
+interface.swf/tag56:code12/DoAction A0003 Push [('const8', 'skala'), ('int', 478)]
+interface.swf/tag56:code12/DoAction A0004 SetMember
+interface.swf/tag56:code12/DoAction A0005 Push [('const8', '_root')]
+interface.swf/tag56:code12/DoAction A0006 GetVariable
+interface.swf/tag56:code12/DoAction A0007 Push [('const8', 'skala2'), ('double', 4.78)]
+interface.swf/tag56:code12/DoAction A0008 SetMember
+interface.swf/tag56:code12/DoAction A0009 Push [('const8', 'suwak')]
+interface.swf/tag56:code12/DoAction A0010 GetVariable
+interface.swf/tag56:code12/DoAction A0011 Push [('const8', 'lapka')]
+interface.swf/tag56:code12/DoAction A0012 GetMember
+interface.swf/tag56:code12/DoAction A0013 Push [('const8', 'onPress')]
+interface.swf/tag56:code12/DoAction A0014 DefineFunction2
+interface.swf/tag56:code12/DoAction A0015 Push [('int', 4294967288), ('int', 4294967293), ('const8', 'suwak')]
+interface.swf/tag56:code12/DoAction A0016 GetVariable
+interface.swf/tag56:code12/DoAction A0017 Push [('const8', 'suwka')]
+interface.swf/tag56:code12/DoAction A0018 GetMember
+interface.swf/tag56:code12/DoAction A0019 Push [('const8', '_height')]
+interface.swf/tag56:code12/DoAction A0020 GetMember
+interface.swf/tag56:code12/DoAction A0021 Push [('int', 4294967295)]
+interface.swf/tag56:code12/DoAction A0022 Multiply
+interface.swf/tag56:code12/DoAction A0023 Push [('int', 4294967293), ('bool', False), ('int', 5), ('register', 1), ('const8', 'startDrag')]
+interface.swf/tag56:code12/DoAction A0024 CallMethod
+interface.swf/tag56:code12/DoAction A0025 Pop
+interface.swf/tag56:code12/DoAction A0026 Push [('register', 1), ('const8', 'onMouseMove')]
+interface.swf/tag56:code12/DoAction A0027 DefineFunction2
+interface.swf/tag56:code12/DoAction A0028 Push [('register', 2), ('const8', 'skala'), ('int', 100), ('int', 4), ('register', 1), ('const8', '_y')]
+interface.swf/tag56:code12/DoAction A0029 GetMember
+interface.swf/tag56:code12/DoAction A0030 Push [('int', 4294967295)]
+interface.swf/tag56:code12/DoAction A0031 Multiply
+interface.swf/tag56:code12/DoAction A0032 Push [('const8', 'suwak')]
+interface.swf/tag56:code12/DoAction A0033 GetVariable
+interface.swf/tag56:code12/DoAction A0034 Push [('const8', 'suwka')]
+interface.swf/tag56:code12/DoAction A0035 GetMember
+interface.swf/tag56:code12/DoAction A0036 Push [('const8', '_height')]
+interface.swf/tag56:code12/DoAction A0037 GetMember
+interface.swf/tag56:code12/DoAction A0038 Divide
+interface.swf/tag56:code12/DoAction A0039 Push [('int', 100)]
+interface.swf/tag56:code12/DoAction A0040 Multiply
+interface.swf/tag56:code12/DoAction A0041 Push [('int', 1), ('const8', 'Math')]
+interface.swf/tag56:code12/DoAction A0042 GetVariable
+interface.swf/tag56:code12/DoAction A0043 Push [('const8', 'round')]
+interface.swf/tag56:code12/DoAction A0044 CallMethod
+interface.swf/tag56:code12/DoAction A0045 Multiply
+interface.swf/tag56:code12/DoAction A0046 Add2
+interface.swf/tag56:code12/DoAction A0047 SetMember
+interface.swf/tag56:code12/DoAction A0048 Push [('register', 2), ('const8', 'skala2'), ('register', 2), ('const8', 'skala')]
+interface.swf/tag56:code12/DoAction A0049 GetMember
+interface.swf/tag56:code12/DoAction A0050 Push [('int', 100)]
+interface.swf/tag56:code12/DoAction A0051 Divide
+interface.swf/tag56:code12/DoAction A0052 SetMember
+interface.swf/tag56:code12/DoAction A0053 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag56:code12/DoAction A0054 GetVariable
+interface.swf/tag56:code12/DoAction A0055 Push [('const8', 'zawieracz')]
+interface.swf/tag56:code12/DoAction A0056 GetMember
+interface.swf/tag56:code12/DoAction A0057 Push [('const8', 'zmienSkale')]
+interface.swf/tag56:code12/DoAction A0058 CallMethod
+interface.swf/tag56:code12/DoAction A0059 Pop
+interface.swf/tag56:code12/DoAction A0060 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag56:code12/DoAction A0061 GetVariable
+interface.swf/tag56:code12/DoAction A0062 Push [('const8', 'zawieracz')]
+interface.swf/tag56:code12/DoAction A0063 GetMember
+interface.swf/tag56:code12/DoAction A0064 Push [('const8', 'zmienPozycje')]
+interface.swf/tag56:code12/DoAction A0065 CallMethod
+interface.swf/tag56:code12/DoAction A0066 Pop
+interface.swf/tag56:code12/DoAction A0067 Push [('double', 0.0), ('const8', 'updateAfterEvent')]
+interface.swf/tag56:code12/DoAction A0068 CallFunction
+interface.swf/tag56:code12/DoAction A0069 Pop
+interface.swf/tag56:code12/DoAction A0070 SetMember
+interface.swf/tag56:code12/DoAction A0071 SetMember
+interface.swf/tag56:code12/DoAction A0072 Push [('const8', 'suwak')]
+interface.swf/tag56:code12/DoAction A0073 GetVariable
+interface.swf/tag56:code12/DoAction A0074 Push [('const8', 'lapka')]
+interface.swf/tag56:code12/DoAction A0075 GetMember
+interface.swf/tag56:code12/DoAction A0076 Push [('const8', 'onMouseUp')]
+interface.swf/tag56:code12/DoAction A0077 DefineFunction2
+interface.swf/tag56:code12/DoAction A0078 Push [('double', 0.0), ('register', 1), ('const8', 'stopDrag')]
+interface.swf/tag56:code12/DoAction A0079 CallMethod
+interface.swf/tag56:code12/DoAction A0080 Pop
+interface.swf/tag56:code12/DoAction A0081 Push [('register', 1), ('const8', 'onMouseMove'), ('undefined', None)]
+interface.swf/tag56:code12/DoAction A0082 SetMember
+interface.swf/tag56:code12/DoAction A0083 SetMember
+interface.swf/tag77:code39/DefineSprite/tag22:code12/DoAction A0000 Stop
+interface.swf/tag81:code39/DefineSprite/tag20:code12/DoAction A0000 GotoFrame data=0000
+interface.swf/tag81:code39/DefineSprite/tag20:code12/DoAction A0001 Play
+interface.swf/tag82:code39/DefineSprite/tag1:code12/DoAction A0000 Stop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0000 ConstantPool ['sloty', 'Array', 'ilosc', 'i', 'slot', 'stan', 'empty', 'dodajObiekt', 'this', 'getNextHighestDepth', 'LinkageNeme', 'attachMovie', 'k', 'this.', '_x', 'slot1', '_width', '_y', '_height', 'onRollOver', 'gotoAndStop', 'onRollOut', 'onReleaseOutside', 'useHandCursor', 'Loopka', 'onRelease', '_level0', 'aktualny', '_level1', 'TenRoom', 'loopa', 'onMouseMove', '_ymouse', 'Mouse', 'hide', 'show', 'zzoomowany', '_parent', 'loopaIsActive', 'doChowania', 'chowajPrzyZoomie', 'zawieracz', 'onEnterFrame', 'removeMovieClip', 'ramka', 'usunObiekt', 'cd1', 'cd2', 'cd3', 'cd4', '_alpha', 'cdUsed', 'insert', 'room42', 'cdpl', 'gotoAndPlay', 'dodajHint', '_level1.exhint', 'num', 'exhint', 'createEmptyMovieClip', '_level100', 'interFace', 'input', '', 'LinkageName', 'Paper', 'PaperTool', 'p', 'Hint', 'ZoomIn', 'usunHint', 'znikaj', 'dezaktywujLoope', '_root', 'dezaktywujeLoope', 'aktywujeLoope', 'cover', 'zakrywka', 'wall', '_', 'push', 's', 'String', 'fromCharCode', '_global', 'toCapitals', 'length', 'substr', 'muffin', 'aktywujLoope', 'go', 'toUpperCase', 'HSsprawdz', 'onPress']
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0001 Push [('const8', 'sloty'), ('double', 0.0), ('const8', 'Array')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0002 NewObject
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0003 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0004 Push [('const8', 'ilosc'), ('int', 6)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0005 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0006 Push [('const8', 'i'), ('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0007 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0008 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0009 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0010 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0011 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0012 Greater
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0013 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0014 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0015 If data=2e00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0016 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0017 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0018 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0019 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0020 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0021 Subtract
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0022 Push [('const8', 'slot'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0023 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0024 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0025 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0026 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0027 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0028 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0029 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0030 Jump data=beff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0031 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0032 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0033 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0034 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0035 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0036 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0037 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0038 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0039 If data=2500
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0040 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0041 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0042 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0043 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0044 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0045 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0046 Push [('const8', 'stan'), ('const8', 'empty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0047 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0048 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0049 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0050 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0051 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0052 Jump data=c8ff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0053 Push [('const8', 'dodajObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0054 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0055 Push [('double', 0.0), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0056 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0057 Push [('const8', 'getNextHighestDepth')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0058 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0059 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0060 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0061 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0062 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0063 Push [('int', 3), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0064 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0065 Push [('const8', 'attachMovie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0066 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0067 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0068 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0069 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0070 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0071 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0072 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0073 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0074 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0075 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0076 If data=cd00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0077 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0078 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0079 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0080 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0081 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0082 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0083 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0084 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0085 Push [('const8', 'empty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0086 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0087 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0088 If data=9e00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0089 Push [('const8', 'k'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0090 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0091 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0092 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0093 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0094 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0095 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0096 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0097 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0098 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0099 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0100 Push [('const8', 'stan'), ('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0101 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0102 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0103 Push [('const8', 'this.'), ('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0104 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0105 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0106 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0107 Push [('const8', '_x'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0108 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0109 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0110 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0111 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0112 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0113 Push [('const8', '_x')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0114 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0115 Push [('double', 0.5), ('const8', 'slot1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0116 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0117 Push [('const8', '_width')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0118 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0119 Multiply
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0120 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0121 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0122 Push [('const8', 'this.'), ('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0123 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0124 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0125 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0126 Push [('const8', '_y'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0127 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0128 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0129 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0130 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0131 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0132 Push [('const8', '_y')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0133 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0134 Push [('double', 0.5), ('const8', 'slot1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0135 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0136 Push [('const8', '_height')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0137 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0138 Multiply
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0139 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0140 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0141 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0142 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0143 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0144 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0145 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0146 Jump data=20ff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0147 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0148 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0149 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0150 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0151 Push [('const8', 'onRollOver')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0152 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0153 Push [('int', 2), ('int', 1), ('register', 1), ('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0154 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0155 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0156 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0157 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0158 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0159 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0160 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0161 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0162 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0163 Push [('int', 1), ('int', 1), ('register', 1), ('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0164 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0165 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0166 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0167 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0168 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0169 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0170 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0171 Push [('const8', 'onReleaseOutside'), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0172 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0173 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0174 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0175 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0176 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0177 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0178 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0179 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0180 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0181 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0182 Push [('const8', 'useHandCursor'), ('bool', True)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0183 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0184 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0185 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0186 Push [('const8', 'Loopka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0187 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0188 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0189 If data=3b03
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0190 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0191 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0192 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0193 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0194 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0195 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0196 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0197 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0198 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0199 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0200 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0201 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0202 Push [('const8', 'TenRoom')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0203 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0204 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0205 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0206 If data=8100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0207 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0208 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0209 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0210 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0211 Push [('const8', 'loopa')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0212 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0213 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0214 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0215 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0216 Push [('const8', 'onMouseMove')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0217 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0218 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0219 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0220 Push [('const8', '_ymouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0221 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0222 Push [('int', 365)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0223 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0224 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0225 If data=1b00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0226 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0227 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0228 Push [('const8', 'hide')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0229 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0230 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0231 Jump data=1600
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0232 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0233 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0234 Push [('const8', 'show')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0235 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0236 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0237 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0238 Jump data=7c00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0239 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0240 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0241 Push [('const8', 'zzoomowany')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0242 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0243 Push [('const8', 'loopa')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0244 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0245 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0246 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0247 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0248 Push [('const8', 'onMouseMove')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0249 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0250 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0251 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0252 Push [('const8', '_ymouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0253 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0254 Push [('int', 365)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0255 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0256 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0257 If data=1b00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0258 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0259 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0260 Push [('const8', 'hide')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0261 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0262 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0263 Jump data=1600
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0264 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0265 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0266 Push [('const8', 'show')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0267 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0268 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0269 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0270 Push [('int', 3), ('int', 1), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0271 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0272 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0273 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0274 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0275 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0276 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0277 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0278 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0279 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0280 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0281 Push [('const8', 'onRollOut'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0282 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0283 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0284 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0285 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0286 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0287 Push [('const8', 'onRollOver'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0288 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0289 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0290 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0291 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0292 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0293 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0294 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0295 Push [('int', 2), ('int', 1), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0296 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0297 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0298 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0299 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0300 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0301 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0302 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0303 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0304 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0305 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0306 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0307 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0308 Push [('const8', 'TenRoom')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0309 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0310 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0311 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0312 If data=d400
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0313 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0314 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0315 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0316 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0317 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0318 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0319 Push [('const8', 'loopaIsActive'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0320 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0321 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0322 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0323 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0324 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0325 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0326 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0327 Push [('const8', 'doChowania')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0328 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0329 Push [('int', 1), ('const8', 'chowajPrzyZoomie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0330 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0331 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0332 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0333 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0334 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0335 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0336 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0337 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0338 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0339 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0340 Push [('const8', 'onEnterFrame'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0341 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0342 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0343 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0344 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0345 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0346 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0347 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0348 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0349 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0350 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0351 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0352 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0353 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0354 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0355 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0356 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0357 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0358 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0359 Push [('const8', 'ramka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0360 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0361 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0362 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0363 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0364 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0365 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0366 Push [('const8', 'onMouseMove'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0367 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0368 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0369 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0370 Push [('const8', 'show')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0371 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0372 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0373 Jump data=7b00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0374 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0375 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0376 Push [('const8', 'loopaIsActive'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0377 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0378 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0379 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0380 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0381 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0382 Push [('const8', 'onEnterFrame'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0383 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0384 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0385 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0386 Push [('const8', 'onMouseMove'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0387 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0388 Push [('double', 0.0), ('const8', 'Mouse')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0389 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0390 Push [('const8', 'show')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0391 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0392 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0393 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0394 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0395 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0396 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0397 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0398 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0399 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0400 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0401 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0402 Push [('const8', 'ramka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0403 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0404 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0405 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0406 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0407 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0408 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0409 Push [('int', 1), ('const8', 'usunObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0410 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0411 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0412 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0413 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0414 Push [('int', 1), ('const8', 'dodajObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0415 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0416 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0417 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0418 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0419 Jump data=9801
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0420 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0421 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0422 Push [('const8', 'cd1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0423 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0424 PushDuplicate
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0425 If data=0d00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0426 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0427 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0428 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0429 Push [('const8', 'cd2')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0430 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0431 PushDuplicate
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0432 If data=0d00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0433 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0434 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0435 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0436 Push [('const8', 'cd3')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0437 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0438 PushDuplicate
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0439 If data=0d00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0440 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0441 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0442 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0443 Push [('const8', 'cd4')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0444 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0445 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0446 If data=4d01
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0447 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0448 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0449 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0450 Push [('const8', '_alpha'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0451 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0452 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0453 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0454 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0455 Push [('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0456 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0457 Push [('register', 1), ('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0458 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0459 Push [('int', 100)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0460 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0461 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0462 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0463 If data=1600
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0464 Push [('register', 1), ('const8', '_alpha'), ('int', 100)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0465 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0466 Push [('register', 1), ('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0467 Delete
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0468 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0469 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0470 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0471 Push [('int', 5)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0472 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0473 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0474 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0475 Push [('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0476 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0477 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0478 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0479 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0480 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0481 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0482 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0483 Push [('const8', 'cdUsed'), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0484 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0485 Push [('const8', 'cdUsed')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0486 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0487 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0488 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0489 Push [('const8', 'insert'), ('int', 1), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0490 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0491 Push [('const8', 'room42')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0492 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0493 Push [('const8', 'cdpl')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0494 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0495 Push [('const8', 'gotoAndPlay')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0496 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0497 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0498 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0499 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0500 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0501 Push [('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0502 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0503 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0504 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0505 Push [('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0506 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0507 Push [('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0508 Greater
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0509 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0510 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0511 If data=3a00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0512 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0513 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0514 Push [('int', 1), ('const8', 'usunObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0515 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0516 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0517 Push [('int', 1), ('int', 1), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0518 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0519 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0520 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0521 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0522 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0523 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0524 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0525 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0526 Push [('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0527 Delete
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0528 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0529 Push [('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0530 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0531 Push [('const8', '_alpha'), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0532 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0533 Push [('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0534 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0535 Push [('int', 5)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0536 Subtract
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0537 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0538 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0539 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0540 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0541 Push [('const8', 'usunObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0542 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0543 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0544 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0545 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0546 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0547 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0548 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0549 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0550 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0551 If data=c000
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0552 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0553 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0554 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0555 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0556 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0557 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0558 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0559 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0560 Push [('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0561 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0562 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0563 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0564 If data=9000
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0565 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0566 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0567 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0568 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0569 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0570 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0571 Push [('const8', 'stan'), ('const8', 'empty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0572 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0573 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0574 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0575 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0576 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0577 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0578 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0579 Push [('const8', 'onRelease'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0580 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0581 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0582 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0583 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0584 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0585 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0586 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0587 Push [('const8', 'onReleaseOutside'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0588 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0589 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0590 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0591 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0592 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0593 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0594 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0595 Push [('const8', 'onRollOver'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0596 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0597 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0598 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0599 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0600 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0601 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0602 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0603 Push [('const8', 'onRollOut'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0604 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0605 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0606 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0607 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0608 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0609 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0610 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0611 Push [('const8', 'useHandCursor'), ('bool', False)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0612 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0613 Push [('const8', 'this.'), ('const8', 'LinkageNeme')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0614 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0615 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0616 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0617 RemoveSprite
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0618 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0619 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0620 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0621 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0622 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0623 Jump data=2dff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0624 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0625 Push [('const8', 'dodajHint')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0626 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0627 Push [('const8', '_level1.exhint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0628 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0629 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0630 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0631 Push [('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0632 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0633 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0634 If data=e402
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0635 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0636 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0637 Push [('const8', 'getNextHighestDepth')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0638 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0639 Push [('const8', 'exhint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0640 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0641 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0642 Push [('int', 2), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0643 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0644 Push [('const8', 'createEmptyMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0645 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0646 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0647 Push [('const8', '_level100')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0648 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0649 Push [('const8', 'interFace')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0650 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0651 Push [('const8', 'input'), ('const8', '')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0652 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0653 Push [('const8', 'LinkageName')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0654 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0655 Push [('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0656 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0657 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0658 If data=3100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0659 Push [('double', 0.0), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0660 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0661 Push [('const8', 'getNextHighestDepth')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0662 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0663 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0664 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0665 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0666 Push [('const8', 'PaperTool'), ('int', 3), ('const8', 'attachMovie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0667 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0668 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0669 Jump data=3000
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0670 Push [('double', 0.0), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0671 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0672 Push [('const8', 'getNextHighestDepth')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0673 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0674 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0675 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0676 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0677 Push [('const8', 'LinkageName')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0678 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0679 Push [('int', 3), ('const8', 'attachMovie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0680 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0681 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0682 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0683 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0684 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0685 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0686 Push [('const8', '_alpha'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0687 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0688 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0689 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0690 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0691 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0692 Push [('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0693 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0694 Push [('register', 1), ('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0695 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0696 Push [('int', 100)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0697 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0698 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0699 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0700 If data=1600
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0701 Push [('register', 1), ('const8', '_alpha'), ('int', 100)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0702 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0703 Push [('register', 1), ('const8', 'onEnterFrame')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0704 Delete
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0705 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0706 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0707 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0708 Push [('int', 5)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0709 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0710 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0711 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0712 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0713 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0714 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0715 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0716 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0717 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0718 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0719 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0720 If data=d000
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0721 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0722 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0723 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0724 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0725 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0726 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0727 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0728 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0729 Push [('const8', 'empty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0730 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0731 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0732 If data=a100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0733 Push [('const8', 'p'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0734 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0735 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0736 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0737 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0738 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0739 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0740 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0741 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0742 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0743 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0744 Push [('const8', 'stan'), ('const8', 'Hint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0745 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0746 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0747 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0748 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0749 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0750 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0751 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0752 Push [('const8', '_x'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0753 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0754 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0755 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0756 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0757 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0758 Push [('const8', '_x')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0759 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0760 Push [('double', 0.5), ('const8', 'slot1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0761 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0762 Push [('const8', '_width')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0763 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0764 Multiply
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0765 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0766 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0767 Push [('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0768 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0769 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0770 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0771 Push [('const8', '_y'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0772 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0773 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0774 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0775 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0776 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0777 Push [('const8', '_y')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0778 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0779 Push [('double', 0.5), ('const8', 'slot1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0780 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0781 Push [('const8', '_height')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0782 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0783 Multiply
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0784 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0785 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0786 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0787 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0788 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0789 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0790 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0791 Jump data=1dff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0792 Push [('const8', 'slot'), ('const8', 'p')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0793 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0794 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0795 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0796 Push [('const8', 'onRollOver')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0797 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0798 Push [('int', 2), ('int', 1), ('register', 1), ('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0799 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0800 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0801 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0802 Push [('const8', 'slot'), ('const8', 'p')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0803 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0804 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0805 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0806 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0807 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0808 Push [('int', 1), ('int', 1), ('register', 1), ('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0809 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0810 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0811 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0812 Push [('const8', 'slot'), ('const8', 'p')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0813 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0814 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0815 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0816 Push [('const8', 'onReleaseOutside'), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0817 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0818 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0819 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0820 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0821 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0822 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0823 Push [('const8', 'slot'), ('const8', 'p')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0824 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0825 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0826 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0827 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0828 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0829 Push [('const8', 'Hint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0830 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0831 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0832 Push [('int', 1), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0833 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0834 Push [('const8', 'TenRoom')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0835 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0836 Push [('const8', 'ZoomIn')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0837 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0838 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0839 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0840 Push [('const8', 'slot'), ('const8', 'p')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0841 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0842 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0843 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0844 Push [('const8', 'useHandCursor'), ('bool', True)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0845 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0846 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0847 Push [('const8', 'usunHint')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0848 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0849 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0850 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0851 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0852 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0853 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0854 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0855 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0856 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0857 If data=de00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0858 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0859 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0860 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0861 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0862 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0863 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0864 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0865 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0866 Push [('const8', 'Hint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0867 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0868 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0869 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0870 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0871 If data=ab00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0872 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0873 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0874 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0875 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0876 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0877 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0878 Push [('const8', 'stan'), ('const8', 'empty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0879 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0880 Push [('int', 4), ('int', 1), ('const8', 'Paper'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0881 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0882 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0883 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0884 Push [('const8', 'znikaj')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0885 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0886 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0887 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0888 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0889 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0890 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0891 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0892 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0893 Push [('const8', 'onRelease'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0894 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0895 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0896 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0897 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0898 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0899 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0900 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0901 Push [('const8', 'onReleaseOutside'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0902 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0903 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0904 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0905 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0906 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0907 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0908 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0909 Push [('const8', 'onRollOver'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0910 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0911 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0912 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0913 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0914 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0915 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0916 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0917 Push [('const8', 'onRollOut'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0918 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0919 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0920 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0921 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0922 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0923 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0924 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0925 Push [('const8', 'useHandCursor'), ('bool', False)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0926 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0927 Push [('const8', '_level1.exhint'), ('const8', 'num')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0928 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0929 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0930 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0931 RemoveSprite
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0932 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0933 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0934 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0935 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0936 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0937 Jump data=0fff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0938 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0939 Push [('const8', 'dezaktywujLoope')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0940 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0941 Push [('const8', '_root')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0942 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0943 Push [('const8', 'dezaktywujeLoope'), ('bool', True)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0944 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0945 Push [('const8', '_root')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0946 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0947 Push [('const8', 'aktywujeLoope'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0948 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0949 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0950 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0951 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0952 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0953 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0954 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0955 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0956 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0957 If data=2701
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0958 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0959 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0960 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0961 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0962 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0963 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0964 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0965 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0966 Push [('const8', 'Loopka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0967 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0968 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0969 If data=f800
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0970 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0971 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0972 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0973 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0974 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0975 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0976 Push [('const8', 'onRelease'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0977 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0978 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0979 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0980 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0981 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0982 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0983 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0984 Push [('const8', 'onReleaseOutside'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0985 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0986 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0987 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0988 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0989 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0990 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0991 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0992 Push [('const8', 'onRollOver'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0993 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0994 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0995 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0996 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0997 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0998 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A0999 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1000 Push [('const8', 'onRollOut'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1001 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1002 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1003 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1004 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1005 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1006 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1007 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1008 Push [('const8', 'useHandCursor'), ('bool', False)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1009 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1010 Push [('double', 0.0), ('const8', 'this')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1011 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1012 Push [('const8', 'getNextHighestDepth')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1013 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1014 Push [('const8', 'cover'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1015 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1016 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1017 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1018 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1019 Push [('const8', 'zakrywka'), ('int', 3), ('const8', 'attachMovie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1020 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1021 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1022 Push [('const8', 'cover'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1023 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1024 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1025 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1026 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1027 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1028 Push [('const8', '_x'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1029 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1030 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1031 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1032 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1033 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1034 Push [('const8', '_x')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1035 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1036 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1037 Push [('const8', 'cover'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1038 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1039 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1040 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1041 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1042 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1043 Push [('const8', '_y'), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1044 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1045 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1046 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1047 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1048 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1049 Push [('const8', '_y')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1050 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1051 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1052 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1053 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1054 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1055 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1056 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1057 Jump data=c6fe
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1058 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1059 Push [('const8', 'wall'), ('double', 0.0), ('const8', 'Array')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1060 NewObject
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1061 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1062 Push [('const8', '_'), ('int', 1), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1063 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1064 Push [('const8', 'push')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1065 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1066 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1067 Push [('const8', 's'), ('int', 65)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1068 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1069 Push [('const8', 's')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1070 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1071 Push [('int', 91)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1072 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1073 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1074 If data=3800
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1075 Push [('const8', 's')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1076 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1077 Push [('int', 1), ('const8', 'String')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1078 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1079 Push [('const8', 'fromCharCode')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1080 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1081 Push [('int', 1), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1082 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1083 Push [('const8', 'push')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1084 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1085 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1086 Push [('const8', 's'), ('const8', 's')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1087 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1088 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1089 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1090 Jump data=b3ff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1091 Push [('const8', '_global')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1092 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1093 Push [('const8', 'toCapitals')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1094 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1095 Push [('const8', '')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1096 StoreRegister data=02
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1097 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1098 Push [('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1099 StoreRegister data=03
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1100 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1101 Push [('register', 3), ('register', 4), ('const8', 'length')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1102 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1103 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1104 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1105 If data=2301
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1106 Push [('register', 2), ('const8', 'length')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1107 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1108 StoreRegister data=05
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1109 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1110 Push [('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1111 StoreRegister data=01
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1112 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1113 Push [('register', 1), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1114 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1115 Push [('const8', 'length')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1116 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1117 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1118 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1119 If data=a100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1120 Push [('int', 1), ('register', 3), ('int', 2), ('register', 4), ('const8', 'substr')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1121 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1122 Push [('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1123 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1124 Push [('register', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1125 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1126 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1127 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1128 If data=6a00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1129 Push [('register', 1), ('int', 2)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1130 Modulo
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1131 Push [('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1132 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1133 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1134 If data=1f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1135 Push [('register', 2), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1136 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1137 Push [('register', 1), ('int', 2)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1138 Divide
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1139 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1140 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1141 StoreRegister data=02
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1142 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1143 Jump data=2d00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1144 Push [('register', 2), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1145 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1146 Push [('register', 1), ('const8', 'wall')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1147 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1148 Push [('const8', 'length')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1149 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1150 Push [('register', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1151 Subtract
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1152 Push [('int', 2)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1153 Divide
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1154 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1155 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1156 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1157 StoreRegister data=02
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1158 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1159 Push [('register', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1160 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1161 StoreRegister data=01
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1162 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1163 Jump data=4aff
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1164 Push [('register', 5), ('register', 2), ('const8', 'length')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1165 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1166 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1167 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1168 If data=1c00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1169 Push [('register', 2), ('int', 1), ('register', 3), ('int', 2), ('register', 4), ('const8', 'substr')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1170 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1171 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1172 StoreRegister data=02
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1173 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1174 Push [('register', 3), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1175 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1176 Push [('const8', 'muffin')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1177 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1178 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1179 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1180 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1181 StoreRegister data=03
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1182 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1183 Jump data=ccfe
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1184 Push [('register', 2)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1185 Return
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1186 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1187 Push [('const8', 'aktywujLoope')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1188 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1189 Push [('const8', '_root')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1190 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1191 Push [('const8', 'aktywujeLoope'), ('bool', True)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1192 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1193 Push [('const8', 'i'), ('double', 0.0)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1194 DefineLocal
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1195 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1196 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1197 Push [('const8', 'ilosc')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1198 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1199 Less2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1200 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1201 If data=4903
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1202 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1203 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1204 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1205 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1206 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1207 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1208 Push [('const8', 'stan')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1209 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1210 Push [('const8', 'Loopka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1211 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1212 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1213 If data=1a03
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1214 Push [('bool', True), ('bool', False), ('int', 3), ('int', 3), ('const8', 'cover'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1215 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1216 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1217 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1218 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1219 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1220 Push [('const8', 'znikaj')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1221 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1222 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1223 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1224 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1225 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1226 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1227 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1228 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1229 Push [('const8', 'onRollOver')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1230 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1231 Push [('int', 2), ('int', 1), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1232 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1233 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1234 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1235 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1236 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1237 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1238 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1239 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1240 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1241 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1242 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1243 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1244 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1245 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1246 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1247 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1248 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1249 Push [('int', 1), ('int', 1), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1250 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1251 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1252 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1253 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1254 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1255 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1256 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1257 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1258 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1259 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1260 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1261 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1262 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1263 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1264 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1265 Push [('const8', 'onReleaseOutside'), ('const8', 'slot'), ('const8', 'k')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1266 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1267 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1268 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1269 Push [('const8', 'onRollOut')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1270 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1271 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1272 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1273 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1274 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1275 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1276 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1277 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1278 Push [('const8', 'useHandCursor'), ('bool', True)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1279 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1280 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1281 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1282 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1283 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1284 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1285 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1286 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1287 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1288 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1289 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1290 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1291 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1292 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1293 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1294 Push [('const8', 'TenRoom')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1295 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1296 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1297 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1298 If data=2100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1299 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1300 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1301 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1302 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1303 Push [('const8', 'loopa')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1304 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1305 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1306 Jump data=1c00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1307 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1308 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1309 Push [('const8', 'zzoomowany')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1310 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1311 Push [('const8', 'loopa')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1312 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1313 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1314 Push [('int', 3), ('int', 1), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1315 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1316 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1317 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1318 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1319 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1320 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1321 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1322 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1323 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1324 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1325 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1326 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1327 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1328 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1329 Push [('const8', 'onRollOut'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1330 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1331 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1332 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1333 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1334 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1335 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1336 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1337 Push [('const8', 'onRollOver'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1338 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1339 Push [('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1340 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1341 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1342 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1343 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1344 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1345 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1346 DefineFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1347 Push [('int', 2), ('int', 1), ('const8', 'sloty')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1348 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1349 Push [('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1350 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1351 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1352 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1353 Push [('const8', 'gotoAndStop')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1354 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1355 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1356 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1357 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1358 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1359 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1360 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1361 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1362 Push [('const8', 'TenRoom')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1363 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1364 Equals2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1365 Not
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1366 If data=b100
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1367 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1368 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1369 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1370 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1371 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1372 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1373 Push [('const8', 'loopaIsActive'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1374 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1375 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1376 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1377 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1378 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1379 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1380 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1381 Push [('const8', 'doChowania')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1382 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1383 Push [('int', 1), ('const8', 'chowajPrzyZoomie')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1384 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1385 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1386 Push [('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1387 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1388 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1389 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1390 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1391 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1392 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1393 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1394 Push [('const8', 'onEnterFrame'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1395 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1396 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1397 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1398 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1399 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1400 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1401 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1402 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1403 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1404 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1405 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1406 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1407 Push [('double', 0.0), ('const8', '_level0')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1408 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1409 Push [('const8', 'aktualny')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1410 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1411 Push [('const8', '_parent')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1412 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1413 Push [('const8', 'ramka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1414 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1415 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1416 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1417 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1418 Jump data=5800
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1419 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1420 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1421 Push [('const8', 'loopaIsActive'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1422 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1423 Push [('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1424 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1425 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1426 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1427 Push [('const8', 'onEnterFrame'), ('undefined', None)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1428 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1429 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1430 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1431 Push [('const8', 'zawieracz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1432 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1433 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1434 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1435 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1436 Push [('double', 0.0), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1437 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1438 Push [('const8', 'ramka')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1439 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1440 Push [('const8', 'removeMovieClip')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1441 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1442 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1443 Push [('const8', 'Loopka'), ('int', 1), ('const8', 'usunObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1444 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1445 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1446 Push [('const8', 'Loopka'), ('int', 1), ('const8', 'dodajObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1447 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1448 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1449 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1450 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1451 Jump data=0f00
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1452 Push [('const8', 'i'), ('const8', 'i')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1453 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1454 Increment
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1455 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1456 Jump data=a4fc
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1457 SetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1458 Push [('const8', 'go')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1459 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1460 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1461 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1462 Push [('register', 1), ('const8', '_x'), ('register', 1), ('const8', '_x')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1463 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1464 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1465 Subtract
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1466 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1467 Push [('register', 1), ('const8', '_y'), ('register', 1), ('const8', '_y')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1468 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1469 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1470 Subtract
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1471 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1472 Push [('double', 0.0), ('const8', 'input')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1473 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1474 Push [('const8', 'toUpperCase')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1475 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1476 Push [('int', 1), ('const8', '_level1')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1477 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1478 Push [('const8', 'HSsprawdz')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1479 CallMethod
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1480 Pop
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1481 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1482 Push [('const8', 'go')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1483 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1484 Push [('const8', 'onReleaseOutside'), ('const8', 'go')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1485 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1486 Push [('const8', 'onRelease')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1487 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1488 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1489 Push [('const8', 'go')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1490 GetVariable
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1491 Push [('const8', 'onPress')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1492 DefineFunction2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1493 Push [('register', 1), ('const8', '_x'), ('register', 1), ('const8', '_x')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1494 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1495 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1496 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1497 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1498 Push [('register', 1), ('const8', '_y'), ('register', 1), ('const8', '_y')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1499 GetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1500 Push [('int', 1)]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1501 Add2
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1502 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1503 SetMember
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1504 Push [('const8', 'Loopka'), ('int', 1), ('const8', 'dodajObiekt')]
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1505 CallFunction
+interface.swf/tag84:code39/DefineSprite/tag1:code12/DoAction A1506 Pop

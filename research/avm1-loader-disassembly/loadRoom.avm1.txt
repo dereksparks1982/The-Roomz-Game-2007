@@ -1,0 +1,180 @@
+loadRoom.swf/tag3:code12/DoAction A0000 ConstantPool ['wywolaj', 'loader', 'onEnterFrame', 'tt1', '_rotation', 'tt2', '_alpha', 'percent', 'obj', 'getBytesLoaded', 'getBytesTotal', 'Math', 'floor', 'per', '%', 'pas', '_width', '_visible', 'gotoAndStop', 'adressCH', 'ZcpXX', '_level0', 'zamowienie', 'str', 'this', '_level1']
+loadRoom.swf/tag3:code12/DoAction A0001 Push [('const8', 'wywolaj')]
+loadRoom.swf/tag3:code12/DoAction A0002 DefineFunction2
+loadRoom.swf/tag3:code12/DoAction A0003 Push [('const8', 'loader')]
+loadRoom.swf/tag3:code12/DoAction A0004 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0005 Push [('const8', 'onEnterFrame')]
+loadRoom.swf/tag3:code12/DoAction A0006 DefineFunction2
+loadRoom.swf/tag3:code12/DoAction A0007 Push [('register', 1), ('const8', 'tt1')]
+loadRoom.swf/tag3:code12/DoAction A0008 GetMember
+loadRoom.swf/tag3:code12/DoAction A0009 Push [('const8', '_rotation'), ('register', 1), ('const8', 'tt1')]
+loadRoom.swf/tag3:code12/DoAction A0010 GetMember
+loadRoom.swf/tag3:code12/DoAction A0011 Push [('const8', '_rotation')]
+loadRoom.swf/tag3:code12/DoAction A0012 GetMember
+loadRoom.swf/tag3:code12/DoAction A0013 Push [('int', 5)]
+loadRoom.swf/tag3:code12/DoAction A0014 Add2
+loadRoom.swf/tag3:code12/DoAction A0015 SetMember
+loadRoom.swf/tag3:code12/DoAction A0016 Push [('register', 1), ('const8', 'tt2')]
+loadRoom.swf/tag3:code12/DoAction A0017 GetMember
+loadRoom.swf/tag3:code12/DoAction A0018 Push [('const8', '_rotation'), ('register', 1), ('const8', 'tt2')]
+loadRoom.swf/tag3:code12/DoAction A0019 GetMember
+loadRoom.swf/tag3:code12/DoAction A0020 Push [('const8', '_rotation')]
+loadRoom.swf/tag3:code12/DoAction A0021 GetMember
+loadRoom.swf/tag3:code12/DoAction A0022 Push [('int', 5)]
+loadRoom.swf/tag3:code12/DoAction A0023 Subtract
+loadRoom.swf/tag3:code12/DoAction A0024 SetMember
+loadRoom.swf/tag3:code12/DoAction A0025 Push [('register', 1), ('const8', '_alpha')]
+loadRoom.swf/tag3:code12/DoAction A0026 GetMember
+loadRoom.swf/tag3:code12/DoAction A0027 Push [('int', 100)]
+loadRoom.swf/tag3:code12/DoAction A0028 Equals2
+loadRoom.swf/tag3:code12/DoAction A0029 Not
+loadRoom.swf/tag3:code12/DoAction A0030 If data=7700
+loadRoom.swf/tag3:code12/DoAction A0031 Push [('register', 1), ('const8', 'percent'), ('double', 0.0), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0032 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0033 Push [('const8', 'getBytesLoaded')]
+loadRoom.swf/tag3:code12/DoAction A0034 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0035 Push [('double', 0.0), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0036 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0037 Push [('const8', 'getBytesTotal')]
+loadRoom.swf/tag3:code12/DoAction A0038 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0039 Divide
+loadRoom.swf/tag3:code12/DoAction A0040 Push [('int', 100)]
+loadRoom.swf/tag3:code12/DoAction A0041 Multiply
+loadRoom.swf/tag3:code12/DoAction A0042 Push [('int', 1), ('const8', 'Math')]
+loadRoom.swf/tag3:code12/DoAction A0043 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0044 Push [('const8', 'floor')]
+loadRoom.swf/tag3:code12/DoAction A0045 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0046 SetMember
+loadRoom.swf/tag3:code12/DoAction A0047 Push [('register', 1), ('const8', 'per'), ('register', 1), ('const8', 'percent')]
+loadRoom.swf/tag3:code12/DoAction A0048 GetMember
+loadRoom.swf/tag3:code12/DoAction A0049 ToString
+loadRoom.swf/tag3:code12/DoAction A0050 Push [('const8', '%')]
+loadRoom.swf/tag3:code12/DoAction A0051 Add2
+loadRoom.swf/tag3:code12/DoAction A0052 SetMember
+loadRoom.swf/tag3:code12/DoAction A0053 Push [('register', 1), ('const8', 'pas')]
+loadRoom.swf/tag3:code12/DoAction A0054 GetMember
+loadRoom.swf/tag3:code12/DoAction A0055 Push [('const8', '_width'), ('int', 3), ('register', 1), ('const8', 'percent')]
+loadRoom.swf/tag3:code12/DoAction A0056 GetMember
+loadRoom.swf/tag3:code12/DoAction A0057 Multiply
+loadRoom.swf/tag3:code12/DoAction A0058 SetMember
+loadRoom.swf/tag3:code12/DoAction A0059 Push [('double', 0.0), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0060 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0061 Push [('const8', 'getBytesLoaded')]
+loadRoom.swf/tag3:code12/DoAction A0062 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0063 Push [('double', 0.0), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0064 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0065 Push [('const8', 'getBytesTotal')]
+loadRoom.swf/tag3:code12/DoAction A0066 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0067 Divide
+loadRoom.swf/tag3:code12/DoAction A0068 Push [('int', 1)]
+loadRoom.swf/tag3:code12/DoAction A0069 Less2
+loadRoom.swf/tag3:code12/DoAction A0070 Not
+loadRoom.swf/tag3:code12/DoAction A0071 Not
+loadRoom.swf/tag3:code12/DoAction A0072 If data=f600
+loadRoom.swf/tag3:code12/DoAction A0073 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+loadRoom.swf/tag3:code12/DoAction A0074 GetMember
+loadRoom.swf/tag3:code12/DoAction A0075 Push [('int', 8)]
+loadRoom.swf/tag3:code12/DoAction A0076 Subtract
+loadRoom.swf/tag3:code12/DoAction A0077 SetMember
+loadRoom.swf/tag3:code12/DoAction A0078 Push [('register', 1), ('const8', '_alpha')]
+loadRoom.swf/tag3:code12/DoAction A0079 GetMember
+loadRoom.swf/tag3:code12/DoAction A0080 Push [('double', 0.0)]
+loadRoom.swf/tag3:code12/DoAction A0081 Greater
+loadRoom.swf/tag3:code12/DoAction A0082 Not
+loadRoom.swf/tag3:code12/DoAction A0083 Not
+loadRoom.swf/tag3:code12/DoAction A0084 If data=c400
+loadRoom.swf/tag3:code12/DoAction A0085 Push [('register', 1), ('const8', '_alpha'), ('double', 0.0)]
+loadRoom.swf/tag3:code12/DoAction A0086 SetMember
+loadRoom.swf/tag3:code12/DoAction A0087 Push [('register', 1), ('const8', '_visible'), ('bool', False)]
+loadRoom.swf/tag3:code12/DoAction A0088 SetMember
+loadRoom.swf/tag3:code12/DoAction A0089 Push [('int', 2), ('int', 1), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0090 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0091 Push [('const8', 'gotoAndStop')]
+loadRoom.swf/tag3:code12/DoAction A0092 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0093 Pop
+loadRoom.swf/tag3:code12/DoAction A0094 Push [('double', 0.0), ('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0095 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0096 Push [('const8', 'adressCH')]
+loadRoom.swf/tag3:code12/DoAction A0097 CallMethod
+loadRoom.swf/tag3:code12/DoAction A0098 Pop
+loadRoom.swf/tag3:code12/DoAction A0099 Push [('const8', 'obj')]
+loadRoom.swf/tag3:code12/DoAction A0100 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0101 Push [('const8', 'ZcpXX')]
+loadRoom.swf/tag3:code12/DoAction A0102 GetMember
+loadRoom.swf/tag3:code12/DoAction A0103 Push [('const8', 'onEnterFrame')]
+loadRoom.swf/tag3:code12/DoAction A0104 DefineFunction2
+loadRoom.swf/tag3:code12/DoAction A0105 Push [('register', 1), ('const8', '_alpha')]
+loadRoom.swf/tag3:code12/DoAction A0106 GetMember
+loadRoom.swf/tag3:code12/DoAction A0107 Push [('double', 0.0)]
+loadRoom.swf/tag3:code12/DoAction A0108 Greater
+loadRoom.swf/tag3:code12/DoAction A0109 Not
+loadRoom.swf/tag3:code12/DoAction A0110 Not
+loadRoom.swf/tag3:code12/DoAction A0111 If data=2400
+loadRoom.swf/tag3:code12/DoAction A0112 Push [('register', 1), ('const8', '_alpha'), ('double', 0.0)]
+loadRoom.swf/tag3:code12/DoAction A0113 SetMember
+loadRoom.swf/tag3:code12/DoAction A0114 Push [('register', 1), ('const8', '_visible'), ('bool', False)]
+loadRoom.swf/tag3:code12/DoAction A0115 SetMember
+loadRoom.swf/tag3:code12/DoAction A0116 Push [('register', 1), ('const8', 'onEnterFrame'), ('undefined', None)]
+loadRoom.swf/tag3:code12/DoAction A0117 SetMember
+loadRoom.swf/tag3:code12/DoAction A0118 Push [('register', 1), ('const8', '_alpha'), ('register', 1), ('const8', '_alpha')]
+loadRoom.swf/tag3:code12/DoAction A0119 GetMember
+loadRoom.swf/tag3:code12/DoAction A0120 Push [('int', 8)]
+loadRoom.swf/tag3:code12/DoAction A0121 Subtract
+loadRoom.swf/tag3:code12/DoAction A0122 SetMember
+loadRoom.swf/tag3:code12/DoAction A0123 SetMember
+loadRoom.swf/tag3:code12/DoAction A0124 Push [('register', 1), ('const8', 'onEnterFrame')]
+loadRoom.swf/tag3:code12/DoAction A0125 Delete
+loadRoom.swf/tag3:code12/DoAction A0126 Pop
+loadRoom.swf/tag3:code12/DoAction A0127 SetMember
+loadRoom.swf/tag3:code12/DoAction A0128 SetVariable
+loadRoom.swf/tag3:code12/DoAction A0129 Push [('const8', '_level0')]
+loadRoom.swf/tag3:code12/DoAction A0130 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0131 Push [('const8', 'zamowienie')]
+loadRoom.swf/tag3:code12/DoAction A0132 GetMember
+loadRoom.swf/tag3:code12/DoAction A0133 Push [('undefined', None)]
+loadRoom.swf/tag3:code12/DoAction A0134 Equals2
+loadRoom.swf/tag3:code12/DoAction A0135 Not
+loadRoom.swf/tag3:code12/DoAction A0136 Not
+loadRoom.swf/tag3:code12/DoAction A0137 If data=6f00
+loadRoom.swf/tag3:code12/DoAction A0138 Push [('const8', 'str'), ('const8', '_level0')]
+loadRoom.swf/tag3:code12/DoAction A0139 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0140 Push [('const8', 'zamowienie')]
+loadRoom.swf/tag3:code12/DoAction A0141 GetMember
+loadRoom.swf/tag3:code12/DoAction A0142 SetVariable
+loadRoom.swf/tag3:code12/DoAction A0143 Push [('const8', '_level0')]
+loadRoom.swf/tag3:code12/DoAction A0144 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0145 Push [('const8', 'zamowienie'), ('undefined', None)]
+loadRoom.swf/tag3:code12/DoAction A0146 SetMember
+loadRoom.swf/tag3:code12/DoAction A0147 Push [('const8', 'this')]
+loadRoom.swf/tag3:code12/DoAction A0148 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0149 Push [('const8', 'onEnterFrame')]
+loadRoom.swf/tag3:code12/DoAction A0150 DefineFunction
+loadRoom.swf/tag3:code12/DoAction A0151 Push [('const8', 'str')]
+loadRoom.swf/tag3:code12/DoAction A0152 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0153 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0154 Push [('undefined', None)]
+loadRoom.swf/tag3:code12/DoAction A0155 Equals2
+loadRoom.swf/tag3:code12/DoAction A0156 Not
+loadRoom.swf/tag3:code12/DoAction A0157 Not
+loadRoom.swf/tag3:code12/DoAction A0158 If data=2700
+loadRoom.swf/tag3:code12/DoAction A0159 Push [('const8', 'obj'), ('const8', 'str')]
+loadRoom.swf/tag3:code12/DoAction A0160 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0161 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0162 SetVariable
+loadRoom.swf/tag3:code12/DoAction A0163 Push [('double', 0.0), ('const8', 'wywolaj')]
+loadRoom.swf/tag3:code12/DoAction A0164 CallFunction
+loadRoom.swf/tag3:code12/DoAction A0165 Pop
+loadRoom.swf/tag3:code12/DoAction A0166 Push [('const8', 'this')]
+loadRoom.swf/tag3:code12/DoAction A0167 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0168 Push [('const8', 'onEnterFrame')]
+loadRoom.swf/tag3:code12/DoAction A0169 Delete
+loadRoom.swf/tag3:code12/DoAction A0170 Pop
+loadRoom.swf/tag3:code12/DoAction A0171 SetMember
+loadRoom.swf/tag3:code12/DoAction A0172 Jump data=1900
+loadRoom.swf/tag3:code12/DoAction A0173 Push [('const8', 'obj'), ('const8', '_level1')]
+loadRoom.swf/tag3:code12/DoAction A0174 GetVariable
+loadRoom.swf/tag3:code12/DoAction A0175 SetVariable
+loadRoom.swf/tag3:code12/DoAction A0176 Push [('double', 0.0), ('const8', 'wywolaj')]
+loadRoom.swf/tag3:code12/DoAction A0177 CallFunction
+loadRoom.swf/tag3:code12/DoAction A0178 Pop
+loadRoom.swf/tag3:code12/DoAction A0179 Stop

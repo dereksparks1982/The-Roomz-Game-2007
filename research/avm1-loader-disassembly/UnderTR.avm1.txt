@@ -1,0 +1,32 @@
+UnderTR.swf/tag3:code12/DoAction A0000 ConstantPool ['donate_btn', 'onRelease', 'forum_btn', 'hide_btn', 'tre_logo', 'fb']
+UnderTR.swf/tag3:code12/DoAction A0001 Stop
+UnderTR.swf/tag3:code12/DoAction A0002 Push [('const8', 'donate_btn')]
+UnderTR.swf/tag3:code12/DoAction A0003 GetVariable
+UnderTR.swf/tag3:code12/DoAction A0004 Push [('const8', 'onRelease')]
+UnderTR.swf/tag3:code12/DoAction A0005 DefineFunction
+UnderTR.swf/tag3:code12/DoAction A0006 GetURL url='donate/index.html' target=''
+UnderTR.swf/tag3:code12/DoAction A0007 SetMember
+UnderTR.swf/tag3:code12/DoAction A0008 Push [('const8', 'forum_btn')]
+UnderTR.swf/tag3:code12/DoAction A0009 GetVariable
+UnderTR.swf/tag3:code12/DoAction A0010 Push [('const8', 'onRelease')]
+UnderTR.swf/tag3:code12/DoAction A0011 DefineFunction
+UnderTR.swf/tag3:code12/DoAction A0012 GetURL url='http://theroomz.19.forumer.com/index.php' target='_blank'
+UnderTR.swf/tag3:code12/DoAction A0013 SetMember
+UnderTR.swf/tag3:code12/DoAction A0014 Push [('const8', 'hide_btn')]
+UnderTR.swf/tag3:code12/DoAction A0015 GetVariable
+UnderTR.swf/tag3:code12/DoAction A0016 Push [('const8', 'onRelease')]
+UnderTR.swf/tag3:code12/DoAction A0017 DefineFunction
+UnderTR.swf/tag3:code12/DoAction A0018 GoToLabel 'hidden'
+UnderTR.swf/tag3:code12/DoAction A0019 SetMember
+UnderTR.swf/tag3:code12/DoAction A0020 Push [('const8', 'tre_logo')]
+UnderTR.swf/tag3:code12/DoAction A0021 GetVariable
+UnderTR.swf/tag3:code12/DoAction A0022 Push [('const8', 'onRelease')]
+UnderTR.swf/tag3:code12/DoAction A0023 DefineFunction
+UnderTR.swf/tag3:code12/DoAction A0024 GetURL url='http://theroomzeclipse.org' target='_blank'
+UnderTR.swf/tag3:code12/DoAction A0025 SetMember
+UnderTR.swf/tag3:code12/DoAction A0026 Push [('const8', 'fb')]
+UnderTR.swf/tag3:code12/DoAction A0027 GetVariable
+UnderTR.swf/tag3:code12/DoAction A0028 Push [('const8', 'onRelease')]
+UnderTR.swf/tag3:code12/DoAction A0029 DefineFunction
+UnderTR.swf/tag3:code12/DoAction A0030 GetURL url='http://www.facebook.com/theroomzproject' target='_blank'
+UnderTR.swf/tag3:code12/DoAction A0031 SetMember
