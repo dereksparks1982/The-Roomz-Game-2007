@@ -1,0 +1,97 @@
+name: Trace redirect history for Roomz check.swf
+
+on:
+  push:
+    paths:
+      - '.github/workflows/check-swf-redirect-history.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query check.swf captures without HTTP status filtering
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import json,time,csv
+
+          ROOT=Path('research/check-swf-redirect-history');ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          hosts=['theroomz.freehost.pl','www.theroomz.freehost.pl','theroomz.yoyo.pl','www.theroomz.yoyo.pl','theroomz.org','www.theroomz.org','dreamward.home.pl','www.dreamward.home.pl','dreamwardgames.com','www.dreamwardgames.com']
+          urls=[]
+          for h in hosts:
+            prefixes=['/']+(['/theroomz/'] if 'dreamward' in h else [])
+            for p in prefixes:
+              for n in ('check.swf','Check.swf','CHECK.SWF'):
+                for scheme in ('http','https'):
+                  urls.append(f'{scheme}://{h}{p}{n}')
+                  if scheme=='http':urls.append(f'http://{h}:80{p}{n}')
+          urls=list(dict.fromkeys(urls))
+
+          def get(u,tries=3):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=28) as r:return r.read()
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(n+1)
+              except (URLError,TimeoutError) as e:last=e;time.sleep(n+1)
+            raise RuntimeError(repr(last))
+
+          def one(u):
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length,redirect','from':'2006','to':'2019'})
+            try:
+              b=get(q,tries=2);data=json.loads(b)
+              if not data:return u,[],''
+              hdr=data[0];return u,[dict(zip(hdr,r)) for r in data[1:]],''
+            except Exception as e:return u,[],repr(e)
+
+          rows=[];fails=[]
+          with ThreadPoolExecutor(max_workers=8) as ex:
+            futs=[ex.submit(one,u) for u in urls]
+            for fut in as_completed(futs):
+              u,rr,err=fut.result()
+              if err:fails.append([u,err])
+              for r in rr:rows.append([u,r.get('timestamp',''),r.get('original',''),r.get('statuscode',''),r.get('mimetype',''),r.get('digest',''),r.get('length',''),r.get('redirect','')])
+          # Dedupe exact archive rows
+          out=[];seen=set()
+          for r in sorted(rows,key=lambda x:(x[1],x[2],x[3])):
+            k=tuple(r[1:])
+            if k not in seen:seen.add(k);out.append(r)
+          with (ROOT/'captures.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['query_url','timestamp','original','status','mime','digest','length','redirect']);w.writerows(out)
+          with (ROOT/'failures.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['url','error']);w.writerows(fails)
+          redirects=[r for r in out if r[3].startswith('3') or r[7]]
+          summary=['# check.swf redirect/status history','',f'- Exact URL variants queried: {len(urls)}',f'- Archive rows of any status: {len(out)}',f'- Redirect-like rows: {len(redirects)}',f'- Failed CDX requests: {len(fails)}','','## All rows','']
+          summary += [f'- {r[1]} status **{r[3]}** `{r[2]}` mime `{r[4]}` redirect `{r[7]}` digest `{r[5]}`' for r in out] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Commit redirect evidence
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/check-swf-redirect-history
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Trace archive redirect history for check.swf"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
