@@ -1,0 +1,102 @@
+name: Mine Forumer Roomz asset tokens
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-forumer-asset-tokens.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract filenames paths and archive leads from recovered topics
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,re,html
+
+          SRC=Path('research/continued-hunt/forumer/topic-pages')
+          OUT=Path('research/forumer-asset-token-mine'); OUT.mkdir(parents=True,exist_ok=True)
+          exts=r'(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|ico|mp3|wav|zip|rar|7z|htm|html|php)'
+          file_re=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+-]{1,160}\.'+exts+r')(?:[?#][^\s"\'<>]*)?')
+          url_re=re.compile(r'(?i)https?://[^\s"\'<>]+')
+          path_re=re.compile(r'(?i)(/[A-Za-z0-9_.%+-]+(?:/[A-Za-z0-9_.%+-]+){1,8}/?)')
+          key_re=re.compile(r'(?i)(loadMovie(?:Num)?|loadVariables|\.swf|\.txt|download|mirror|attachment|upload|source|flash|roomz\.org|yoyo\.pl|dreamward)')
+
+          rows=[]; urls=[]; paths=[]; contexts=[]
+          if SRC.exists():
+            for p in sorted(SRC.glob('*')):
+              if not p.is_file(): continue
+              raw=p.read_text(encoding='utf-8',errors='replace')
+              text=html.unescape(re.sub(r'<[^>]+>',' ',raw))
+              text=re.sub(r'\s+',' ',text)
+              for m in file_re.finditer(text):
+                token=m.group(1).rstrip('.,);:]')
+                a=max(0,m.start()-260); z=min(len(text),m.end()+420)
+                rows.append([p.name,token,text[a:z]])
+              for m in url_re.finditer(raw):
+                u=html.unescape(m.group(0)).rstrip('.,);]')
+                if any(k in u.lower() for k in ('theroomz','dreamward','yoyo','swf','zip','rar','mediafire','rapidshare','megaupload','sendspace','filefront')):
+                  urls.append([p.name,u])
+              for m in path_re.finditer(text):
+                q=m.group(1)
+                if any(k in q.lower() for k in ('room','paper','danger','this','bonus','swf','txt','download')):
+                  paths.append([p.name,q])
+              for m in key_re.finditer(text):
+                a=max(0,m.start()-220); z=min(len(text),m.end()+420)
+                contexts.append([p.name,m.group(1),text[a:z]])
+
+          def dedupe(rows,key=lambda r:tuple(r)):
+            out=[];seen=set()
+            for r in rows:
+              k=key(r)
+              if k not in seen:seen.add(k);out.append(r)
+            return out
+          rows=dedupe(rows,lambda r:(r[0],r[1].lower()))
+          urls=dedupe(urls,lambda r:(r[0],r[1].lower()))
+          paths=dedupe(paths,lambda r:(r[0],r[1].lower()))
+          contexts=dedupe(contexts,lambda r:(r[0],r[1].lower(),r[2]))
+
+          known={'check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','blackandwhite.swf','hof.swf','redirect.swf','rrr.swf','cannon.txt','yoyo.pnq','interface.swf','intro.swf','loadroom.swf','roomzmain.swf','frame.swf'}
+          novel=[]
+          for r in rows:
+            base=r[1].replace('\\','/').rsplit('/',1)[-1].lower()
+            if base not in known and not base.startswith(('viewtopic.','index.','posting.','profile.','search.')):
+              novel.append(r)
+
+          def tsv(name,header,data):
+            with (OUT/name).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(data)
+          tsv('file-tokens.tsv',['topic_page','token','context'],rows)
+          tsv('novel-file-tokens.tsv',['topic_page','token','context'],novel)
+          tsv('interesting-urls.tsv',['topic_page','url'],urls)
+          tsv('interesting-paths.tsv',['topic_page','path'],paths)
+          tsv('keyword-contexts.tsv',['topic_page','keyword','context'],contexts)
+
+          summary=['# Forumer asset-token mine','',f'- Topic pages scanned: {len(list(SRC.glob("*"))) if SRC.exists() else 0}',f'- Distinct file tokens: {len(rows)}',f'- Potentially novel file tokens: {len(novel)}',f'- Interesting URLs: {len(urls)}',f'- Interesting paths: {len(paths)}','', '## Potentially novel file tokens','']
+          summary += [f'- `{r[1]}` in `{r[0]}`: {r[2][:700]}' for r in novel[:250]] or ['- None.']
+          summary += ['', '## Interesting URLs','']+[f'- `{r[1]}` in `{r[0]}`' for r in urls[:250]]
+          (OUT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:300]))
+          PY
+      - name: Commit mining results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/forumer-asset-token-mine
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine archived Forumer topics for Roomz asset names"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
