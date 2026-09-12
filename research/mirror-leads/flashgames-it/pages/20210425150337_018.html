@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>The Roomz - Flashgames.it</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Roomz: Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.
+
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.
+Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla!">
+<link rel="canonical" href="https://www.flashgames.it/the.roomz.html" />
+<link rel="image_src" href="https://www.flashgames.it/giochi/avventura/the.roomz/the.roomz.jpg" />
+<meta property="og:title" content="The Roomz" />
+<meta property="og:site_name" content="Flashgames.it" />
+<meta property="og:image" content="https://www.flashgames.it/giochi/avventura/the.roomz/the.roomz.jpg" />
+
+<script type="text/javascript" async src='https://ads.talkscreativity.com/assets/publisher/flashgames/init.js'></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload" as="style" href="(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap)">
+
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap)">
+
+<noscript>
+    <link rel="stylesheet" href="(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap)">
+</noscript>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/@style.css?1619363009">
+<style>
+h1 { margin: 0px; border-bottom: 1px solid #c6c6c6; padding-bottom: 6px; }
+h2 { font-size: inherit; margin:16px 0px; font-size: 24px; }
+.uppercase { text-transform:uppercase; font-size: 1.1em; }
+</style>
+<script>
+$(document).ready(function(){
+	$('.preferiti').click(function() {
+		$(this).html("<i class='fas fa-spinner fa-spin'></i>");
+		$action = $(this).attr('rel');
+		$.ajax({
+				url:"/include/apicenter.php?preferiti=" + $action +"&idgame=4156",
+				type:'GET',
+			   success:function(data){			   
+				   if(data.indexOf('login') !== -1) {
+					   $("body").append(data).slideDown("fast");
+					   return;
+				   }
+				   
+   				   $('body').append(data);
+		   
+				   if($action == "add") {
+					   $('.preferiti').css('background-color', '#5c4a88');
+					   $(".preferiti").attr('rel', 'del');
+					   $(".preferiti").html("<i style='color:orange;' class=\"fas fa-star\"></i> Preferito");
+				   }
+				    if($action == "del") {
+					   $('.preferiti').css('background-color', 'red');
+					   $(".preferiti").attr('rel', 'add');
+					   $(".preferiti").html("<i class='far fa-heart'></i> Aggiungi ai Preferiti");
+					   
+				   }
+			   }
+		});
+	});
+	
+	$('.fa-thumbs-up, .fa-thumbs-down').click(function() {
+		// $(this).html("<i class='fas fa-spinner fa-spin'></i>");
+		$action = $(this).attr('rel');
+		$.ajax({
+				url:"/include/apicenter.php?voto=" + $action +"&idgame=4156",
+				type:'GET',
+			   success:function(data){			   				   
+   				   $('body').append(data);
+		   
+				   if($action == "like") {
+					   $('.fa-thumbs-up').css('background-color', '#5c4a88');
+					   $(".fa-thumbs-up").attr('rel', 'dislike');
+				   }
+				    if($action == "dislike") {
+					   $('.fa-thumbs-down').css('background-color', 'red');
+					   $(".fa-thumbs-down").attr('rel', 'like');					   
+				   }
+			   }
+		});
+	});
+	
+	
+	$('.modal_segnala').click(function() {
+		$('.modal_login').show();
+	});
+	
+	$('.segnala').click(function() {
+		// confirm("Il gioco non si carica? Invia una segnalazione.");
+		$.ajax({
+				url:"/include/apicenter.php",
+				type:'POST',
+				data: { segnala: "the.roomz"} ,
+			   success:function(data){			   				   
+   				   $('body').append(data);
+				   alert("La segnalazione è stata inviata correttamente, grazie.");
+				   $('.modal_login').fadeOut();
+		  	   }
+		});
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+
+<div id="header2020">
+<div style="background-color:#a4bbff; height:6px; flex: 0 1 100%;"></div>
+<div><i class="fa fa-bars showmenu nodesktop"></i></div>
+<div class="logo"><a title="Giochi Online - Flashgames.it" href="https://www.flashgames.it"><img alt="Flashgames.it - Giochi Online" src="https://web2.flashgames.it/img/logo.png" /></a></div>
+<h2 class="header_giochionline"><a style="text-decoration:none;" href="https://www.flashgames.it">Giochi Gratis</a> (5.214)</h2>
+<div class="searchbox">
+<i class="fa fa-search searchicon" aria-hidden="true"></i>
+<div class="search">
+<meta charset="utf-8">
+<link rel="stylesheet" href="/js/autocomplete/dist/easy-autocomplete.min.css" />
+
+<script type="text/javascript" src="/js/autocomplete/dist/jquery.easy-autocomplete.min.js"></script>
+<style>
+
+/* .container { margin:0px; padding:0px; width:auto; float:left; width:270px; margin-left:62px; display:inline; margin-top: -22px;  } */
+#categories-basic { width:100%; border:none; padding:2px; border:0px; -webkit-appearance: none; box-shadow: inset 0px 0px 0px 0px red; }
+
+input:focus { 
+    outline: none !important;
+    border:1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+/* blocco dei risultati della ricerca */
+.easy-autocomplete-container { width:150%; margin-left:-30px; margin-top:6px; box-shadow: 0px 3px 15px #888888; z-index:9999999; background-color:#fff; border-radius:12px; }
+div.header-container p { margin:0px; }
+
+.easy-autocomplete-container ul .eac-category { padding:10px 0px; font-style:normal; }
+.easy-autocomplete-container ul .eac-category:first-of-type {  padding-top:0; }
+.easy-autocomplete-container ul li { border-bottom:1px dotted #00FFFF; }
+
+/* title dei gruppi */
+div.header-container { background-color: #46bcfe; color: #fff; text-transform:uppercase; height:20px;line-height:20px;clear:both;overflow:hidden; font-size:12px; padding:4px 12px; margin-bottom:-8px; }
+
+div.header-container p.left-align { float:left; font-weight:bold; }
+.showall a { color: #F5C5FC; float:right; text-transform:lowercase; font-size:12px; }
+.easy-autocomplete-container ul li div { word-break:normal; }
+
+#no-results { padding:3px 10px; font-style:italic;box-shadow: 0px 3px 15px #888888; z-index:9999999; background-color:#fff;}
+
+</style>
+<div class="container">
+<form method="GET" action="/ricerca.php">
+<input class="motore_input suggest" id="categories-basic" name="giochi" />
+</form>
+</div>
+<script>
+jQuery( document ).ready(function( $ ) {
+var click = 0; //tracciando il click evito che mi richiami la funzione onHide anche quando seleziona un risultato dalla lista.
+var no_results = '<div id="no-results">Non ci sono risultati</div>';
+var text_holder = null;
+
+var options = {
+	
+  url: function(phrase) {
+    return "/js/autocomplete/query_sparse.php";
+  },
+placeholder: "Inserisci il gioco da cercare",
+  	getValue: 'riga1',
+	categories: [
+
+    {
+        listLocation: "gruppi",
+        maxNumberOfElements: 10,
+        header: "<div class='header-container' style='background-color:orange;'><p class='left-align'>Categorie</p><p class='showall'><a id='ab-link' style='color:#fff' href=''>Mostra tutti >></a></p></div>"
+    },
+
+	{
+        listLocation: "giochi",
+        maxNumberOfElements: 10,
+        header: "<div class='header-container'><p class='left-align'>Giochi</p><p class='showall'><a id='an-link' href=''>Mostra tutti >></a></p></div>"
+    }
+
+    ],
+    list: {
+    	onShowListEvent: function() {
+			var res = encodeURIComponent($("#categories-basic").val());
+			$('#an-link').attr('href','/listato.php?src='+res);
+			// $('#re-link').attr('href','/racconti-erotici/search.php?racconti='+res);
+		},
+		onLoadEvent:function() {
+			console.log('carica');
+			text_holder = $("#categories-basic").val();
+			if($("#categories-basic").length > 0) {
+			if($("#no-results").length > 0) {
+				$("#no-results").remove();
+				//ga('send', 'event', 'Ricerca', 'Trovato', $("#categories-basic").val());
+				}
+			}
+			if($("#categories-basic").length == 0) {
+			if($("#no-results").length <= 0) {
+				$("#categories-basic").after(no_results);
+					//ga('send', 'event', 'Ricerca', 'Non Trovato', text_holder);
+				}
+			} 
+		},
+		onClickEvent: function() {
+			//ga('send', 'event', 'Ricerca', 'Trovato', text_holder);
+			
+		},
+		/*onHideListEvent: function() {
+			
+			if(click == 0) {
+				if($("#categories-basic").getItems().length > 0) {
+					ga('send', 'event', 'Ricerca', 'non trovato', $("#categories-basic").val());
+				}
+			}			
+		},*/
+        maxNumberOfElements: 20
+    },
+  ajaxSettings: {
+    dataType: "json",
+    method: "GET",
+    data: {
+      dataType: "json"
+    }
+  },
+  minCharNumber: 4,
+  template: {
+		type: "custom",
+		method: function(value, item) {
+			var vip = '';
+			var addriga2 = '';
+			if(item.vip && item.vip > 0) {
+				vip = '<img src="https://img.annunci69.it/img/vip_badge.png" style="padding-left:3px;" width="20"/>';
+			}
+			if(item.nomeforum) { //per i forum aggiunge nome forum
+				addriga2 = ' risposte | Pubblicato in '+item.nomeforum;
+			}
+			if(item.riga21) { //per gli Annunci aggiunge la regione
+				addriga2 = ', '+item.riga21;
+			}
+			return "<a class='titolo_celeste_elenco' href='"+item.link+"'><div style='display:inline-block;padding-right:10px; vertical-align:top;position:relative;'><div style='width:50px; height:50px; background-color:#fff; background-image:url(" + item.img + "); background-size:cover; background-position:center center; background-repeat:none; float:left; margin-left:-5px;'></div></div><div style='display:inline-block;width:80%;position:relative;'>"+ value + vip + "<br><span style='font-size:12px;color:#999;'>"+item.riga2+ addriga2 +"</span></div></a>";
+		}
+	},
+  preparePostData: function(data) {
+    data.q = encodeURIComponent($("#categories-basic").val());
+    return data;
+  },
+  requestDelay: 400
+  
+}; 
+$("#categories-basic").easyAutocomplete(options);
+//$j('#categories-basic').removeAttr('style');
+});
+</script> </div>
+</div>
+<div class="login nomobile dropdown">
+<a href="/accedi.php"><i class="far fa-user-circle"></i> Login </a> </div>
+</div>
+<div id="O_SKIN"></div> 
+<div id="container">
+
+<script>
+$(document).ready(function() {
+	$(".showmenu").click(function(){
+	  $("#menu-left").slideToggle('fast');
+	});
+	$(".searchicon").click(function(){
+	  $(".search").fadeToggle('fast');
+	});
+});
+</script>
+<div id="menu-left">
+<div class="login onlymobile dropdown">
+<a href="/accedi.php"><i class="far fa-user-circle"></i> Accedi </a> </div>
+<ul>
+<li><a href="//www.flashgames.it/top100"><i style="color:#ffe025; background: #ff8d00;" class="fas fa-fire"></i> I Più Giocati</a></li>
+<li><a href="//www.flashgames.it/ricerca.php?rand"><i style="color:#65729d; background: #b7cddf; font-size: 21px;" class="fas fa-dice"></i> Un Gioco a Caso</a></li>
+<li style="border-bottom:1px solid #CCC; margin: 12px 0px;"></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-abilita.html"><i style="color: #829f3c;" class="fas fa-gamepad"></i> Abilitá</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-azione.html"><i style="color: #bd86be;" class="fas fa-fighter-jet"></i> Azione</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-avventura.html"><i style="color: #adba65;" class="fas fa-running"></i> Avventura</a></li>
+<li><a href="//www.flashgames.it/giochi-flash/arcade.html"><i style="color: #00ffff;" class="fas fa-ghost"></i> Arcade</a></li>
+<li><a href="//www.flashgames.it/giochi-online/casino-online.html"><i style="color: orange;" class="fas fa-coins"></i> Casinó</a></li>
+<li><a href="//www.flashgames.it/giochi-flash/cucina.html"><i style="color: red;" class="fas fa-pizza-slice"></i> Cucina</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-divertenti.html"><i style="color: #883b3b;" class="fas fa-poo"></i> Divertenti</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-datavolo.html"><i class="fas fa-chess-board"></i> Da Tavolo</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-logica.html"><i style="color: #4ebec2;" class="fas fa-dice-d20"></i> Logica</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-puzzle.html"><i style="color: #69c468;" class="fas fa-puzzle-piece"></i> Puzzle</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-ragazze.html"><i style="color: #d2d21a;" class="fas fa-gem"></i> Ragazze</a></li>
+<li><a href="//www.flashgames.it/giochi-online/giochi-sportivi.html"><i style="color: #539fe1;" class="fas fa-tshirt"></i> Sport</a></li>
+</ul>
+</div>
+<div id="mainpage">
+<h1>The Roomz</h1>
+
+<style>
+@media only screen and (max-width: 1600px) { #C_1 { display:none; } }
+</style>
+<div id="C_1" class="nomobile" style="height:600px; position: fixed; top: 190px; left: 1500px;"></div>
+<div class="topinfo_gioco">
+Giocato: <strong>2.248.216</strong> volte |
+Voti: <div class="rating-box" style="font-size:12px;">
+<div class="rating" style="width:80%;"></div>
+</div>
+<div class="onlymobile" style="padding: 4px;"></div>
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebApplication","applicationCategory":"Game","url":"https://www.flashgames.it/the.roomz.html","name":"The Roomz","image":"https://www.flashgames.it/giochi/avventura/the.roomz/the.roomz.jpg","browserRequirements":"Flash","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"ratingCount":238,"bestRating":"5","worstRating":"0"},"description":"Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad..."}
+</script>
+<a class="tagslabel" href='/giochi/'></a></div>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@type": "Thing",
+				"@id": "/",
+				"name": "Flashgames.it"
+			}
+		}
+        
+		,{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+				"@type": "Thing",
+				"@id": "/giochi/avventura",
+				"name": "avventura"
+			}
+		}
+        
+        
+		,{
+			"@type": "ListItem",
+			"position": 3,
+			"item": {
+				"@type": "Thing",
+				"@id": "/giochi/",
+				"name": ""
+			}
+		}
+		
+	]
+}
+</script>
+<style>
+.topinfo_gioco { padding:12px 0px; }
+.div_gioco { background:#fff; width: min-content; padding: 16px; border-radius: 16px; min-width: 95%;  text-align:center; }
+#game { width: 640px; margin: 0px auto; height:440px; /*background:#fff;*/ }
+#game iframe { width: 640px; height:440px; }
+
+@media only screen and (max-width: 900px) {
+	.topinfo_gioco { text-align:center; color:#666; font-size:0.8em; padding:12px; }
+	.topinfo_gioco .tagslabel { font-size:13px; }
+	.div_gioco { width:auto; min-width: inherit; }
+	#game { width:100%; }
+	#game iframe { width:100%; }
+}
+</style>
+
+<div class="div_gioco">
+<div style="background:#323336;">
+<div id="game">
+<style>
+ @media only screen and (min-width: 800px) {
+	 #game { min-height:560px; }
+ }
+ </style>
+<div style="padding: 2%;font-weight: 600; color:#999;  background: #323336;">
+<i style="font-size: 4em; color: #c6bebe; margin: 20px 0px;" class="fas fa-info-circle"></i><br>
+The Roomz è un gioco in Flash, tecnologia non più supportata dai dispositivi Mobile e Desktop.
+<br>
+Ma non preoccuparti, abbiamo un gioco simile per te!<br>
+<br>
+<div class="giochi_rand boxshadow" style="width:300px;     margin: 0px auto;">
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Royal Cats" href="/royal.cats.html"><img alt="Royal Cats" src="//web2.flashgames.it/giochi/avventura/royal.cats/royal.cats.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Royal Cats" href="/royal.cats.html">
+Royal Cats</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/royal.cats.html">I tre gatti del castello è un po’ che non mangiano come si deve...</a>
+<a href="/royal.cats.html" class="tagslabel" style="background:orange; color:#fff; display:block; margin:6px 0px; padding: 12px;">Gioca</a>
+</div>
+</div>
+</div>
+</div>
+
+<div id="T_1"></div> 
+<style>
+.pulsantiera { flex-direction: row; flex-wrap: wrap; width: -webkit-fill-available; display: flex; justify-content: space-between; align-items: center; }
+.preferiti { background: #ff0000; font-size: 16px; font-weight: 700; padding: 8px 20px; margin: 8px 0px; color: #fff;}
+.like { margin:8px; }
+.like i { cursor:pointer; background: #ffffff; border: 1px solid #c3e6ff; color: #5077b8; }
+.like i:hover { background:#6b8ced; color:#fff; }
+.like .voted { background:#6b8ced; color:#fff; }
+.fa-share-square { padding: 10px 24px; margin-left: 12px; color: brown; border-radius: 6px; background: @antiquewhite!important;}
+[data-placeholder]:empty:before{
+  content: attr(data-placeholder);
+  color: #888;
+  font-style: italic;
+}
+.istruzioni { padding:12px; text-align:left; }
+.istruzioni_img { float:left; margin-right:20px; border-radius: 12px; }
+@media only screen and (max-width: 900px) { 
+	.istruzioni { padding:0px; margin:2px; }
+	.istruzioni_img { float:none; } 
+	.istruzioni p { font-size: 16px; color:#666; }
+}
+</style>
+<div class="pulsantiera">
+<div>
+<a class="tagslabel preferiti" href="javascript:void(0);" rel="add"><i class="far fa-heart"></i> Aggiungi ai Preferiti</a> </div>
+<div class="like">
+<i class="far fa-thumbs-up circle_icon " rel="like"></i>
+<i class="far fa-thumbs-down circle_icon " rel="dislike"></i>
+<div class="dropdown" style="display: inline-block;">
+<i class="far fa-share-square dropbtn"><span style="font-family: Arial, Helvetica, sans-serif; font-weight:600; font-size:12px; height: 18px;"> INVIA GIOCO </span> </i>
+<div class="dropdown-content" style="text-align:left;">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.flashgames.it/the.roomz.html" target="_new"><i class="fab fa-facebook"></i> Facebook</a>
+<a href="https://twitter.com/intent/tweet?url=https://www.flashgames.it/the.roomz.html" target="_blank"><i style="color:#09C" class="fab fa-twitter-square"></i> Twitter</a>
+<a href="whatsapp://send?text=https://www.flashgames.it/the.roomz.html%0ASfida? :-)" target="_blank"><i style="color:#6C3;" class="fab fa-whatsapp-square"></i> Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal_login" style="display:none; height:100%; width:100%; z-index:20; position:fixed; background:#000; top: 0; background: rgba(0, 0, 0, 0.68); left: 0;">
+<div class="boxshadow" style="width:400px; height:auto; font-size:15px;">
+<h2>Segnala un Problema</h2>
+The Roomz non si carica? Segnalacelo, provvederemo subito a verificarlo.<br><br>
+<a href="#" style="padding:10px 20px;" class="tagslabel segnala">Segnala</a>
+</div>
+</div>
+
+<div class="latest_box istruzioni">
+<h2 class="uppercase">Come si gioca a The Roomz</h2>
+<img class="istruzioni_img" alt="The Roomz" src="//web2.flashgames.it/giochi/avventura/the.roomz/the.roomz_m.jpg" width="180" height="106">
+<p>Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.<br />
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.<br />
+<br />
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.<br />
+<h3 style="margin-top: 50px;" class="uppercase"><i style="color: #ffffff; background: #4dc862;" class="fas fa-gamepad circle_icon"></i> Comandi di Gioco:</h3><p style="background: #f0f8ec; padding: 24px; border-radius: 8px;"><img align="absmiddle" src="/img/tasti.gif" alt="istruzioni" style="margin-right:5px; display:none;" /> Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla!</p></p>
+</div>
+</div>
+<br>
+
+<div class="commenti">
+<h2 class="uppercase">Commenti 80 </h2>
+<script>
+$(document).ready(function(){
+	// invio chat
+	$('.send_comment').click(function() {
+		var text = $('.commento_Box').text();
+		
+		if (text.length < 6) {
+			alert("Commento troppo breve");
+			return;
+		}
+		
+					window.location.replace("https://www.flashgames.it/registrazione.php"); 
+			return;
+			
+		
+		$.post("/include/apicenter.php?sendcomment",
+		  {
+			icona_gioco: "the.roomz",
+			testo: text
+		  },
+		  function(data, status){
+		 		$(".text_sent").append("<div class='commento_inviato'><strong></strong>: " + text + "</div>");
+				 $('.commento_Box, .send_comment').fadeOut();
+		  });
+	});
+	
+	// btn
+	$('.commento_Box').click(function() {
+			$('.send_comment').fadeIn();
+	});
+	
+});
+</script>
+<style>
+.commenti { margin: 12px;}
+.commento_inviato { padding: 12px; border-bottom: 1px solid #d5cece; margin-bottom: 6px;}
+.send_comment { border:none; padding:4px 12px; display:none; cursor:pointer;}
+</style>
+<div id="BLOCCO_COMM">
+<div class="commento_Box" contenteditable="true" data-placeholder="Scrivi un Commento..." style="background:#e1e1e1; padding:18px; margin:6px; border-radius:6px; max-width:800px;"></div>
+<button class="send_comment tagslabel">Invia</button>
+</div>
+<div class="text_sent"></div>
+<br>
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/bimbascemottola93">bimbascemottola93</a></strong>
+<br />
+ciao :D </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Domi_Domi">Domi_Domi</a></strong>
+<br />
+ciao </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/viciousross">viciousross</a></strong>
+<br />
+ma la due non ? memory? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/paradisovola">paradisovola</a></strong>
+<br />
+x 1 bastaspostare il kuadroioo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/paradisovola">paradisovola</a></strong>
+<br />
+perf aiutatemi nella 1!!!!! boo boo boo boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/paradisovola">paradisovola</a></strong>
+<br />
+la pas del primoooooooooooooooooboo boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/card">card</a></strong>
+<br />
+cm si fa il primoboo boo boo boo boo boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/5/896805/896805-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/aooo">aooo</a></strong>
+<br />
+ma come la passoword della prima stanza???????????????? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+35bell 36pine 37there </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/408481/408481-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/IOeTExsempre">IOeTExsempre</a></strong>
+<br />
+Ciao ragazzi!sn arr alla 34 , ma nn riesco proprio ad and avanti!mi date 1 mano,x favore?grazie a tutti/e... 3-12-2008... </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/408481/408481-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/IOeTExsempre">IOeTExsempre</a></strong>
+<br />
+syrus...gaia93...mi potete aiutare?sono nella 30...ho spostato una porta fake e ho trovato quella real...cosa devo scrivere ora? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/408481/408481-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/IOeTexsempre">IOeTexsempre</a></strong>
+<br />
+SCUSATE RAGAZZI...HO BISOGNO DELLA PASS DELLA STANZA 30 X APRIRE LA PORTA...GRAZIE </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+33baum 34sugcahutimsruy </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+34baum </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+sabri, x la 5 devi scrivere i tutti i 5 sensi fino a ke nn trovi quello giusto. qnd lo avrai trovato capurai cs fare cn la nuvoletta. ti dico ank ke la leva la devi tirare pi? volte prima che si fermi nella posizione giusta. </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/sabri5">sabri5</a></strong>
+<br />
+potete darmi una mano? solo grazie ai vostri aiuti :D sono arrivata alla 5...mi dite il procedimento? la parola l'ho letta, ma se ce la metto senza che ci ragiono ? inutile..finisce che devo uardare qui pure la 6...v </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/sabri5">sabri5</a></strong>
+<br />
+ho capito ce l'ho fatta!! grazie </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+32entangle </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+30faith 31kingdom </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+27blank 28dog 29origin </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+14hedgehog 15multiplicity 16system 17mistake 18spider 19remember 20craziness 21headache 22burning 23lore 24hunter 25imprisonment 26destiny </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/avatar/user/1/66211/66211-50.jpg" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gaia93">gaia93</a></strong>
+<br />
+i quickpass fino a dove sn arrivata sono: 1escape 2keeneye 3eviltown 4freedom 5hidden 6casting 7brainstorm 8delay 9hideout 10starlight 11themis 12power 13chappedmind </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/mrs92">mrs92</a></strong>
+<br />
+Ecco una soluzione!!!! The ROOMZ 1.Escape 2.Keeneye 3.Eviltown 4.161523518 + ingrain, growth, sunshine, rainfall 5.Hidden 6.Casting 7. 8. 9.Hideout 10. Light + Four stars + Constellation + Name it + Libra The Roomz Complete Walkthrough Room 1 * </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/mrs92">mrs92</a></strong>
+<br />
+Nella stanza 1 la password ? ESCAPE. </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/babybimba96">babybimba96</a></strong>
+<br />
+ma qual ? l prcedimento della 2? argh argh </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/babybimba96">babybimba96</a></strong>
+<br />
+aiuto la 1 nn m riesce aiutatemi sn nuova </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Yarikh">Yarikh</a></strong>
+<br />
+prova un po di volte e in entrambe i sensi. quando ce la fai senti un suono e la stanza lampeggia. i 3 fogli si riempiono di codici. devo ancora capirli </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Yarikh">Yarikh</a></strong>
+<br />
+#okkiverdi990: leggi tutti i foglietti, anche quelli bianchi... poi clicca e tieni cliccato facendo una spirale sopra la scritta </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Yarikh">Yarikh</a></strong>
+<br />
+e cos? via fino a ottenere VILTOWN. a questa password aggiungete prima la "e" e ottenete la password che sotto vi hanno gi? detto </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Yarikh">Yarikh</a></strong>
+<br />
+ora guardate la tastiera: ogni fila di lettere disegna con i tasti della tastiera una lettera. la prima fila ? (con molta fantasia) una V, la seconda una I </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Yarikh">Yarikh</a></strong>
+<br />
+x la 3: il numero in alto ? il numero di nepero che matematicamente si rappresenta con la lettera "e". scrivata e nell'HS System e leggete il biglietto </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/simpaticaaaaaaaa">simpaticaaaaaaaa</a></strong>
+<br />
+oooooooooo raga la n 4444444444 </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/simpaticaaaaaaaa">simpaticaaaaaaaa</a></strong>
+<br />
+aiuto perfavore sn disperata </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/simpaticaaaaaaaa">simpaticaaaaaaaa</a></strong>
+<br />
+come e il 1 codiceboo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/ely33">ely33</a></strong>
+<br />
+ma scusate con che procedeimento seite arrivati alla password dl 3? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nikkolotto">nikkolotto</a></strong>
+<br />
+potete dire i passaggi della 3???? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nikkolotto">nikkolotto</a></strong>
+<br />
+potete dire i passaggi della 3???? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nikkolotto">nikkolotto</a></strong>
+<br />
+potete dire i passaggi della 3???? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nikkolotto">nikkolotto</a></strong>
+<br />
+boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/TheEndIsNear">TheEndIsNear</a></strong>
+<br />
+la3? argh </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+ragazzi i passaggi della 7??pleaseboo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+#ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+argh </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+ragazzi un'aiutino!! </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+ma quale spirale?? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+vorrei sapere tutti i passaggi della 6!!Grazie#ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+grz 1000 nady!!!!!!:) </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+non so come aprire la cassaforte del 7 aiuto... </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+psw per il 6: casting </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+#ok ho fatto un passetto in pi? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+sono pure io bloccata al 6...ma che ci faccio con quella spirale </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+please la 6 cm si faaaaaa???boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+cm si fa la 6???oddio...:( </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+6!!!!!!!!!!!!!ke billuuuuuuu!!!:P </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+sto alla 5:D </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+ogni livello che passo mi tocca coiminciare da capo per vedre il successivo... uff </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/nady80">nady80</a></strong>
+<br />
+perch? io quando vado sul sito vedo tutto nero? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/skatergirl93">skatergirl93</a></strong>
+<br />
+sn un incapace sto solo alla 4boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/okkiverdi990">okkiverdi990</a></strong>
+<br />
+mi dite tutto il procedimento della 5??grazie... #ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/homer95">homer95</a></strong>
+<br />
+*** aiutatemi </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/homer95">homer95</a></strong>
+<br />
+help me c'? qualcuno che gioca??????????????#ok :o argh :Oo boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/homer95">homer95</a></strong>
+<br />
+aiutatemi sono alla 5boo boo boo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Bianca95">Bianca95</a></strong>
+<br />
+Io si k sn forte!!!!!!!! Le trovo tutte da sola(tanto k ho guardato tutto nelle istruzioni...hihihihihi:D :P )!! </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/Bianca95">Bianca95</a></strong>
+<br />
+ma xk nn mettete la soluzione della stanza 6??? Nn l'avete trovata??Dai dite la verit?...cn me n si puo' skerzare! Bianca95 ? ritornataaaaaaaaaaaa!!!!!!! Verso l'infinito e oltre!!!!!!!!!!!!!!!!!#ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/chikky">chikky</a></strong>
+<br />
+la 5 ? HIDDEN....e la sei nn la riesco a fare! dv si trova "la girandola???" pleeeeese spero di essere stata utile x qll k avevano kiesto le pass, ma le so sl g=fino alle 5........ cm si fa la 6??? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/chikky">chikky</a></strong>
+<br />
+allora la 1 ? ESCAPE; la 2 ? KEENEYE, la 3 ? EVILTOWN, la 4 ? 161523518+ le 4 parole </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/lailetta">lailetta</a></strong>
+<br />
+la psw della 6 please? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/lailetta">lailetta</a></strong>
+<br />
+la psw della 5 e' HIDDEN </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/sk8terinagirlNCISnco">sk8terinagirlNCISnco</a></strong>
+<br />
+sa#lve a tutti!! qualcuno mi sa dire l'intero procedimento della terza??:Oo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/damiano65">damiano65</a></strong>
+<br />
+cm si fa x la 4Aboo </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/damiano65">damiano65</a></strong>
+<br />
+nella 2A stanza mettete memory nell' hsSistem#ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/damiano65">damiano65</a></strong>
+<br />
+pass 1: Escape Pass 2: Keeneye Pass 3: Eviltown;) #ok </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/alepucci13">alepucci13</a></strong>
+<br />
+la 6 km si fa?parlate di 1 spirale...ke spirale???????? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/alepucci13">alepucci13</a></strong>
+<br />
+cmq nella 4 dovete inserire le 4 parole trovate(rainfall,sunshine,growth e ingrain)nell'HS sistem una x volta e la pallagialla si gonfier? fino a kadere sul pulsante tenendolo premuto e aprendo la porta:D </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/alepucci13">alepucci13</a></strong>
+<br />
+sn nlla 4 ho mexo power in numeri e poi se clikko il pulsante la porta si rikiude!ce un parola sul pulsante...ma poi? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/destructoremi">destructoremi</a></strong>
+<br />
+MI RINGRAZIERA' IL MONDO PER QUESTO! LA PASSWORD DELLA 2 E' KEENEYE E SI TROVA INSERENDO MEMORY(LETTA SUI MURI) NELL'HS SYSTEM E ESAMINANDO IL FOGLIO CHE TI DA! </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/panfolo">panfolo</a></strong>
+<br />
+Vi prego ho provato tutte le possibilit?!!!!!! ho six e 2 m y r o e poi non ho capito a cosa serve hs system, ho digit bricks e non succede nulla! </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/panfolo">panfolo</a></strong>
+<br />
+scusate ho letto tutta la tagboard ma non c'? pi? la pwd della 2 stanza... aiutoooooo please </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/simfra">simfra</a></strong>
+<br />
+scusate power in num cm ???? </div>
+</div>
+<br clear="all" />
+<div class="TFtable" style="padding:6px 0px; font-size:1em; color:#666; word-wrap: break-word;">
+<img style="border-radius:50%; width:50px; float:left;" src="//web2.flashgames.it/img/noavatar_m50.gif" />
+<div style="margin-left:70px;">
+<strong><a style="color:#666;" href="/user/gio55">gio55</a></strong>
+<br />
+xfavore ragazzi sn nuova e vorrei capire il senso della parola kiave della 3 </div>
+</div>
+<br clear="all" />
+</div>
+<br>
+<br>
+
+<h3>ALTRI GIOCHI SIMILI A THE ROOMZ</h3>
+<div id="giochi_random">
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/platform" title="giochi platform" class="txt_semplice">GIOCO platform</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Royal Cats" href="/royal.cats.html"><img alt="Royal Cats" src="//web2.flashgames.it/giochi/avventura/royal.cats/royal.cats_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Royal Cats" href="/royal.cats.html">
+Royal Cats</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/royal.cats.html">I tre gatti del castello è un po’ che non...</a>
+<a href="/royal.cats.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/fantasy" title="giochi fantasy" class="txt_semplice">GIOCO fantasy</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Legends of Necrodungeons" href="/legends.of.necrodungeons.html"><img alt="Legends of Necrodungeons" src="//web2.flashgames.it/giochi/avventura/legends.of.necrodungeons/legends.of.necrodungeons_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Legends of Necrodungeons" href="/legends.of.necrodungeons.html">
+Legends of</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/legends.of.necrodungeons.html">Il malvagio Lich minaccia di lanciare una...</a>
+<a href="/legends.of.necrodungeons.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/platform" title="giochi platform" class="txt_semplice">GIOCO platform</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Super Onion Boy" href="/super.onion.boy.html"><img alt="Super Onion Boy" src="//web2.flashgames.it/giochi/avventura/super.onion.boy/super.onion.boy_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Super Onion Boy" href="/super.onion.boy.html">
+Super Onion Boy</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/super.onion.boy.html">Se vi piacciono i grandi classici come Super...</a>
+<a href="/super.onion.boy.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/punta e clicca" title="giochi punta e clicca" class="txt_semplice">GIOCO punta e clicca</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a The Grudge" href="/the.grudge.html"><img alt="The Grudge" src="//web2.flashgames.it/giochi/avventura/the.grudge/the.grudge_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="The Grudge" href="/the.grudge.html">
+The Grudge</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/the.grudge.html">Dalla Sony Pictures, una spettacolare...</a>
+<a href="/the.grudge.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/uscita" title="giochi uscita" class="txt_semplice">GIOCO uscita</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Max and Mink" href="/max.and.mink.html"><img alt="Max and Mink" src="//web2.flashgames.it/giochi/avventura/max.and.mink/max.and.mink_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Max and Mink" href="/max.and.mink.html">
+Max and Mink</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/max.and.mink.html">Max e Mink sono due amici che avranno...</a>
+<a href="/max.and.mink.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/punta e clicca" title="giochi punta e clicca" class="txt_semplice">GIOCO punta e clicca</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Encerrada" href="/encerrada.html"><img alt="Encerrada" src="//web2.flashgames.it/giochi/avventura/encerrada/encerrada_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Encerrada" href="/encerrada.html">
+Encerrada</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/encerrada.html">Provate a scappare da una terrificante casa,...</a>
+<a href="/encerrada.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/rpg avventura" title="giochi rpg avventura" class="txt_semplice">GIOCO rpg avventura</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Dragonmyths" href="/dragonmyths.html"><img alt="Dragonmyths" src="//web2.flashgames.it/giochi/avventura/dragonmyths/dragonmyths_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Dragonmyths" href="/dragonmyths.html">
+Dragonmyths</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/dragonmyths.html">Preparatevi ad affrontare ogni tipo di...</a>
+<a href="/dragonmyths.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/punta e clicca" title="giochi punta e clicca" class="txt_semplice">GIOCO punta e clicca</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Adamo ed Eva - Adam & Eve Go" href="/adam.eve.go.html"><img alt="Adamo ed Eva - Adam & Eve Go" src="//web2.flashgames.it/giochi/avventura/adam.eve.go/adam.eve.go_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Adamo ed Eva - Adam & Eve Go" href="/adam.eve.go.html">
+Adamo ed Eva - Adam</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/adam.eve.go.html">Riuscirà il nostro Adamo a raggiungere la...</a>
+<a href="/adam.eve.go.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/platform" title="giochi platform" class="txt_semplice">GIOCO platform</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Wave Run" href="/wave.run.html"><img alt="Wave Run" src="//web2.flashgames.it/giochi/avventura/wave.run/wave.run_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Wave Run" href="/wave.run.html">
+Wave Run</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/wave.run.html">Correte da un lato all’altro del schermo...</a>
+<a href="/wave.run.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/arcade" title="giochi arcade" class="txt_semplice">GIOCO arcade</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Mazmorra.io" href="/mazmorra.html"><img alt="Mazmorra.io" src="//web2.flashgames.it/giochi/avventura/mazmorra/mazmorra_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Mazmorra.io" href="/mazmorra.html">
+Mazmorra.io</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/mazmorra.html">Mazmorra.io è un dungeon game multiplayer,...</a>
+<a href="/mazmorra.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/punta e clicca" title="giochi punta e clicca" class="txt_semplice">GIOCO punta e clicca</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Escape Game Island" href="/escape.game.island.html"><img alt="Escape Game Island" src="//web2.flashgames.it/giochi/avventura/escape.game.island/escape.game.island_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Escape Game Island" href="/escape.game.island.html">
+Escape Game Island</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/escape.game.island.html">Fuggite da un'isola piena zeppa di enigmi,...</a>
+<a href="/escape.game.island.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/simulazione" title="giochi simulazione" class="txt_semplice">GIOCO simulazione</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Last Wood" href="/last.wood.html"><img alt="Last Wood" src="//web2.flashgames.it/giochi/avventura/last.wood/last.wood_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Last Wood" href="/last.wood.html">
+Last Wood</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/last.wood.html">Due naufraghi sono in difficoltà, e stanno...</a>
+<a href="/last.wood.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/super mario" title="giochi super mario" class="txt_semplice">GIOCO super mario</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Super Mario HTML5" href="/super.mario.html5.html"><img alt="Super Mario HTML5" src="//web2.flashgames.it/giochi/avventura/super.mario.html5/super.mario.html5_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Super Mario HTML5" href="/super.mario.html5.html">
+Super Mario HTML5</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/super.mario.html5.html">Vi ricordate gli anni '90 e il mitico...</a>
+<a href="/super.mario.html5.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/3Dgame" title="giochi 3Dgame" class="txt_semplice">GIOCO 3Dgame</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Kogama Wipeout" href="/kogama.wipeout.html"><img alt="Kogama Wipeout" src="//web2.flashgames.it/giochi/avventura/kogama.wipeout/kogama.wipeout_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Kogama Wipeout" href="/kogama.wipeout.html">
+Kogama Wipeout</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/kogama.wipeout.html">Proiettati all'interno di una grafica...</a>
+<a href="/kogama.wipeout.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<div class="giochi_rand boxshadow">
+<div style="text-transform:uppercase; font-variant:small-caps; font-size:13px;">
+<a href="/giochi/ben10" title="giochi ben10" class="txt_semplice">GIOCO ben10</a>
+</div>
+<div style="margin-bottom:4px;">
+<a class="alpha" title="gioca a Ben 10 - Alien Device" href="/ben10.alien.device.html"><img alt="Ben 10 - Alien Device" src="//web2.flashgames.it/giochi/avventura/ben10.alien.device/ben10.alien.device_m.jpg" width="100%" border="0" style="border-radius:10px; margin:5px 0px 5px 0px; height:auto;" /></a>
+<a style=" font-weight:bold; color: #009; text-decoration:none; font-size:15px;  text-transform:uppercase;" title="Ben 10 - Alien Device" href="/ben10.alien.device.html">
+Ben 10 - Alien</a>
+</div>
+<a style="color:#666; font-size:0.9em;" href="/ben10.alien.device.html">Aiutate Ben 10, il nonno Max e il cugino...</a>
+<a href="/ben10.alien.device.html" class="tagslabel" style="background:orange; color:#fff; display:block; display: table; margin:6px 0px;">Gioca</a>
+</div>
+<br clear="all" />
+</div>
+</div> 
+</div>
+<footer>
+<strong style="color: #586ead;">FLASHGAMES.IT</strong> by <a title="FormatC LTD" rel="noopener" href="https://www.formatcltd.com" target="_blank"><img border="0" alt="FORMATC GROUP LTD" align="absmiddle" src="//web2.flashgames.it/img/logo_formatc.png" width="72" height="14"></a> 2003-2021 TUTTI I DIRITTI RISERVATI
+<div style="float:right;">
+<a href="https://www.flashgames.it" title="Giochi gratis online">Giochi Gratis</a> | <a title="Iscriviti" href="/registrazione.php">Iscriviti al sito </a> | <a href="https://www.flashgames.it/help/read.php?idgruppo=17&amp;q=265" class="txt_semplice">Cookies e Utilizzo del Sito</a> | <a href="https://www.flashgames.it/privacy.php" class="txt_semplice">Privacy</a> | <a href="/contatti.php">Scrivici</a>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js" integrity="sha512-eviLb3jW7+OaVLz5N3B5F0hpluwkLb8wTXHOTy0CyNaZM5IlShxX1nEbODak/C0k9UdsrWjqIBKOFY0ELCCArw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.plugins.js" integrity="sha512-+/Sdj6uywMdwvcdNCCbb4cSaiLiIz/tHyFr97ex++ynILaxFSW8u+fTMtJaTQza4BeU1RDMpWnh2Tl6XQVAjBA==" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+	$(function() {
+        $('.lazy').Lazy({
+          effect: "fadeIn",
+          effectTime: 300,
+        });
+    });
+  });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-324538-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-324538-2');
+</script>
+</body>
+</html>

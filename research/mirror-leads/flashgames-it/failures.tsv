@@ -1,0 +1,4 @@
+stage	target	error
+cdx	http://flashgames.it/the.roomz.html	RuntimeError('https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fflashgames.it%2Fthe.roomz.html&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&collapse=digest: <urlopen error [Errno 111] Connection refused>')
+page	https://web.archive.org/web/20111209104057id_/http://www.flashgames.it/the.roomz.html	RuntimeError('https://web.archive.org/web/20111209104057id_/http://www.flashgames.it/the.roomz.html: <urlopen error [Errno 111] Connection refused>')
+page	https://web.archive.org/web/20120127062746id_/http://www.flashgames.it:80/the.roomz.html	RuntimeError('https://web.archive.org/web/20120127062746id_/http://www.flashgames.it:80/the.roomz.html: <urlopen error [Errno 111] Connection refused>')
