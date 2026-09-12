@@ -1,0 +1,106 @@
+name: Probe Jeuxclic Roomz mirror
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-jeuxclic-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-research-writes
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and fingerprint surviving mirror SWF
+        shell: bash
+        run: |
+          set -u
+          ROOT="research/mirror-leads/jeuxclic"
+          mkdir -p "$ROOT"
+          OUT="$ROOT/4f38429db014a.swf"
+          URLS=(
+            'https://www.jeuxclic.com/jeux/4f38429db014a.swf'
+            'http://www.jeuxclic.com/jeux/4f38429db014a.swf'
+            'https://jeuxclic.com/jeux/4f38429db014a.swf'
+          )
+          : > "$ROOT/fetch-log.txt"
+          ok=0
+          for u in "${URLS[@]}"; do
+            echo "Trying $u" | tee -a "$ROOT/fetch-log.txt"
+            if curl -L --fail --retry 3 --retry-delay 2 --connect-timeout 15 --max-time 90 \
+                -A 'Mozilla/5.0' \
+                -e 'https://www.jeuxclic.com/jeux.php?id=2074283' \
+                -D "$ROOT/headers.txt" -o "$OUT.tmp" "$u" >>"$ROOT/fetch-log.txt" 2>&1; then
+              sig="$(head -c 3 "$OUT.tmp" 2>/dev/null || true)"
+              bytes="$(wc -c < "$OUT.tmp" 2>/dev/null || echo 0)"
+              echo "Signature=$sig bytes=$bytes" | tee -a "$ROOT/fetch-log.txt"
+              if [[ "$sig" == FWS || "$sig" == CWS || "$sig" == ZWS ]]; then
+                mv "$OUT.tmp" "$OUT"
+                ok=1
+                break
+              fi
+            fi
+            rm -f "$OUT.tmp"
+          done
+
+          if [[ $ok -eq 0 ]]; then
+            echo 'Mirror page exposes the SWF path, but direct binary fetch did not succeed in this run.' > "$ROOT/RESULT.md"
+            exit 0
+          fi
+
+          sha256sum "$OUT" | tee "$ROOT/SHA256SUM.txt"
+          file "$OUT" | tee "$ROOT/file.txt"
+          strings -a -n 4 "$OUT" > "$ROOT/strings.txt" || true
+          grep -Eai 'roomz|sciemka|about\.swf|check\.swf|rules\.swf|solutions\.swf|tescik\.swf|interface\.swf|loadRoom\.swf|Intro\.swf|ile\.txt|bonus\.txt|theroomz|dreamward|yoyo|\.swf|\.txt' "$ROOT/strings.txt" | head -n 500 > "$ROOT/interesting-strings.txt" || true
+
+          {
+            echo '# Jeuxclic Roomz mirror probe'
+            echo
+            echo '- Source page: https://www.jeuxclic.com/jeux.php?id=2074283'
+            echo '- Embedded SWF path advertised by page: /jeux/4f38429db014a.swf'
+            echo "- Bytes: $(wc -c < "$OUT")"
+            echo "- SHA-256: $(sha256sum "$OUT" | awk '{print $1}')"
+            echo "- SWF signature: $(head -c 3 "$OUT")"
+            echo
+            echo '## Comparison to repository SWFs'
+            found=0
+            while IFS= read -r f; do
+              [[ "$f" == "$OUT" ]] && continue
+              h="$(sha256sum "$f" | awk '{print $1}')"
+              if [[ "$h" == "$(sha256sum "$OUT" | awk '{print $1}')" ]]; then
+                echo "- Exact byte match: $f"
+                found=1
+              fi
+            done < <(find originals -type f -iname '*.swf' -print 2>/dev/null)
+            [[ $found -eq 0 ]] && echo '- No exact SHA-256 match among currently recovered repository SWFs.'
+            echo
+            echo '## Interesting strings'
+            sed 's/^/- `/' "$ROOT/interesting-strings.txt" | sed 's/$/`/'
+          } > "$ROOT/RESULT.md"
+
+      - name: Commit probe results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/mirror-leads/jeuxclic
+          if git diff --cached --quiet; then
+            echo "No probe material to commit."
+            exit 0
+          fi
+          git commit -m "Probe Jeuxclic mirror for surviving Roomz SWF"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
