@@ -1,0 +1,167 @@
+name: Mine every archived Forumer topic capture
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-all-forumer-captures.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mine exact archived topic captures for files mirrors and creator clues
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,re,html,time,hashlib
+
+          ROOT=Path('research/forumer-all-capture-mine'); ROOT.mkdir(parents=True,exist_ok=True)
+          SRC=Path('research/continued-hunt/forumer/viewtopic-availability.tsv')
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          with SRC.open(encoding='utf-8') as f:
+            rows=list(csv.DictReader(f,delimiter='\t'))
+          # One request per distinct archived digest/body.
+          selected=[];seen=set()
+          for r in rows:
+            k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+            if k in seen:continue
+            seen.add(k);selected.append(r)
+
+          def get(u,tries=4):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=40) as q:return q.read(),q.geturl()
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(1.5*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e;time.sleep(1.5*(n+1))
+            raise RuntimeError(str(last))
+
+          def textify(s):
+            s=html.unescape(s)
+            s=re.sub(r'(?is)<script.*?</script>|<style.*?</style>',' ',s)
+            s=re.sub(r'(?i)<br\s*/?>|</p>|</div>|</tr>|</li>','\n',s)
+            s=re.sub(r'<[^>]+>',' ',s)
+            s=re.sub(r'[ \t\r]+',' ',s)
+            s=re.sub(r'\n\s*\n+','\n',s)
+            return s.strip()
+
+          file_re=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+~@-]{1,220}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|ico|mp3|wav|flv|zip|rar|7z|exe|htm|html|php))(?:[?#][^\s"\'<>]*)?')
+          url_re=re.compile(r'https?://[^\s<>"\']+',re.I)
+          high_re=re.compile(r'(?i)check\.swf|sciemka\.swf|about\.swf|rules\.swf|solutions\.swf|tescik\.swf|ile\.txt|bonus\.txt|(?:\b|/)\w+\.swf\b|(?:\b|/)\w+\.txt\b|download|mirror|source\s*(?:file|code)?|full\s+(?:game|version)|attachment|upload|rapidshare|megaupload|mediafire|sendspace|filefront|freehost\.pl|yoyo\.pl|dreamward|roomz\.org|flashkit|stachu|ralfi')
+
+          failures=[];manifest=[];files=[];urls=[];contexts=[];creators=[]
+          def one(r):
+            arc=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+            b,final=get(arc)
+            s=b.decode('utf-8','replace'); txt=textify(s)
+            sha=hashlib.sha256(b).hexdigest()
+            title=''
+            m=re.search(r'(?is)<title[^>]*>(.*?)</title>',s)
+            if m:title=textify(m.group(1))
+            fs=[]
+            for m in file_re.finditer(txt):
+              token=m.group(1).rstrip('.,);:]')
+              if token not in fs:
+                a=max(0,m.start()-260);z=min(len(txt),m.end()+600);fs.append((token,txt[a:z]))
+            us=[]
+            for m in url_re.finditer(s):
+              u=html.unescape(m.group(0)).rstrip(').,;\'"')
+              low=u.lower()
+              if any(k in low for k in ('theroomz','roomz','freehost','yoyo','dreamward','flashkit','rapidshare','megaupload','mediafire','sendspace','filefront','.swf','.zip','.rar','.7z')) and u not in [x[0] for x in us]:
+                us.append((u,''))
+            cs=[]
+            for m in high_re.finditer(txt):
+              a=max(0,m.start()-350);z=min(len(txt),m.end()+900);c=re.sub(r'\s+',' ',txt[a:z])
+              if c not in cs:cs.append(c)
+            return r,title,len(b),sha,final,fs,us,cs
+
+          with ThreadPoolExecutor(max_workers=8) as ex:
+            futs={ex.submit(one,r):r for r in selected}
+            for fut in as_completed(futs):
+              r=futs[fut]
+              try:
+                r,title,n,sha,final,fs,us,cs=fut.result()
+                tid=r.get('topic_id','');ts=r.get('timestamp','');mapped=r.get('mapped_title','')
+                manifest.append([tid,mapped,ts,r.get('original',''),n,sha,final])
+                files += [[tid,mapped,ts,t,c] for t,c in fs]
+                urls += [[tid,mapped,ts,u,c] for u,c in us]
+                contexts += [[tid,mapped,ts,c] for c in cs]
+              except Exception as e:
+                failures.append([r.get('topic_id',''),r.get('timestamp',''),r.get('original',''),repr(e)])
+
+          def ded(data,key):
+            out=[];s=set()
+            for r in data:
+              k=key(r)
+              if k not in s:s.add(k);out.append(r)
+            return out
+          manifest=ded(manifest,lambda r:(r[0],r[2],r[5]))
+          files=ded(files,lambda r:(r[0],r[3].lower(),r[4]))
+          urls=ded(urls,lambda r:(r[0],r[3].lower()))
+          contexts=ded(contexts,lambda r:(r[0],r[3]))
+
+          known={'check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','blackandwhite.swf','hof.swf','redirect.swf','rrr.swf','data.swf','roomzmain.swf','undertr.swf','interface.swf','intro.swf','loadroom.swf','frame.swf','cannon.txt'}
+          novel=[]; target=[]
+          for r in files:
+            base=r[3].replace('\\','/').rsplit('/',1)[-1].lower()
+            if base in known: target.append(r)
+            elif not base.startswith(('viewtopic.','posting.','profile.','index.','search.','viewforum.')): novel.append(r)
+
+          def tsv(n,h,data):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(data)
+          tsv('manifest.tsv',['topic_id','mapped_title','timestamp','original','bytes','sha256','final_url'],sorted(manifest,key=lambda r:(int(r[0]) if r[0].isdigit() else 999999,r[2])))
+          tsv('all-file-tokens.tsv',['topic_id','mapped_title','timestamp','token','context'],files)
+          tsv('target-file-tokens.tsv',['topic_id','mapped_title','timestamp','token','context'],target)
+          tsv('novel-file-tokens.tsv',['topic_id','mapped_title','timestamp','token','context'],novel)
+          tsv('interesting-urls.tsv',['topic_id','mapped_title','timestamp','url','context'],urls)
+          tsv('high-value-contexts.tsv',['topic_id','mapped_title','timestamp','context'],contexts)
+          tsv('failures.tsv',['topic_id','timestamp','original','error'],failures)
+
+          summary=['# Every archived Forumer topic capture mine','',
+                   f'- Distinct archived bodies selected: {len(selected)}',
+                   f'- Bodies recovered: {len(manifest)}',
+                   f'- Failures: {len(failures)}',
+                   f'- File-token hits: {len(files)}',
+                   f'- Known target-file mentions: {len(target)}',
+                   f'- Potentially novel file tokens: {len(novel)}',
+                   f'- Interesting outbound URLs: {len(urls)}',
+                   f'- High-value contexts: {len(contexts)}','',
+                   '## Known target-file mentions','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`: {r[4][:900]}' for r in target[:250]] or ['- None.']
+          summary += ['', '## Potentially novel file tokens','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`: {r[4][:900]}' for r in novel[:400]] or ['- None.']
+          summary += ['', '## Interesting outbound URLs','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`' for r in urls[:400]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:600]))
+          PY
+      - name: Commit results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/forumer-all-capture-mine
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine every known archived Forumer topic capture"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
