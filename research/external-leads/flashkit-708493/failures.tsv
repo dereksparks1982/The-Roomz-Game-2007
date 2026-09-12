@@ -1,0 +1,8 @@
+stage	target	error
+cdx	http://board.flashkit.com/board/showthread.php?t=708493	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/2006id_/http://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/200610id_/http://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/200611id_/http://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/2007id_/https://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/2008id_/https://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay-probe	https://web.archive.org/web/2010id_/https://board.flashkit.com/board/showthread.php?708493-game-The-Roomz	RuntimeError('<urlopen error [Errno 111] Connection refused>')
