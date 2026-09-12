@@ -1,0 +1,218 @@
+name: Sweep public web archives
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sweep-public-archives.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sweep-archives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query Common Crawl and Arquivo.pt
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError, URLError
+          import csv, json, re, time
+
+          ROOT = Path('research/public-archive-sweep')
+          CC = ROOT / 'commoncrawl'
+          ARQ = ROOT / 'arquivo-pt'
+          ROOT.mkdir(parents=True, exist_ok=True)
+          CC.mkdir(parents=True, exist_ok=True)
+          ARQ.mkdir(parents=True, exist_ok=True)
+
+          UA = 'The-Roomz-2007-preservation/1.0 (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          targets = [
+              'check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf',
+              'ile.txt','bonus.txt'
+          ]
+          patterns = [
+              'theroomz.yoyo.pl/*',
+              'www.theroomz.yoyo.pl/*',
+              'dreamward.home.pl/theroomz/*',
+              'dreamwardgames.com/theroomz/*',
+              'theroomz.org/*',
+              'www.theroomz.org/*',
+          ]
+          interesting = re.compile(r'(?:' + '|'.join(re.escape(x) for x in targets) + r'|\.swf(?:$|[?#])|\.zip(?:$|[?#])|\.rar(?:$|[?#])|\.7z(?:$|[?#])|\.txt(?:$|[?#]))', re.I)
+
+          def get(url, tries=5, delay=2):
+              last = None
+              for n in range(tries):
+                  try:
+                      req = Request(url, headers={'User-Agent': UA})
+                      with urlopen(req, timeout=60) as r:
+                          return r.read()
+                  except (HTTPError, URLError, TimeoutError) as e:
+                      last = e
+                      time.sleep(delay * (n + 1))
+              raise RuntimeError(f'{url}: {last}')
+
+          failures = []
+          hits = []
+
+          # Common Crawl: select up to 4 crawls/year for 2008-2018, spreading coverage.
+          try:
+              colls = json.loads(get('https://index.commoncrawl.org/collinfo.json'))
+          except Exception as e:
+              colls = []
+              failures.append(['commoncrawl','collinfo','',repr(e)])
+
+          by_year = {}
+          for c in colls:
+              m = re.search(r'CC-MAIN-(\d{4})-', c.get('id',''))
+              if not m:
+                  continue
+              y = int(m.group(1))
+              if 2008 <= y <= 2018:
+                  by_year.setdefault(y, []).append(c)
+
+          selected = []
+          for y in sorted(by_year):
+              arr = sorted(by_year[y], key=lambda c: c['id'])
+              if len(arr) <= 4:
+                  selected.extend(arr)
+              else:
+                  idxs = sorted(set([0, len(arr)//3, (2*len(arr))//3, len(arr)-1]))
+                  selected.extend(arr[i] for i in idxs)
+
+          cc_rows = []
+          for c in selected:
+              cid = c['id']
+              api = c['cdx-api'] if 'cdx-api' in c else f'https://index.commoncrawl.org/{cid}-index'
+              for pat in patterns:
+                  q = api + '?' + urlencode({'url':pat,'output':'json','filter':'status:200'})
+                  try:
+                      raw = get(q)
+                      text = raw.decode('utf-8','replace')
+                      safe = re.sub(r'[^A-Za-z0-9._-]+','_',pat)
+                      (CC / f'{cid}__{safe}.jsonl').write_text(text, encoding='utf-8')
+                      for line in text.splitlines():
+                          line=line.strip()
+                          if not line.startswith('{'):
+                              continue
+                          try:
+                              r=json.loads(line)
+                          except Exception:
+                              continue
+                          url = r.get('url','')
+                          if interesting.search(url):
+                              row=['commoncrawl',cid,r.get('timestamp',''),url,r.get('status',''),r.get('mime',''),r.get('digest',''),r.get('filename',''),r.get('offset',''),r.get('length','')]
+                              cc_rows.append(row)
+                              hits.append(row)
+                  except Exception as e:
+                      failures.append(['commoncrawl',cid,pat,repr(e)])
+                  time.sleep(0.8)
+
+          # Arquivo.pt CDX inventory. One prefix query per historical host/path.
+          arq_rows = []
+          for pat in patterns:
+              params = {'url':pat,'output':'json','filter':'statuscode:200','collapse':'urlkey'}
+              q = 'https://arquivo.pt/wayback/cdx?' + urlencode(params)
+              try:
+                  raw = get(q)
+                  safe = re.sub(r'[^A-Za-z0-9._-]+','_',pat)
+                  (ARQ / f'{safe}.json').write_bytes(raw)
+                  text = raw.decode('utf-8','replace')
+                  try:
+                      data = json.loads(text)
+                  except Exception:
+                      data = None
+
+                  parsed=[]
+                  if isinstance(data,list) and data:
+                      if isinstance(data[0],list):
+                          hdr=data[0]
+                          for vals in data[1:]:
+                              parsed.append(dict(zip(hdr, vals)))
+                      elif isinstance(data[0],dict):
+                          parsed=data
+                  else:
+                      # Some CDX servers emit whitespace-separated lines.
+                      for line in text.splitlines():
+                          parts=line.split()
+                          if len(parts)>=7:
+                              parsed.append({'urlkey':parts[0],'timestamp':parts[1],'original':parts[2],'mimetype':parts[3],'statuscode':parts[4],'digest':parts[5],'length':parts[6]})
+
+                  for r in parsed:
+                      url = r.get('original') or r.get('url') or ''
+                      if interesting.search(url):
+                          row=['arquivo.pt','',r.get('timestamp',''),url,r.get('statuscode',''),r.get('mimetype',''),r.get('digest',''),'','',''+str(r.get('length',''))]
+                          arq_rows.append(row)
+                          hits.append(row)
+              except Exception as e:
+                  failures.append(['arquivo.pt','',pat,repr(e)])
+              time.sleep(1.2)
+
+          # Dedupe evidence lines while preserving source/index distinctions.
+          dedup=[]; seen=set()
+          for r in hits:
+              k=tuple(str(x) for x in r)
+              if k not in seen:
+                  seen.add(k); dedup.append(r)
+
+          with (ROOT/'interesting-hits.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['archive','crawl','timestamp','url','status','mime','digest','warc_file','offset','length'])
+              w.writerows(dedup)
+
+          with (ROOT/'failures.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['archive','crawl','pattern','error'])
+              w.writerows(failures)
+
+          exact=[]
+          target_low=[t.lower() for t in targets]
+          for r in dedup:
+              path=r[3].lower().split('?',1)[0].split('#',1)[0]
+              if any(path.endswith('/'+t) for t in target_low):
+                  exact.append(r)
+          with (ROOT/'exact-missing-file-hits.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
+              w.writerow(['archive','crawl','timestamp','url','status','mime','digest','warc_file','offset','length'])
+              w.writerows(exact)
+
+          summary=[
+              '# Public archive sweep', '',
+              f'- Common Crawl indexes sampled: {len(selected)}',
+              f'- Historical host/path patterns queried: {len(patterns)}',
+              f'- Interesting asset/archive hits: {len(dedup)}',
+              f'- Exact hits for currently missing filenames: {len(exact)}',
+              f'- Query failures: {len(failures)}', '',
+              '## Exact missing-file hits',''
+          ]
+          if exact:
+              for r in exact:
+                  summary.append(f'- {r[0]} {r[1]} {r[2]} {r[3]}')
+          else:
+              summary.append('- None in this sweep.')
+          summary += ['', '## Interesting URLs', '']
+          for r in dedup[:200]:
+              summary.append(f'- {r[0]} {r[1]} {r[2]} {r[3]}')
+          (ROOT/'SUMMARY.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:230]))
+          PY
+
+      - name: Commit archive sweep results
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/public-archive-sweep
+          if git diff --cached --quiet; then
+            echo "No archive sweep material to commit."
+          else
+            git commit -m "Add Common Crawl and Arquivo.pt Roomz archive sweep"
+            git push
+          fi
