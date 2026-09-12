@@ -1,0 +1,170 @@
+name: Disassemble recovered Roomz loader ActionScript
+
+on:
+  push:
+    paths:
+      - '.github/workflows/disassemble-roomz-loaders.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  disassemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse AVM1 actions in recovered SWFs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import struct,zlib,re,csv,hashlib
+
+          ROOT=Path('research/avm1-loader-disassembly'); ROOT.mkdir(parents=True,exist_ok=True)
+          files=[]
+          files += sorted(Path('originals/recovered/freehost-era').glob('RoomzMain_*.swf'))
+          files += sorted(Path('originals/recovered/yoyo').glob('RoomzMain_*.swf'))
+          files += sorted(Path('originals/recovered/demo').glob('*.swf'))
+
+          names={
+            0x04:'NextFrame',0x05:'PreviousFrame',0x06:'Play',0x07:'Stop',0x08:'ToggleQuality',0x09:'StopSounds',
+            0x0A:'Add',0x0B:'Subtract',0x0C:'Multiply',0x0D:'Divide',0x0E:'Equals',0x0F:'Less',0x10:'And',0x11:'Or',0x12:'Not',
+            0x13:'StringEquals',0x14:'StringLength',0x15:'StringExtract',0x17:'Pop',0x18:'ToInteger',0x1C:'GetVariable',0x1D:'SetVariable',
+            0x20:'SetTarget2',0x21:'StringAdd',0x22:'GetProperty',0x23:'SetProperty',0x24:'CloneSprite',0x25:'RemoveSprite',0x26:'Trace',
+            0x27:'StartDrag',0x28:'EndDrag',0x29:'StringLess',0x2A:'Throw',0x2B:'CastOp',0x2C:'ImplementsOp',
+            0x30:'RandomNumber',0x31:'MBStringLength',0x32:'CharToAscii',0x33:'AsciiToChar',0x34:'GetTime',0x35:'MBStringExtract',
+            0x36:'MBCharToAscii',0x37:'MBAsciiToChar',0x3A:'Delete',0x3B:'Delete2',0x3C:'DefineLocal',0x3D:'CallFunction',0x3E:'Return',
+            0x3F:'Modulo',0x40:'NewObject',0x41:'DefineLocal2',0x42:'InitArray',0x43:'InitObject',0x44:'TypeOf',0x45:'TargetPath',
+            0x46:'Enumerate',0x47:'Add2',0x48:'Less2',0x49:'Equals2',0x4A:'ToNumber',0x4B:'ToString',0x4C:'PushDuplicate',
+            0x4D:'StackSwap',0x4E:'GetMember',0x4F:'SetMember',0x50:'Increment',0x51:'Decrement',0x52:'CallMethod',0x53:'NewMethod',
+            0x54:'InstanceOf',0x55:'Enumerate2',0x60:'BitAnd',0x61:'BitOr',0x62:'BitXor',0x63:'BitLShift',0x64:'BitRShift',0x65:'BitURShift',
+            0x66:'StrictEquals',0x67:'Greater',0x68:'StringGreater',0x69:'Extends',0x81:'GotoFrame',0x83:'GetURL',0x87:'StoreRegister',
+            0x88:'ConstantPool',0x8A:'WaitForFrame',0x8B:'SetTarget',0x8C:'GoToLabel',0x8D:'WaitForFrame2',0x8E:'DefineFunction2',
+            0x8F:'Try',0x94:'With',0x96:'Push',0x99:'Jump',0x9A:'GetURL2',0x9B:'DefineFunction',0x9D:'If',0x9E:'Call',0x9F:'GotoFrame2'
+          }
+
+          def decompress(b):
+            if b[:3]==b'CWS': return b'FWS'+b[3:8]+zlib.decompress(b[8:])
+            return b
+
+          def cstr(d,p):
+            q=d.find(b'\0',p)
+            if q<0:q=len(d)
+            return d[p:q].decode('latin1','replace'),q+1
+
+          def pushvals(d,consts):
+            out=[];p=0
+            while p<len(d):
+              t=d[p];p+=1
+              try:
+                if t==0:
+                  v,p=cstr(d,p);out.append(('str',v))
+                elif t==1:
+                  out.append(('float',struct.unpack_from('<f',d,p)[0]));p+=4
+                elif t==2:out.append(('null',None))
+                elif t==3:out.append(('undefined',None))
+                elif t==4:out.append(('register',d[p]));p+=1
+                elif t==5:out.append(('bool',bool(d[p])));p+=1
+                elif t==6:
+                  raw=d[p:p+8]; p+=8
+                  raw=raw[4:8]+raw[0:4]
+                  out.append(('double',struct.unpack('<d',raw)[0]))
+                elif t==7:out.append(('int',struct.unpack_from('<I',d,p)[0]));p+=4
+                elif t==8:
+                  i=d[p];p+=1;out.append(('const8',consts[i] if i<len(consts) else f'#{i}'))
+                elif t==9:
+                  i=struct.unpack_from('<H',d,p)[0];p+=2;out.append(('const16',consts[i] if i<len(consts) else f'#{i}'))
+                else:
+                  out.append((f'type{t}',d[p:].hex()));break
+              except Exception:
+                out.append(('decode-error',d[p:].hex()));break
+            return out
+
+          def actions(d,context):
+            out=[];p=0;consts=[];idx=0
+            while p<len(d):
+              op=d[p];p+=1
+              if op==0:break
+              payload=b''
+              if op>=0x80:
+                if p+2>len(d):break
+                n=struct.unpack_from('<H',d,p)[0];p+=2
+                payload=d[p:p+n];p+=n
+              desc=names.get(op,f'Action_{op:02X}')
+              extra=''
+              if op==0x88 and len(payload)>=2:
+                cnt=struct.unpack_from('<H',payload,0)[0];q=2;pool=[]
+                for _ in range(cnt):
+                  s,q=cstr(payload,q);pool.append(s)
+                consts=pool;extra=' '+repr(pool)
+              elif op==0x96:
+                extra=' '+repr(pushvals(payload,consts))
+              elif op==0x83:
+                u,q=cstr(payload,0);t,_=cstr(payload,q);extra=f' url={u!r} target={t!r}'
+              elif op==0x9A and payload:
+                extra=f' flags=0x{payload[0]:02x}'
+              elif op in (0x8B,0x8C):
+                s,_=cstr(payload,0);extra=' '+repr(s)
+              elif op in (0x81,0x87,0x99,0x9D,0x9F):
+                extra=' data='+payload.hex()
+              out.append(f'{context} A{idx:04d} {desc}{extra}')
+              idx+=1
+            return out
+
+          def skip_rect(b,p=8):
+            nbits=b[p]>>3
+            bits=5+4*nbits
+            return p+(bits+7)//8
+
+          def walk_tags(b,start,end,ctx,out,depth=0):
+            p=start;tagno=0
+            while p+2<=end:
+              rec=struct.unpack_from('<H',b,p)[0];p+=2
+              code=rec>>6;n=rec&63
+              if n==63:
+                if p+4>end:break
+                n=struct.unpack_from('<I',b,p)[0];p+=4
+              body=b[p:p+n];p+=n;tagno+=1
+              here=f'{ctx}/tag{tagno}:code{code}'
+              if code==0:break
+              if code==12:out.extend(actions(body,here+'/DoAction'))
+              elif code==59 and len(body)>=2:out.extend(actions(body[2:],here+'/DoInitAction'))
+              elif code==39 and len(body)>=4:
+                walk_tags(body,4,len(body),here+'/DefineSprite',out,depth+1)
+
+          rows=[]; summaries=[]
+          for path in files:
+            b=path.read_bytes();u=decompress(b)
+            p=skip_rect(u,8)+4
+            lines=[];walk_tags(u,p,len(u),path.name,lines)
+            text='\n'.join(lines)+'\n'
+            (ROOT/(path.stem+'.avm1.txt')).write_text(text,encoding='utf-8')
+            swfrefs=[]
+            for line in lines:
+              for m in re.finditer(r"['\"]([^'\"]+\.(?:swf|txt|htm|html|php))['\"]",line,re.I):
+                if m.group(1) not in swfrefs:swfrefs.append(m.group(1))
+            relevant=[x for x in lines if re.search(r'(?i)\.swf|load|room|intro|frame|geturl|stringadd|add2',x)]
+            rows.append([str(path),len(b),hashlib.sha256(b).hexdigest(),len(lines),' | '.join(swfrefs)])
+            summaries += [f'## {path.name}','',f'- Action instructions: {len(lines)}',f'- Explicit file refs: {", ".join(swfrefs) if swfrefs else "None"}','', '```text']+relevant[:350]+['```','']
+
+          with (ROOT/'manifest.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['file','bytes','sha256','action_instructions','explicit_refs']);w.writerows(rows)
+          (ROOT/'RESULT.md').write_text('# AVM1 loader disassembly\n\n'+'\n'.join(summaries),encoding='utf-8')
+          print('\n'.join(['# AVM1 loader disassembly','']+summaries[:1200]))
+          PY
+      - name: Commit ActionScript disassembly
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/avm1-loader-disassembly
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Disassemble recovered Roomz loader ActionScript"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
