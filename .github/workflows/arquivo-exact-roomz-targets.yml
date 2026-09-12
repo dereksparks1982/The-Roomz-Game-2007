@@ -1,0 +1,185 @@
+name: Scan Arquivo.pt for Roomz targets
+
+on:
+  push:
+    paths:
+      - '.github/workflows/arquivo-exact-roomz-targets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-arquivo-targets
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query Arquivo.pt for exact and prefix Roomz targets
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,hashlib,json,re,time
+
+          ROOT=Path('research/arquivo-target-scan')
+          REC=ROOT/'recovered'
+          ROOT.mkdir(parents=True,exist_ok=True); REC.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          names=['check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','BlackAndWhite.swf','hof.swf','Redirect.swf','yoyo.pnq','cannon.txt']
+          roots=[
+            'http://www.theroomz.yoyo.pl/','http://theroomz.yoyo.pl/',
+            'http://www.theroomz.org/','http://theroomz.org/',
+            'http://dreamward.home.pl/theroomz/','http://dreamwardgames.com/theroomz/'
+          ]
+          exact=[]
+          for root in roots:
+              for n in names:
+                  exact.append(root+n)
+                  if n=='BlackAndWhite.swf': exact.append(root+'paper/'+n)
+          exact=list(dict.fromkeys(exact))
+          prefixes=[r+'*' for r in roots]
+
+          def get(url,tries=3,timeout=30):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as resp:
+                          return resp.read(),resp.geturl()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.2*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          queries=[]
+          for u in exact: queries.append(('exact',u))
+          for u in prefixes: queries.append(('prefix',u))
+
+          rows=[]; failures=[]
+          def one(kind,u):
+              params={'url':u,'output':'json'}
+              if kind=='prefix': params['collapse']='urlkey'
+              q='https://arquivo.pt/wayback/cdx?'+urlencode(params)
+              b,_=get(q,tries=2,timeout=25)
+              return kind,u,b
+
+          with ThreadPoolExecutor(max_workers=12) as ex:
+              futs={ex.submit(one,k,u):(k,u) for k,u in queries}
+              for fut in as_completed(futs):
+                  k,u=futs[fut]
+                  try:
+                      k,u,b=fut.result(); text=b.decode('utf-8','replace')
+                      try:data=json.loads(text)
+                      except Exception:data=None
+                      parsed=[]
+                      if isinstance(data,list) and data:
+                          if isinstance(data[0],list):
+                              hdr=data[0]; parsed=[dict(zip(hdr,v)) for v in data[1:]]
+                          elif isinstance(data[0],dict): parsed=data
+                      for r in parsed:
+                          orig=r.get('original') or r.get('url') or ''
+                          rows.append([k,u,r.get('timestamp',''),orig,r.get('statuscode',''),r.get('mimetype',''),r.get('digest',''),str(r.get('length',''))])
+                  except Exception as e:
+                      failures.append([k,u,repr(e)])
+
+          # dedupe and identify target names / interesting hidden paths
+          dr=[]; seen=set()
+          for r in rows:
+              key=tuple(r[2:])
+              if key not in seen:seen.add(key);dr.append(r)
+          targets={x.lower() for x in names}
+          exacthits=[]; interesting=[]
+          for r in dr:
+              u=r[3].lower().split('?',1)[0].rstrip('/')
+              base=u.rsplit('/',1)[-1]
+              if base in targets: exacthits.append(r)
+              if base in targets or any(x in u for x in ['/paper/','/this/','/danger/']) or re.search(r'\.(?:swf|zip|rar|7z|txt|pnq)$',u,re.I):
+                  interesting.append(r)
+
+          # Try replaying exact hits directly from Arquivo.pt.
+          recovered=[]
+          known={}
+          for p in Path('originals').rglob('*'):
+              if p.is_file():
+                  try:known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+                  except Exception:pass
+
+          def fetch_capture(r):
+              ts,orig=r[2],r[3]
+              candidates=[
+                f'https://arquivo.pt/wayback/{ts}id_/{orig}',
+                f'https://arquivo.pt/wayback/{ts}/{orig}'
+              ]
+              last=''
+              for au in candidates:
+                  try:
+                      b,final=get(au,tries=2,timeout=35)
+                      return r,au,b,None
+                  except Exception as e:last=repr(e)
+              return r,candidates[0],None,last
+
+          with ThreadPoolExecutor(max_workers=8) as ex:
+              futs=[ex.submit(fetch_capture,r) for r in exacthits]
+              for fut in as_completed(futs):
+                  r,au,b,err=fut.result()
+                  if b is None:
+                      failures.append(['replay',r[3],err]);continue
+                  sha=hashlib.sha256(b).hexdigest(); sig=b[:3].decode('latin1','replace')
+                  safe=re.sub(r'[^A-Za-z0-9._-]+','_',Path(urlparse(r[3]).path).name or 'object')
+                  out=REC/f'{r[2]}__{sha[:12]}__{safe}'
+                  out.write_bytes(b)
+                  recovered.append([r[2],r[3],len(b),sha,sig,known.get(sha,''),str(out),au])
+
+          def tsv(path,header,data):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(data)
+          hdr=['query_kind','query_url','timestamp','original','status','mime','digest','length']
+          tsv(ROOT/'all-results.tsv',hdr,dr)
+          tsv(ROOT/'exact-target-hits.tsv',hdr,exacthits)
+          tsv(ROOT/'interesting-hits.tsv',hdr,interesting)
+          tsv(ROOT/'recovered.tsv',['timestamp','original','bytes','sha256','signature','exact_repo_match','saved_file','replay_url'],recovered)
+          tsv(ROOT/'failures.tsv',['stage','target','error'],failures)
+
+          valid=[r for r in recovered if r[4] in ('FWS','CWS','ZWS') or r[1].lower().endswith(('.txt','.pnq'))]
+          summary=['# Arquivo.pt Roomz target scan','',
+                   f'- Exact URL variants queried: {len(exact)}',
+                   f'- Host-prefix inventories queried: {len(prefixes)}',
+                   f'- Distinct archive records returned: {len(dr)}',
+                   f'- Exact target filename hits: {len(exacthits)}',
+                   f'- Interesting Roomz/file hits: {len(interesting)}',
+                   f'- Exact-hit objects replayed: {len(recovered)}',
+                   f'- Valid SWF/text-ish recovered objects: {len(valid)}',
+                   f'- Failures: {len(failures)}','',
+                   '## Exact target hits','']
+          summary += [f'- {r[2]} {r[4]} {r[5]} {r[3]}' for r in exacthits] or ['- None.']
+          summary += ['', '## Recovered exact-hit objects','']
+          summary += [f'- `{r[1]}` {r[2]} bytes sha256 `{r[3]}` saved `{r[6]}`' for r in recovered] or ['- None.']
+          summary += ['', '## Other interesting hits','']
+          summary += [f'- {r[2]} {r[3]}' for r in interesting[:250]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:250]))
+          PY
+
+      - name: Commit Arquivo scan safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/arquivo-target-scan
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Scan Arquivo.pt for missing Roomz targets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
