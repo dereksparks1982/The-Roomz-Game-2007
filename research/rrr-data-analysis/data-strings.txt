@@ -1,0 +1,7 @@
+_global
+_level0
+Array
+length
+Math
+round
+GNGO
