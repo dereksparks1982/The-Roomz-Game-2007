@@ -1,0 +1,5 @@
+http://theroomz.yoyo.pl
+http://www.theroomz.yoyo.pl
+loadRoom.swf
+Intro.swf
+frame.swf
