@@ -1,0 +1,125 @@
+name: Recover Roomz server and site migration topics directly
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-forumer-migration-topics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query Wayback directly for high-value topic IDs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          import json,re,html,time,csv,hashlib
+
+          ROOT=Path('research/forumer-migration-topics'); ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          titles={'3':'UPDATE LIST','54':'Server change','70':'the Roomz Site','95':'The Roomz Break','128':'New roomz - BUG-FIXING','137':'theroomz.org :D','144':'Admin changes'}
+
+          def get(u,tries=4,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl()
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(1.3*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e; time.sleep(1.3*(n+1))
+            raise RuntimeError(str(last))
+
+          hits=[]; failures=[]
+          for tid,title in titles.items():
+            for base in ('http://theroomz.19.forumer.com/viewtopic.php','http://theroomz.19.forumer.com:80/viewtopic.php'):
+              target=f'{base}?t={tid}'
+              params={'url':target,'matchType':'prefix','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','from':'2006','to':'2013'}
+              try:
+                b,_=get('https://web.archive.org/cdx/search/cdx?'+urlencode(params),tries=3)
+                data=json.loads(b)
+                if data:
+                  hdr=data[0]
+                  for row in data[1:]:
+                    r=dict(zip(hdr,row));r['topic_id']=tid;r['topic_title']=title;hits.append(r)
+              except Exception as e:failures.append(['cdx',tid,target,repr(e)])
+
+          seen=set(); uniq=[]
+          for r in sorted(hits,key=lambda x:(x['topic_id'],x['timestamp'])):
+            k=r.get('digest') or (r['timestamp'],r['original'])
+            if k not in seen:seen.add(k);uniq.append(r)
+
+          def textify(s):
+            s=html.unescape(s)
+            s=re.sub(r'(?is)<script.*?</script>|<style.*?</style>',' ',s)
+            s=re.sub(r'(?i)<br\s*/?>|</p>|</div>|</tr>|</li>','\n',s)
+            s=re.sub(r'<[^>]+>',' ',s)
+            s=re.sub(r'[ \t\r]+',' ',s)
+            s=re.sub(r'\n\s*\n+','\n',s)
+            return s.strip()
+
+          url_re=re.compile(r'https?://[^\s<>"\']+',re.I)
+          file_re=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+~@-]{1,220}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|ico|mp3|wav|flv|zip|rar|7z|exe|htm|html|php))(?:[?#][^\s"\'<>]*)?')
+          manifest=[]; posts=[]; urls=[]; files=[]
+          for r in uniq:
+            arc=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+            try:
+              b,final=get(arc)
+              s=b.decode('utf-8','replace');txt=textify(s);sha=hashlib.sha256(b).hexdigest()
+              manifest.append([r['topic_id'],r['topic_title'],r['timestamp'],r['original'],len(b),sha,final])
+              posts.append([r['topic_id'],r['topic_title'],r['timestamp'],txt])
+              for m in url_re.finditer(s):
+                u=html.unescape(m.group(0)).rstrip(').,;\'"')
+                if any(k in u.lower() for k in ('roomz','freehost','yoyo','dreamward','forumer','.swf','.zip','.rar','.7z','.txt')):urls.append([r['topic_id'],r['topic_title'],r['timestamp'],u])
+              for m in file_re.finditer(txt):files.append([r['topic_id'],r['topic_title'],r['timestamp'],m.group(1).rstrip('.,);:]')])
+            except Exception as e:failures.append(['replay',r['topic_id'],r['original'],repr(e)])
+
+          def ded(d,key):
+            o=[];s=set()
+            for r in d:
+              k=key(r)
+              if k not in s:s.add(k);o.append(r)
+            return o
+          posts=ded(posts,lambda r:(r[0],r[3]));urls=ded(urls,lambda r:(r[0],r[3].lower()));files=ded(files,lambda r:(r[0],r[3].lower()))
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          tsv('manifest.tsv',['topic_id','topic_title','timestamp','original','bytes','sha256','final_url'],manifest)
+          tsv('posts.tsv',['topic_id','topic_title','timestamp','text'],posts)
+          tsv('interesting-urls.tsv',['topic_id','topic_title','timestamp','url'],urls)
+          tsv('file-tokens.tsv',['topic_id','topic_title','timestamp','token'],files)
+          tsv('failures.tsv',['stage','topic_id','target','error'],failures)
+          summary=['# Direct recovery of Roomz migration/admin topics','',f'- Distinct archived bodies: {len(uniq)}',f'- Replayed bodies: {len(manifest)}',f'- Unique text bodies: {len(posts)}',f'- Interesting URLs: {len(urls)}',f'- File tokens: {len(files)}',f'- Failures: {len(failures)}','','## URLs','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`' for r in urls] or ['- None.']
+          summary += ['','## File tokens','']+[f'- t={r[0]} **{r[1]}** `{r[3]}`' for r in files] if files else ['','## File tokens','','- None.']
+          summary += ['','## Topic text','']
+          for r in posts:summary += [f'### t={r[0]} {r[1]} @ {r[2]}','',r[3][:9000],'']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:1200]))
+          PY
+      - name: Commit migration-topic recovery
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1981982@gmail.com"
+          git add research/forumer-migration-topics
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover Roomz server and site migration topics"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
