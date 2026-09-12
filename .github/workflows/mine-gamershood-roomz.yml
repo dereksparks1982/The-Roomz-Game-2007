@@ -1,0 +1,183 @@
+name: Mine GamersHood Roomz thread
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-gamershood-roomz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-gamershood-probe
+  cancel-in-progress: false
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crawl current and archived GamersHood thread
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urljoin, urlencode
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import csv, html, json, re, time
+
+          ROOT=Path('research/mirror-leads/gamershood')
+          PAGES=ROOT/'pages'; PAGES.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          def get(url,tries=3,timeout=30):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:
+                          return r.read(), r.geturl()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.2*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          def clean(s):
+              s=html.unescape(s or '')
+              s=re.sub(r'<br\s*/?>','\n',s,flags=re.I)
+              s=re.sub(r'<[^>]+>',' ',s)
+              s=re.sub(r'\s+',' ',s)
+              return s.strip()
+
+          base='https://forums.gamershood.com/free-online-offline-games/riddles/2818-/'
+          urls=[base]+[base+f'page{n}' for n in range(2,141)]
+          failures=[]; fetched=[]; links=[]; hits=[]
+          high=re.compile(r'theroomz|yoyo\.pl|dreamward|roomz\.org|download|mirror|server|creator|stachu|ralfi|\.swf\b|\.zip\b|\.rar\b|\.7z\b|room\s*4[0-5]|bonus|full\s*(?:game|version)',re.I)
+          urlre=re.compile(r'https?://[^\s<>"\']+',re.I)
+
+          def one(i,u):
+              body,final=get(u,tries=2,timeout=25)
+              return i,u,final,body
+
+          with ThreadPoolExecutor(max_workers=10) as ex:
+              futs={ex.submit(one,i,u):(i,u) for i,u in enumerate(urls,1)}
+              for fut in as_completed(futs):
+                  i,u=futs[fut]
+                  try:
+                      i,u,final,body=fut.result()
+                      text=body.decode('utf-8','replace')
+                      plain=clean(text)
+                      # Detect obvious duplicate/error pagination by looking for post numbers/text anyway.
+                      fname=f'page-{i:03d}.html'; (PAGES/fname).write_bytes(body)
+                      fetched.append([i,u,final,len(body),fname])
+                      for m in urlre.finditer(html.unescape(text)):
+                          x=m.group(0).rstrip(').,;\'"')
+                          if 'gamershood.com' not in x or re.search(r'theroomz|yoyo|dreamward|\.swf|\.zip|\.rar|\.7z',x,re.I):
+                              links.append([i,final,x])
+                      for m in high.finditer(plain):
+                          a=max(0,m.start()-260); b=min(len(plain),m.end()+520)
+                          hits.append([i,final,re.sub(r'\s+',' ',plain[a:b])])
+                  except Exception as e:
+                      failures.append(['current',u,repr(e)])
+
+          # Deduplicate by context / URL.
+          dl=[]; seen=set()
+          for r in links:
+              k=r[2]
+              if k not in seen: seen.add(k); dl.append(r)
+          dh=[]; seen=set()
+          for r in hits:
+              k=r[2]
+              if k not in seen: seen.add(k); dh.append(r)
+
+          # Wayback inventory for historical GamersHood thread URLs. This can expose old outgoing URLs lost in current rendering.
+          cdx_rows=[]
+          cdx_queries=[
+              'forums.gamershood.com/showthread.php?t=2818*',
+              'www.gamershood.com/forum/showthread.php?t=2818*',
+              'gamershood.com/forum/showthread.php?t=2818*',
+              'forums.gamershood.com/free-online-offline-games/riddles/2818-*'
+          ]
+          for pat in cdx_queries:
+              q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':pat,'output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','collapse':'digest'})
+              try:
+                  raw,_=get(q,tries=2,timeout=35); data=json.loads(raw)
+                  if data:
+                      hdr=data[0]; cdx_rows += [dict(zip(hdr,v)) for v in data[1:]]
+              except Exception as e:
+                  failures.append(['wayback-cdx',pat,repr(e)])
+
+          # Select a manageable spread of distinct archived bodies and extract old outbound URLs / high-value text.
+          arc=[]; seen=set()
+          for r in sorted(cdx_rows,key=lambda x:x.get('timestamp','')):
+              k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+              if k not in seen: seen.add(k); arc.append(r)
+          if len(arc)>100:
+              idxs=sorted(set(round(i*(len(arc)-1)/99) for i in range(100)))
+              arc=[arc[i] for i in idxs]
+          archived_hits=[]; archived_links=[]
+          for r in arc:
+              au=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+              try:
+                  body,_=get(au,tries=2,timeout=30)
+                  text=body.decode('utf-8','replace'); plain=clean(text)
+                  for m in urlre.finditer(html.unescape(text)):
+                      x=m.group(0).rstrip(').,;\'"')
+                      if re.search(r'theroomz|yoyo|dreamward|\.swf|\.zip|\.rar|\.7z',x,re.I):
+                          archived_links.append([r['timestamp'],r['original'],x])
+                  for m in high.finditer(plain):
+                      a=max(0,m.start()-260); b=min(len(plain),m.end()+520)
+                      archived_hits.append([r['timestamp'],r['original'],re.sub(r'\s+',' ',plain[a:b])])
+              except Exception as e:
+                  failures.append(['wayback-page',au,repr(e)])
+
+          def write(path,header,rows):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(header); w.writerows(rows)
+          write(ROOT/'current-pages.tsv',['page','requested','final','bytes','file'],sorted(fetched))
+          write(ROOT/'current-outbound-urls.tsv',['page','source','url'],dl)
+          write(ROOT/'current-high-value-context.tsv',['page','source','context'],dh)
+          write(ROOT/'wayback-outbound-urls.tsv',['timestamp','source','url'],archived_links)
+          write(ROOT/'wayback-high-value-context.tsv',['timestamp','source','context'],archived_hits)
+          write(ROOT/'failures.tsv',['stage','target','error'],failures)
+
+          allurls=[]; us=set()
+          for r in dl:
+              if r[2] not in us: us.add(r[2]); allurls.append(r[2])
+          for r in archived_links:
+              if r[2] not in us: us.add(r[2]); allurls.append(r[2])
+          summary=['# GamersHood Roomz thread mining','',
+                   f'- Current pages fetched: {len(fetched)}',
+                   f'- Distinct current outbound URLs of interest: {len(dl)}',
+                   f'- Current high-value contexts: {len(dh)}',
+                   f'- Distinct Wayback bodies selected: {len(arc)}',
+                   f'- Archived outbound URL hits: {len(archived_links)}',
+                   f'- Archived high-value contexts: {len(archived_hits)}',
+                   f'- Failures: {len(failures)}','',
+                   '## Outbound URLs','']
+          summary += [f'- {u}' for u in allurls[:300]] or ['- None.']
+          summary += ['', '## High-value current contexts','']
+          summary += [f'- p{r[0]}: {r[2][:1000]}' for r in dh[:100]]
+          summary += ['', '## High-value archived contexts','']
+          summary += [f'- {r[0]}: {r[2][:1000]}' for r in archived_hits[:100]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:180]))
+          PY
+
+      - name: Commit results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/mirror-leads/gamershood
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine GamersHood history for Roomz recovery leads"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
