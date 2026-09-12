@@ -1,0 +1,147 @@
+name: Mine high-value Forumer announcement topics
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-forumer-announcements.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover project, server, site, and bug-fix announcements
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,re,html,time,hashlib
+
+          ROOT=Path('research/forumer-announcement-mine'); ROOT.mkdir(parents=True,exist_ok=True)
+          SRC=Path('research/continued-hunt/forumer/viewtopic-availability.tsv')
+          WANTED={'3','6','9','18','54','70','95','111','128','137','144'}
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          with SRC.open(encoding='utf-8') as f:
+            rows=[r for r in csv.DictReader(f,delimiter='\t') if r.get('topic_id') in WANTED]
+          selected=[]; seen=set()
+          for r in rows:
+            k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+            if k in seen: continue
+            seen.add(k); selected.append(r)
+
+          def get(u,tries=3):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=35) as q:return q.read(),q.geturl()
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504): break
+                time.sleep(1.2*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e; time.sleep(1.2*(n+1))
+            raise RuntimeError(str(last))
+
+          def textify(s):
+            s=html.unescape(s)
+            s=re.sub(r'(?is)<script.*?</script>|<style.*?</style>',' ',s)
+            s=re.sub(r'(?i)<br\s*/?>|</p>|</div>|</tr>|</li>','\n',s)
+            s=re.sub(r'<[^>]+>',' ',s)
+            s=re.sub(r'[ \t\r]+',' ',s)
+            s=re.sub(r'\n\s*\n+','\n',s)
+            return s.strip()
+
+          url_re=re.compile(r'https?://[^\s<>"\']+',re.I)
+          file_re=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+~@-]{1,220}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|ico|mp3|wav|flv|zip|rar|7z|exe|htm|html|php))(?:[?#][^\s"\'<>]*)?')
+          failures=[]; manifests=[]; posts=[]; files=[]; urls=[]
+
+          def one(r):
+            arc=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+            b,final=get(arc); s=b.decode('utf-8','replace'); txt=textify(s)
+            title=''
+            m=re.search(r'(?is)<title[^>]*>(.*?)</title>',s)
+            if m:title=textify(m.group(1))
+            fs=[]
+            for m in file_re.finditer(txt):
+              t=m.group(1).rstrip('.,);:]')
+              if t not in fs:fs.append(t)
+            us=[]
+            for m in url_re.finditer(s):
+              u=html.unescape(m.group(0)).rstrip(').,;\'"')
+              if u not in us:us.append(u)
+            return r,title,b,final,txt,fs,us
+
+          with ThreadPoolExecutor(max_workers=6) as ex:
+            futs={ex.submit(one,r):r for r in selected}
+            for fut in as_completed(futs):
+              r=futs[fut]
+              try:
+                r,title,b,final,txt,fs,us=fut.result()
+                tid=r.get('topic_id',''); ts=r.get('timestamp',''); mapped=r.get('mapped_title','')
+                sha=hashlib.sha256(b).hexdigest()
+                manifests.append([tid,mapped,ts,r.get('original',''),len(b),sha,final,title])
+                posts.append([tid,mapped,ts,title,txt])
+                files += [[tid,mapped,ts,x] for x in fs]
+                urls += [[tid,mapped,ts,x] for x in us if any(k in x.lower() for k in ('roomz','freehost','yoyo','dreamward','forumer','.swf','.zip','.rar','.7z','.txt'))]
+              except Exception as e:
+                failures.append([r.get('topic_id',''),r.get('timestamp',''),r.get('original',''),repr(e)])
+
+          def ded(data,key):
+            out=[]; s=set()
+            for r in data:
+              k=key(r)
+              if k not in s:s.add(k);out.append(r)
+            return out
+          posts=ded(posts,lambda r:(r[0],r[4]))
+          files=ded(files,lambda r:(r[0],r[3].lower()))
+          urls=ded(urls,lambda r:(r[0],r[3].lower()))
+
+          def tsv(name,head,data):
+            with (ROOT/name).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(head);w.writerows(data)
+          tsv('manifest.tsv',['topic_id','mapped_title','timestamp','original','bytes','sha256','final_url','page_title'],manifests)
+          tsv('posts.tsv',['topic_id','mapped_title','timestamp','page_title','text'],posts)
+          tsv('file-tokens.tsv',['topic_id','mapped_title','timestamp','token'],files)
+          tsv('interesting-urls.tsv',['topic_id','mapped_title','timestamp','url'],urls)
+          tsv('failures.tsv',['topic_id','timestamp','original','error'],failures)
+
+          summary=['# High-value Forumer announcement mine','',
+                   f'- Distinct archived bodies selected: {len(selected)}',
+                   f'- Bodies recovered: {len(manifests)}',
+                   f'- Unique text bodies: {len(posts)}',
+                   f'- File tokens: {len(files)}',
+                   f'- Interesting URLs: {len(urls)}',
+                   f'- Failures: {len(failures)}','',
+                   '## File tokens','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`' for r in files] or ['- None.']
+          summary += ['', '## Interesting URLs','']
+          summary += [f'- t={r[0]} **{r[1]}** `{r[3]}`' for r in urls] or ['- None.']
+          summary += ['', '## Recovered topic text','']
+          for r in sorted(posts,key=lambda x:(int(x[0]),x[2])):
+            summary += [f'### t={r[0]} {r[1]} @ {r[2]}','',r[4][:7000],'']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:1000]))
+          PY
+      - name: Commit announcement evidence safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/forumer-announcement-mine
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine high-value Roomz announcement topics"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
