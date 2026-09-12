@@ -1,4 +1,5 @@
-url	error
-https://www.reddit.com/r/lostmedia/comments/z11xux.json?raw_json=1	<HTTPError 403: 'Blocked'>
-https://old.reddit.com/r/lostmedia/comments/z11xux/.json?raw_json=1	<HTTPError 403: 'Blocked'>
-https://www.reddit.com/r/lostmedia/comments/z11xux/partially_lost_a_flash_game_by_the_name_of_the/.json?raw_json=1	<HTTPError 403: 'Blocked'>
+source	url	error
+reddit	https://www.reddit.com/r/lostmedia/comments/z11xux.json?raw_json=1	<HTTPError 403: 'Blocked'>
+reddit	https://old.reddit.com/r/lostmedia/comments/z11xux/.json?raw_json=1	<HTTPError 403: 'Blocked'>
+pullpush	https://api.pullpush.io/comment?link_id=z11xux&size=100&sort=asc	<HTTPError 429: 'Too Many Requests'>
+pullpush	https://api.pullpush.io/reddit/search/comment/?link_id=z11xux&size=100&sort=asc	<HTTPError 429: 'Too Many Requests'>
