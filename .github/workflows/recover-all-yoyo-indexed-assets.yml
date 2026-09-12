@@ -1,0 +1,144 @@
+name: Recover every indexed Yoyo-era Roomz asset
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-all-yoyo-indexed-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay and preserve all indexed Yoyo artifacts
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from urllib.parse import urlparse
+          import json,time,hashlib,csv,re,html,mimetypes
+
+          ROOT=Path('research/yoyo-complete-recovery');ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered';REC.mkdir(exist_ok=True)
+          src=Path('research/continued-hunt/public-archives/wayback__theroomz.yoyo.pl_.json')
+          data=json.loads(src.read_text(encoding='utf-8'))
+          hdr=data[0];rows=[dict(zip(hdr,r)) for r in data[1:]]
+          rows=[r for r in rows if r.get('statuscode')=='200']
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          # Preserve one representative per archive digest, but retain URL/timestamp manifest for all.
+          unique=[];seen=set()
+          for r in sorted(rows,key=lambda x:(x.get('timestamp',''),x.get('original',''))):
+            k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+            if k in seen:continue
+            seen.add(k);unique.append(r)
+
+          def get(u,tries=4,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as q:return q.read(),q.geturl(),dict(q.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504):break
+                time.sleep(1.2*(n+1))
+              except (URLError,TimeoutError) as e:last=e;time.sleep(1.2*(n+1))
+            raise RuntimeError(repr(last))
+
+          existing={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:existing[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except:pass
+
+          manifest=[];fails=[];refs=[]
+          for i,r in enumerate(unique,1):
+            ts=r['timestamp'];orig=r['original'];arc=f'https://web.archive.org/web/{ts}id_/{orig}'
+            try:
+              b,final,h=get(arc,tries=3)
+              sha=hashlib.sha256(b).hexdigest()
+              path=urlparse(orig).path
+              base=path.rsplit('/',1)[-1] or 'index.html'
+              base=re.sub(r'[^A-Za-z0-9._-]+','_',base) or 'index.html'
+              mime=r.get('mimetype','') or h.get('Content-Type','').split(';')[0]
+              # Give extensionless directories useful names.
+              if '.' not in base:
+                if mime.startswith('text/html'):base += '.html'
+                elif mime.startswith('text/plain'):base += '.txt'
+                elif mime=='application/x-shockwave-flash':base += '.swf'
+              fn=f'{ts}__{sha[:12]}__{base}'
+              (REC/fn).write_bytes(b)
+              status='NEW' if sha not in existing else 'already:'+existing[sha]
+              manifest.append([ts,orig,r.get('statuscode',''),mime,len(b),sha,r.get('digest',''),fn,status,final])
+              # Pull refs from textual bodies for another generation of leads.
+              if mime.startswith('text/') or base.lower().endswith(('.html','.htm','.txt','.pnq','.js')):
+                s=b.decode('latin1','replace')
+                pats=[r'''(?i)(?:href|src|movie|value)\s*=\s*["']?([^"' >]+)''',r'''(?i)https?://[^\s"'<>]+''']
+                for pat in pats:
+                  for m in re.finditer(pat,s):
+                    x=html.unescape(m.group(1) if m.lastindex else m.group(0)).strip().rstrip(');,')
+                    refs.append([ts,orig,fn,x])
+            except Exception as e:fails.append([ts,orig,repr(e)])
+            if i%20==0:time.sleep(1)
+
+          def ded(data,key):
+            out=[];s=set()
+            for r in data:
+              k=key(r)
+              if k not in s:s.add(k);out.append(r)
+            return out
+          refs=ded(refs,lambda r:(r[1],r[3]))
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          tsv('manifest.tsv',['timestamp','original','status','mime','bytes','sha256','cdx_digest','file','repo_status','final_url'],manifest)
+          tsv('references.tsv',['timestamp','original','file','reference'],refs)
+          tsv('failures.tsv',['timestamp','original','error'],fails)
+
+          swfs=[r for r in manifest if r[3]=='application/x-shockwave-flash' or r[1].lower().endswith('.swf')]
+          textish=[r for r in manifest if r[3].startswith('text/') or r[1].lower().endswith(('.txt','.pnq','.htm','.html'))]
+          new=[r for r in manifest if r[8]=='NEW']
+          summary=['# Complete Yoyo indexed-asset recovery','',
+                   f'- HTTP-200 inventory rows: {len(rows)}',f'- Unique archive digests selected: {len(unique)}',
+                   f'- Objects replayed: {len(manifest)}',f'- New byte-identities vs current originals: {len(new)}',
+                   f'- SWF captures recovered: {len(swfs)}',f'- Text/page captures recovered: {len(textish)}',
+                   f'- References extracted: {len(refs)}',f'- Replay failures: {len(fails)}','','## SWFs','']
+          summary += [f'- **{r[8]}** {r[0]} `{r[1]}` {r[4]} bytes sha256 `{r[5]}` -> `{r[7]}`' for r in swfs] or ['- None.']
+          summary += ['','## Text / hidden artifacts','']
+          summary += [f'- **{r[8]}** {r[0]} `{r[1]}` {r[4]} bytes -> `{r[7]}`' for r in textish[:250]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Promote newly recovered Yoyo originals and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/yoyo-complete-recovery');out=Path('originals/recovered/yoyo-indexed');out.mkdir(parents=True,exist_ok=True)
+          p=root/'manifest.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('repo_status')!='NEW':continue
+                src=root/'recovered'/r['file'];dst=out/r['file']
+                if src.exists() and not dst.exists():shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/yoyo-complete-recovery originals/recovered/yoyo-indexed
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover complete indexed Yoyo Roomz archive"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
