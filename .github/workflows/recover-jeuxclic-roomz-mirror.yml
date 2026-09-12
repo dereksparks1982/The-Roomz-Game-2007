@@ -1,0 +1,143 @@
+name: Recover Jeuxclic Roomz mirror SWF
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-jeuxclic-roomz-mirror.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch live and archived Jeuxclic Roomz SWF
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from urllib.parse import urlencode
+          import hashlib,json,csv,time,re,zlib,struct
+
+          ROOT=Path('research/external-leads/jeuxclic-roomz');ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered';REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          urls=[
+            'https://www.jeuxclic.com/jeux/4f38429db014a.swf',
+            'http://www.jeuxclic.com/jeux/4f38429db014a.swf',
+            'https://jeuxclic.com/jeux/4f38429db014a.swf',
+            'http://jeuxclic.com/jeux/4f38429db014a.swf',
+            'https://www.gamesflow.com/jeux/4f38429db014a.swf',
+            'http://www.gamesflow.com/jeux/4f38429db014a.swf'
+          ]
+
+          def get(u,tries=3,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA,'Referer':'https://www.jeuxclic.com/jeux.php?id=2074283'}),timeout=timeout) as r:
+                  return r.read(),r.geturl(),getattr(r,'status',200),dict(r.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504): break
+                time.sleep(1.2*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e;time.sleep(1.2*(n+1))
+            raise RuntimeError(repr(last))
+
+          existing={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:existing[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except:pass
+
+          rows=[];fails=[];candidates=[]
+          # Live fetches
+          for u in urls:
+            try:
+              b,final,st,h=get(u,tries=2)
+              candidates.append(('live','',u,b,final,h))
+            except Exception as e:fails.append(['live',u,'',repr(e)])
+
+          # Exact Wayback inventory for each spelling.
+          for u in urls[:4]:
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','collapse':'digest','from':'2007','to':'2020'})
+            try:
+              b,final,st,h=get(q,tries=2,timeout=25);data=json.loads(b)
+              if data:
+                hdr=data[0]
+                for rr in data[1:]:
+                  r=dict(zip(hdr,rr));ts=r['timestamp'];orig=r['original']
+                  arc=f'https://web.archive.org/web/{ts}id_/{orig}'
+                  try:
+                    body,fin2,st2,h2=get(arc,tries=3)
+                    candidates.append(('wayback',ts,orig,body,fin2,h2))
+                  except Exception as e:fails.append(['replay',orig,ts,repr(e)])
+            except Exception as e:fails.append(['cdx',u,'',repr(e)])
+
+          seen=set()
+          for kind,ts,u,b,final,h in candidates:
+            sha=hashlib.sha256(b).hexdigest()
+            if sha in seen:continue
+            seen.add(sha)
+            valid=len(b)>100 and b[:3] in (b'FWS',b'CWS',b'ZWS')
+            status=('NEW' if sha not in existing else 'already:'+existing[sha]) if valid else 'invalid'
+            fn=''
+            strings=[];rooms=[]
+            if valid:
+              fn=f'{kind}__{ts or "current"}__{sha[:12]}__4f38429db014a.swf'
+              (REC/fn).write_bytes(b)
+              try:
+                raw=b
+                if b[:3]==b'CWS':raw=b'FWS'+b[3:8]+zlib.decompress(b[8:])
+                for m in re.finditer(rb'[ -~]{4,}',raw):
+                  s=m.group().decode('latin1','replace')
+                  if any(k in s.lower() for k in ('room','check.swf','intro.swf','theroomz','password','bonus')):strings.append(s[:500])
+                for m in re.finditer(rb'room\d+',raw,re.I):
+                  s=m.group().decode('ascii','ignore').lower()
+                  if s not in rooms:rooms.append(s)
+              except Exception:pass
+            rows.append([kind,ts,u,len(b),sha,b[:3].decode('latin1','replace'),status,fn,','.join(rooms),' | '.join(strings[:40]),final])
+
+          with (ROOT/'results.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['source','timestamp','url','bytes','sha256','signature','status','file','room_tokens','interesting_strings','final_url']);w.writerows(rows)
+          with (ROOT/'failures.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['stage','target','timestamp','error']);w.writerows(fails)
+          good=[r for r in rows if r[6].startswith(('NEW','already:'))]
+          summary=['# Jeuxclic The Roomz mirror recovery','',f'- Distinct fetched bodies: {len(rows)}',f'- Valid SWFs: {len(good)}',f'- New vs repo: {sum(r[6]=="NEW" for r in good)}',f'- Failures: {len(fails)}','','## Valid SWFs','']
+          summary += [f'- **{r[6]}** {r[0]} {r[1] or "current"} `{r[2]}` — {r[3]} bytes, sha256 `{r[4]}`, room tokens `{r[8] or "none"}` -> `{r[7]}`' for r in good] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Promote genuinely new mirror SWF and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/external-leads/jeuxclic-roomz');out=Path('originals/recovered/portal-mirrors');out.mkdir(parents=True,exist_ok=True)
+          p=root/'results.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('status')=='NEW' and r.get('file'):
+                  src=root/'recovered'/r['file'];dst=out/r['file']
+                  if src.exists() and not dst.exists():shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/external-leads/jeuxclic-roomz originals/recovered/portal-mirrors
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover Jeuxclic mirror of The Roomz"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
