@@ -1,0 +1,115 @@
+name: Recover cannon.txt and hidden path clues
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-cannon-and-robots.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-cannon-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover exact archived files and inspect robots
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          import hashlib, re, time
+
+          ROOT=Path('research/newly-recovered/cannon-and-robots')
+          ORIG=Path('originals/recovered/runtime-data')
+          ROOT.mkdir(parents=True,exist_ok=True); ORIG.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          def get(url,tries=5,timeout=35):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:
+                          return r.read(), r.geturl(), dict(r.headers)
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.5*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          entries=[
+            ('cannon.txt','20071114203520','http://www.theroomz.yoyo.pl:80/cannon.txt'),
+            ('robots-yoyo-20070703.txt','20070703063940','http://www.theroomz.yoyo.pl:80/robots.txt'),
+            ('robots-yoyo-20070817.txt','20070817060529','http://www.theroomz.yoyo.pl:80/robots.txt'),
+            ('robots-org-20070622.txt','20070622002441','http://www.theroomz.org:80/robots.txt'),
+            ('robots-org-20071028.txt','20071028072751','http://www.theroomz.org:80/robots.txt'),
+            ('robots-dreamward-20141225.txt','20141225011300','http://dreamwardgames.com/theroomz//robots.txt')
+          ]
+          rows=[]; failures=[]; hidden=[]
+          cannon_bytes=None
+          for name,ts,orig in entries:
+              au=f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                  b,final,h=get(au)
+                  (ROOT/name).write_bytes(b)
+                  sha=hashlib.sha256(b).hexdigest()
+                  rows.append([name,ts,orig,len(b),sha,final])
+                  if name=='cannon.txt': cannon_bytes=b
+                  if 'robots' in name:
+                      text=b.decode('utf-8','replace')
+                      for line in text.splitlines():
+                          m=re.match(r'\s*(?:Disallow|Allow)\s*:\s*(\S+)',line,re.I)
+                          if m: hidden.append([name,m.group(1),line.strip()])
+              except Exception as e:
+                  failures.append([name,au,repr(e)])
+
+          if cannon_bytes is not None:
+              (ORIG/'cannon.txt').write_bytes(cannon_bytes)
+              # Preserve a readable copy too; do not alter original bytes.
+              (ROOT/'cannon-decoded.txt').write_text(cannon_bytes.decode('utf-8','replace'),encoding='utf-8')
+
+          import csv
+          def tsv(path,header,data):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(header); w.writerows(data)
+          tsv(ROOT/'manifest.tsv',['file','timestamp','original_url','bytes','sha256','fetched_url'],rows)
+          tsv(ROOT/'robots-paths.tsv',['snapshot','path','directive'],hidden)
+          tsv(ROOT/'failures.tsv',['file','archive_url','error'],failures)
+
+          summary=['# cannon.txt recovery and robots-path mining','',
+                   f'- Archived objects recovered: {len(rows)}',
+                   f'- robots.txt path directives extracted: {len(hidden)}',
+                   f'- Failures: {len(failures)}','']
+          if cannon_bytes is not None:
+              summary += ['## cannon.txt','',
+                          f'- Bytes: {len(cannon_bytes)}',
+                          f'- SHA-256: {hashlib.sha256(cannon_bytes).hexdigest()}',
+                          '- Saved verbatim to `originals/recovered/runtime-data/cannon.txt`.','',
+                          '```text',cannon_bytes.decode('utf-8','replace')[:5000],'```','']
+          summary += ['## robots.txt path clues','']
+          summary += [f'- `{r[1]}` ({r[0]})' for r in hidden] or ['- None extracted.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+
+      - name: Commit recovered material safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/newly-recovered/cannon-and-robots originals/recovered/runtime-data/cannon.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover original cannon.txt and robots path clues"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
