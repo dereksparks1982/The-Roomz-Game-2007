@@ -1,0 +1,184 @@
+name: Recover confirmed Roomz runtime dependencies
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-confirmed-runtime-dependencies.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe confirmed dependencies at known archive eras
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode,urlparse
+          from urllib.error import HTTPError,URLError
+          import json,time,hashlib,csv,re
+
+          ROOT=Path('research/confirmed-runtime-recovery'); ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered'; REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          names=['sciemka.swf','about.swf','check.swf','rules.swf','solutions.swf','ile.txt','bonus.txt','hof.htm',
+                 'Redirect.swf','tescik.swf','BlackAndWhite.swf','cannon.txt','yoyo.pnq']
+          roots=[
+            'http://dreamwardgames.com/theroomz/',
+            'http://www.dreamwardgames.com/theroomz/',
+            'http://dreamward.home.pl/theroomz/',
+            'http://www.dreamward.home.pl/theroomz/',
+            'http://theroomz.yoyo.pl/',
+            'http://www.theroomz.yoyo.pl/',
+            'http://theroomz.org/',
+            'http://www.theroomz.org/',
+            'http://theroomz.freehost.pl/',
+            'http://www.theroomz.freehost.pl/'
+          ]
+          anchors=['20061026205422','20061111092143','20070206062346','20080101000000','20110930161009','20121102214347',
+                   '20130908011142','20150125020014','20160602063809','20160602073428','20160805142136']
+
+          def get(u,tries=3,timeout=35):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl(),getattr(r,'status',200),dict(r.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504): break
+                time.sleep(1.5*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e;time.sleep(1.5*(n+1))
+            raise RuntimeError(repr(last))
+
+          def valid(name,b,headers):
+            low=name.lower()
+            if low.endswith('.swf'): return len(b)>100 and b[:3] in (b'FWS',b'CWS',b'ZWS')
+            if low.endswith(('.txt','.pnq')):
+              return len(b)>0 and b[:20].lower().find(b'<html')<0 and b[:20].lower().find(b'<!doctype')<0
+            if low.endswith(('.htm','.html')): return len(b)>50
+            return len(b)>0
+
+          urls=[root+name for root in roots for name in names]
+          candidates=[]; failures=[]; availability=[]
+
+          # 1) Exact CDX, one request per URL.
+          for i,u in enumerate(urls,1):
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({
+              'url':u,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length',
+              'filter':'statuscode:200','collapse':'digest','from':'2006','to':'2018'})
+            try:
+              b,final,st,h=get(q,tries=2,timeout=25)
+              data=json.loads(b)
+              if data:
+                hdr=data[0]
+                for row in data[1:]:
+                  r=dict(zip(hdr,row));candidates.append((u,r['timestamp'],r['original'],'cdx'))
+            except Exception as e: failures.append(['cdx',u,'',repr(e)])
+            if i%15==0: time.sleep(1)
+
+          # 2) Wayback availability API around known eras. This can expose captures missed by our CDX requests.
+          for u in urls:
+            for ts in anchors:
+              q='https://archive.org/wayback/available?'+urlencode({'url':u,'timestamp':ts})
+              try:
+                b,final,st,h=get(q,tries=2,timeout=20)
+                j=json.loads(b);snap=(j.get('archived_snapshots') or {}).get('closest') or {}
+                if snap.get('available') and snap.get('url'):
+                  sts=str(snap.get('timestamp') or ts)
+                  orig=u
+                  candidates.append((u,sts,orig,'availability'))
+                  availability.append([u,ts,sts,snap.get('status',''),snap.get('url','')])
+              except Exception as e: failures.append(['availability',u,ts,repr(e)])
+
+          # Dedupe candidate timestamp/URL pairs and replay raw objects.
+          uniq=[];seen=set()
+          for qurl,ts,orig,method in candidates:
+            k=(ts,orig.lower())
+            if k in seen: continue
+            seen.add(k);uniq.append((qurl,ts,orig,method))
+
+          recovered=[]; bad=[]
+          existing_hashes=set()
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try: existing_hashes.add(hashlib.sha256(p.read_bytes()).hexdigest())
+              except Exception: pass
+
+          for qurl,ts,orig,method in uniq:
+            name=urlparse(orig).path.rsplit('/',1)[-1] or urlparse(qurl).path.rsplit('/',1)[-1]
+            arc=f'https://web.archive.org/web/{ts}id_/{orig}'
+            try:
+              b,final,st,h=get(arc,tries=3,timeout=40)
+              sha=hashlib.sha256(b).hexdigest()
+              ok=valid(name,b,h)
+              if not ok:
+                bad.append([method,ts,orig,len(b),sha,final,'invalid-content'])
+                continue
+              safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)
+              fn=f'{ts}__{sha[:12]}__{safe}'
+              (REC/fn).write_bytes(b)
+              new='NEW' if sha not in existing_hashes else 'already-in-repo'
+              recovered.append([method,ts,orig,len(b),sha,fn,final,new])
+              existing_hashes.add(sha)
+            except Exception as e: failures.append(['replay',orig,ts,repr(e)])
+
+          def tsv(name,head,data):
+            with (ROOT/name).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(head);w.writerows(data)
+          tsv('availability.tsv',['query_url','anchor_timestamp','closest_timestamp','status','snapshot_url'],availability)
+          tsv('recovered.tsv',['method','timestamp','original','bytes','sha256','file','final_url','repo_status'],recovered)
+          tsv('invalid.tsv',['method','timestamp','original','bytes','sha256','final_url','reason'],bad)
+          tsv('failures.tsv',['stage','target','timestamp','error'],failures)
+
+          summary=['# Confirmed Roomz runtime dependency recovery','',
+                   f'- Confirmed/related filenames: {len(names)}',
+                   f'- Host/path variants: {len(urls)}',
+                   f'- Unique archive candidates: {len(uniq)}',
+                   f'- Valid recovered objects: {len(recovered)}',
+                   f'- Newly recovered vs repository: {sum(1 for r in recovered if r[-1]=="NEW")}',
+                   f'- Invalid replay bodies: {len(bad)}',
+                   f'- Probe/replay failures: {len(failures)}','',
+                   '## Valid objects','']
+          summary += [f'- **{r[7]}** {r[1]} `{r[2]}` {r[3]} bytes sha256 `{r[4]}` -> `{r[5]}`' for r in recovered] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Promote genuinely new recovered originals and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/confirmed-runtime-recovery')
+          rec=root/'recovered'
+          out=Path('originals/recovered/runtime-data');out.mkdir(parents=True,exist_ok=True)
+          p=root/'recovered.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('repo_status')!='NEW': continue
+                src=rec/r['file']
+                if src.exists():
+                  dst=out/r['file']
+                  if not dst.exists(): shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/confirmed-runtime-recovery originals/recovered/runtime-data
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover confirmed Roomz runtime dependencies"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
