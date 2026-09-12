@@ -26,6 +26,7 @@ jobs:
           files=[]
           files += sorted(Path('originals/recovered/freehost-era').glob('RoomzMain_*.swf'))
           files += sorted(Path('originals/recovered/yoyo').glob('RoomzMain_*.swf'))
+          files += sorted(Path('originals/recovered/dreamwardgames').glob('*.swf'))
           files += sorted(Path('originals/recovered/demo').glob('*.swf'))
 
           names={
@@ -145,14 +146,14 @@ jobs:
             for line in lines:
               for m in re.finditer(r"['\"]([^'\"]+\.(?:swf|txt|htm|html|php))['\"]",line,re.I):
                 if m.group(1) not in swfrefs:swfrefs.append(m.group(1))
-            relevant=[x for x in lines if re.search(r'(?i)\.swf|load|room|intro|frame|geturl|stringadd|add2',x)]
+            relevant=[x for x in lines if re.search(r'(?i)\.swf|load|room|intro|frame|geturl|stringadd|add2|zamowienie',x)]
             rows.append([str(path),len(b),hashlib.sha256(b).hexdigest(),len(lines),' | '.join(swfrefs)])
-            summaries += [f'## {path.name}','',f'- Action instructions: {len(lines)}',f'- Explicit file refs: {", ".join(swfrefs) if swfrefs else "None"}','', '```text']+relevant[:350]+['```','']
+            summaries += [f'## {path.name}','',f'- Action instructions: {len(lines)}',f'- Explicit file refs: {", ".join(swfrefs) if swfrefs else "None"}','', '```text']+relevant[:600]+['```','']
 
           with (ROOT/'manifest.tsv').open('w',newline='',encoding='utf-8') as f:
             w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['file','bytes','sha256','action_instructions','explicit_refs']);w.writerows(rows)
           (ROOT/'RESULT.md').write_text('# AVM1 loader disassembly\n\n'+'\n'.join(summaries),encoding='utf-8')
-          print('\n'.join(['# AVM1 loader disassembly','']+summaries[:1200]))
+          print('\n'.join(['# AVM1 loader disassembly','']+summaries[:1800]))
           PY
       - name: Commit ActionScript disassembly
         shell: bash
@@ -161,7 +162,7 @@ jobs:
           git config user.email "dereksparks1982@gmail.com"
           git add research/avm1-loader-disassembly
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Disassemble recovered Roomz loader ActionScript"
+          git commit -m "Disassemble recovered Roomz core component ActionScript"
           for attempt in 1 2 3 4 5; do
             git pull --rebase origin main || true
             if git push; then exit 0; fi
