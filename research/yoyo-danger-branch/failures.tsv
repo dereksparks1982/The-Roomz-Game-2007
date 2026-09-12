@@ -1,2 +1,5 @@
 stage	target	error
-replay	http://www.theroomz.yoyo.pl:80/roomz.htm	RuntimeError('<urlopen error timed out>')
+cdx	http://www.theroomz.yoyo.pl/danger/map.html/	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+cdx	http://www.theroomz.yoyo.pl/danger/index.htm	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay	http://www.theroomz.yoyo.pl:80/roomz.htm	RuntimeError('<urlopen error [Errno 111] Connection refused>')
+replay	http://www.theroomz.yoyo.pl:80/roomz.htm	RuntimeError('<urlopen error [Errno 111] Connection refused>')
