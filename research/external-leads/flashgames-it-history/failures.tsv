@@ -1,0 +1,18 @@
+stage	target	timestamp	error
+replay-page	http://www.flashgames.it:80/the.roomz.html	20070830131313	ValueError('Invalid IPv6 URL')
+replay-page	http://flashgames.it:80/the.roomz.html	20071012054519	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20071210222417	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20080110151412	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20080212011342	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20080314181701	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20080915213358	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20081018013235	ValueError('Invalid IPv6 URL')
+replay-page	http://flashgames.it:80/the.roomz.html	20090201052542	ValueError('Invalid IPv6 URL')
+replay-page	http://flashgames.it:80/the.roomz.html	20090304023521	ValueError('Invalid IPv6 URL')
+replay-page	http://flashgames.it:80/the.roomz.html	20090406060609	ValueError('Invalid IPv6 URL')
+replay-page	http://flashgames.it:80/the.roomz.html	20090508165633	ValueError('Invalid IPv6 URL')
+replay-page	http://www.flashgames.it:80/the.roomz.html	20100503162219	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+replay-page	http://www.flashgames.it/the.roomz.html	20111209104057	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+live-swf	http://games.flashgames.it/avventura/the.roomz/game.swf		"RuntimeError(""URLError(gaierror(-2, 'Name or service not known'))"")"
+live-swf	http://flashgames.it:80/preloader4.swf?fszie=469970&pub_path=		"RuntimeError(""<HTTPError 404: 'Not Found'>"")"
+live-swf	http://flashgames.it:80/avventura/the.roomz/game.swf		"RuntimeError(""<HTTPError 404: 'Not Found'>"")"

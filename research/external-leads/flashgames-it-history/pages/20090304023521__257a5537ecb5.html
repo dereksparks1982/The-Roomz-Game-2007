@@ -1,0 +1,622 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>The Roomz- Giochi by FlashGames.it</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.
+
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.
+Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla!">
+<meta name="keywords" content="The Roomz, giochi, giochi online, giochi sportivi, videogiochi, download giochi, giochi pc, giochi gratis, giochi avventura, giochi sexy, giochi erotici, giochi carte, giochi on line, trucchi giochi, flash games, giochi computer">
+<meta NAME="robots" CONTENT="index,follow">
+<script src="/include/script_linguetta.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+
+    <!--
+    if (top.frames.length > 0)
+    {
+        top.location.href = location.href;
+    }
+    // -->
+</script>
+<script language="JavaScript1.2">
+var bookmarkurl="http://www.flashgames.it/the.roomz.html"
+var bookmarktitle="The Roomz - Il tuo gioco preferito by FlashGames.it"
+function addbookmark(){
+if (document.all)
+window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+</script>
+<link href="/style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#tablist{padding: 3px 0; margin-left: 0; margin-bottom: 0; margin-top: 0.1em;}
+#tablist li{list-style: none; display: inline; margin: 0; }
+#tablist li a{padding: 3px 0.5em; margin-left: 1px; border-bottom: none; background: white;}
+#tablist li a:link, #tablist li a:visited{color: navy;}
+#tablist li a.current{background: #EAEAFF;}
+#tabcontentcontainer{padding:5px; margin-left:1px; margin-right:4px;}
+.tabcontent{display://none;}
+#adsense { font-family:Verdana, Arial, Helvetica, sans-serif; width:120px; word-wrap: break-word; margin-top:20px;}
+#adsense a { display:block; width:120px; float:left; }
+#adsense a:hover { width:120px; background-color:#def6ff;}
+#adsense_or { font-family: Arial, Verdana; width:32%; float:left; text-align:left; margin-left:5px;}
+#adsense_or a { display:block; }
+#adsense_or a:hover {background-color:#fff3e4;}
+</style>
+<!-- CODICE DADA -->
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+</script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-9091551696182533");
+
+  GS_googleEnableAllServices();
+</script>
+<script type="text/javascript">
+
+  GA_googleAddSlot("ca-pub-9091551696182533", "Flashgames_120x600_AVVENTURA");
+
+  GA_googleAddSlot("ca-pub-9091551696182533", "Flashgames_728x90_AVVENTURA");
+
+</script>
+<script type="text/javascript">
+
+  GA_googleFetchAds();
+
+</script>
+<!-- END OF TAG FOR head SECTION -->
+</head>
+<body background="/img/sfondo.gif" leftmargin="0" topmargin="4" marginwidth="0" marginheight="4">
+<script language="JavaScript">
+
+<!--
+
+var isInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+
+// Handle all the FSCommand messages in a Flash movie.
+
+function preloader_DoFSCommand(command, args) {
+
+	var preloaderObj = isInternetExplorer ? document.all.preloader : document.preloader;
+
+	var flashMovie = getFlashMovieObject("game");
+
+	var flashMovie2 = getFlashMovieObject("preloader");
+
+	if(command == "get_percent"){
+
+		var loaded=flashMovie.PercentLoaded();
+
+		flashMovie2.SetVariable("loaded_perc",loaded);
+
+	}else if(command == "show_game"){
+
+		show_game();
+	}
+}
+// Hook for Internet Explorer.
+
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+
+	document.write('<script language=\"VBScript\"\>\n');
+	document.write('On Error Resume Next\n');
+	document.write('Sub preloader_FSCommand(ByVal command, ByVal args)\n');
+	document.write('	Call preloader_DoFSCommand(command, args)\n');
+	document.write('End Sub\n');
+	document.write('</script\>\n');
+}
+
+function game_DoFSCommand(command, args) {
+
+	var gameObj = isInternetExplorer ? document.all.preloader : document.preloader;
+	var flashMovie = getFlashMovieObject("chart");
+	if(command == "login"){
+		flashMovie.SetVariable("uid",args);
+		flashMovie.TCallLabel("/","do_login");
+
+	}else if(command == "update"){
+
+		flashMovie.TCallLabel("/","do_update");
+	}
+}
+
+// Hook for Internet Explorer.
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+
+	document.write('<script language=\"VBScript\"\>\n');
+	document.write('On Error Resume Next\n');
+	document.write('Sub game_FSCommand(ByVal command, ByVal args)\n');
+	document.write('	Call game_DoFSCommand(command, args)\n');
+	document.write('End Sub\n');
+	document.write('</script\>\n');
+
+}
+
+function getFlashMovieObject(movieName){
+	if(window.document[movieName]){
+		return window.document[movieName];
+	}
+	if(navigator.appName.indexOf("Microsoft Internet")==-1){
+
+		if(document.embeds&&document.embeds[movieName]){
+
+			return document.embeds[movieName];
+		}
+
+	}else{
+
+		return document.getElementById(movieName);
+
+	}
+}
+function show_game(){
+
+	document.getElementById("loaderobj").style.width = 0;
+	document.getElementById("loaderobj").style.height = 0;
+	document.getElementById("loaderobj").style.visibility = "hidden";
+	document.getElementById("loaderobj").outerHTML = "";
+	document.getElementById("flashobj").style.width = 640;
+	document.getElementById("flashobj").style.height = 440;
+	flashMovie = getFlashMovieObject("game");
+	flashMovie.width = 640;
+	flashMovie.height = 440;
+}
+
+//-->
+</script>
+<center>
+<!-- DADA Flashgames_728x90_SPORT
+
+     -->
+<script type="text/javascript">
+
+  GA_googleFillSlot("Flashgames_728x90_AVVENTURA");
+
+</script>
+</center>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-324538-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<center>
+<div style="height:15px;"></div>
+<div id="menualto" style="clear:both;">
+<div style="height:50px; float:left; margin-top:10px; text-align:left"><img src="/img.menu/singleplayer.gif"><img src="/img.menu/barretta.gif" width="21" height="16"><a href="/indexmp.php"><img src="/img.menu/multiplayer.gif" width="73" height="16" border="0"></a><br>
+<br>
+<a href="/index.php"><img src="/img/logo.gif" alt="giochi" width="230" height="50" border="0" align="bottom"></a>&nbsp;&nbsp;</div>
+<div style="margin-top:4px; height:62;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-0927614704954713";
+/* 468x60, creato 07/05/08 */
+google_ad_slot = "9611334879";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div style="margin-top:4px; margin-left:240px; clear:right;">
+<div class="arialblack" style="float:left;"><font size="3">giochi online</font>&nbsp;&nbsp;</div>
+<div><b><img src="/img/ico.data.gif" width="22" height="17" align="absmiddle">
+<script src="/include/orario_menu.js" type="text/javascript">
+</script>
+<script language="JavaScript1.2">
+var bookmarkurl="http://www.flashgames.it/the.roomz.html"
+var bookmarktitle="The Roomz - Il tuo gioco preferito by FlashGames.it"
+function addbookmark(){
+if (document.all)
+window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+</script>
+&nbsp;&nbsp;| &nbsp;&nbsp;<img src="/img/stats.giocatori.gif" width="16" height="14" align="absmiddle">
+<script src="/online/online.php"></script>
+
+</b>Giocatori Online</div></div></div>
+</center><div style="clear:both;"></div><center>
+<div style="width:736px;">
+<!-- codice per lo sky -->
+<script language="JavaScript1.2">
+
+// riccardo - visualizzazione nascosta per risoluz. 800*600
+var larghezza = screen.width
+var lunghezza = screen.height
+
+if(navigator.userAgent.toLowerCase().indexOf('safari')!=-1) {
+
+document.write('<style type="text/css">');
+document.write('#risoluzione800600{display:none;}');
+document.write('</style>');
+}
+if(larghezza <= 800){
+
+document.write('<style type="text/css">');
+document.write('#risoluzione800600{display:none;}');
+document.write('</style>');
+}
+
+</script>
+<div id="risoluzione800600" style="margin:0px 0px 0px 10px; width: 175px; position:absolute;">
+<div style="position: absolute; left:726px !important; left:358px; top:360px; z-index: 1; visibility: visible;" id="divMenu">
+<div style="width:129px; height:550px; background-image:url(/img/sf.linguettasp3.gif); background-position:bottom; background-repeat:no-repeat; text-align:left; padding-top:7px; padding-left:5px; padding-right:4px;">
+<script language="JavaScript">
+
+<!--
+
+  function google_ad_request_done(google_ads) {
+
+    var s = '';
+    var i;
+    if (google_ads.length == 0) {
+
+      return;
+
+    }
+			s += '<div style="width:100%; color:#999999; font-size:10px; font-weight:bold; text-align:left; margin:6px 0px 10px 0px;"><a target="_blank" href=\"' + 
+google_info.feedback_url + '\" style="color:#2eabff">Ads by Google</a></div>';
+    for(i=0; i < google_ads.length; ++i) { 
+
+    	s += '<div id="adsense"><a target="_blank" href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'; return true" ' + 'onmouseover="window.status=\'go to ' +
+
+                            google_ads[i].visible_url + '\'; return true" ' + 'class="">' +
+
+                            '<span style="color:#0000FF; font-weight:bold;font-size:16px;">' + 
+
+                            '<b>' + google_ads[i].line1 + '</b><br></span></a>' + '<span style="font-size:9px; color:gray;">' +
+
+							google_ads[i].line2 + google_ads[i].line3 + '<br></span>' + '<a target="_blank" href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'; return true" ' + 'onmouseover="window.status=\'go to ' +
+
+                            google_ads[i].visible_url + '\'; return true" ' + 'class=""><span style="color:#ff73ff; text-decoration:underline; overflow:hidden; word-wrap: break-word;">' +
+
+                            google_ads[i].visible_url + '</span></a><br clear="all"></div><br>';
+
+    }
+    document.write(s);
+    return;
+  }
+    google_ad_type = 'text'; // settato su testo altri parametri sono flash, image
+     google_ad_client = 'pub-0927614704954713'; // obbligatorio
+     google_ad_output = 'js';
+     google_max_num_ads = '4';
+     google_language = 'it';
+     google_encoding = 'latin1';//'utf8';
+     google_safe = 'medium'; // il parametro per linguaggio offensivo
+	 google_feedback = 'on';
+	 //2007-05-08: FG-Linguetta
+
+     google_ad_channel = "0809466234";
+
+  // -->
+
+</script>
+<script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div>
+<script language="JavaScript1.2" type="text/javascript"><!-- 
+OnLoad(); 
+//--></script>
+</div>
+<!-- fine codice -->
+<center><div style="background-color:#3F4060; width:736px; height:26px; text-align:right;"><a href="/giochi-online/giochi-azione.html"></a><a href="/giochi-online/giochi-abilita.html"><img src="/img.menu/abilita.gif" alt="giochi d'abilit&agrave;" width="62" height="26" border="0" /></a><a href="/giochi-online/giochi-azione.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-azione.html"></a><a href="/giochi-online/giochi-azione.html"><img src="/img.menu/azione.gif" alt="giochi azione" width="56" height="26" border="0" /></a><a href="/giochi-online/giochi-azione.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-sportivi.html"></a><a href="/giochi-online/giochi-sportivi.html"><img src="/img.menu/sport.gif" alt="giochi sportivi" width="50" height="26" border="0" /></a><a href="/giochi-online/giochi-sportivi.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-avventura.html"></a><a href="/giochi-online/giochi-avventura.html"><img src="/img.menu/avventura.sel.gif" width="81" height="26" border="0" /></a><a href="/giochi-online/giochi-avventura.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-puzzle.html"></a><a href="/giochi-online/giochi-puzzle.html"><img src="/img.menu/puzzle.gif" alt="giochi puzzle e logica" width="53" height="26" border="0" /></a><a href="/giochi-online/giochi-puzzle.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-divertenti.html"></a><a href="/giochi-online/giochi-divertenti.html"><img src="/img.menu/humor.gif" alt="giochi divertenti" width="55" height="26" border="0" /></a><a href="/giochi-online/giochi-divertenti.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-datavolo.html"></a><a href="/giochi-online/giochi-datavolo.html"><img src="/img.menu/datavolo.gif" alt="giochi da tavolo online" width="76" height="26" border="0" /></a><a href="/giochi-online/giochi-datavolo.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/giochi-erotici.html"></a><a href="/giochi-online/giochi-erotici.html"><img src="/img.menu/sexy.gif" alt="giochi sexy online" width="41" height="26" border="0" /></a><a href="/giochi-online/giochi-erotici.html"></a><img src="/img.menu/separatore.gif" width="8" height="26" /><a href="/giochi-online/casino-online.html"></a><a href="/giochi-online/casino-online.html"><img src="/img.menu/casino.gif" alt="giochi online casin&ograve; e carte" width="60" height="26" border="0" /></a><a href="/giochi-online/casino-online.html"></a><a href="/gioco.random.php"><img src="/img.menu/gioco.random.gif" alt="Lascia decidere la fortuna e prova a caso uno dei nostri 3315 giochi!" width="136" height="26" border="0" /></a></div></center></div>
+</center>
+<center>
+<div class="border" style="width:736px; height:228px; background-color:#FFFFFF">
+<div style="width:335px; height:auto !important; height /**/: 206px; float:left; padding:8px 6px 4px 4px;">
+<div id="boxbordoistruz" style="border-color:#F09020;"><img src="/img/istruzioni.gioco.gif" width="331" height="17"><div class="verdana10" id="boxcont" style="background-color:#F6B467; height:auto 	!important; height /**/: 187px;">Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.<br />
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.<br />
+<br />
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.<br />
+Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla!</div></div>
+<img src="/img/spaziatura10.gif" width="36" height="6"><div id="boxbordoistruz" style="border-color:#6F78B0; background-color:#BBC7ED"><font color="#5C5C8B">Se non visualizzi il gioco <strong>scarica la plugin</strong></font> <a href="http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash?Lang=Italian&P5_Language=Italian"><img src="/img/flash.gif" alt="plugin per flash" width="34" height="20" border="0" align="absmiddle"></a> &nbsp;&nbsp;<a href="http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=Shockwave?Lang=Italian&P5_Language=Italian"><img src="/img/shock.gif" alt="plugin per shockwave" width="34" height="20" border="0" align="absmiddle"></a></div>
+</div>
+<div style="width:378px; float:right; padding:8px 4px 6px 4px;">
+<link rel="stylesheet" href="tag.css" type="text/css">
+
+<script language="JavaScript" type="text/javascript"><!--
+
+function setsmiley(which) {
+
+document.form.comment.value += which+" ";
+
+document.form.comment.focus();
+
+}
+
+//--></script>
+
+<div style="border:1px solid; border-color:#F0C43F; background-color:#FFF4D5; width:378px;  height:auto 	!important; height /**/: 204px; padding:1px; text-align:center"><table border="0" cellpadding="2" cellspacing="0" width="370"><tr> 
+
+
+<form action="/tagboard/tag.php?email=the.roomz&multiplayer=no" method="post" target="tag" name="form">
+
+<input name="email" type="hidden" value="the.roomz">
+
+<td colspan="4"><iframe src="/tagboard/tag.php?email=the.roomz&multiplayer=no" name="tag" width="99%" height="118
+
+" style="margin:0px" scrolling="yes"></iframe></td><tr><td width="30">nick</td><td> 
+
+<input class="form" type="text" name="name" size="23" maxlength="30"></td>
+
+<td width="31">&nbsp;&nbsp;password</td>
+
+<td align="center"> 
+
+<input class="form" name="password" type="password" id="password" size="20"></td></tr>
+
+<tr><td>testo</td>
+
+<td colspan="3"><textarea class="form" name="comment" cols="61" rows="2"></textarea></td></tr><tr> <td></td>
+
+<td colspan="3">
+
+<a href="javascript:setsmiley(':)')"><img src="/tagboard/images/smile.gif" alt=":)" border="0"></a>
+
+<a href="javascript:setsmiley(':D')"><img src="/tagboard/images/grin.gif" alt=":D" border="0"></a>
+
+<a href="javascript:setsmiley(':P')"><img src="/tagboard/images/stick.gif" alt=":P" border="0"></a>
+
+<a href="javascript:setsmiley('lv')"><img src="/tagboard/images/lv.gif" alt="lv" border="0"></a>
+
+<a href="javascript:setsmiley(';)')"><img src="/tagboard/images/wink.gif" alt=";)" border="0"></a>
+
+<a href="javascript:setsmiley('ioo')"><img src="/tagboard/images/io.gif" alt="ioo" border="0"></a>
+
+<a href="javascript:setsmiley('grr')"><img src="/tagboard/images/grr.gif" alt="grr" border="0"></a>
+
+<a href="javascript:setsmiley(':(')"><img src="/tagboard/images/sadd.gif" alt=":(" border="0"></a>
+
+<a href="javascript:setsmiley('boo')"><img src="/tagboard/images/boo.gif" alt="boo" border="0"></a>
+
+<a href="javascript:setsmiley(':Oo')"><img src="/tagboard/images/uhm.gif" alt=":Oo" border="0"></a>
+
+<a href="javascript:setsmiley('argh')"><img src="/tagboard/images/argh.gif" alt="O-O" border="0"></a>
+
+<a href="javascript:setsmiley(':o')"><img src="/tagboard/images/gasp.gif" alt=":o" border="0"></a>
+
+<a href="javascript:setsmiley('ok')"><img src="/tagboard/images/ok.gif" alt="ok" border="0"></a>
+
+<input class="form" type="submit" value="invia" name="submit"></td></tr>
+
+<tr><td colspan="4" align="center"></td></tr></form></tr></table></div><div style="width:378px; margin-top:5px; padding:5px; color:gray;">» La Tagboard &egrave; uno spazio per i giochi. <a href="http://www.puntochat.it" target="_blank" style="color: #0099FF;">Per chattare <b><u>clicca qui</u></b></a></div>
+</div>
+</div>
+<div class="border" style="width:736px; height:auto; background-color:#FFFFFF;">
+<!-- INIT NEW FLASH INCLUDE ADDS -->
+<script type="text/javascript" 
+  src="http://partner.googleadservices.com/gampad/google_service.js">
+</script>
+<script type="text/javascript"><!--
+  GS_googleAddAdSenseService("ca-pub-9091551696182533");
+
+  GS_googleEnableAllServices();
+
+--></script>
+<script type="text/javascript"><!--
+  GA_googleAddSlot("ca-pub-9091551696182533", "Flashgames_300x250_videobanner");
+--></script>
+<script type="text/javascript"><!--
+  	GA_googleFetchAds();
+--></script>
+<div id="dummy_div" name="dummy_div">
+<script type="text/javascript"><!--
+	try{
+
+		GA_googleFillSlot("Flashgames_300x250_videobanner");
+
+	}catch(error){
+
+		//kill
+	}	
+--></script>
+</div>
+<!-- FINISH NEW FLASH INCLUDE ADDS -->
+<div style="clear:both; width:722px; height:96px; margin-bottom:4px;">
+
+<script language="JavaScript">
+<!--
+  function google_ad_request_done(google_ads) {
+    var s = '';
+    var i;
+
+    if (google_ads.length == 0) {
+      return;
+    }
+	
+	s += '<div style="color:#999999; font-size:10px; font-weight:bold; text-align:left; margin:4px 0px 2px 10px;"><a target="_blank" href=\"' + 
+google_info.feedback_url + '\" style="color:#790026">Annunci Google</a></div>';
+	
+    for(i=0; i < google_ads.length; ++i) { 
+    	s += '<div id="adsense_or"><a target="_blank" href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'; return true" ' + 'onmouseover="window.status=\'go to ' +
+                            google_ads[i].visible_url + '\'; return true" ' + 'class="">' +
+                            '<span style="color: black; font-size:20px; font-weight:bold;">' + 
+                            '' + google_ads[i].line1 + '<br></span></a>' + '<span style="font-size:10px; color:#999999; font-family:Verdana;">' +
+							google_ads[i].line2 + google_ads[i].line3 + '<br></span>' + '<a target="_blank" href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'; return true" ' + 'onmouseover="window.status=\'go to ' +
+                            google_ads[i].visible_url + '\'; return true" ' + 'class=""><span style="color:#f09020; font-size:9px;">' +
+                            google_ads[i].visible_url + '</span></a></div>';
+    }
+	 
+    document.write(s);
+    return;
+  }
+     google_ad_type = 'text'; // settato su testo altri parametri sono flash, image
+     google_ad_client = 'pub-0927614704954713'; // obbligatorio
+     google_ad_output = 'js';
+     google_max_num_ads = '3';
+     google_language = 'it';
+     google_encoding = 'latin1';//'utf8';
+     google_safe = 'medium'; // il parametro per linguaggio offensivo
+	 google_feedback = 'on';
+	 //2007-02-14: FG-Game, FG-Game--avventura
+     google_ad_channel = "8699784415+8169798550";
+  // -->
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- codice di chiusura adsense -->
+<script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div>
+<img src="/img/sf.gametop.gif" width="722" height="15"><div style="background-color:#E0E0E0; width:722px; height:auto; text-align:center; padding-bottom:10px;"><h3 style="margin:0px; color:#6F78B0; font-family:'Trebuchet MS', Verdana, Arial;" >The Roomz</h3>
+<span class="verdana10blu">Peso:
+459 KB| Giocato: <strong>105.346</strong><br>
+<br>
+</span>
+<table width="10" height="51" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" class="border">
+<tr>
+<td height="51" bgcolor="#E0E0E0"><div id="loaderobj" style="width: 640px; height: 440px; visibility:visible">
+<script type="text/javascript">
+function find_file_data(text,find_){
+	index_1 = text.indexOf(find_,0);
+	if(index_1 == -1){
+
+	return null;
+
+	}else{
+
+		index_1 = index_1+find_.length;
+
+		index_2 = text.indexOf('"',index_1);
+
+		return text.substring(index_1,index_2);
+
+	}
+}
+
+function open_link(){
+
+	window.open (pub_link,"mywindow");
+}
+var div_text = document.getElementById("dummy_div").innerHTML;
+document.getElementById("dummy_div").outerHTML = "";
+
+var pub_path = find_file_data(div_text,'<PARAM adFilePath="');
+
+var pub_link = find_file_data(div_text,'<PARAM link="');
+
+var pub_width = find_file_data(div_text,'<PARAM width="');
+
+var pub_height = find_file_data(div_text,'<PARAM height="');
+
+var pub_time = find_file_data(div_text,'<PARAM time="');
+
+var data_string = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="preloader" width="640" height="440" align="middle">';
+
+data_string+='<param name="allowScriptAccess" value="sameDomain" />';
+
+data_string+='<param name="movie" value="preloader4.swf?fszie=469970&pub_path='+pub_path+'&pub_width='+pub_width+'&pub_height='+pub_height+'&pub_time='+pub_time+'" />';
+
+data_string+='<param name="quality" value="high" />';
+
+data_string+='<embed src="preloader4.swf?fszie=469970&pub_path='+pub_path+'&pub_width='+pub_width+'&pub_height='+pub_height+'&pub_time='+pub_time+'" quality="high" bgcolor="#ffffff" width="640" height="440" swLiveConnect=true id="preloader" name="preloader" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+
+data_string+='</object>';
+
+document.write(data_string);
+</script>
+</div>
+<div id="flashobj" align="center" style="width: 0px; height:  0px; visibility:visible;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="game" width="0" height="0" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="/avventura/the.roomz/game.swf" />
+<param name="quality" value="high" />
+<embed src="/avventura/the.roomz/game.swf"  quality="high" width="0" height="0" swLiveConnect=true id="game" name="game" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<img src="/img/sf.gamebottom.gif" width="722" height="15">
+</div>
+<div class="border" id="cont_3boxgioco" style="float:none;">
+<div style="padding:5px;"><div style="border:1px solid #27985C; width:230px !important; width /**/: 232px; margin-right:6px; float:left;"><img style="margin:1px;" src="/img/giochi.preferiti.gif" width="228" height="16"><div class="box3interno" style="background-color:#B5EED0;"><img style="margin-right:2px;" src="/img/ico.dadi.gif" width="67" height="66" align="left">Ti piace <span style="font-weight:bold; color:#27985c;">The Roomz</span>?<br><br>
+Allora aggiungilo ai tuoi  preferiti o postalo nel tuo social network.
+<div style="text-align:center; margin-top:12px; font-weight:bold;"><font color="#009900">:: <a style="color:#000000; text-decoration:none;" href="javascript:addbookmark()">Aggiungi il Gioco ai Preferiti</a> ::</font></div>
+<div style="text-align:center; margin-top:8px; font-weight:bold;"> <A href="http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html" 
+target=_blank><IMG src="/img/facebook.gif" alt=Facebook! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="https://favorites.live.com/quickadd.aspx?marklet=1&amp;mkt=en-us&amp;top=0&amp;url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/live.gif" alt=Live! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/google.gif" alt=Google! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/excite.gif" alt=Excite width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://digg.com/submit?phase=2&amp;url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/digg.gif" alt=Digg! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/delicious.gif" alt=Del.icio.us! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/slashdot.gif" alt=Slashdot! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html" target=_blank><br>
+<IMG src="/img/netscape.gif" alt=Netscape! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html"target=_blank><IMG src="/img/technorati.gif" alt=Technorati! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html" target=_blank><IMG src="/img/stumbleupon.gif" alt=StumbleUpon! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html" 
+target=_blank><IMG src="/img/yahoo.gif" alt=Yahoo! width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://oknotizie.alice.it/post?url=http://www.flashgames.it/the.roomz.html"target=_blank><IMG src="/img/oknotizie.gif" alt="Ok Notizie!" width=20 height=20 hspace="2" vspace="2" border="0" align=absMiddle></A> <A href="http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html" target="_blank"><IMG src="/img/twitter.gif" width=20 height=20 hspace="2" border="0" align=absMiddle></A></div>
+</div>
+</div>
+<div style="border:1px solid; border-color:#F0C43F; width:230px !important; width /**/: 232px; margin:0px 7px 0px 7px; float:left;"><img style="margin:1px;" src="/img/sfida.amico.gif" width="228" height="16"><div class="box3interno" style="background-color:#FFE187;"><img style="margin-right:2px;" src="/img/ico.pupazzetto.gif" width="70" height="74" align="left">Sei davvero cosi forte come dici?<br>
+<br>
+Invia <span style="font-weight:bold; color:#ae860d;">The Roomz</span> ad un amico, e vediamo se lui riuscir&agrave; a realizzare un punteggio migliore del tuo!<br>
+Pronto per la sfida?
+<div style="text-align:center; margin-top:12px; font-weight:bold;"><font color="#ae860d">:: <a style="color:#000000; text-decoration:none;" href="sfida.php?icona=the.roomz">Invita un Amico su FlashGames </a> ::</font></div>
+</div>
+</div>
+<div style="border:1px solid; border-color:#6F78B0; width:230px !important; width /**/: 232px; margin-left:6px; float:right;"><img style="margin:1px;" src="/img/bloggames.tit.gif" width="228" height="16"><div class="box3interno" style="background-color:BBC7ED;">Questo gioco nel tuo <strong>Blog</strong> o <strong>Forum</strong>!
+<div style="margin:5px 2px 0px 2px;">
+<ul id="tablist">
+<li><a style="color:#4c4c93;" href="http://www.flashgames.it/bloggames.php" class="current" onClick="return expandcontent('sc1', this)">Codice Blog</a> </li>
+<li><a style="color:#4c4c93;" href="http://www.flashgames.it/bloggamesforum.php?id=4156" onClick="return expandcontent('sc2', this)" theme="#EAEAFF"> Codice Forum</a></li>
+<li><a style="color:#4c4c93;" href="http://www.flashgames.it/bloggames.php">Help</a></li>
+</ul>
+<DIV id="tabcontentcontainer">
+<div id="sc1" class="tabcontent">
+<div>
+<form name="urlForm" id="urlForm" style="display:inline;">
+<textarea name="textarea" cols="35" rows="8" class="form" onFocus="this.select()">
+<h3>The Roomz</H3>
+
+<div style="padding:1px; margin:4px 2px 2px 2px; border:1px solid black; float:left;"><img src="http://www.flashgames.it/avventura/the.roomz/ico.gif"></div>Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.
+
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.
+Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla!<br>
+
+<a target="_blank" href="http://www.flashgames.it/webmastergame.php?icona=the.roomz"><img style="margin-top:6px;" border="0px" src="http://www.flashgames.it/webmaster/gioca.gif"></a>
+<hr size="1"><div style="float:right;"><a title="giochi" href="http://www.flashgames.it">Giochi by Flashgames.it</a> </div>
+
+</textarea>
+</form>
+</div>
+</div>
+<div id="sc2" class="tabcontent" style="display:none;">
+<div>
+<form name="urlForm2" id="urlForm2" style="display:inline;">
+<textarea name="forum" cols="35" rows="8" class="form" onfocus=this.select()>[list]
+[B]The Roomz[/B]
+[IMG]http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]
+Vi trovate nalla camera numero Uno e, per entrare nella stanza successiva, dovete riuscire ad aprire una porta di cui avete smarrito la password.
+Recuperatela usando la lente d'ingrandimento che avete a disposizione, e controllate ogni angolo della stanza osservando attentamente i quadri appesi e leggendo gli appunti sul muro.. non tralasciate nulla e nessun oggetto che potrebbe essere utile al vostro scopo.
+
+Per utilizzare la lente basta cliccarci sopra e muoverla con il MOUSE per tutta la stanza. Trovate gli indizi necessari e appena avrete la soluzione sotto lente andate nel cursore per digitare la password necessaria.
+Non vi perdete d'animo, la soluzione è sotto ai vostri occhi, basta solo trovarla![url=http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]
+
+----------------------------------------------------------------
+
+by [URL=http://www.flashgames.it]Flashgames.it[/URL]
+
+[/list]</textarea>
+</form>
+</div>
+</div>
+</DIV>
+</div>
+</div>
+</div>
+</div>
+</div>
+<img src="/img/footer.gif" width="736" height="16"> <span class="verdana10blu"><br>
+<br>
+&copy;2006-2009 TUTTI I DIRITTI RISERVATI &nbsp;&nbsp;|&nbsp;&nbsp; Sito realizzato da<strong><font color="#FF9933"> <a href="http://www.formatc.it" target="_blank"><img src="/img/logo.formatc.gif" alt="FORMAT C Web Agency" width="73" height="14" border="0" align="texttop"></a></font></strong>&nbsp;&nbsp; | &nbsp;&nbsp; Pubblicit&agrave; su questo sito <a href="http://dada.dada.net/it/dadad/splashdadad.php " target="_blank"><img src="/img/logo.dada.gif" alt="Dada-Ad" width="77" height="17" border="0" align="absmiddle"></a><br>
+<br>
+|&nbsp;&nbsp; <a class="verdana10blu" href="http://www.formatc.it/offertelavoro.php" target="_blank">Lavora con Noi</a>!&nbsp;&nbsp; |</span><br>
+</center>
+</body>
+</html>

@@ -1,0 +1,195 @@
+# Historical Flashgames.it Roomz recovery
+
+- Distinct archived page bodies: 14
+- Pages replayed: 0
+- Interesting references: 1058
+- Distinct SWF candidate URLs: 3
+- Valid SWFs recovered: 0
+- New SWFs: 0
+- Failures: 17
+
+## SWF candidates
+
+- `http://games.flashgames.it/avventura/the.roomz/game.swf` (found in page capture 20070830131313)
+- `http://flashgames.it:80/preloader4.swf?fszie=469970&pub_path=` (found in page capture 20090201052542)
+- `http://flashgames.it:80/avventura/the.roomz/game.swf` (found in page capture 20090201052542)
+
+## Valid SWFs
+
+- None.
+
+## Roomz-related references
+
+- 20070830131313 `http://www.flashgames.it:80/the.roomz`
+- 20070830131313 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20070830131313 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20070830131313 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20070830131313 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20070830131313 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20070830131313 `http://www.flashgames.it/the.roomz.html`
+- 20070830131313 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20070830131313 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20071012054519 `http://flashgames.it:80/the.roomz`
+- 20071012054519 `http://flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20071012054519 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20071012054519 `http://flashgames.it:80/sfida.php?icona=the.roomz`
+- 20071012054519 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20071012054519 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20071012054519 `http://www.flashgames.it/the.roomz.html`
+- 20071012054519 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20071012054519 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20071210222417 `http://www.flashgames.it:80/the.roomz`
+- 20071210222417 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20071210222417 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20071210222417 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20071210222417 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20071210222417 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20071210222417 `http://www.flashgames.it/the.roomz.html`
+- 20071210222417 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20071210222417 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20080110151412 `http://www.flashgames.it:80/the.roomz`
+- 20080110151412 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20080110151412 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20080110151412 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20080110151412 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20080110151412 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20080110151412 `http://www.flashgames.it/the.roomz.html`
+- 20080110151412 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20080110151412 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20080212011342 `http://www.flashgames.it:80/the.roomz`
+- 20080212011342 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20080212011342 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20080212011342 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20080212011342 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20080212011342 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20080212011342 `http://www.flashgames.it/the.roomz.html`
+- 20080212011342 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20080212011342 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20080314181701 `http://www.flashgames.it:80/the.roomz`
+- 20080314181701 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20080314181701 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20080314181701 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20080314181701 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20080314181701 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20080314181701 `http://www.flashgames.it/the.roomz.html`
+- 20080314181701 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20080314181701 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20080915213358 `http://www.flashgames.it:80/the.roomz`
+- 20080915213358 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20080915213358 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20080915213358 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20080915213358 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20080915213358 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20080915213358 `http://www.flashgames.it/the.roomz.html`
+- 20080915213358 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20080915213358 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20081018013235 `http://www.flashgames.it:80/the.roomz`
+- 20081018013235 `http://www.flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20081018013235 `http://games.flashgames.it/avventura/the.roomz/game.swf`
+- 20081018013235 `http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=0&url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://www.google.com/bookmarks/mark?op=add&bkmk=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://digg.com/submit?phase=2&url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://oknotizie.alice.it/post?url=?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://www.flashgames.it:80/sfida.php?icona=the.roomz`
+- 20081018013235 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20081018013235 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20081018013235 `http://www.flashgames.it/the.roomz.html`
+- 20081018013235 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20081018013235 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20090201052542 `http://flashgames.it:80/the.roomz`
+- 20090201052542 `http://flashgames.it:80/tagboard/tag.php?email=the.roomz`
+- 20090201052542 `http://flashgames.it:80/avventura/the.roomz/game.swf`
+- 20090201052542 `http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=0&url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://www.google.com/bookmarks/mark?op=add&bkmk=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://digg.com/submit?phase=2&url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://oknotizie.alice.it/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://flashgames.it:80/sfida.php?icona=the.roomz`
+- 20090201052542 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20090201052542 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20090201052542 `http://www.flashgames.it/the.roomz.html`
+- 20090201052542 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20090201052542 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20090304023521 `http://flashgames.it:80/the.roomz`
+- 20090304023521 `http://flashgames.it:80/tagboard/tag.php?email=the.roomz&multiplayer=no`
+- 20090304023521 `http://flashgames.it:80/avventura/the.roomz/game.swf`
+- 20090304023521 `http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=0&url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://www.google.com/bookmarks/mark?op=add&bkmk=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://digg.com/submit?phase=2&url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://oknotizie.alice.it/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://flashgames.it:80/sfida.php?icona=the.roomz`
+- 20090304023521 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20090304023521 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20090304023521 `http://www.flashgames.it/the.roomz.html`
+- 20090304023521 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20090304023521 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20090406060609 `http://flashgames.it:80/the.roomz`
+- 20090406060609 `http://flashgames.it:80/tagboard/tag.php?email=the.roomz&multiplayer=no`
+- 20090406060609 `http://flashgames.it:80/avventura/the.roomz/game.swf`
+- 20090406060609 `http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=0&url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://www.google.com/bookmarks/mark?op=add&bkmk=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://digg.com/submit?phase=2&url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://oknotizie.alice.it/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://flashgames.it:80/sfida.php?icona=the.roomz`
+- 20090406060609 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20090406060609 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20090406060609 `http://www.flashgames.it/the.roomz.html`
+- 20090406060609 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20090406060609 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
+- 20090508165633 `http://flashgames.it:80/the.roomz`
+- 20090508165633 `http://flashgames.it:80/tagboard/tag.php?email=the.roomz&multiplayer=no`
+- 20090508165633 `http://flashgames.it:80/avventura/the.roomz/game.swf`
+- 20090508165633 `http://www.facebook.com/share.php?u=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&top=0&url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://www.google.com/bookmarks/mark?op=add&bkmk=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://bookmarks.excite.eu/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://digg.com/submit?phase=2&url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://del.icio.us/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://slashdot.org/bookmark.pl?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://www.netscape.com/submit/?U=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://technorati.com/faves/?add=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://www.stumbleupon.com/submit?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://oknotizie.alice.it/post?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://twitthis.com/twit?url=http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://flashgames.it:80/sfida.php?icona=the.roomz`
+- 20090508165633 `http://www.flashgames.it/avventura/the.roomz/ico.gif`
+- 20090508165633 `http://www.flashgames.it/webmastergame.php?icona=the.roomz`
+- 20090508165633 `http://www.flashgames.it/the.roomz.html`
+- 20090508165633 `http://www.flashgames.it/avventura/the.roomz/ico.gif[/IMG]`
+- 20090508165633 `http://www.flashgames.it/the.roomz.html][img]http://www.flashgames.it/webmaster/gioca.gif[/img][/url]`
