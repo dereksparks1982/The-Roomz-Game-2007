@@ -1,0 +1,106 @@
+# Complete Yoyo indexed-asset recovery
+
+- HTTP-200 inventory rows: 112
+- Unique archive digests selected: 111
+- Objects replayed: 104
+- New byte-identities vs current originals: 99
+- SWF captures recovered: 4
+- Text/page captures recovered: 86
+- References extracted: 863
+- Replay failures: 7
+
+## SWFs
+
+- **already:originals/recovered/yoyo/RoomzMain_2007.swf** 20070206062346 `http://www.theroomz.yoyo.pl:80/RoomzMain.swf` 11034 bytes sha256 `61c728f54f9552744edc19f22b152a7ed89854b45891316957eaeaf763d4add9` -> `20070206062346__61c728f54f95__RoomzMain.swf`
+- **already:originals/recovered/yoyo/RoomzMain_2011.swf** 20110930161009 `http://www.theroomz.yoyo.pl/RoomzMain.swf` 10995 bytes sha256 `d7dd1d01587d2857d5bb67cc7b94c0ab6f9fc18b53d66cd81f2b849606ea32e1` -> `20110930161009__d7dd1d01587d__RoomzMain.swf`
+- **already:originals/recovered/yoyo/RRR.swf** 20121102214347 `http://www.theroomz.yoyo.pl/RRR.swf` 17061 bytes sha256 `c58a2a373bcc3c1cb36b9864b4bf1932f009c8f96a457f9d4d3db3cdc5f8f4f5` -> `20121102214347__c58a2a373bcc__RRR.swf`
+- **already:originals/recovered/yoyo/data.swf** 20121102214348 `http://www.theroomz.yoyo.pl/data.swf` 682 bytes sha256 `91657fb753d5794c5310b25ed9e6d896e67ddb199cff5d8ca7f275410360ae0b` -> `20121102214348__91657fb753d5__data.swf`
+
+## Text / hidden artifacts
+
+- **NEW** 20070116125329 `http://www.theroomz.yoyo.pl:80/` 1945 bytes -> `20070116125329__e18afb40c0ec__index.html`
+- **NEW** 20070203021337 `http://www.theroomz.yoyo.pl:80/` 2159 bytes -> `20070203021337__4a56035ac413__index.html`
+- **NEW** 20070212145101 `http://www.theroomz.yoyo.pl:80/roomz.htm` 1890 bytes -> `20070212145101__326006a09afd__roomz.htm`
+- **NEW** 20070212155253 `http://www.theroomz.yoyo.pl:80/` 2240 bytes -> `20070212155253__3210e99b4ede__index.html`
+- **NEW** 20070220112352 `http://www.theroomz.yoyo.pl:80/` 2427 bytes -> `20070220112352__bff43a66b5f7__index.html`
+- **NEW** 20070220112512 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2254 bytes -> `20070220112512__eba64f669c7c__roomz.htm`
+- **NEW** 20070227224035 `http://www.theroomz.yoyo.pl:80/` 2427 bytes -> `20070227224035__7723cb41375e__index.html`
+- **NEW** 20070227224047 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2291 bytes -> `20070227224047__96dc42201988__roomz.htm`
+- **NEW** 20070307144359 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2291 bytes -> `20070307144359__3fcdc50da911__roomz.htm`
+- **NEW** 20070315080611 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2291 bytes -> `20070315080611__b59642bd1ff6__roomz.htm`
+- **NEW** 20070317075126 `http://www.theroomz.yoyo.pl:80/` 2427 bytes -> `20070317075126__0554eca9bca4__index.html`
+- **NEW** 20070406210112 `http://www.theroomz.yoyo.pl:80/` 2597 bytes -> `20070406210112__f60fac66ec9f__index.html`
+- **NEW** 20070408021203 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2461 bytes -> `20070408021203__377d419c1867__roomz.htm`
+- **NEW** 20070408211316 `http://www.theroomz.yoyo.pl:80/` 2597 bytes -> `20070408211316__0e944ef32751__index.html`
+- **NEW** 20070509150022 `http://www.theroomz.yoyo.pl:80/roomz.htm` 1926 bytes -> `20070509150022__066de84e2578__roomz.htm`
+- **NEW** 20070509150102 `http://www.theroomz.yoyo.pl:80/` 2074 bytes -> `20070509150102__d7e84e865eaf__index.html`
+- **NEW** 20070525170113 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2732 bytes -> `20070525170113__ea0e990672e2__roomz.htm`
+- **NEW** 20070607071432 `http://www.theroomz.yoyo.pl:80/` 2101 bytes -> `20070607071432__cf3b44f85ad7__index.html`
+- **NEW** 20070703063940 `http://www.theroomz.yoyo.pl:80/robots.txt` 25 bytes -> `20070703063940__86b18ac4328b__robots.txt`
+- **NEW** 20070703063940 `http://www.theroomz.yoyo.pl:80/roomz.htm` 2856 bytes -> `20070703063940__3b1d0ff0cf86__roomz.htm`
+- **NEW** 20070712122744 `http://www.theroomz.yoyo.pl:80/` 2272 bytes -> `20070712122744__343226c8ad4f__index.html`
+- **NEW** 20070817060529 `http://www.theroomz.yoyo.pl:80/robots.txt` 33 bytes -> `20070817060529__6eed2a484390__robots.txt`
+- **NEW** 20070819111804 `http://www.theroomz.yoyo.pl:80/roomz.htm` 1429 bytes -> `20070819111804__6be8721ef104__roomz.htm`
+- **NEW** 20070920121441 `http://www.theroomz.yoyo.pl/yoyo.pnq` 0 bytes -> `20070920121441__e3b0c44298fc__yoyo.pnq`
+- **NEW** 20070920121513 `http://www.theroomz.yoyo.pl/yoyo.pnq` 0 bytes -> `20070920121513__e3b0c44298fc__yoyo.pnq`
+- **NEW** 20071018092116 `http://www.theroomz.yoyo.pl:80/yoyo.pnq` 0 bytes -> `20071018092116__e3b0c44298fc__yoyo.pnq`
+- **already:originals/recovered/runtime-data/cannon.txt** 20071114203520 `http://www.theroomz.yoyo.pl:80/cannon.txt` 345 bytes -> `20071114203520__99e085eb7348__cannon.txt`
+- **NEW** 20071121144203 `http://www.theroomz.yoyo.pl:80/paper/` 3453 bytes -> `20071121144203__b71deb6d2f18__index.html`
+- **NEW** 20071128034207 `http://www.theroomz.yoyo.pl:80/this/` 376 bytes -> `20071128034207__a733ad6f1a50__index.html`
+- **NEW** 20071129231525 `http://www.theroomz.yoyo.pl:80/this/lesson.htm` 527 bytes -> `20071129231525__b77613cf2d00__lesson.htm`
+- **NEW** 20080126221610 `http://www.theroomz.yoyo.pl:80/` 2424 bytes -> `20080126221610__50bdf3dee930__index.html`
+- **NEW** 20080204150434 `http://www.theroomz.yoyo.pl:80/this/lesson.htm` 297 bytes -> `20080204150434__399fb2d5e9b0__lesson.htm`
+- **NEW** 20080214234114 `http://www.theroomz.yoyo.pl:80/roomz.htm` 1199 bytes -> `20080214234114__3effb05e5b09__roomz.htm`
+- **NEW** 20080502181650 `http://www.theroomz.yoyo.pl:80/hof.htm` 4437 bytes -> `20080502181650__84f61c6b1cc2__hof.htm`
+- **NEW** 20080916183819 `http://www.theroomz.yoyo.pl:80/hof.htm` 5539 bytes -> `20080916183819__118388610a1e__hof.htm`
+- **NEW** 20081217082814 `http://www.theroomz.yoyo.pl:80/` 2474 bytes -> `20081217082814__27e51170f021__index.html`
+- **NEW** 20090228222609 `http://www.theroomz.yoyo.pl:80/` 4179 bytes -> `20090228222609__e0f0857b24bf__index.html`
+- **NEW** 20090831150516 `http://www.theroomz.yoyo.pl:80/donate/` 11552 bytes -> `20090831150516__ab2ceda1877f__index.html`
+- **NEW** 20100109161456 `http://www.theroomz.yoyo.pl:80/` 6038 bytes -> `20100109161456__4ea636af4902__index.html`
+- **NEW** 20100110004431 `http://www.theroomz.yoyo.pl:80/donate/` 11544 bytes -> `20100110004431__d81f1aadc430__index.html`
+- **NEW** 20100926143524 `http://www.theroomz.yoyo.pl:80/` 7023 bytes -> `20100926143524__a536a2359213__index.html`
+- **NEW** 20101118015056 `http://www.theroomz.yoyo.pl:80/` 7053 bytes -> `20101118015056__0a5cbe41f3ff__index.html`
+- **NEW** 20110318160332 `http://www.theroomz.yoyo.pl:80/` 6909 bytes -> `20110318160332__c66383c3d4d4__index.html`
+- **NEW** 20110423173248 `http://www.theroomz.yoyo.pl:80/` 6435 bytes -> `20110423173248__015ff02c06c0__index.html`
+- **NEW** 20110527235026 `http://www.theroomz.yoyo.pl:80/` 6913 bytes -> `20110527235026__f5bd9035bd5b__index.html`
+- **NEW** 20110617191643 `http://www.theroomz.yoyo.pl:80/donate/` 12141 bytes -> `20110617191643__96ab4c2fd0ae__index.html`
+- **NEW** 20110702043102 `http://www.theroomz.yoyo.pl:80/` 6905 bytes -> `20110702043102__5aa094a5a0fe__index.html`
+- **NEW** 20110722121852 `http://www.theroomz.yoyo.pl:80/donate/` 12629 bytes -> `20110722121852__83c208545fbc__index.html`
+- **NEW** 20110807183838 `http://www.theroomz.yoyo.pl:80/` 6437 bytes -> `20110807183838__42eb5ca33cb6__index.html`
+- **NEW** 20110817045853 `http://www.theroomz.yoyo.pl:80/donate/` 12133 bytes -> `20110817045853__cebac9304ce2__index.html`
+- **NEW** 20110822120753 `http://www.theroomz.yoyo.pl:80/donate/` 12129 bytes -> `20110822120753__a6c505842105__index.html`
+- **NEW** 20110930160954 `http://www.theroomz.yoyo.pl/` 6431 bytes -> `20110930160954__43ce67ce95ce__index.html`
+- **NEW** 20111120024726 `http://www.theroomz.yoyo.pl:80/` 7245 bytes -> `20111120024726__91a2f5b5e1ea__index.html`
+- **NEW** 20111221031733 `http://www.theroomz.yoyo.pl:80/` 7713 bytes -> `20111221031733__390b23b5eb88__index.html`
+- **NEW** 20120817203529 `http://www.theroomz.yoyo.pl:80/` 7235 bytes -> `20120817203529__8747baf4cb0a__index.html`
+- **NEW** 20121102214345 `http://www.theroomz.yoyo.pl/rrr.htm` 5397 bytes -> `20121102214345__a4c9879ccb24__rrr.htm`
+- **NEW** 20121106220600 `http://www.theroomz.yoyo.pl/` 7239 bytes -> `20121106220600__6e8dcba2a8b5__index.html`
+- **NEW** 20121106220606 `http://www.theroomz.yoyo.pl/roomz.htm` 4437 bytes -> `20121106220606__9d31bf07019e__roomz.htm`
+- **NEW** 20130206164127 `http://www.theroomz.yoyo.pl/robots.txt` 136 bytes -> `20130206164127__a57960ad3ede__robots.txt`
+- **NEW** 20130206164235 `http://theroomz.yoyo.pl/roomers-online2.gif` 141 bytes -> `20130206164235__73bf8c081914__roomers-online2.gif`
+- **NEW** 20130214074032 `http://www.theroomz.yoyo.pl:80/?` 126 bytes -> `20130214074032__147eac9efbf9__index.html`
+- **NEW** 20130305022814 `http://theroomz.yoyo.pl:80/hof.htm` 129 bytes -> `20130305022814__c7aeb2285620__hof.htm`
+- **NEW** 20130514020922 `http://www.theroomz.yoyo.pl/` 7241 bytes -> `20130514020922__2dedd0ac9b60__index.html`
+- **NEW** 20130605185033 `http://www.theroomz.yoyo.pl:80/donate/` 12933 bytes -> `20130605185033__baecaf51c585__index.html`
+- **NEW** 20130901174040 `http://www.theroomz.yoyo.pl/` 7368 bytes -> `20130901174040__bd4d68266230__index.html`
+- **NEW** 20150416092348 `http://www.theroomz.yoyo.pl/` 25297 bytes -> `20150416092348__8ee3f4410ff1__index.html`
+- **NEW** 20160502013935 `http://www.theroomz.yoyo.pl/danger/map.htm/` 25063 bytes -> `20160502013935__b5c1f34c0471__index.html`
+- **NEW** 20160504022934 `http://theroomz.yoyo.pl/` 24949 bytes -> `20160504022934__c84500e135fd__index.html`
+- **NEW** 20160504022936 `http://www.theroomz.yoyo.pl/danger/` 25031 bytes -> `20160504022936__d6dbb3744c81__index.html`
+- **NEW** 20160610035115 `http://theroomz.yoyo.pl/robots.txt` 149 bytes -> `20160610035115__38c25815580a__robots.txt`
+- **NEW** 20160610035120 `http://theroomz.yoyo.pl/` 30717 bytes -> `20160610035120__219aaa47fe21__index.html`
+- **NEW** 20170424215126 `http://theroomz.yoyo.pl/robots.txt` 390 bytes -> `20170424215126__7e4e4d3da018__robots.txt`
+- **NEW** 20170722212603 `http://theroomz.yoyo.pl/` 21531 bytes -> `20170722212603__8b3d4bb511f6__index.html`
+- **NEW** 20180329211132 `http://theroomz.yoyo.pl/` 21608 bytes -> `20180329211132__04798ed10b2d__index.html`
+- **NEW** 20180426031008 `http://www.theroomz.yoyo.pl:80/` 68748 bytes -> `20180426031008__dc8f3aa1ab77__index.html`
+- **NEW** 20180427042659 `http://www.theroomz.yoyo.pl:80/` 27765 bytes -> `20180427042659__faff31c40156__index.html`
+- **NEW** 20210321135554 `http://www.theroomz.yoyo.pl/danger/map.htm/` 55603 bytes -> `20210321135554__ef0cb09cc719__index.html`
+- **NEW** 20210322112840 `http://theroomz.yoyo.pl/` 54995 bytes -> `20210322112840__f26a3cc23813__index.html`
+- **NEW** 20210322112841 `http://www.theroomz.yoyo.pl/danger/` 55603 bytes -> `20210322112841__a35d798035ca__index.html`
+- **NEW** 20210428210620 `http://www.theroomz.yoyo.pl/roomz.htm` 55629 bytes -> `20210428210620__e590f48edec1__roomz.htm`
+- **NEW** 20210911012327 `http://www.theroomz.yoyo.pl/roomz.htm` 55567 bytes -> `20210911012327__6cf0bab45a0a__roomz.htm`
+- **NEW** 20211116064822 `http://www.theroomz.yoyo.pl/roomz.htm` 54179 bytes -> `20211116064822__cf82687973da__roomz.htm`
+- **NEW** 20220331020047 `http://www.theroomz.yoyo.pl/` 54960 bytes -> `20220331020047__0dc0c06cb04a__index.html`
+- **NEW** 20220523160347 `http://www.theroomz.yoyo.pl/roomz.htm` 55000 bytes -> `20220523160347__5c8c6980356d__roomz.htm`
+- **NEW** 20260202004233 `http://www.theroomz.yoyo.pl/` 2914 bytes -> `20260202004233__5ccf228cf6ea__index.html`
+- **NEW** 20260202043320 `http://theroomz.yoyo.pl/` 2887 bytes -> `20260202043320__d1bcc8d36790__index.html`
