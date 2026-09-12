@@ -1,0 +1,145 @@
+name: Mine full Forumer quote corpus
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mine-forumer-quote-corpus.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover archived quote text and asset leads
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import csv,json,re,html,time
+
+          ROOT=Path('research/forumer-quote-corpus'); ROOT.mkdir(parents=True,exist_ok=True)
+          SRC=Path('research/continued-hunt/forumer/domain-all.json')
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          data=json.loads(SRC.read_text(encoding='utf-8'))
+          hdr=data[0]; allrows=[dict(zip(hdr,r)) for r in data[1:]]
+
+          def is_quote(r):
+              u=html.unescape(r.get('original',''))
+              return r.get('statuscode')=='200' and 'posting.php?' in u and re.search(r'(?:[?&])mode=quote(?:&|$)',u,re.I) and re.search(r'(?:[?&])p=\d+',u,re.I)
+
+          selected=[];seen=set()
+          for r in sorted((x for x in allrows if is_quote(x)),key=lambda x:(x.get('timestamp',''),x.get('original',''))):
+              k=r.get('digest') or (r.get('timestamp'),r.get('original'))
+              if k in seen: continue
+              seen.add(k); selected.append(r)
+
+          def get(u):
+              last=None
+              for n in range(3):
+                  try:
+                      with urlopen(Request(u,headers={'User-Agent':UA}),timeout=35) as q:return q.read()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.5*(n+1))
+              raise RuntimeError(str(last))
+
+          def clean(s):
+              s=html.unescape(s or '')
+              s=re.sub(r'<br\s*/?>','\n',s,flags=re.I)
+              s=re.sub(r'<[^>]+>',' ',s)
+              return re.sub(r'\s+',' ',s).strip()
+
+          file_re=re.compile(r'(?i)(?<![A-Za-z0-9])([A-Za-z0-9_./%+~-]{1,180}\.(?:swf|txt|xml|dat|ini|cfg|jpg|jpeg|png|gif|bmp|mp3|wav|zip|rar|7z|htm|html|php))(?:[?#][^\s"\'<>]*)?')
+          url_re=re.compile(r'https?://[^\s<>"\']+',re.I)
+          hot_re=re.compile(r'(?i)check\.swf|sciemka\.swf|about\.swf|rules\.swf|solutions\.swf|tescik\.swf|ile\.txt|bonus\.txt|\.swf\b|\.zip\b|\.rar\b|download|mirror|source|full\s+game|full\s+version|flashkit|roomz\.org|yoyo\.pl|dreamward|rapidshare|megaupload|mediafire|sendspace')
+
+          def one(r):
+              u=f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}"
+              b=get(u); s=b.decode('utf-8','replace')
+              m=re.search(r'<textarea[^>]+name=["\']message["\'][^>]*>(.*?)</textarea>',s,re.I|re.S)
+              txt=clean(m.group(1)) if m else ''
+              pid=(re.search(r'(?:[?&])p=(\d+)',html.unescape(r['original']),re.I) or [None,'unknown'])[1]
+              files=[]
+              for x in file_re.finditer(txt):
+                  t=x.group(1).rstrip('.,);:]')
+                  if t not in files: files.append(t)
+              urls=[]
+              for x in url_re.finditer(txt):
+                  q=x.group(0).rstrip(').,;\'"')
+                  if q not in urls:urls.append(q)
+              ctx=[]
+              for x in hot_re.finditer(txt):
+                  a=max(0,x.start()-220);z=min(len(txt),x.end()+450);c=txt[a:z]
+                  if c not in ctx:ctx.append(c)
+              return pid,r['timestamp'],r['original'],txt,files,urls,ctx,''
+
+          results=[]; failures=[]
+          with ThreadPoolExecutor(max_workers=8) as ex:
+              fs={ex.submit(one,r):r for r in selected}
+              for f in as_completed(fs):
+                  r=fs[f]
+                  try:results.append(f.result())
+                  except Exception as e:failures.append([r.get('timestamp',''),r.get('original',''),repr(e)])
+
+          results.sort(key=lambda x:(int(x[0]) if x[0].isdigit() else 10**12,x[1]))
+          posts=[];tokens=[];urls=[];hot=[]
+          for pid,ts,orig,txt,fl,ul,cx,_ in results:
+              posts.append([pid,ts,orig,txt])
+              tokens += [[pid,ts,t,txt[:3500]] for t in fl]
+              urls += [[pid,ts,u,txt[:3500]] for u in ul]
+              hot += [[pid,ts,c] for c in cx]
+
+          def ded(rows,key):
+              out=[];s=set()
+              for r in rows:
+                  k=key(r)
+                  if k not in s:s.add(k);out.append(r)
+              return out
+          tokens=ded(tokens,lambda r:(r[0],r[2].lower()))
+          urls=ded(urls,lambda r:(r[0],r[2].lower()))
+          hot=ded(hot,lambda r:(r[0],r[2]))
+
+          known={'check.swf','sciemka.swf','about.swf','rules.swf','solutions.swf','tescik.swf','ile.txt','bonus.txt','blackandwhite.swf','hof.swf','redirect.swf','rrr.swf','data.swf','cannon.txt','roomzmain.swf','undertr.swf','interface.swf','intro.swf','loadroom.swf','frame.swf'}
+          novel=[]
+          for r in tokens:
+              base=r[2].replace('\\','/').rsplit('/',1)[-1].lower()
+              if base not in known and not base.startswith(('viewtopic.','posting.','profile.','index.','search.')): novel.append(r)
+          archive_urls=[r for r in urls if re.search(r'(?i)roomz|yoyo|dreamward|flashkit|rapidshare|megaupload|mediafire|sendspace|\.swf|\.zip|\.rar',r[2])]
+
+          def tsv(name,header,rows):
+              with (ROOT/name).open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(header);w.writerows(rows)
+          tsv('posts.tsv',['post_id','timestamp','original','quoted_text'],posts)
+          tsv('file-tokens.tsv',['post_id','timestamp','token','context'],tokens)
+          tsv('novel-file-tokens.tsv',['post_id','timestamp','token','context'],novel)
+          tsv('interesting-urls.tsv',['post_id','timestamp','url','context'],archive_urls)
+          tsv('high-value-contexts.tsv',['post_id','timestamp','context'],hot)
+          tsv('failures.tsv',['timestamp','original','error'],failures)
+
+          summary=['# Full Forumer quote-corpus mine','',f'- Unique archived quote bodies selected: {len(selected)}',f'- Quote bodies recovered: {len(results)}',f'- Failures: {len(failures)}',f'- File tokens: {len(tokens)}',f'- Potentially novel file tokens: {len(novel)}',f'- High-value outbound URLs: {len(archive_urls)}',f'- High-value text contexts: {len(hot)}','', '## Potentially novel file tokens','']
+          summary += [f'- p={r[0]} `{r[2]}`: {r[3][:700]}' for r in novel[:300]] or ['- None.']
+          summary += ['', '## High-value outbound URLs','']+[f'- p={r[0]} `{r[2]}`' for r in archive_urls[:300]]
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:400]))
+          PY
+      - name: Commit quote-corpus results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/forumer-quote-corpus
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Mine full Forumer quote corpus for Roomz assets"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
