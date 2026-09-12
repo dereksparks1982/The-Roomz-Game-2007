@@ -1,0 +1,90 @@
+name: Parse recovered FlashKit Roomz thread
+
+on:
+  push:
+    paths:
+      - '.github/workflows/parse-flashkit-roomz-thread.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract clean author date and post bodies
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,html,csv
+          ROOT=Path('research/external-leads/flashkit-708493')
+          pages=sorted((ROOT/'pages').glob('*.html'))
+          if not pages: raise SystemExit('no recovered FlashKit pages')
+          raw=pages[0].read_text(encoding='utf-8',errors='replace')
+
+          def clean(s):
+              s=html.unescape(s or '')
+              s=re.sub(r'(?is)<script.*?</script>|<style.*?</style>',' ',s)
+              s=re.sub(r'(?i)<br\s*/?>|</p>|</div>|</blockquote>|</li>','\n',s)
+              s=re.sub(r'<[^>]+>',' ',s)
+              s=re.sub(r'[ \t\r]+',' ',s)
+              s=re.sub(r'\n\s*\n+','\n',s)
+              return s.strip()
+
+          posts=[]
+          # Each post container carries post id; parse locally inside each container.
+          starts=list(re.finditer(r'<li[^>]+id=["\']post_(\d+)["\'][^>]*>',raw,re.I))
+          for i,m in enumerate(starts):
+              pid=m.group(1); a=m.start(); z=starts[i+1].start() if i+1<len(starts) else len(raw)
+              block=raw[a:z]
+              am=re.search(r'class=["\']username[^"\']*["\'][^>]*>\s*(?:<strong>)?([^<]+)',block,re.I)
+              author=clean(am.group(1)) if am else ''
+              dm=re.search(r'<span class=["\']date["\']>(.*?)</span>',block,re.I|re.S)
+              date=clean(dm.group(1)) if dm else ''
+              bm=re.search(r'<div id=["\']post_message_'+re.escape(pid)+r'["\']>\s*<blockquote[^>]*>(.*?)</blockquote>',block,re.I|re.S)
+              body=clean(bm.group(1)) if bm else ''
+              if body: posts.append([pid,author,date,body])
+
+          # Deduplicate by post id.
+          out=[];seen=set()
+          for r in posts:
+              if r[0] not in seen:seen.add(r[0]);out.append(r)
+          posts=out
+
+          with (ROOT/'clean-posts.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['post_id','author','date','body']);w.writerows(posts)
+
+          creators=[r for r in posts if r[1].strip().lower() in ('stachu','xstachux','ralfi')]
+          links=[]
+          for r in posts:
+              for u in re.findall(r'https?://[^\s<>"\']+',r[3],re.I): links.append([r[0],r[1],u.rstrip(').,;')])
+          with (ROOT/'clean-links.tsv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(['post_id','author','url']);w.writerows(links)
+
+          summary=['# Clean FlashKit Roomz thread transcript','',f'- Posts extracted: {len(posts)}',f'- Creator posts extracted: {len(creators)}','', '## Creator posts','']
+          for pid,author,date,body in creators:
+              summary += [f'### #{pid} — {author} — {date}','',body,'']
+          summary += ['## Full thread','']
+          for pid,author,date,body in posts:
+              summary += [f'### #{pid} — {author} — {date}','',body,'']
+          (ROOT/'CLEAN_TRANSCRIPT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:300]))
+          PY
+      - name: Commit clean transcript safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/external-leads/flashkit-708493/clean-posts.tsv research/external-leads/flashkit-708493/clean-links.tsv research/external-leads/flashkit-708493/CLEAN_TRANSCRIPT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Extract clean FlashKit Roomz creator posts"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          exit 1
