@@ -1,0 +1,4 @@
+url	error
+https://www.reddit.com/r/lostmedia/comments/z11xux.json?raw_json=1	<HTTPError 403: 'Blocked'>
+https://old.reddit.com/r/lostmedia/comments/z11xux/.json?raw_json=1	<HTTPError 403: 'Blocked'>
+https://www.reddit.com/r/lostmedia/comments/z11xux/partially_lost_a_flash_game_by_the_name_of_the/.json?raw_json=1	<HTTPError 403: 'Blocked'>
