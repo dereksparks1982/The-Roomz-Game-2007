@@ -1,0 +1,135 @@
+name: Recover obscure Yoyo Roomz paths
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-yoyo-obscure-paths.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: roomz-yoyo-obscure
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover unusual historical Yoyo objects and mine their links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urljoin
+          import csv, hashlib, html, re, time
+
+          ROOT=Path('research/newly-recovered/yoyo-obscure-paths')
+          ROOT.mkdir(parents=True,exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+
+          captures=[
+            ('cannon.txt','20071114203520','http://www.theroomz.yoyo.pl:80/cannon.txt'),
+            ('danger-root.html','20160504022936','http://www.theroomz.yoyo.pl/danger/'),
+            ('danger-map.html','20160502013935','http://www.theroomz.yoyo.pl/danger/map.htm/'),
+            ('paper-root.html','20071121144203','http://www.theroomz.yoyo.pl:80/paper/'),
+            ('this-root.html','20071128034207','http://www.theroomz.yoyo.pl:80/this/'),
+            ('this-lesson-2007.html','20071129231525','http://www.theroomz.yoyo.pl:80/this/lesson.htm'),
+            ('this-lesson-2008.html','20080204150434','http://www.theroomz.yoyo.pl:80/this/lesson.htm'),
+            ('yoyo-20070920.pnq','20070920121441','http://www.theroomz.yoyo.pl/yoyo.pnq'),
+            ('yoyo-20071018.pnq','20071018092116','http://www.theroomz.yoyo.pl:80/yoyo.pnq'),
+            ('hof-20080502.html','20080502181650','http://www.theroomz.yoyo.pl:80/hof.htm'),
+            ('roomz-2012.html','20121106220606','http://www.theroomz.yoyo.pl/roomz.htm'),
+            ('rrr-2012.html','20121102214345','http://www.theroomz.yoyo.pl/rrr.htm')
+          ]
+
+          def get(url,tries=4,timeout=35):
+              last=None
+              for n in range(tries):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:
+                          return r.read(),r.geturl()
+                  except (HTTPError,URLError,TimeoutError) as e:
+                      last=e; time.sleep(1.5*(n+1))
+              raise RuntimeError(f'{url}: {last}')
+
+          rows=[]; failures=[]; links=[]; terms=[]
+          high=re.compile(r'\.swf\b|\.txt\b|\.pnq\b|\.zip\b|\.rar\b|\.7z\b|room|bonus|check|password|hint|source|download|map|cannon|paper|lesson|danger',re.I)
+          attr=re.compile(r'''(?:href|src|action|value)\s*=\s*["']([^"']+)["']''',re.I)
+          bare=re.compile(r'https?://[^\s<>"\']+',re.I)
+
+          for name,ts,orig in captures:
+              au=f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                  b,final=get(au)
+                  (ROOT/name).write_bytes(b)
+                  sha=hashlib.sha256(b).hexdigest()
+                  rows.append([name,ts,orig,len(b),sha,final])
+                  text=b.decode('utf-8','replace')
+                  for m in attr.finditer(text):
+                      x=html.unescape(m.group(1)).replace('\\/','/').strip()
+                      links.append([name,ts,x,urljoin(orig,x)])
+                  for m in bare.finditer(html.unescape(text)):
+                      x=m.group(0).rstrip(').,;\'"')
+                      links.append([name,ts,x,x])
+                  plain=html.unescape(re.sub(r'<[^>]+>',' ',text))
+                  plain=re.sub(r'\s+',' ',plain)
+                  for m in high.finditer(plain):
+                      a=max(0,m.start()-200); z=min(len(plain),m.end()+420)
+                      terms.append([name,ts,plain[a:z]])
+              except Exception as e:
+                  failures.append([name,ts,orig,repr(e)])
+
+          # unique links and contexts
+          ul=[]; seen=set()
+          for r in links:
+              k=(r[0],r[3])
+              if k not in seen: seen.add(k); ul.append(r)
+          uc=[]; seen=set()
+          for r in terms:
+              k=(r[0],r[2])
+              if k not in seen: seen.add(k); uc.append(r)
+
+          def tsv(path,header,data):
+              with path.open('w',newline='',encoding='utf-8') as f:
+                  w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(header); w.writerows(data)
+          tsv(ROOT/'manifest.tsv',['file','timestamp','original_url','bytes','sha256','fetched_url'],rows)
+          tsv(ROOT/'links.tsv',['source_file','timestamp','raw_link','resolved_link'],ul)
+          tsv(ROOT/'contexts.tsv',['source_file','timestamp','context'],uc)
+          tsv(ROOT/'failures.tsv',['file','timestamp','original_url','error'],failures)
+
+          interesting_links=[r for r in ul if re.search(r'theroomz|dreamward|\.swf(?:$|[?#])|\.txt(?:$|[?#])|\.pnq(?:$|[?#])|\.zip(?:$|[?#])|\.rar(?:$|[?#])|\.7z(?:$|[?#])',r[3],re.I)]
+          summary=['# Obscure Yoyo-era Roomz path recovery','',
+                   f'- Objects recovered: {len(rows)}',
+                   f'- Distinct links extracted: {len(ul)}',
+                   f'- Interesting Roomz/file links: {len(interesting_links)}',
+                   f'- High-value text contexts: {len(uc)}',
+                   f'- Failures: {len(failures)}','',
+                   '## Interesting extracted links','']
+          summary += [f'- `{r[0]}` -> {r[3]}' for r in interesting_links[:250]] or ['- None.']
+          summary += ['', '## Context clues','']
+          summary += [f'- `{r[0]}`: {r[2][:1200]}' for r in uc[:120]] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary[:200]))
+          PY
+
+      - name: Commit recovered obscure material safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/newly-recovered/yoyo-obscure-paths
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover obscure Yoyo-era Roomz files and pages"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
