@@ -1,0 +1,113 @@
+name: Recover RRR.swf directly
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-rrr-direct.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe Wayback around the archived rrr.htm timestamp
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          import csv,hashlib,json,time,re
+
+          ROOT=Path('research/rrr-direct-recovery'); ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered'; REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          originals=[
+            'http://www.theroomz.yoyo.pl/RRR.swf','http://www.theroomz.yoyo.pl/rrr.swf',
+            'http://www.theroomz.yoyo.pl:80/RRR.swf','http://www.theroomz.yoyo.pl:80/rrr.swf',
+            'http://theroomz.yoyo.pl/RRR.swf','http://theroomz.yoyo.pl/rrr.swf'
+          ]
+          stamps=['20121102214345','20121102','2012','2011','2010','2009','2008','2007']
+          rows=[]; recovered=[]
+          known={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try: known[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except Exception: pass
+
+          def req(url,timeout=25):
+            with urlopen(Request(url,headers={'User-Agent':UA}),timeout=timeout) as r:
+              return r.read(),r.geturl(),dict(r.headers),getattr(r,'status',200)
+
+          # Availability API first.
+          for orig in originals:
+            for ts in stamps[:2]:
+              q='https://archive.org/wayback/available?'+urlencode({'url':orig,'timestamp':ts})
+              try:
+                b,final,h,status=req(q,20)
+                data=json.loads(b.decode('utf-8','replace'))
+                snap=(data.get('archived_snapshots') or {}).get('closest') or {}
+                rows.append(['availability',orig,ts,str(snap.get('available','')),snap.get('timestamp',''),snap.get('url',''),''])
+              except Exception as e:
+                rows.append(['availability',orig,ts,'','','',repr(e)])
+
+          # Direct replay at/near the page timestamp. Wayback may resolve to a nearby capture.
+          for orig in originals:
+            for ts in stamps:
+              u=f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                b,final,h,status=req(u,30)
+                sig=b[:3].decode('latin1','replace'); sha=hashlib.sha256(b).hexdigest()
+                rows.append(['replay',orig,ts,str(status),sig,final,f'{len(b)} bytes sha256={sha}'])
+                if b[:3] in (b'FWS',b'CWS',b'ZWS'):
+                  out=REC/f'{ts}__{sha[:12]}__RRR.swf'; out.write_bytes(b)
+                  recovered.append([orig,ts,final,len(b),sha,sig,known.get(sha,''),str(out)])
+              except Exception as e:
+                rows.append(['replay',orig,ts,'','','',repr(e)])
+
+          # Exact CDX check, one at a time to avoid rate spikes.
+          for orig in originals:
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':orig,'matchType':'exact','output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length'})
+            try:
+              b,final,h,status=req(q,30)
+              rows.append(['cdx',orig,'',str(status),'',final,b.decode('utf-8','replace')[:2000]])
+            except Exception as e:
+              rows.append(['cdx',orig,'','','','',repr(e)])
+            time.sleep(1)
+
+          with (ROOT/'attempts.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['method','original','timestamp','status_or_available','signature_or_capture_ts','final_or_capture_url','detail']); w.writerows(rows)
+          with (ROOT/'recovered.tsv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f,delimiter='\t',lineterminator='\n'); w.writerow(['original','timestamp','final_url','bytes','sha256','signature','exact_repo_match','saved_file']); w.writerows(recovered)
+
+          summary=['# Direct RRR.swf recovery','',f'- Direct/availability/CDX attempts recorded: {len(rows)}',f'- Valid RRR SWFs recovered: {len(recovered)}','']
+          if recovered:
+            summary += ['## Recovered','']+[f'- `{r[0]}` via `{r[2]}`: {r[3]} bytes, sha256 `{r[4]}`, existing match `{r[6] or "none"}`' for r in recovered]
+          else:
+            summary += ['- No valid SWF recovered in this pass.']
+          summary += ['', '## Availability hits','']
+          for r in rows:
+            if r[0]=='availability' and r[3]=='True': summary.append(f'- {r[1]} requested {r[2]} -> {r[4]} {r[5]}')
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Commit results safely
+        shell: bash
+        run: |
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/rrr-direct-recovery
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Probe archived RRR.swf directly"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
