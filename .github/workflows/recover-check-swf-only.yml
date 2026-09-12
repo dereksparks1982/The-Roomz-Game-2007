@@ -1,0 +1,164 @@
+name: Recover check.swf across every known Roomz host
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-check-swf-only.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query exact check.swf variants and recover valid captures
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          from urllib.error import HTTPError,URLError
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          import json,time,hashlib,csv,re
+
+          ROOT=Path('research/check-swf-recovery'); ROOT.mkdir(parents=True,exist_ok=True)
+          REC=ROOT/'recovered'; REC.mkdir(exist_ok=True)
+          UA='Mozilla/5.0 Roomz-preservation (+https://github.com/dereksparks1982/The-Roomz-Game-2007)'
+          hosts=[
+            'theroomz.freehost.pl','www.theroomz.freehost.pl',
+            'theroomz.yoyo.pl','www.theroomz.yoyo.pl',
+            'theroomz.org','www.theroomz.org',
+            'dreamwardgames.com','www.dreamwardgames.com',
+            'dreamward.home.pl','www.dreamward.home.pl'
+          ]
+          paths=[]
+          for h in hosts:
+            prefixes=['/']
+            if 'dreamward' in h: prefixes += ['/theroomz/']
+            for pre in prefixes:
+              for name in ('check.swf','Check.swf','CHECK.SWF'):
+                for scheme in ('http','https'):
+                  paths.append(f'{scheme}://{h}{pre}{name}')
+                  if scheme=='http': paths.append(f'http://{h}:80{pre}{name}')
+          paths=list(dict.fromkeys(paths))
+
+          def get(u,tries=3,timeout=30):
+            last=None
+            for n in range(tries):
+              try:
+                with urlopen(Request(u,headers={'User-Agent':UA}),timeout=timeout) as r:return r.read(),r.geturl(),dict(r.headers)
+              except HTTPError as e:
+                last=e
+                if e.code not in (429,500,502,503,504): break
+                time.sleep(1.2*(n+1))
+              except (URLError,TimeoutError) as e:
+                last=e; time.sleep(1.2*(n+1))
+            raise RuntimeError(repr(last))
+
+          def query(u):
+            q='https://web.archive.org/cdx/search/cdx?'+urlencode({
+              'url':u,'matchType':'exact','output':'json',
+              'fl':'timestamp,original,statuscode,mimetype,digest,length',
+              'filter':'statuscode:200','from':'2006','to':'2018','collapse':'digest'})
+            try:
+              b,final,h=get(q,tries=2,timeout=22)
+              data=json.loads(b)
+              if not data:return u,[],''
+              hdr=data[0]; return u,[dict(zip(hdr,r)) for r in data[1:]],''
+            except Exception as e:return u,[],repr(e)
+
+          cdx=[];fails=[]
+          with ThreadPoolExecutor(max_workers=8) as ex:
+            futs=[ex.submit(query,u) for u in paths]
+            for fut in as_completed(futs):
+              u,rows,err=fut.result()
+              if err:fails.append(['cdx',u,'',err])
+              for r in rows:cdx.append(r)
+
+          # Fallback availability checks only for canonical likely URLs if CDX misses them.
+          canonical=[
+            'http://theroomz.freehost.pl/check.swf',
+            'http://www.theroomz.yoyo.pl/check.swf',
+            'http://theroomz.yoyo.pl/check.swf',
+            'http://theroomz.org/check.swf',
+            'http://www.theroomz.org/check.swf',
+            'http://dreamwardgames.com/theroomz/check.swf',
+            'http://dreamward.home.pl/theroomz/check.swf'
+          ]
+          anchors=['20061015','20070115','20070715','20080115','20110930','20130101','20150125','20160602']
+          if not cdx:
+            for u in canonical:
+              for ts in anchors:
+                q='https://archive.org/wayback/available?'+urlencode({'url':u,'timestamp':ts})
+                try:
+                  b,final,h=get(q,tries=2,timeout=20); j=json.loads(b)
+                  snap=(j.get('archived_snapshots') or {}).get('closest') or {}
+                  if snap.get('available') and snap.get('timestamp'):
+                    cdx.append({'timestamp':str(snap['timestamp']),'original':u,'statuscode':str(snap.get('status','')),'mimetype':'','digest':'','length':''})
+                except Exception as e:fails.append(['availability',u,ts,repr(e)])
+
+          uniq=[];seen=set()
+          for r in sorted(cdx,key=lambda x:(x.get('timestamp',''),x.get('original',''))):
+            k=(r.get('timestamp',''),r.get('original','').lower())
+            if k not in seen:seen.add(k);uniq.append(r)
+
+          recovered=[]
+          existing={}
+          for p in Path('originals').rglob('*'):
+            if p.is_file():
+              try:existing[hashlib.sha256(p.read_bytes()).hexdigest()]=str(p)
+              except:pass
+          for r in uniq:
+            ts=r['timestamp'];orig=r['original'];arc=f'https://web.archive.org/web/{ts}id_/{orig}'
+            try:
+              b,final,h=get(arc,tries=4,timeout=35);sha=hashlib.sha256(b).hexdigest()
+              valid=len(b)>100 and b[:3] in (b'FWS',b'CWS',b'ZWS')
+              status=('NEW' if sha not in existing else 'already:'+existing[sha]) if valid else 'invalid'
+              fn=''
+              if valid:
+                fn=f'{ts}__{sha[:12]}__check.swf';(REC/fn).write_bytes(b)
+              recovered.append([ts,orig,len(b),sha,final,status,fn])
+            except Exception as e:fails.append(['replay',orig,ts,repr(e)])
+
+          def tsv(n,h,d):
+            with (ROOT/n).open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,delimiter='\t',lineterminator='\n');w.writerow(h);w.writerows(d)
+          tsv('captures.tsv',['timestamp','original','bytes','sha256','final_url','status','file'],recovered)
+          tsv('failures.tsv',['stage','target','timestamp','error'],fails)
+          good=[r for r in recovered if r[5].startswith(('NEW','already:'))]
+          summary=['# check.swf focused recovery','',f'- URL variants queried: {len(paths)}',f'- Unique candidate captures: {len(uniq)}',f'- Valid SWF captures: {len(good)}',f'- New SWFs: {sum(r[5]=="NEW" for r in good)}',f'- Failures: {len(fails)}','','## Valid captures','']
+          summary += [f'- **{r[5]}** {r[0]} `{r[1]}` {r[2]} bytes sha256 `{r[3]}` -> `{r[6]}`' for r in good] or ['- None.']
+          (ROOT/'RESULT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')
+          print('\n'.join(summary))
+          PY
+      - name: Promote recovered check.swf and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,shutil
+          root=Path('research/check-swf-recovery'); out=Path('originals/recovered/runtime-data');out.mkdir(parents=True,exist_ok=True)
+          p=root/'captures.tsv'
+          if p.exists():
+            with p.open(encoding='utf-8') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                if r.get('status')=='NEW' and r.get('file'):
+                  src=root/'recovered'/r['file'];dst=out/r['file']
+                  if src.exists() and not dst.exists():shutil.copy2(src,dst)
+          PY
+          git config user.name "Derek Sparks"
+          git config user.email "dereksparks1982@gmail.com"
+          git add research/check-swf-recovery originals/recovered/runtime-data
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Probe all known Roomz hosts for check.swf"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            if git push; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
