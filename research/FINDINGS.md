@@ -184,3 +184,34 @@ Current priority targets:
 2. Continue mining archived forum topics for filenames, mirrors, puzzle assets, and creator posts.
 3. Preserve provenance and hashes for every recovered object.
 4. Reconstruct only where original material cannot be recovered, and label reconstruction clearly.
+
+## Completed deep Wayback recheck (2026-09-13)
+
+A final manual deep Wayback sweep was completed against the known official hosting lineage.
+
+The sweep tested:
+
+- 1,740 exact URL variants
+- HTTP, explicit `:80`, and HTTPS forms
+- filename case variants
+- 10 known host/prefix variants
+- full archived URL inventories for each host
+- likely historical subdirectories including `flash/`, `swf/`, `game/`, `games/`, `roomz/`, `files/`, `data/`, `assets/`, `resources/`, and `paper/`
+
+Final result:
+
+- CDX exact/subdirectory hits: 0
+- full-host inventory target matches: 0
+- valid missing payloads recovered: 0
+- unique recovered hashes: 0
+- logged query failures: 28
+
+All ten full-host inventory requests succeeded, including both `theroomz.org` and `www.theroomz.org`, and none contained the known missing target basenames.
+
+This is strong negative archive evidence, not proof that the files never existed. They may have been uncrawled, stored under unexpected names or paths, served dynamically, hosted elsewhere, or survive only in private backups/browser caches.
+
+Phase 3 intentionally suppressed transient query exceptions, so its lack of hits should not be interpreted as proof that every individual speculative subdirectory request completed successfully.
+
+Raw results are preserved under:
+
+`research/manual-wayback-deep-recheck/`
