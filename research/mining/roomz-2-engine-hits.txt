@@ -1,0 +1,859 @@
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-19-<link rel="chapter forum" href="viewforum.php?f=20" title="Connotizer" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=10" title="News & infos" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=11" title="Free section" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=18" title="PayPal Donations" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=4" title="What is it?" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=1" title="Announcements" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=17" title="TR solvers" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-28-<link rel="chapter forum" href="viewforum.php?f=24" title="Archives" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-29-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-30-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-31-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-32-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:34:<title>FoROOM ~ View topic - The Roomz 2.0?</title>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-35-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-36-<style type="text/css">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-37-<!--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-38-/*
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-39-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-40-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-41-  http://www.mikelothar.com
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-42-  Please don't remove this. :)
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-43-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-44-  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-45-  theme administration centre. When you have finalised your style you could cut the final CSS code
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-46-  and place it in an external file, deleting this section to save bandwidth.
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-47-*/
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-48-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-49-/* General page style. The scroll bar colours only visible in IE5.5+ */
+--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-357-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-358-<!--AD_E-->
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-359-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-360-</div><SCRIPT LANGUAGE="JavaScript">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-361-<!--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-362-if (window != top) top.location.href = location.href;
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-363--->
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-364-</SCRIPT>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-365- 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-366-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-367-  <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-368-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-369-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-370-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-371-  <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:372:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=421&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">The Roomz 2.0?</a></th>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-373-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-374-   
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-375-<tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-376-  <td class="row1" colspan="2"><br clear="all" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-377-	<table cellspacing="0" cellpadding="4" border="0" align="center">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-378-	  <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-379-		<td colspan="4" align="center"><span class="gen"><b>What do you think about TR sequel?</b></span></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-380-	  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-381-	  <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-382-		<td align="center"> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-383-		  <table cellspacing="0" cellpadding="2" border="0">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-384-						<tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-385-			  <td><span class="gen">Yes, definitely a good idea!</span></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-386-			  <td> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-387-				<table cellspacing="0" cellpadding="0" border="0">
+--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-430-		<td colspan="4" align="center"><span class="gen">Total Votes : 6</span></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-431-	  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-432-	</table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-433-	<br clear="all" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-434-  </td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-435-</tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-436-	<tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-437-		<td class="spaceRow" colspan="2" height="1"><img src="templates/AdInfinitum/images/spacer.gif" alt="" width="1" height="1" /></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-438-	</tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-439-    <tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-440-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="11639"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-441-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-442-        <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-443-          <td width="100%"><a href="viewtopic.php?p=11639#11639"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-444-            Tue Jun 15, 2010 10:42 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:445:            <!-- &nbsp; &nbsp;Post subject: The Roomz 2.0?</span> -->
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-446-            </span></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-447-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11639"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-448-             </td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-449-        </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-450-      </table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-451-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-452-  <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-453-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-454-	
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-455-<table width="" border="0" cellspacing="2" cellpadding="0"><tr><td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-456-<table width="" border="0" cellspacing="1" cellpadding="0" bgcolor="#E3E3E3">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-457-  <tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-458-    <td><div align="center">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-459-	
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-460-<table width="" border="0" bgcolor="#FFFFFF" cellspacing="3">
+--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-467-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-468-</table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-469-</td></tr></table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-470-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-471- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-472-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-473-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-474-      <br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-475-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-476-      Posts: 1530<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-477-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-478-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-479-        <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-480-          <td valign="top"><span class="postbody">Do you miss brainstorming, banging your head into the wall, sleepless nights, thousand HSS inputs and evil riddles? If you do, then I have a good news for you.
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-481-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:482:I thought this through. I'm ready to continue The Roomz project. I have pack of new ideas. The Roomz 2.0 (which is a temporary name, don't get used to it) will be completely rebuilt. There will be no problems with FireFox any more. New structure, new riddles, new interface. Probably a new server. FREE server, 'cause I want to keep TR being free-to-play.
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-483-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-484-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-485-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-486-But, as always, I'd like to know your opinion. If you have any questions - feel free to ask.
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-487-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-488-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-489-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-490-Cheers,
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-491-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-492-Stachu</span></td></tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-493-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-494-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-495-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-496-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-497-<span style="color: red">Life is a room where the password is 'death'</span>
+--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-909-</td></tr></table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-910-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-911- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-912-      <span class="postdetails">Roomz fan<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-913-      <img src="http://www.thesmilies.com/smilies/military/officer8.gif" alt="Roomz fan" title="Roomz fan" border="0" /><br /><br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-914-      <br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-915-      Joined: 27 Jan 2010<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-916-      Posts: 26<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-917-      </span><br /></td></table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-918-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-919-        <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-920-          <td valign="top"><span class="postbody">Yes, I would love a sequel!!!
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-921-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-922-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-923-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:924:I don't know if you  mean with rebuild that the first the Roomz will be gone. I hope that isn't the case. Such a great game should be online forever for anyone who wants to play it. Even when it are only a handful of people. 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-925-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-926-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-927-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-928-But a new Roomz I would applaud and welcome very much. Go Stachu!!
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-929-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-930-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-931-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-932-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-933-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-934-P.S. Please don't abandon Shi. A friend and I are waiting hopeful for chapter 1.</span></td></tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-935-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"></span></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-936-        </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-937-      </table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-938-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-939-  <tr> 
+--
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-980-  </tr>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-981-</table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-982-</td></tr></table>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-983-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-984- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-985-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-986-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-987-      <br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-988-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-989-      Posts: 1530<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-990-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-991-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-992-        <tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-993-          <td valign="top"><span class="postbody">@Adventure
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-994-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html:995:Don't worry. The Roomz will stay as it is. Eclipse is a sequel, separate project. What I mean by rebuilding is 'writing a whole engine from the beginning' ;]
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-996-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-997-And Shi is absolutely different story <img src="images/smiles/smile.gif" alt="happy" border="0" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-998-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-999-
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1000-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1001-@Jim
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1002-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1003-I can't have brilliant ideas all the time, gimme a break! <img src="images/smiles/theroomz/tongue.gif" alt="tongue" border="0" /> &lt;/sarcasm&gt;</span></td></tr> 
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1004-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1005-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1006-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1007-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1008-<span style="color: red">Life is a room where the password is 'death'</span>
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1009-<br />
+research/forumer-recovered/20110819115423_a09933dcd560_viewtopic.php.html-1010-<span style="font-style: italic">Progress: Roomz: mine (45/45 +5) :p, eri's (1/2), RG's (2/2), kish's (4/4 with magic :p), jan's (3/10), puzz_hunt's (many) :p</span>
+--
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-867-      Joined: 10 Jun 2007<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-868-      Posts: 307<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-869-      Location: South Korea</span><br /></td></table></td>
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-870-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-871-        <tr> 
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-872-          <td valign="top"><span class="postbody">ARGHHHHHHH!!!!!!!!!!!!!! <img src="images/smiles/ohmy.gif" alt="omg" border="0" />  <img src="images/smiles/theroomz/sadwave.gif" alt="bye bye" border="0" /> 
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-873-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-874-I lost by <span style="color: violet">number</span>vs.<span style="color: violet">number</span>!!!!!!!!!!!!!!!!!!!
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-875-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-876-
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-877-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-878-edit: now i lost because of bread strikes.....
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-879-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-880-
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-881-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html:882:edit2:I seem to get the same problem from dgupta but in bread what's wrong? The flours and waters are dissapearing but i'm not getting bread. I had to sell everything to avoide strike and rebuild them
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-883-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-884-
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-885-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-886-edit3: (continued from edit2) but I won!!!!!  <img src="images/smiles/theroomz/winner_first_h4h.gif" alt="winner" border="0" /> <span style="color: violet">number</span>vs.<span style="color: violet">number</span>
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-887-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-888-
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-889-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-890-<span style="color: violet">Correct me if I am wrong other mods, but I thought putting how many people you needed to win was spoiling? Soz cams if what you said is ok. </span></span></td></tr> 
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-891-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br />roomz complete:
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-892-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-893-normal 44/45
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-894-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-895-bonus 1, 2, 3, 4 
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-896-<br />
+research/forumer-recovered/20080208205610_4d9fb97c94d7_viewtopic.php.html-897-kish 2/3     eri 2/2     RG 1     jan 5/10</span></td>
+--
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-867-      Joined: 10 Jun 2007<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-868-      Posts: 307<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-869-      Location: South Korea</span><br /></td></table></td>
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-870-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-871-        <tr> 
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-872-          <td valign="top"><span class="postbody">ARGHHHHHHH!!!!!!!!!!!!!! <img src="images/smiles/ohmy.gif" alt="omg" border="0" />  <img src="images/smiles/theroomz/sadwave.gif" alt="bye bye" border="0" /> 
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-873-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-874-I lost by <span style="color: violet">number</span>vs.<span style="color: violet">number</span>!!!!!!!!!!!!!!!!!!!
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-875-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-876-
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-877-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-878-edit: now i lost because of bread strikes.....
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-879-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-880-
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-881-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html:882:edit2:I seem to get the same problem from dgupta but in bread what's wrong? The flours and waters are dissapearing but i'm not getting bread. I had to sell everything to avoide strike and rebuild them
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-883-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-884-
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-885-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-886-edit3: (continued from edit2) but I won!!!!!  <img src="images/smiles/theroomz/winner_first_h4h.gif" alt="winner" border="0" /> <span style="color: violet">number</span>vs.<span style="color: violet">number</span>
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-887-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-888-
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-889-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-890-<span style="color: violet">Correct me if I am wrong other mods, but I thought putting how many people you needed to win was spoiling? Soz cams if what you said is ok. </span></span></td></tr> 
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-891-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br />roomz complete:
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-892-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-893-normal 44/45
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-894-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-895-bonus 1, 2, 3, 4 
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-896-<br />
+research/forumer-recovered/20080208153822_3b83fda1be8d_viewtopic.php.html-897-kish 2/3     eri 2/2     RG 1     jan 5/10</span></td>
+--
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-891-      Joined: 10 Jun 2007<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-892-      Posts: 387<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-893-      Location: South Korea</span><br /></td></table></td>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-894-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-895-        <tr> 
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-896-          <td valign="top"><span class="postbody">ARGHHHHHHH!!!!!!!!!!!!!! <img src="images/smiles/ohmy.gif" alt="omg" border="0" />  <img src="images/smiles/theroomz/sadwave.gif" alt="bye bye" border="0" /> 
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-897-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-898-I lost by <span style="color: violet">number</span>vs.<span style="color: violet">number</span>!!!!!!!!!!!!!!!!!!!
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-899-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-900-
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-901-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-902-edit: now i lost because of bread strikes.....
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-903-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-904-
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-905-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html:906:edit2:I seem to get the same problem from dgupta but in bread what's wrong? The flours and waters are dissapearing but i'm not getting bread. I had to sell everything to avoide strike and rebuild them
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-907-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-908-
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-909-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-910-edit3: (continued from edit2) but I won!!!!!  <img src="images/smiles/theroomz/winner_first_h4h.gif" alt="winner" border="0" /> <span style="color: violet">number</span>vs.<span style="color: violet">number</span>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-911-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-912-
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-913-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-914-<span style="color: violet">Correct me if I am wrong other mods, but I thought putting how many people you needed to win was spoiling? Soz cams if what you said is ok. </span></span></td></tr> 
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-915-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br />Progress:      normal 45/45      bonus 1, 2, 3, 4, 5
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-916-<br />
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-917-<img src="images/smiles/theroomz/winner_first_h4h.gif" alt="winner" border="0" /><span style="font-size: 15px; line-height: normal"> <span style="color: red">Roomz Completed!!!!!! </span> </span> <img src="images/smiles/theroomz/winner_first_h4h.gif" alt="winner" border="0" />      *fireworks*</span></td>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-918-        </tr>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-919-      </table></td>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-920-  </tr>
+research/forumer-recovered/20120215170624_c941f8f30b06_viewtopic.php.html-921-  <tr> 
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-19-<link rel="chapter forum" href="viewforum.php?f=20" title="Connotizer" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=10" title="News & infos" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=11" title="Free section" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=18" title="PayPal Donations" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=4" title="What is it?" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=1" title="Announcements" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=17" title="TR solvers" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-28-<link rel="chapter forum" href="viewforum.php?f=24" title="Archives" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-29-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-30-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-31-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-32-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:34:<title>FoROOM ~ View topic - The Roomz 2.0?</title>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-35-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-36-<style type="text/css">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-37-<!--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-38-/*
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-39-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-40-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-41-  http://www.mikelothar.com
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-42-  Please don't remove this. :)
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-43-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-44-  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-45-  theme administration centre. When you have finalised your style you could cut the final CSS code
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-46-  and place it in an external file, deleting this section to save bandwidth.
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-47-*/
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-48-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-49-/* General page style. The scroll bar colours only visible in IE5.5+ */
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-362-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-363-<!--AD_E-->
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-364-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-365-</div><SCRIPT LANGUAGE="JavaScript">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-366-<!--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-367-if (window != top) top.location.href = location.href;
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-368--->
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-369-</SCRIPT>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-370- 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-371-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-372-  <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-373-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-374-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-375-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-376-  <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:377:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=421&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">The Roomz 2.0?</a></th>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-378-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-379-   
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-380-<tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-381-  <td class="row1" colspan="2"><br clear="all" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-382-	<table cellspacing="0" cellpadding="4" border="0" align="center">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-383-	  <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-384-		<td colspan="4" align="center"><span class="gen"><b>What do you think about TR sequel?</b></span></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-385-	  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-386-	  <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-387-		<td align="center"> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-388-		  <table cellspacing="0" cellpadding="2" border="0">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-389-						<tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-390-			  <td><span class="gen">Yes, definitely a good idea!</span></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-391-			  <td> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-392-				<table cellspacing="0" cellpadding="0" border="0">
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-435-		<td colspan="4" align="center"><span class="gen">Total Votes : 6</span></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-436-	  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-437-	</table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-438-	<br clear="all" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-439-  </td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-440-</tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-441-	<tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-442-		<td class="spaceRow" colspan="2" height="1"><img src="templates/AdInfinitum/images/spacer.gif" alt="" width="1" height="1" /></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-443-	</tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-444-    <tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-445-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="11639"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-446-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-447-        <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-448-          <td width="100%"><a href="viewtopic.php?p=11639#11639"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-449-            Tue Jun 15, 2010 10:42 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:450:            <!-- &nbsp; &nbsp;Post subject: The Roomz 2.0?</span> -->
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-451-            </span></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-452-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11639"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-453-             </td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-454-        </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-455-      </table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-456-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-457-  <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-458-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-459-	
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-460-<table width="" border="0" cellspacing="2" cellpadding="0"><tr><td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-461-<table width="" border="0" cellspacing="1" cellpadding="0" bgcolor="#E3E3E3">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-462-  <tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-463-    <td><div align="center">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-464-	
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-465-<table width="" border="0" bgcolor="#FFFFFF" cellspacing="3">
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-472-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-473-</table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-474-</td></tr></table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-475-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-476- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-477-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-478-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-479-      <br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-480-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-481-      Posts: 1534<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-482-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-483-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-484-        <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-485-          <td valign="top"><span class="postbody">Do you miss brainstorming, banging your head into the wall, sleepless nights, thousand HSS inputs and evil riddles? If you do, then I have a good news for you.
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-486-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:487:I thought this through. I'm ready to continue The Roomz project. I have pack of new ideas. The Roomz 2.0 (which is a temporary name, don't get used to it) will be completely rebuilt. There will be no problems with FireFox any more. New structure, new riddles, new interface. Probably a new server. FREE server, 'cause I want to keep TR being free-to-play.
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-488-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-489-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-490-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-491-But, as always, I'd like to know your opinion. If you have any questions - feel free to ask.
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-492-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-493-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-494-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-495-Cheers,
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-496-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-497-Stachu</span></td></tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-498-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-499-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-500-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-501-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-502-<span style="color: red">Life is a room where the password is 'death'</span>
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-914-</td></tr></table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-915-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-916- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-917-      <span class="postdetails">Roomz fan<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-918-      <img src="http://www.thesmilies.com/smilies/military/officer8.gif" alt="Roomz fan" title="Roomz fan" border="0" /><br /><br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-919-      <br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-920-      Joined: 27 Jan 2010<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-921-      Posts: 26<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-922-      </span><br /></td></table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-923-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-924-        <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-925-          <td valign="top"><span class="postbody">Yes, I would love a sequel!!!
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-926-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-927-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-928-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:929:I don't know if you  mean with rebuild that the first the Roomz will be gone. I hope that isn't the case. Such a great game should be online forever for anyone who wants to play it. Even when it are only a handful of people. 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-930-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-931-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-932-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-933-But a new Roomz I would applaud and welcome very much. Go Stachu!!
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-934-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-935-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-936-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-937-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-938-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-939-P.S. Please don't abandon Shi. A friend and I are waiting hopeful for chapter 1.</span></td></tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-940-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"></span></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-941-        </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-942-      </table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-943-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-944-  <tr> 
+--
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-985-  </tr>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-986-</table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-987-</td></tr></table>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-988-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-989- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-990-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-991-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-992-      <br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-993-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-994-      Posts: 1534<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-995-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-996-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-997-        <tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-998-          <td valign="top"><span class="postbody">@Adventure
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-999-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html:1000:Don't worry. The Roomz will stay as it is. Eclipse is a sequel, separate project. What I mean by rebuilding is 'writing a whole engine from the beginning' ;]
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1001-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1002-And Shi is absolutely different story <img src="images/smiles/smile.gif" alt="happy" border="0" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1003-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1004-
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1005-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1006-@Jim
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1007-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1008-I can't have brilliant ideas all the time, gimme a break! <img src="images/smiles/theroomz/tongue.gif" alt="tongue" border="0" /> &lt;/sarcasm&gt;</span></td></tr> 
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1009-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1010-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1011-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1012-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1013-<span style="color: red">Life is a room where the password is 'death'</span>
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1014-<br />
+research/forumer-recovered/20120215154140_a09933dcd560_viewtopic.php.html-1015-<span style="font-style: italic">Progress: Roomz: mine (45/45 +5) :p, eri's (1/2), RG's (2/2), kish's (4/4 with magic :p), jan's (3/10), puzz_hunt's (many) :p</span>
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-19-<link rel="chapter forum" href="viewforum.php?f=20" title="Connotizer" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=10" title="News & infos" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=11" title="Free section" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=18" title="PayPal Donations" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=4" title="What is it?" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=1" title="Announcements" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=17" title="TR solvers" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-28-<link rel="chapter forum" href="viewforum.php?f=24" title="Archives" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-29-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-30-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-31-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-32-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:34:<title>FoROOM ~ View topic - The Roomz 2.0?</title>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-35-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-36-<style type="text/css">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-37-<!--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-38-/*
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-39-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-40-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-41-  http://www.mikelothar.com
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-42-  Please don't remove this. :)
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-43-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-44-  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-45-  theme administration centre. When you have finalised your style you could cut the final CSS code
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-46-  and place it in an external file, deleting this section to save bandwidth.
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-47-*/
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-48-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-49-/* General page style. The scroll bar colours only visible in IE5.5+ */
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-357-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-358-<!--AD_E-->
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-359-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-360-</div><SCRIPT LANGUAGE="JavaScript">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-361-<!--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-362-if (window != top) top.location.href = location.href;
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-363--->
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-364-</SCRIPT>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-365- 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-366-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-367-  <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-368-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-369-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-370-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-371-  <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:372:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=421&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">The Roomz 2.0?</a></th>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-373-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-374-   
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-375-<tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-376-  <td class="row1" colspan="2"><br clear="all" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-377-	<table cellspacing="0" cellpadding="4" border="0" align="center">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-378-	  <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-379-		<td colspan="4" align="center"><span class="gen"><b>What do you think about TR sequel?</b></span></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-380-	  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-381-	  <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-382-		<td align="center"> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-383-		  <table cellspacing="0" cellpadding="2" border="0">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-384-						<tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-385-			  <td><span class="gen">Yes, definitely a good idea!</span></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-386-			  <td> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-387-				<table cellspacing="0" cellpadding="0" border="0">
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-430-		<td colspan="4" align="center"><span class="gen">Total Votes : 6</span></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-431-	  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-432-	</table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-433-	<br clear="all" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-434-  </td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-435-</tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-436-	<tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-437-		<td class="spaceRow" colspan="2" height="1"><img src="templates/AdInfinitum/images/spacer.gif" alt="" width="1" height="1" /></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-438-	</tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-439-    <tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-440-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="11639"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-441-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-442-        <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-443-          <td width="100%"><a href="viewtopic.php?p=11639#11639"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-444-            Tue Jun 15, 2010 10:42 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:445:            <!-- &nbsp; &nbsp;Post subject: The Roomz 2.0?</span> -->
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-446-            </span></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-447-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11639"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-448-             </td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-449-        </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-450-      </table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-451-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-452-  <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-453-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-454-	
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-455-<table width="" border="0" cellspacing="2" cellpadding="0"><tr><td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-456-<table width="" border="0" cellspacing="1" cellpadding="0" bgcolor="#E3E3E3">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-457-  <tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-458-    <td><div align="center">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-459-	
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-460-<table width="" border="0" bgcolor="#FFFFFF" cellspacing="3">
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-467-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-468-</table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-469-</td></tr></table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-470-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-471- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-472-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-473-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-474-      <br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-475-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-476-      Posts: 1530<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-477-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-478-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-479-        <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-480-          <td valign="top"><span class="postbody">Do you miss brainstorming, banging your head into the wall, sleepless nights, thousand HSS inputs and evil riddles? If you do, then I have a good news for you.
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-481-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:482:I thought this through. I'm ready to continue The Roomz project. I have pack of new ideas. The Roomz 2.0 (which is a temporary name, don't get used to it) will be completely rebuilt. There will be no problems with FireFox any more. New structure, new riddles, new interface. Probably a new server. FREE server, 'cause I want to keep TR being free-to-play.
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-483-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-484-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-485-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-486-But, as always, I'd like to know your opinion. If you have any questions - feel free to ask.
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-487-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-488-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-489-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-490-Cheers,
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-491-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-492-Stachu</span></td></tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-493-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-494-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-495-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-496-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-497-<span style="color: red">Life is a room where the password is 'death'</span>
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-909-</td></tr></table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-910-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-911- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-912-      <span class="postdetails">Roomz fan<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-913-      <img src="http://www.thesmilies.com/smilies/military/officer8.gif" alt="Roomz fan" title="Roomz fan" border="0" /><br /><br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-914-      <br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-915-      Joined: 27 Jan 2010<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-916-      Posts: 26<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-917-      </span><br /></td></table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-918-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-919-        <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-920-          <td valign="top"><span class="postbody">Yes, I would love a sequel!!!
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-921-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-922-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-923-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:924:I don't know if you  mean with rebuild that the first the Roomz will be gone. I hope that isn't the case. Such a great game should be online forever for anyone who wants to play it. Even when it are only a handful of people. 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-925-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-926-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-927-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-928-But a new Roomz I would applaud and welcome very much. Go Stachu!!
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-929-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-930-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-931-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-932-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-933-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-934-P.S. Please don't abandon Shi. A friend and I are waiting hopeful for chapter 1.</span></td></tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-935-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"></span></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-936-        </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-937-      </table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-938-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-939-  <tr> 
+--
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-980-  </tr>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-981-</table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-982-</td></tr></table>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-983-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-984- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-985-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-986-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-987-      <br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-988-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-989-      Posts: 1530<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-990-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-991-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-992-        <tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-993-          <td valign="top"><span class="postbody">@Adventure
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-994-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html:995:Don't worry. The Roomz will stay as it is. Eclipse is a sequel, separate project. What I mean by rebuilding is 'writing a whole engine from the beginning' ;]
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-996-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-997-And Shi is absolutely different story <img src="images/smiles/smile.gif" alt="happy" border="0" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-998-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-999-
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1000-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1001-@Jim
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1002-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1003-I can't have brilliant ideas all the time, gimme a break! <img src="images/smiles/theroomz/tongue.gif" alt="tongue" border="0" /> &lt;/sarcasm&gt;</span></td></tr> 
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1004-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1005-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1006-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1007-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1008-<span style="color: red">Life is a room where the password is 'death'</span>
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1009-<br />
+research/forumer-recovered/20110618113725_a09933dcd560_viewtopic.php.html-1010-<span style="font-style: italic">Progress: Roomz: mine (45/45 +5) :p, eri's (1/2), RG's (2/2), kish's (4/4 with magic :p), jan's (3/10), puzz_hunt's (many) :p</span>
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-19-<link rel="chapter forum" href="viewforum.php?f=20" title="Connotizer" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=10" title="News & infos" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=11" title="Free section" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=18" title="PayPal Donations" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=4" title="What is it?" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=1" title="Announcements" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=17" title="TR solvers" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-28-<link rel="chapter forum" href="viewforum.php?f=24" title="Archives" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-29-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-30-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-31-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-32-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:34:<title>FoROOM ~ View topic - The Roomz 2.0?</title>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-35-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-36-<style type="text/css">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-37-<!--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-38-/*
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-39-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-40-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-41-  http://www.mikelothar.com
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-42-  Please don't remove this. :)
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-43-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-44-  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-45-  theme administration centre. When you have finalised your style you could cut the final CSS code
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-46-  and place it in an external file, deleting this section to save bandwidth.
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-47-*/
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-48-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-49-/* General page style. The scroll bar colours only visible in IE5.5+ */
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-357-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-358-<!--AD_E-->
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-359-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-360-</div><SCRIPT LANGUAGE="JavaScript">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-361-<!--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-362-if (window != top) top.location.href = location.href;
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-363--->
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-364-</SCRIPT>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-365- 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-366-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-367-  <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-368-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-369-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-370-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-371-  <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:372:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=421&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">The Roomz 2.0?</a></th>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-373-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-374-   
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-375-<tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-376-  <td class="row1" colspan="2"><br clear="all" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-377-	<table cellspacing="0" cellpadding="4" border="0" align="center">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-378-	  <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-379-		<td colspan="4" align="center"><span class="gen"><b>What do you think about TR sequel?</b></span></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-380-	  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-381-	  <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-382-		<td align="center"> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-383-		  <table cellspacing="0" cellpadding="2" border="0">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-384-						<tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-385-			  <td><span class="gen">Yes, definitely a good idea!</span></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-386-			  <td> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-387-				<table cellspacing="0" cellpadding="0" border="0">
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-430-		<td colspan="4" align="center"><span class="gen">Total Votes : 6</span></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-431-	  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-432-	</table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-433-	<br clear="all" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-434-  </td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-435-</tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-436-	<tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-437-		<td class="spaceRow" colspan="2" height="1"><img src="templates/AdInfinitum/images/spacer.gif" alt="" width="1" height="1" /></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-438-	</tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-439-    <tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-440-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="11639"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-441-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-442-        <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-443-          <td width="100%"><a href="viewtopic.php?p=11639#11639"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-444-            Tue Jun 15, 2010 10:42 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:445:            <!-- &nbsp; &nbsp;Post subject: The Roomz 2.0?</span> -->
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-446-            </span></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-447-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11639"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-448-             </td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-449-        </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-450-      </table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-451-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-452-  <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-453-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-454-	
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-455-<table width="" border="0" cellspacing="2" cellpadding="0"><tr><td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-456-<table width="" border="0" cellspacing="1" cellpadding="0" bgcolor="#E3E3E3">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-457-  <tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-458-    <td><div align="center">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-459-	
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-460-<table width="" border="0" bgcolor="#FFFFFF" cellspacing="3">
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-467-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-468-</table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-469-</td></tr></table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-470-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-471- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-472-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-473-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-474-      <br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-475-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-476-      Posts: 1530<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-477-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-478-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-479-        <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-480-          <td valign="top"><span class="postbody">Do you miss brainstorming, banging your head into the wall, sleepless nights, thousand HSS inputs and evil riddles? If you do, then I have a good news for you.
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-481-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:482:I thought this through. I'm ready to continue The Roomz project. I have pack of new ideas. The Roomz 2.0 (which is a temporary name, don't get used to it) will be completely rebuilt. There will be no problems with FireFox any more. New structure, new riddles, new interface. Probably a new server. FREE server, 'cause I want to keep TR being free-to-play.
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-483-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-484-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-485-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-486-But, as always, I'd like to know your opinion. If you have any questions - feel free to ask.
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-487-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-488-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-489-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-490-Cheers,
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-491-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-492-Stachu</span></td></tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-493-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-494-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-495-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-496-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-497-<span style="color: red">Life is a room where the password is 'death'</span>
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-909-</td></tr></table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-910-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-911- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-912-      <span class="postdetails">Roomz fan<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-913-      <img src="http://www.thesmilies.com/smilies/military/officer8.gif" alt="Roomz fan" title="Roomz fan" border="0" /><br /><br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-914-      <br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-915-      Joined: 27 Jan 2010<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-916-      Posts: 26<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-917-      </span><br /></td></table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-918-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-919-        <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-920-          <td valign="top"><span class="postbody">Yes, I would love a sequel!!!
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-921-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-922-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-923-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:924:I don't know if you  mean with rebuild that the first the Roomz will be gone. I hope that isn't the case. Such a great game should be online forever for anyone who wants to play it. Even when it are only a handful of people. 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-925-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-926-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-927-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-928-But a new Roomz I would applaud and welcome very much. Go Stachu!!
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-929-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-930-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-931-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-932-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-933-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-934-P.S. Please don't abandon Shi. A friend and I are waiting hopeful for chapter 1.</span></td></tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-935-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"></span></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-936-        </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-937-      </table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-938-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-939-  <tr> 
+--
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-980-  </tr>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-981-</table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-982-</td></tr></table>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-983-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-984- <table width="100%" border="0" cellspacing="2" cellpadding="0"><td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-985-      <span class="postdetails">Lord of The Roomz<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-986-      <img src="http://img320.imageshack.us/img320/4381/adminol6.png" alt="Lord of The Roomz" title="Lord of The Roomz" border="0" /><br /><br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-987-      <br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-988-      Joined: 22 Sep 2006<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-989-      Posts: 1530<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-990-      Location: Hell</span><br /></td></table></td>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-991-    <td class="row2" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-992-        <tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-993-          <td valign="top"><span class="postbody">@Adventure
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-994-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html:995:Don't worry. The Roomz will stay as it is. Eclipse is a sequel, separate project. What I mean by rebuilding is 'writing a whole engine from the beginning' ;]
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-996-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-997-And Shi is absolutely different story <img src="images/smiles/smile.gif" alt="happy" border="0" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-998-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-999-
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1000-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1001-@Jim
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1002-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1003-I can't have brilliant ideas all the time, gimme a break! <img src="images/smiles/theroomz/tongue.gif" alt="tongue" border="0" /> &lt;/sarcasm&gt;</span></td></tr> 
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1004-<tr><td valign="bottom"><span class="gensmall"><i></i></span><span class="postbody"><br />_________________<br /><script language="javascript" type="text/javascript"> function pointercursor()	{document.body.style.cursor = "move"; }function unpointercursor()	{document.body.style.cursor=""; }</script><img src="http://img211.imageshack.us/img211/1556/userbar235525hq1.gif" border="0" onmouseout="unpointercursor();" onmouseover="if(this.width == 540) {pointercursor();}"  onclick="if(this.width == 540) { window.open('templates/AdInfinitum/resizefix.php?originalsize=http://img211.imageshack.us/img211/1556/userbar235525hq1.gif', '_blank' ,'scrollbars=1,toolbar=no,resizable=1,menubar=no,directories=no,status=yes'); return false; }" alt="" />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1005-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1006-<a href="http://theroomz.org" target="_blank" class="postlink">.....:::ENTER THE ROOMZ:::.....</a>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1007-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1008-<span style="color: red">Life is a room where the password is 'death'</span>
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1009-<br />
+research/forumer-recovered/20110619154353_a09933dcd560_viewtopic.php.html-1010-<span style="font-style: italic">Progress: Roomz: mine (45/45 +5) :p, eri's (1/2), RG's (2/2), kish's (4/4 with magic :p), jan's (3/10), puzz_hunt's (many) :p</span>

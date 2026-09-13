@@ -1,0 +1,5 @@
+getBytesLoaded
+_level0
+_level1
+loader
+onEnterFrame

@@ -1,0 +1,4 @@
+research/decompiled/loadRoom/scripts/frame_1/DoAction.as:37:if(_level0.zamowienie != undefined)
+research/decompiled/loadRoom/scripts/frame_1/DoAction.as:39:   str = _level0.zamowienie;
+research/decompiled/loadRoom/scripts/frame_1/DoAction.as:40:   _level0.zamowienie = undefined;
+research/decompiled/loadRoom/scripts/frame_1/DoAction.as:53:   obj = _level1;

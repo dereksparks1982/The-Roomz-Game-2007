@@ -1,0 +1,5 @@
+filename	classification	first_capture	last_capture	capture_count	urls
+data.swf	KNOWN	20121102214348	20121102214348	1	http://www.theroomz.yoyo.pl/data.swf
+RoomzMain.swf	KNOWN	20061026205422	20150125020014	15	http://dreamwardgames.com/theroomz/RoomzMain.swf | http://theroomz.freehost.pl/RoomzMain.swf | http://theroomz.freehost.pl:80/RoomzMain.swf | http://www.theroomz.yoyo.pl/RoomzMain.swf | http://www.theroomz.yoyo.pl:80/RoomzMain.swf
+RRR.swf	KNOWN	20121102214347	20121102214347	1	http://www.theroomz.yoyo.pl/RRR.swf
+UnderTR.swf	UNKNOWN	20110930161017	20150125014523	2	http://dreamwardgames.com/theroomz/UnderTR.swf | http://www.theroomz.yoyo.pl/UnderTR.swf

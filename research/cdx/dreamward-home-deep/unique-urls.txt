@@ -1,0 +1,13 @@
+http://dreamward.home.pl:80/
+http://dreamward.home.pl/
+http://dreamward.home.pl/favicon.ico
+http://dreamward.home.pl/gierciadlo/
+http://dreamward.home.pl/gierciadlo/wp-content/themes/GamePlus/images/logoWP.png
+http://dreamward.home.pl/gierciadlo/wp-content/uploads/2013/06/colorful-invaders2.jpg
+http://dreamward.home.pl/gierciadlo/wp-content/uploads/2013/08/favicon2.ico
+http://dreamward.home.pl/robots.txt
+http://dreamward.home.pl:80/shi/
+http://dreamward.home.pl:80/theroomz
+http://dreamward.home.pl:80/theroomz/
+
+TOTAL UNIQUE URLS: 11

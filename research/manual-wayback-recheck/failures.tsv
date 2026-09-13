@@ -1,0 +1,5 @@
+stage	timestamp	target	detail	error
+cdx		https://theroomz.freehost.pl/hof.swf		"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+cdx		https://www.theroomz.freehost.pl/ile.txt		"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+cdx		https://dreamward.home.pl/theroomz/hof.swf		"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+cdx		https://www.dreamward.home.pl/theroomz/tescik.swf		"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"

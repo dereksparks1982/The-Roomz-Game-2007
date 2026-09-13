@@ -1,0 +1,4 @@
+_blank
+_root
+_url
+http://www.theroomz.yoyo.pl

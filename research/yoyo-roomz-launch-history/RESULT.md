@@ -1,0 +1,175 @@
+# Yoyo roomz.htm launch-page history
+
+- Historical roomz.htm captures: 26
+- Extracted references: 84
+- Distinct resolved references: 18
+- Candidate asset URLs: 9
+- Archive asset capture records: 162
+- Valid assets recovered: 142
+- Failures: 19
+
+## Distinct references
+
+- `http://ad.yoyo.pl/advertisements/lib.js`
+- `http://ad.yoyo.pl/img/kill.png`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8A2Z1AQSzAJIuMwLlLJD4ZQMuZzH0L2D0MTAwZGR5AGWyZwRmMQt4Z3j7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8AzMxZJAxLwqzZmLlAGV1BJR3AmHmBQN0BQx1AGHjLJIzAzAwZwpkAUj7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8BQH2MwSwBJD1LzLlMQSxAmL5AmMvL2H0AwuyZJR1ZwyxLmH4L2LjAKj7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8MGx3LGyzLmZ5AGEvMzD0L2SuLmOxMwV2ZTD4AGpkBJEuLwpjLwEwMKj7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8MQVjMzExMQSvBGEwAGEyMwEyMwRkZwqyMQH1ZQDkLGRjATSvMzAuLKj7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/l.php?t=2&p=AwDhZwN4YwR3Zv4kAmy8B3k3q3phqTuypz9ioKbhrJ95ol5joUj7sS9RK3j7sS9HK3j7sP9lo29grv5bqT18B3kcLI9upzAbnKMypaj7sUj7sUj7sQO8B3jjsQg8Z2AzMzL1Amp4A2HlMwEvMTL0AJR2MTDlAmyxAJRmL2D2ZwSwAGAxA3j7sQNhZv4jsQg8ZUj7sQR=`
+- `http://t.yoyo.pl/pure.js`
+- `http://theroomz.yoyo.pl/roomers-online2.gif`
+- `http://theroomz.yoyo.pl:80/Redirect.swf`
+- `http://theroomz.yoyo.pl:80/back.gif`
+- `http://www.theroomz.yoyo.pl/Redirect.swf`
+- `http://www.theroomz.yoyo.pl/back.gif`
+- `http://www.theroomz.yoyo.pl:80/Redirect.swf`
+- `http://www.theroomz.yoyo.pl:80/RoomzMain.swf`
+- `http://www.theroomz.yoyo.pl:80/back.gif`
+- `http://www.theroomz.yoyo.pl:80/yoyo.pnq`
+
+## Recovered assets
+
+- `http://ad.yoyo.pl/img/kill.png` @ 20110101204025 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110112215332 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110128134708 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110129044222 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110131174423 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110131224224 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110202134640 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110205092355 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110208045438 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110208210405 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110208220528 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110209000719 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110209001613 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110209170807 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20110210090734 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20120719044452 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20120801192636 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20120810031539 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20120816033402 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130116154932 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130117133713 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130117133714 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130117201907 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130118185259 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130120115030 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130122204910 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130123200927 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130123200930 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130124070938 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130124214246 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130125004956 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130125190632 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130127211220 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130128071023 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130128101452 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130129001646 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130129193750 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130129210159 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130130111932 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130130131537 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130131200517 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130201184510 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130201212259 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130203171220 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130206005311 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130206070853 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130211161207 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130211212451 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130213025546 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130213084233 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130214014944 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130214171322 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130217153638 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130218031339 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130218164741 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130222111354 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130223193818 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130228193359 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130301114313 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130301225949 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130305143806 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130306132636 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130307182501 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130308103227 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130308153005 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130309071507 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130310092243 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130311212854 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130313104200 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130318130858 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130318210825 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130319101006 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130320142542 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130323153215 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130324135952 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130325162432 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130325202210 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130326184609 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130327234244 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130328202413 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130330052444 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130330162622 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130402071511 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130409044951 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130410140303 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130410162014 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130410192247 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130413220906 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130414123207 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130415144705 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130417172450 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130418083646 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130420110700 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130420232128 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130421184428 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130423074339 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130423094215 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130423173125 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130424101521 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130424193345 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130425121614 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130425215017 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130426111258 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130426234115 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130427141602 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130427231707 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130428134853 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130428214157 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130429202455 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130430075339 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130430162731 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130501140732 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130502054908 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130502140753 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130503131304 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130503175357 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130504165620 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130506083657 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130506184826 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130509092155 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130510091951 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130512073633 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130512152326 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130512195533 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130513054647 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130513124852 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://ad.yoyo.pl/img/kill.png` @ 20130513210801 | PNG | 673 bytes | SHA-256 `12d4283a0ad036c9e881fe5928e7d50b2074870c591b5987472d147a29b28476`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121443 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121515 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20110930161003 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20130621143756 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121443 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121515 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20110930161003 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20130621143756 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl:80/RoomzMain.swf` @ 20070206062346 | SWF | 11034 bytes | SHA-256 `61c728f54f9552744edc19f22b152a7ed89854b45891316957eaeaf763d4add9`
+- `http://www.theroomz.yoyo.pl/RoomzMain.swf` @ 20110930161009 | SWF | 10995 bytes | SHA-256 `d7dd1d01587d2857d5bb67cc7b94c0ab6f9fc18b53d66cd81f2b849606ea32e1`
+- `http://www.theroomz.yoyo.pl/RoomzMain.swf` @ 20130621121228 | SWF | 10995 bytes | SHA-256 `d7dd1d01587d2857d5bb67cc7b94c0ab6f9fc18b53d66cd81f2b849606ea32e1`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121443 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20070920121515 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20110930161003 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`
+- `http://www.theroomz.yoyo.pl/back.gif` @ 20130621143756 | GIF | 1415 bytes | SHA-256 `7f587aef168635789c9da8581a1ebd8394600f7b969a4868e81f9e8a52fff6f5`

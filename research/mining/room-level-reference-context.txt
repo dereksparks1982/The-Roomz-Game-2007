@@ -1,0 +1,360 @@
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-7-   {
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-8-      showRedrawRegions(false);
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-9-   };
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-10-   k = setInterval(SRR,1000);
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as:13:   _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-14-   loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-15-   loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-16-   loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-17-}
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-18-else
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-19-{
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-1-loadVariables("ile.txt",_root);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as:2:loadVariables("bonus.txt",_root);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-3-var t = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-4-onEnterFrame = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-5-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-6-   t++;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-7-   if(koniec != undefined)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-8-   {
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-1-stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-2-st.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-3-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-4-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-5-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:6:      _level0.zamowienie = "_level106";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-7-      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-8-      loadMovieNum("sciemka.swf",106,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-9-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-10-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-11-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-12-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-13-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-14-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-15-cred.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-16-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-17-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-18-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:19:      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-20-      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-21-      loadMovieNum("about.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-22-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-23-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-24-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-25-   stopAllSounds();
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-38-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-39-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-40-go.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-41-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-42-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-43-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:44:      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-45-      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-46-      loadMovieNum("check.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-47-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-48-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-49-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-50-   stopAllSounds();
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-64-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-65-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-66-solutions.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-67-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-68-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-69-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:70:      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-71-      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-72-      loadMovieNum("solutions.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-73-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-74-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-75-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-76-   stopAllSounds();
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-39-   eval("slot" + k).onReleaseOutside = eval("slot" + k).onRollOut;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-40-   eval("slot" + k).useHandCursor = true;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-41-   if(LinkageNeme == "Loopka")
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-42-   {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-43-      eval("slot" + k).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-44-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:45:         if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-46-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:47:            _level0.aktualny.loopa();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-48-            this.onMouseMove = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-49-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:50:               if(_level0._ymouse < 365)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-51-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-52-                  Mouse.hide();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-53-               }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-54-               else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-55-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-56-                  Mouse.show();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-57-               }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-58-            };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-59-         }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-60-         else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-61-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:62:            _level1.zzoomowany.loopa();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-63-            this.onMouseMove = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-64-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:65:               if(_level0._ymouse < 365)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-66-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-67-                  Mouse.hide();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-68-               }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-69-               else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-70-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-71-                  Mouse.show();
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-75-         eval("slot" + k).gotoAndStop(3);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-76-         eval("slot" + k).onRollOut = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-77-         eval("slot" + k).onRollOver = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-78-         eval("slot" + k).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-79-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-80-            eval("slot" + k).gotoAndStop(2);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:81:            if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-82-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:83:               _level0.aktualny._parent.loopaIsActive = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:84:               chowajPrzyZoomie(_level0.aktualny._parent.doChowania);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:85:               _level0.aktualny._parent.zawieracz.onEnterFrame = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:86:               _level0.aktualny._parent.zawieracz.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:87:               _level0.aktualny._parent.ramka.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-88-               this.onMouseMove = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-89-               Mouse.show();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-90-            }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-91-            else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-92-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:93:               _level1.loopaIsActive = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:94:               _level1.zawieracz.onEnterFrame = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-95-               this.onMouseMove = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-96-               Mouse.show();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:97:               _level1.zawieracz.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:98:               _level1.ramka.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-99-            }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-100-            usunObiekt(LinkageNeme);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-101-            dodajObiekt(LinkageNeme);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-102-         };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-103-      };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-104-   }
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-113-            delete this.onEnterFrame;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-114-         }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-115-         this._alpha += 5;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-116-      };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-117-      eval("slot" + k).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-118-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:119:         _level1.cdUsed++;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:120:         _level1.room42.cdpl.gotoAndPlay("insert");
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-121-         eval(LinkageNeme).onEnterFrame = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-122-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-123-            if(this._alpha <= 0)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-124-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-125-               usunObiekt(LinkageNeme);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-126-               eval("slot" + k).gotoAndStop(1);
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-149-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-150-      i++;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-151-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-152-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-153-dodajHint = function(num, LinkageName)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-154-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:155:   if(eval("_level1.exhint" + num) == undefined)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-156-   {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:157:      _level1.createEmptyMovieClip("exhint" + num,_level1.getNextHighestDepth());
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:158:      _level100.interFace.input = "";
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-159-      if(LinkageName == undefined)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-160-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-161-         attachMovie("PaperTool","Paper" + num,this.getNextHighestDepth());
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-162-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-163-      else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-164-      {
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-195-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-196-         this.gotoAndStop(1);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-197-      };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-198-      eval("slot" + p).onReleaseOutside = eval("slot" + k).onRollOut;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-199-      eval("slot" + p).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-200-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:201:         _level1.TenRoom.ZoomIn("Hint" + num);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-202-      };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-203-      eval("slot" + p).useHandCursor = true;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-204-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-205-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-206-usunHint = function(num)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-207-{
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-214-         eval("Paper" + num).znikaj(4);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-215-         eval(sloty[i]).onRelease = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-216-         eval(sloty[i]).onReleaseOutside = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-217-         eval(sloty[i]).onRollOver = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-218-         eval(sloty[i]).onRollOut = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-219-         eval(sloty[i]).useHandCursor = false;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:220:         removeMovieClip(eval("_level1.exhint" + num));
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-221-         break;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-222-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-223-      i++;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-224-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-225-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-226-dezaktywujLoope = function()
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-279-         _loc1_ = _loc1_ + 1;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-280-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-281-      if(_loc5_ == _loc2_.length)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-282-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-283-         _loc2_ += str.substr(_loc3_,1);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-284-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:285:      _loc3_ += _level1.muffin + 1;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-286-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-287-   return _loc2_;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-288-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-289-aktywujLoope = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-290-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-291-   _root.aktywujeLoope = true;
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-304-            eval(sloty[i]).gotoAndStop(1);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-305-         };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-306-         eval(sloty[i]).onReleaseOutside = eval("slot" + k).onRollOut;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-307-         eval(sloty[i]).useHandCursor = true;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-308-         eval(sloty[i]).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-309-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:310:            if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-311-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:312:               _level0.aktualny.loopa();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-313-            }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-314-            else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-315-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:316:               _level1.zzoomowany.loopa();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-317-            }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-318-            eval(sloty[i]).gotoAndStop(3);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-319-            eval(sloty[i]).onRollOut = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-320-            eval(sloty[i]).onRollOver = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-321-            eval(sloty[i]).onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-322-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-323-               eval(sloty[i]).gotoAndStop(2);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:324:               if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-325-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:326:                  _level0.aktualny._parent.loopaIsActive = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:327:                  chowajPrzyZoomie(_level0.aktualny._parent.doChowania);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:328:                  _level0.aktualny._parent.zawieracz.onEnterFrame = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:329:                  _level0.aktualny._parent.zawieracz.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:330:                  _level0.aktualny._parent.ramka.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-331-               }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-332-               else
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-333-               {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:334:                  _level1.loopaIsActive = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:335:                  _level1.zawieracz.onEnterFrame = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:336:                  _level1.zawieracz.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:337:                  _level1.ramka.removeMovieClip();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-338-               }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-339-               usunObiekt("Loopka");
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-340-               dodajObiekt("Loopka");
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-341-            };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-342-         };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-343-         break;
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-346-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-347-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-348-go.onRelease = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-349-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-350-   this._x -= 1;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-351-   this._y -= 1;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as:352:   _level1.HSsprawdz(input.toUpperCase());
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-353-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-354-go.onReleaseOutside = go.onRelease;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-355-go.onPress = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-356-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-357-   this._x += 1;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as-358-   this._y += 1;
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-4-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-5-   this.startDrag(false,-3,suwak.suwka._height * -1,-3,-8);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-6-   this.onMouseMove = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-7-   {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-8-      _root.skala = 100 + 4 * Math.round(this._y * -1 / suwak.suwka._height * 100);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-9-      _root.skala2 = _root.skala / 100;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as:10:      _level1.zawieracz.zmienSkale();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as:11:      _level1.zawieracz.zmienPozycje();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-12-      updateAfterEvent();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-13-   };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-14-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-15-suwak.lapka.onMouseUp = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-16-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_2/DoAction.as-17-   this.stopDrag();
+--
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineButton2_44/BUTTONCONDACTION on(keyPress Enter).as-1-on(keyPress "<Enter>"){
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineButton2_44/BUTTONCONDACTION on(keyPress Enter).as:2:   _level1.HSsprawdz(input.toUpperCase());
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineButton2_44/BUTTONCONDACTION on(keyPress Enter).as-3-}
+--
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-31-            };
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-32-            delete this.onEnterFrame;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-33-         }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-34-      }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-35-   };
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-36-};
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as:37:if(_level0.zamowienie != undefined)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-38-{
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as:39:   str = _level0.zamowienie;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as:40:   _level0.zamowienie = undefined;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-41-   this.onEnterFrame = function()
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-42-   {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-43-      if(eval(str) != undefined)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-44-      {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-45-         obj = eval(str);
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-46-         wywolaj();
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-47-         delete this.onEnterFrame;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-48-      }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-49-   };
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-50-}
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-51-else
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-52-{
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as:53:   obj = _level1;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-54-   wywolaj();
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-55-}
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-56-stop();
+--
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as:1:_global.l = _level0;
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-2-l.r1 = new Array(0,0,1,1,1,2,1);
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-3-l.r2 = new Array(0,0,2,2,2,1,1);
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-4-l.r3 = new Array(0,0,3,2,2,2,1);
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-5-l.r4 = new Array(0,0,3,3,3,1,1);
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-6-l.r5 = new Array(0,0,2,3,3,2,1);
+research/decompiled/recovered-unique/91657fb753d5_data/scripts/frame_1/DoAction.as-7-l.r6 = new Array(0,0,3,2,3,2,2);
+--
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-9-   };
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-10-   k = setInterval(SRR,1000);
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-13-   if(substring(_root._url,0,23) == "http://theroomz.yoyo.pl" || substring(_root._url,0,27) == "http://www.theroomz.yoyo.pl")
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-14-   {
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as:15:      _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-16-      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-17-      loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-18-      loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-19-   }
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-20-   else
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-21-   {
+--
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as:1:_global.l = _level0;
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-2-loadMovieNum("data.swf",1,"GET");
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-3-rrr._visible = false;
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-4-clickHere.onRelease = function()
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-5-{
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-6-   getURL("http://theroomz.19.forumer.com/", "blank");
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-7-};
+--
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-7-   {
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-8-      showRedrawRegions(false);
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-9-   };
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-10-   k = setInterval(SRR,1000);
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as:13:   _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-14-   loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-15-   loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-16-   loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-17-}
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-18-else
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-19-{

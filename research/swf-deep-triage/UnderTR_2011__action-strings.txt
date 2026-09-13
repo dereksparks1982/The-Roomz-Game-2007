@@ -1,0 +1,11 @@
+donate_btn
+onRelease
+forum_btn
+hide_btn
+tre_logo
+http://theroomz.yoyo.pl/donate/
+_blank
+http://theroomz.19.forumer.com/index.php
+hidden
+http://theroomzeclipse.org
+http://www.facebook.com/theroomzproject

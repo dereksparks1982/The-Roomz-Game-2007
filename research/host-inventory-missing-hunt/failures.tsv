@@ -1,0 +1,2 @@
+stage	target	error
+inventory	theroomz.org/	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"

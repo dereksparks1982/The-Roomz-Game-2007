@@ -1,0 +1,17 @@
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:6:      _level0.zamowienie = "_level106";
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:7:      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:8:      loadMovieNum("sciemka.swf",106,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:19:      _level0.zamowienie = "_level10";
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:20:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:21:      loadMovieNum("about.swf",10,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:30:   getURL("http://theroomz.19.forumer.com", "_blank");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:36:   getURL("http://dreamward.home.pl/theroomz/hof.htm", "_blank");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:44:      _level0.zamowienie = "_level10";
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:45:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:46:      loadMovieNum("check.swf",10,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:57:      loadMovieNum("loadRoom.swf",3,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:58:      loadMovieNum("rules.swf",1,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:59:      loadMovieNum("interface.swf",100,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:70:      _level0.zamowienie = "_level10";
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:71:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:72:      loadMovieNum("solutions.swf",10,"GET");

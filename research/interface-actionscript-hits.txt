@@ -1,0 +1,40 @@
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:45:         if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:47:            _level0.aktualny.loopa();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:50:               if(_level0._ymouse < 365)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:62:            _level1.zzoomowany.loopa();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:65:               if(_level0._ymouse < 365)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:81:            if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:83:               _level0.aktualny._parent.loopaIsActive = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:84:               chowajPrzyZoomie(_level0.aktualny._parent.doChowania);
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:85:               _level0.aktualny._parent.zawieracz.onEnterFrame = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:86:               _level0.aktualny._parent.zawieracz.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:87:               _level0.aktualny._parent.ramka.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:93:               _level1.loopaIsActive = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:94:               _level1.zawieracz.onEnterFrame = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:97:               _level1.zawieracz.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:98:               _level1.ramka.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:119:         _level1.cdUsed++;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:120:         _level1.room42.cdpl.gotoAndPlay("insert");
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:155:   if(eval("_level1.exhint" + num) == undefined)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:157:      _level1.createEmptyMovieClip("exhint" + num,_level1.getNextHighestDepth());
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:158:      _level100.interFace.input = "";
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:201:         _level1.TenRoom.ZoomIn("Hint" + num);
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:220:         removeMovieClip(eval("_level1.exhint" + num));
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:285:      _loc3_ += _level1.muffin + 1;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:310:            if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:312:               _level0.aktualny.loopa();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:316:               _level1.zzoomowany.loopa();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:324:               if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:326:                  _level0.aktualny._parent.loopaIsActive = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:327:                  chowajPrzyZoomie(_level0.aktualny._parent.doChowania);
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:328:                  _level0.aktualny._parent.zawieracz.onEnterFrame = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:329:                  _level0.aktualny._parent.zawieracz.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:330:                  _level0.aktualny._parent.ramka.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:334:                  _level1.loopaIsActive = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:335:                  _level1.zawieracz.onEnterFrame = undefined;
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:336:                  _level1.zawieracz.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:337:                  _level1.ramka.removeMovieClip();
+research/decompiled/interface/scripts/DefineSprite_59/frame_1/DoAction.as:352:   _level1.HSsprawdz(input.toUpperCase());
+research/decompiled/interface/scripts/frame_2/DoAction.as:10:      _level1.zawieracz.zmienSkale();
+research/decompiled/interface/scripts/frame_2/DoAction.as:11:      _level1.zawieracz.zmienPozycje();
+research/decompiled/interface/scripts/DefineButton2_44/BUTTONCONDACTION on(keyPress Enter).as:2:   _level1.HSsprawdz(input.toUpperCase());

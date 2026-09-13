@@ -1,0 +1,28 @@
+research/theroomz-org-root/2012.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2012.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2012.html:6:<frame title="http://dreamward.home.pl/theroomz/" src="http://dreamward.home.pl/theroomz/" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2012.html:8:Go here instead - <a href="http://dreamward.home.pl/theroomz/">The Roomz</a></noframes>
+research/theroomz-org-root/2008.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2008.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2008.html:4:<meta name="Keywords" content="The Roomz, roomz, room, rooms, riddle, online, game"><meta name="Author" content="Stachu & Ralfi"><meta name="Description" content="Puzzle your way through over thirty levels of this point-and-click Flash riddle game."><link rel="shortcut icon" href="favicon.ico"></head>
+research/theroomz-org-root/2008.html:6:<frame title="http://www.theroomz.yoyo.pl/" src="http://www.theroomz.yoyo.pl/" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2008.html:8:Go here instead - <a href="http://www.theroomz.yoyo.pl/">The Roomz</a></noframes>
+research/theroomz-org-root/2007-early.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2007-early.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2007-early.html:4:<meta name="Keywords" content="The Roomz, roomz, room, rooms, riddle, online, game"><meta name="Author" content="Stachu & Ralfi"><meta name="Description" content="Puzzle your way through over thirty levels of this point-and-click Flash riddle game."><link rel="shortcut icon" href="favicon.ico"></head>
+research/theroomz-org-root/2007-early.html:6:<frame title="http://www.theroomz.yoyo.pl/roomz.htm" src="http://www.theroomz.yoyo.pl/roomz.htm" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2007-early.html:9:Go here instead - <a href="http://www.theroomz.yoyo.pl/roomz.htm">The Roomz</a></noframes>
+research/theroomz-org-root/2013.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2013.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2013.html:6:<frame title="http://dreamwardgames.com/theroomz/" src="http://dreamwardgames.com/theroomz/" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2013.html:8:Go here instead - <a href="http://dreamwardgames.com/theroomz/">The Roomz</a></noframes>
+research/theroomz-org-root/2007-late.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2007-late.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2007-late.html:4:<meta name="Keywords" content="The Roomz, roomz, room, rooms, riddle, online, game"><meta name="Author" content="Stachu & Ralfi"><meta name="Description" content="Puzzle your way through over thirty levels of this point-and-click Flash riddle game."><link rel="shortcut icon" href="favicon.ico"></head>
+research/theroomz-org-root/2007-late.html:6:<frame title="http://www.theroomz.yoyo.pl/" src="http://www.theroomz.yoyo.pl/" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2007-late.html:9:Go here instead - <a href="http://www.theroomz.yoyo.pl/">The Roomz</a></noframes>
+research/theroomz-org-root/2011.html:1:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+research/theroomz-org-root/2011.html:3:<head><title>The Roomz</title>
+research/theroomz-org-root/2011.html:4:<meta name="Keywords" content="The Roomz, roomz, room, rooms, riddle, online, game"><meta name="Author" content="Stachu & Ralfi"><meta name="Description" content="Puzzle your way through over thirty levels of this point-and-click Flash riddle game."><link rel="shortcut icon" href="favicon.ico"></head>
+research/theroomz-org-root/2011.html:6:<frame title="http://www.theroomz.yoyo.pl/" src="http://www.theroomz.yoyo.pl/" name="mainframe" frameborder="0" noresize="noresize" scrolling="auto">
+research/theroomz-org-root/2011.html:8:Go here instead - <a href="http://www.theroomz.yoyo.pl/">The Roomz</a></noframes>

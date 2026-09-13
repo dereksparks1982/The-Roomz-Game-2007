@@ -1,0 +1,10 @@
+_global
+_level0
+data.swf
+_level1
+rrr
+_visible
+clickHere
+onRelease
+http://theroomz.19.forumer.com/
+blank

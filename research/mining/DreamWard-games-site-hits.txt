@@ -1,0 +1,12 @@
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction_2.as:3:   getURL("http://www.facebook.com/theroomzproject", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction_2.as:7:   getURL("http://dreamwardgames.com/forum/", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:149:   _loc3_.loadClip("resources/" + swf_id + ".swf",_loc4_);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:183:   var games_labels = new Array("tre","tr","shi");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_10/DoAction.as:3:   getURL("http://www.facebook.com/theroomzproject", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_10/DoAction.as:7:   getURL("http://theroomz.org", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_50/DoAction.as:3:   getURL("http://www.newgrounds.com/portal/view/494691", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_5/DoAction.as:3:   getURL("http://www.facebook.com/theroomzproject", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_5/DoAction.as:7:   getURL("http://theroomzeclipse.org", "_blank");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_15/DoAction.as:3:   getURL("http://dreamwardgames.com/shi/", "_blank");
+research/decompiled/DreamWard-games-site/scripts/__Packages/mx/transitions/Tween.as:146:   function yoyo()
+research/decompiled/DreamWard-games-site/scripts/__Packages/mx/transitions/BroadcasterMX.as:50:      var _loc5_ = String(arguments.shift());

@@ -1,0 +1,341 @@
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=2&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="Q & A" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=6&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="Your opinions" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=17&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="TR solvers" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=3&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="Roomz" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=12&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="The other side of TR" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=5&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="Hyde-Park" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=13&amp;sid=453a4e839f5f00f556c0497b0b0b1110" title="Let's Shout!" />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:29:<title>FoROOM ~ View topic - HISTORY of TR</title>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-30-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-31-<style type="text/css">
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-32-<!--
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-33-/*
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-34-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-35-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-36-  http://www.mikelothar.com
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-37-  Please don't remove this. :)
+--
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-342-</SCRIPT>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-343- 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-344-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-345-  <tr> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-346-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-347-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-348-  </tr>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-349-  <tr> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:350:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php?sid=453a4e839f5f00f556c0497b0b0b1110"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1&amp;sid=453a4e839f5f00f556c0497b0b0b1110">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=167&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=&amp;sid=453a4e839f5f00f556c0497b0b0b1110">HISTORY of TR</a></th>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-351-  </tr>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-352-   
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-353-    <tr>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-354-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="4659"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-355-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-356-        <tr> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-357-          <td width="100%"><a href="viewtopic.php?p=4659&amp;sid=453a4e839f5f00f556c0497b0b0b1110#4659"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-358-            Tue Jul 31, 2007 11:12 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:359:            <!-- &nbsp; &nbsp;Post subject: HISTORY of TR</span> -->
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-360-            </span></td>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-361-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=4659&amp;sid=453a4e839f5f00f556c0497b0b0b1110"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-362-             </td>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-363-        </tr>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-364-      </table></td>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-365-  </tr>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-366-  <tr> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-367-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+--
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-392-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-393-        <tr> 
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-394-          <td valign="top"><span class="postbody">In order not to make too much mess at the Message Board, whole history will be stored here.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-395-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-396-
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-397-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-398-<span style="font-size: 14px; line-height: normal"><span style="font-weight: bold">THE ROOMZ HISTORY:</span></span>
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-399-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:400:<span style="color: red">&lt;b&gt;26 Dec&lt;/b&gt;</span> - Room 45 is done.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-401-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:402:<span style="color: red">&lt;b&gt;14 Sep&lt;/b&gt;</span> - New release - room 44 awaits.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-403-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html:404:<span style="color: red">&lt;b&gt;28 Aug&lt;/b&gt;</span> - Bonus Room 4 saw the daylight.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-405-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-406-<span style="color: red">&lt;b&gt;21 Aug&lt;/b&gt;</span> - Room 43 is ready.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-407-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-408-<span style="color: red">&lt;b&gt;4 Aug&lt;/b&gt;</span> - New release - roomz 41 &amp; 42 are ready.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-409-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-410-<span style="color: red">&lt;b&gt;26 Jul&lt;/b&gt;</span> - Room 40 and Bonus Room 3 awaits the challenge.
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-411-<br />
+research/forumer-recovered/20080303163910_67249a4e136d_viewtopic.php.html-412-<span style="color: red">&lt;b&gt;6 Jul&lt;/b&gt;</span> - New release - roomz 38 and 39 are ready.
+--
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=1&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Announcements" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=2&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Q & A" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=6&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Your opinions" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=3&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Roomz" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=12&amp;sid=76d447c294dc5955c26631d80439dbb1" title="The other side of TR" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=5&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Hyde-Park" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=13&amp;sid=76d447c294dc5955c26631d80439dbb1" title="Let's Shout!" />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:28:<title>FoROOM ~ View topic - HISTORY of TR</title>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-29-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-30-<style type="text/css">
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-31-<!--
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-32-/*
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-33-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-34-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-35-  http://www.mikelothar.com
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-36-  Please don't remove this. :)
+--
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-354-</SCRIPT>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-355- 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-356-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-357-  <tr> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-358-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-359-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-360-  </tr>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-361-  <tr> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:362:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php?sid=76d447c294dc5955c26631d80439dbb1"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1&amp;sid=76d447c294dc5955c26631d80439dbb1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=167&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=&amp;sid=76d447c294dc5955c26631d80439dbb1">HISTORY of TR</a></th>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-363-  </tr>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-364-   
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-365-    <tr>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-366-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="4659"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-367-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-368-        <tr> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-369-          <td width="100%"><a href="viewtopic.php?p=4659&amp;sid=76d447c294dc5955c26631d80439dbb1#4659"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-370-            Tue Jul 31, 2007 11:12 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:371:            <!-- &nbsp; &nbsp;Post subject: HISTORY of TR</span> -->
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-372-            </span></td>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-373-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=4659&amp;sid=76d447c294dc5955c26631d80439dbb1"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-374-             </td>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-375-        </tr>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-376-      </table></td>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-377-  </tr>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-378-  <tr> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-379-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+--
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-404-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-405-        <tr> 
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-406-          <td valign="top"><span class="postbody">In order not to make too much mess at the Message Board, whole history will be stored here.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-407-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-408-
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-409-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-410-<span style="font-size: 14px; line-height: normal"><span style="font-weight: bold">THE ROOMZ HISTORY:</span></span>
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-411-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:412:<span style="color: red">&lt;b&gt;26 Dec&lt;/b&gt;</span> - Room 45 is done.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-413-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:414:<span style="color: red">&lt;b&gt;14 Sep&lt;/b&gt;</span> - New release - room 44 awaits.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-415-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html:416:<span style="color: red">&lt;b&gt;28 Aug&lt;/b&gt;</span> - Bonus Room 4 saw the daylight.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-417-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-418-<span style="color: red">&lt;b&gt;21 Aug&lt;/b&gt;</span> - Room 43 is ready.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-419-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-420-<span style="color: red">&lt;b&gt;4 Aug&lt;/b&gt;</span> - New release - roomz 41 &amp; 42 are ready.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-421-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-422-<span style="color: red">&lt;b&gt;26 Jul&lt;/b&gt;</span> - Room 40 and Bonus Room 3 awaits the challenge.
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-423-<br />
+research/forumer-recovered/20080102173511_67249a4e136d_viewtopic.php.html-424-<span style="color: red">&lt;b&gt;6 Jul&lt;/b&gt;</span> - New release - roomz 38 and 39 are ready.
+--
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-51-
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-52-<table border=1 color=white><tr><td><center>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-53-<a href="http://theroomz.19.forumer.com/viewtopic.php?p=7965#7965">Test Chat</a><br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-54-<i>Status</i>: <font color=lime><b>ON</b></font>;
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-55-</td></tr></table><br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-56-
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-57-<img src="http://theroomz.yoyo.pl/hist.jpg"><br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-58-
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html:59:<font color=red><b>26 Dec</b></font> - Room 45 is done.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html:60:<font color=red><b>14 Sep</b></font> - New release - room 44 awaits.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html:61:<font color=red><b>28 Aug</b></font> - Bonus Room 4 saw the daylight.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-62-<font color=red><b>21 Aug</b></font> - Room 43 is ready.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-63-<font color=red><b>4 Aug</b></font> - New release - roomz 41 & 42 are ready.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-64-<font color=red><b>26 Jul</b></font> - Room 40 and Bonus Room 3 awaits the challenge.<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-65-<br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-66-To see whole history - click <a href="http://theroomz.19.forumer.com/viewtopic.php?p=4659#4659">HERE</a><br><br>
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-67-
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-68-
+research/forumer-recovered/20071227152221_5dfb90c5a1cd_a.html-69-<font color=lime>Check this board often - you'll get up-to-date information about<br> <b>The Roomz<b> project.</font>
+--
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-49->>Remember - if u have more than 10 posts, you can PM me (Stachu) or RG365 with a request that u would like to have a possibility to talk in a ShoutBox!<<<br>***<br><br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-50-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-51-<a href="http://theroomz.19.forumer.com/viewtopic.php?p=7965#7965">Test Chat</a><br><br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-52-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-53-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-54-<img src="http://theroomz.yoyo.pl/hist.jpg"><br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-55-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-56-<font color=red><b>1 Jun</b></font> - Bonus Room 5 is ready.<br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html:57:<font color=red><b>26 Dec</b></font> - Room 45 is done.<br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html:58:<font color=red><b>14 Sep</b></font> - New release - room 44 awaits.<br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html:59:<font color=red><b>28 Aug</b></font> - Bonus Room 4 saw the daylight.<br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-60-<br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-61-To see whole history - click <a href="http://theroomz.19.forumer.com/viewtopic.php?p=4659#4659">HERE</a><br><br>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-62-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-63-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-64-<font color=lime>Check this board often - you'll get up-to-date information about<br> <b>The Roomz<b> project.</font>
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-65-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-66-
+research/forumer-recovered/20081221110346_5dfb90c5a1cd_a.html-67-
+--
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-48-***<br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-49->>Remember - if u have more than 10 posts, you can PM me (Stachu) or RG365 with a request that u would like to have a possibility to talk in a ShoutBox!<<<br>***<br><br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-50-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-51-<a href="http://theroomz.19.forumer.com/viewtopic.php?p=7965#7965">Test Chat</a><br><br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-52-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-53-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-54-<img src="http://theroomz.yoyo.pl/hist.jpg"><br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-55-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html:56:<font color=red><b>26 Dec</b></font> - Room 45 is done.<br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html:57:<font color=red><b>14 Sep</b></font> - New release - room 44 awaits.<br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html:58:<font color=red><b>28 Aug</b></font> - Bonus Room 4 saw the daylight.<br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-59-<br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-60-To see whole history - click <a href="http://theroomz.19.forumer.com/viewtopic.php?p=4659#4659">HERE</a><br><br>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-61-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-62-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-63-<font color=lime>Check this board often - you'll get up-to-date information about<br> <b>The Roomz<b> project.</font>
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-64-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-65-
+research/forumer-recovered/20080226032406_5dfb90c5a1cd_a.html-66-
+--
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-49->>Remember - if u have more than 10 posts, you can PM me (Stachu) or RG365 with a request that u would like to have a possibility to talk in a ShoutBox!<<<br>***<br><br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-50-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-51-<a href="http://theroomz.19.forumer.com/viewtopic.php?p=7965#7965">Test Chat</a><br><br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-52-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-53-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-54-<img src="http://theroomz.yoyo.pl/hist.jpg"><br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-55-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-56-<font color=red><b>1 Jun</b></font> - Bonus Room 5 is ready.<br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html:57:<font color=red><b>26 Dec</b></font> - Room 45 is done.<br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html:58:<font color=red><b>14 Sep</b></font> - New release - room 44 awaits.<br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html:59:<font color=red><b>28 Aug</b></font> - Bonus Room 4 saw the daylight.<br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-60-<br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-61-To see whole history - click <a href="http://theroomz.19.forumer.com/viewtopic.php?p=4659#4659">HERE</a><br><br>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-62-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-63-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-64-<font color=lime>Check this board often - you'll get up-to-date information about<br> <b>The Roomz<b> project.</font>
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-65-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-66-
+research/forumer-recovered/20090220100015_5dfb90c5a1cd_a.html-67-
+--
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-20-<link rel="chapter forum" href="viewforum.php?f=1" title="Announcements" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-27-<!-- base url -->
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html:28:<title>FoROOM ~ View topic - HISTORY of TR</title>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-29-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-30-<style type="text/css">
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-31-<!--
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-32-/*
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-33-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-34-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-35-  http://www.mikelothar.com
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-36-  Please don't remove this. :)
+--
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-354-</SCRIPT>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-355- 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-356-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-357-  <tr> 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-358-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-359-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-360-  </tr>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-361-  <tr> 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html:362:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=167&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">HISTORY of TR</a></th>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-363-  </tr>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-364-   
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-365-    <tr>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-366-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="4659"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-367-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-368-        <tr> 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-369-          <td width="100%"><a href="viewtopic.php?p=4659#4659"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-370-            Tue Jul 31, 2007 11:12 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html:371:            <!-- &nbsp; &nbsp;Post subject: HISTORY of TR</span> -->
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-372-            </span></td>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-373-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=4659"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-374-             </td>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-375-        </tr>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-376-      </table></td>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-377-  </tr>
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-378-  <tr> 
+research/forumer-recovered/20071030230441_67249a4e136d_viewtopic.php.html-379-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+--
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-21-<link rel="chapter forum" href="viewforum.php?f=2" title="Q & A" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-22-<link rel="chapter forum" href="viewforum.php?f=6" title="Your opinions" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-23-<link rel="chapter forum" href="viewforum.php?f=17" title="TR solvers" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-24-<link rel="chapter forum" href="viewforum.php?f=3" title="Roomz" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-25-<link rel="chapter forum" href="viewforum.php?f=12" title="The other side of TR" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-26-<link rel="chapter forum" href="viewforum.php?f=5" title="Hyde-Park" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-27-<link rel="chapter forum" href="viewforum.php?f=13" title="Let's Shout!" />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:29:<title>FoROOM ~ View topic - HISTORY of TR</title>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-30-<!-- link rel="stylesheet" href="templates/AdInfinitum/AdInfinitum.css" type="text/css" -->
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-31-<style type="text/css">
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-32-<!--
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-33-/*
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-34-  The original Ad Infinitum v1.05 skin for phpBB version 2+
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-35-  Created by Mike Lothar (c) 2004
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-36-  http://www.mikelothar.com
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-37-  Please don't remove this. :)
+--
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-351-</SCRIPT>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-352- 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-353-<table align="CENTER" class="forumline" width="717" cellspacing="1" cellpadding="5" border="0">
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-354-  <tr> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-355-    <th class="thCornerL" width="150" height="26" nowrap="nowrap">Author</th>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-356-    <th class="thTop" nowrap="nowrap">Message</th>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-357-  </tr>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-358-  <tr> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:359:    <th colspan="2" align="left" height="28" class="nav"><a class="nav" href="index.php"><</a>&nbsp;&nbsp;<a class="nav" href="viewforum.php?f=1">Announcements</a>&nbsp;&nbsp;~&nbsp;&nbsp;<a class="nav" href="viewtopic.php?t=167&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">HISTORY of TR</a></th>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-360-  </tr>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-361-   
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-362-    <tr>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-363-    <td align="left" valign="MIDDLE" class="row3"><table width="100%" border="0" cellspacing="2" cellpadding="0"><td><span class="name"><a name="4659"></a><b>.:Stachu:.</b></span></td></table></td>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-364-    <td class="row3" height="28" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-365-        <tr> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-366-          <td width="100%"><a href="viewtopic.php?p=4659#4659"><img src="templates/AdInfinitum/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-367-            Tue Jul 31, 2007 11:12 am<span class="gen">&nbsp;</span> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:368:            <!-- &nbsp; &nbsp;Post subject: HISTORY of TR</span> -->
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-369-            </span></td>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-370-          <td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=4659"><img src="templates/AdInfinitum/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>  
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-371-             </td>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-372-        </tr>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-373-      </table></td>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-374-  </tr>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-375-  <tr> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-376-    <td class="row1" width="150" align="left" valign="top" bordercolor="#FFFFFF"> 
+--
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-401-    <td class="row1" width="100%" height="28" valign="top"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="4">
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-402-        <tr> 
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-403-          <td valign="top"><span class="postbody">In order not to make too much mess at the Message Board, whole history will be stored here.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-404-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-405-
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-406-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-407-<span style="font-size: 14px; line-height: normal"><span style="font-weight: bold">THE ROOMZ HISTORY:</span></span>
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-408-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:409:<span style="color: red">&lt;b&gt;26 Dec&lt;/b&gt;</span> - Room 45 is done.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-410-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:411:<span style="color: red">&lt;b&gt;14 Sep&lt;/b&gt;</span> - New release - room 44 awaits.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-412-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html:413:<span style="color: red">&lt;b&gt;28 Aug&lt;/b&gt;</span> - Bonus Room 4 saw the daylight.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-414-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-415-<span style="color: red">&lt;b&gt;21 Aug&lt;/b&gt;</span> - Room 43 is ready.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-416-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-417-<span style="color: red">&lt;b&gt;4 Aug&lt;/b&gt;</span> - New release - roomz 41 &amp; 42 are ready.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-418-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-419-<span style="color: red">&lt;b&gt;26 Jul&lt;/b&gt;</span> - Room 40 and Bonus Room 3 awaits the challenge.
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-420-<br />
+research/forumer-recovered/20081221132942_67249a4e136d_viewtopic.php.html-421-<span style="color: red">&lt;b&gt;6 Jul&lt;/b&gt;</span> - New release - roomz 38 and 39 are ready.
+--
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-43-<font size=2 color=red><b></b></font>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-44-</td></tr></table>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-45-
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-46-<br>***<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-47->>Let's chat on <b>#TheRoomz</b> <i>IRC channel</i>! More info <a href=http://theroomz.19.forumer.com/viewtopic.php?t=98>HERE</a><<<br>***<br><br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-48-
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-49-<img src="http://theroomz.yoyo.pl/hist.jpg"><br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-50-
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html:51:<font color=red><b>14 Sep</b></font> - New release - room 44 awaits.<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html:52:<font color=red><b>28 Aug</b></font> - Bonus Room 4 saw the daylight.<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-53-<font color=red><b>21 Aug</b></font> - Room 43 is ready.<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-54-<font color=red><b>4 Aug</b></font> - New release - roomz 41 & 42 are ready.<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-55-<font color=red><b>26 Jul</b></font> - Room 40 and Bonus Room 3 awaits the challenge.<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-56-<br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-57-To see whole history - click <a href="http://theroomz.19.forumer.com/viewtopic.php?p=4659#4659">HERE</a><br><br>
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-58-
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-59-
+research/forumer-recovered/20071030225128_5dfb90c5a1cd_a.html-60-<font color=lime>Check this board often - you'll get up-to-date information about<br> <b>The Roomz<b> project.</font></li>

@@ -1,0 +1,33 @@
+0000: ConstantPool len=54 | strings=['donate_btn', 'onRelease', 'forum_btn', 'hide_btn', 'tre_logo']
+0039: Stop len=0
+003a: Push len=2 | const8:0
+003f: GetVariable len=0
+0040: Push len=2 | const8:1
+0045: DefineFunction len=5
+004d: GetURL len=39 | url='http://theroomz.yoyo.pl/donate/' target='_blank'
+0077: SetMember len=0
+0078: Push len=2 | const8:2
+007d: GetVariable len=0
+007e: Push len=2 | const8:1
+0083: DefineFunction len=5
+008b: GetURL len=48 | url='http://theroomz.19.forumer.com/index.php' target='_blank'
+00be: SetMember len=0
+00bf: Push len=2 | const8:3
+00c4: GetVariable len=0
+00c5: Push len=2 | const8:1
+00ca: DefineFunction len=5
+00d2: GotoLabel len=7 | label='hidden'
+00dc: SetMember len=0
+00dd: Push len=2 | const8:4
+00e2: GetVariable len=0
+00e3: Push len=2 | const8:1
+00e8: DefineFunction len=5
+00f0: GetURL len=34 | url='http://theroomzeclipse.org' target='_blank'
+0115: SetMember len=0
+0116: Push len=2 | const8:5
+011b: GetVariable len=0
+011c: Push len=2 | const8:1
+0121: DefineFunction len=5
+0129: GetURL len=47 | url='http://www.facebook.com/theroomzproject' target='_blank'
+015b: SetMember len=0
+015c: End

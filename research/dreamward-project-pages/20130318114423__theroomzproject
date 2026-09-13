@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Roomz Project | Obviously entertaining</title>
+		<meta charset="utf-8">
+		<meta name="Description" content="Challenging riddles, unique puzzles, huge variety of ciphers. Everything to entertain your brain to the max!" />
+		<meta name="Keywords" content="the roomz, roomz, theroomz, eclipse, abandoned pit, riddle, riddles, game, flash, adventure, puzzles, entertain, entartainment, games, cipher, ciphers, code, codes" />
+		<meta name="Author" content="DreamWardGames.com" />
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">   
+		<script src="js/jquery-1.6.3.min.js" type="text/javascript"></script>
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/cufon-replace.js" type="text/javascript"></script>
+		<script src="js/NewsGoth_400.font.js" type="text/javascript"></script>
+		<script src="js/NewsGoth_700.font.js" type="text/javascript"></script>
+		<script src="js/Vegur_300.font.js" type="text/javascript"></script> 
+		<script src="js/FF-cash.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="js/tms-0.3.js" type="text/javascript"></script>
+		<script src="js/tms_presets.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() { 
+				$('.close').bind('click', function(){
+					$(this).parent().show().fadeOut(500);
+				});
+			}); 
+		</script>
+		<!--[if lt IE 7]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+			</a>
+		</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="js/html5.js"></script>
+			<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+		<![endif]-->
+	</head>
+	<body id="page1">
+	<!--==============================header=================================-->
+		<header>
+			<div class="main">
+				<div class="wrapper">
+					<h1>
+						<a href="index.html">The Roomz Project</a>
+					</h1>
+					<nav>
+						<ul class="menu">
+							<li><a class="active" href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="http://theroomzeclipse.org/forum/index.php" target="_blank">Forum</a></li>
+							<li><a href="support.html">Support</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+	<!--==============================content================================-->
+		<section id="content">
+			<div class="main">
+				<div class="slider-wrapper">
+					<div class="slider">
+						<ul class="items">
+							<li>
+								<img src="images/slider-img1.jpg" alt="" />
+								<strong class="banner">
+									<a class="close" href="#">x</a>
+									<strong>TRAP</strong>
+									<span>The Roomz: Abandoned Pit</span>
+									<b class="margin-bot">The biggest interactive riddle database on the web. Unlimited amount of unique puzzles, five levels of difficulty to choose from, no more password remembering! Free and open for everyone!<br /></b>
+									<a class="button2" href="http://trap-the-game.org">Play!</a>
+								</strong>
+							</li>
+							<li>
+								<img src="images/slider-img2.jpg" alt="" />
+								<strong class="banner">
+									<a class="close" href="#">x</a>
+									<strong>TRE</strong>
+									<span>The Roomz: Eclipse</span>
+									<b class="margin-bot">Twenty four high quality roomz filled with challenging riddles. Solve the mystery of Eclipse Corp. and find your way to escape from the hands of Doctor Vile. Are you ready for an experiment?</b>
+									<a class="button2" href="http://theroomzeclipse.org">Play!</a>
+								</strong>
+							</li>
+							<li>
+								<img src="images/slider-img3.jpg" alt="" />
+								<strong class="banner">
+									<a class="close" href="#">x</a>
+									<strong>TR</strong>
+									<span>The Roomz</span>
+									<b class="margin-bot">Fifty roomz containing riddles with increasing difficulty. Seek for hints and solve puzzles to get a password in order to progress to another room. Can you beat them all?</b>
+									<a class="button2" href="http://theroomz.org">Play!</a>
+								</strong>
+							</li>
+						</ul>
+					</div>
+					<ul class="pagination">
+						<li><a class="item-1" href=""><strong>01</strong></a></li>
+						<li><a class="item-2" href=""><strong>02</strong></a></li>
+						<li><a class="item-3" href=""><strong>03</strong></a></li>
+					</ul>
+				</div>
+				<div class="border-bot1 img-indent-bot">
+					<h2>Challenging riddles, unique puzzles, huge variety of ciphers.<strong>Everything to entertain your brain to the max!</strong></h2>
+				</div>
+				<div class="wrapper">
+					
+				</div>
+			</div>
+		</section>
+	<!--==============================footer=================================-->
+		<footer>
+			<div class="main">
+				<div class="wrapper border-bot2 margin-bot">
+					<article class="fcol-1">
+						<div class="indent-left">
+							<h3 class="color-1">Stay Connected</h3>
+							<ul class="list-services">
+								<li><a href="https://www.facebook.com/theroomzproject" target="_blank">Facebook</a></li>
+								<li class="last-item"><a class="it-2" href="https://twitter.com/theroomz" target="_blank">Twitter</a></li>
+							</ul>
+						</div>
+					</article>
+					<article class="fcol-2">
+						<h3 class="color-1">About The Project</h3>
+						<p class="p3">The Roomz Project is a series of interactive riddles based on point-and-click genre, developed by <a href="http://dreamwardgames.com" title="DreamWard Games" target="_blank">DreamWard Games</a>. Each of three games provides many hours of mind-stretching riddles and puzzles.</p>
+						<a class="button2" href="about.html">Read More</a>
+					</article>
+					<article class="fcol-3">
+						<h3 class="color-1">Games</h3>
+						<ul class="list-3">
+							<li><a href="http://theroomz.org" target="_blank">The Roomz</a> <span></span></li>
+							<li><a href="http://theroomzeclipse.org" target="_blank">The Roomz: Eclipse</a> <span></span></li>
+							<li class="last-item"><a href="http://trap-the-game.org">The Roomz: Abandoned Pit</a> <span></span></li>
+						</ul>
+					</article>
+				</div>
+				<div class="aligncenter">
+					&copy; 2012 DreamWard Games, all rights reserved<br /><p class="footer-tiny">Website layout based on a template from <a class="color-1" href="http://www.templatemonster.com/" target="_blank" rel="nofollow">www.templatemonster.com</a></p>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript"> Cufon.now(); </script>
+		<script type="text/javascript">
+			$(window).load(function() {
+				$('.slider')._TMS({
+					duration:500,
+					easing:'easeOutQuart',
+					preset:'diagonalExpand',
+					slideshow:7000,
+					pagNums:false,
+					pagination:'.pagination',
+					banners:'fade',
+					pauseOnHover:true,
+					waitBannerAnimation:true
+				});
+			});
+		</script>
+	</body>
+</html>

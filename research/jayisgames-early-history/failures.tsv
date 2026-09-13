@@ -1,0 +1,6 @@
+stage	target	timestamp	error
+cdx	https://www.jayisgames.com/review/2007/02/		"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+replay	http://jayisgames.com/archives/2007/02/	20080512035037	"RuntimeError(""<HTTPError 400: 'Bad Request'>"")"
+replay	http://jayisgames.com:80/archives/2007/02/	20080707001027	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+replay	http://jayisgames.com:80/archives/2007/02/	20080721115814	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"
+replay	http://jayisgames.com:80/archives/2007/02/	20111227155044	"RuntimeError(""URLError(ConnectionRefusedError(111, 'Connection refused'))"")"

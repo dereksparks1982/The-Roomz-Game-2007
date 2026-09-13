@@ -1,0 +1,126 @@
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-9-   };
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-10-   k = setInterval(SRR,1000);
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-13-   _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as:14:   loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as:15:   loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as:16:   loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-17-}
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-18-else
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-19-{
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-20-   gotoAndStop(2);
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as-21-}
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-2-st.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-3-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-4-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-5-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-6-      _level0.zamowienie = "_level106";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:7:      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:8:      loadMovieNum("sciemka.swf",106,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-9-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-10-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-11-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-12-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-13-   dzwiek.stop();
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-15-cred.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-16-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-17-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-18-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-19-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:20:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:21:      loadMovieNum("about.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-22-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-23-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-24-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-25-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-26-   dzwiek.stop();
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-40-go.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-41-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-42-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-43-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-44-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:45:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:46:      loadMovieNum("check.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-47-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-48-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-49-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-50-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-51-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-52-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-53-rules.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-54-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-55-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-56-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:57:      loadMovieNum("loadRoom.swf",3,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:58:      loadMovieNum("rules.swf",1,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:59:      loadMovieNum("interface.swf",100,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-60-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-61-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-62-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-63-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-64-   dzwiek.stop();
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-66-solutions.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-67-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-68-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-69-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-70-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:71:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:72:      loadMovieNum("solutions.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-73-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-74-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-75-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-76-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-77-   dzwiek.stop();
+--
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-13-   if(substring(_root._url,0,23) == "http://theroomz.yoyo.pl" || substring(_root._url,0,27) == "http://www.theroomz.yoyo.pl")
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-14-   {
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-15-      _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as:16:      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as:17:      loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as:18:      loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-19-   }
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-20-   else
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-21-   {
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-22-      gotoAndStop(3);
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as-23-      getURL("http://theroomz.yoyo.pl", "_blank");
+--
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as:1:var mcLoader = new MovieClipLoader();
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-2-var listener = new Object();
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-3-listener.onLoadProgress = function(target, bytesLoaded, bytesTotal)
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-4-{
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-5-};
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-6-listener.onLoadInit = function(target)
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-7-{
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-8-};
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-9-mcLoader.addListener(listener);
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as-10-_root.createEmptyMovieClip("nowy",_root.getNextHighestDepth());
+research/decompiled/recovered-unique/ee32de2a31ba_frame/scripts/frame_1/DoAction.as:11:mcLoader.loadClip("tescik.swf",_root.nowy);
+--
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-1-_global.l = _level0;
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as:2:loadMovieNum("data.swf",1,"GET");
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-3-rrr._visible = false;
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-4-clickHere.onRelease = function()
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-5-{
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-6-   getURL("http://theroomz.19.forumer.com/", "blank");
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as-7-};
+--
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-9-   };
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-10-   k = setInterval(SRR,1000);
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-11-   _focusrect = false;
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-12-   fscommand("showmenu","false");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-13-   _level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as:14:   loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as:15:   loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as:16:   loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-17-}
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-18-else
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-19-{
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-20-   gotoAndStop(2);
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as-21-}

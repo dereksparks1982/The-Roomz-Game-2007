@@ -1,0 +1,38 @@
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction.as:21:      this.onRollOut = this.onReleaseOutside = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction.as:28:      this.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction_2.as:1:fb_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_1/DoAction_2.as:5:forum_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:16:      _loc2_.gotoAndStop(games_labels[i - 1]);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:45:      _loc2_.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:60:      _loc4_.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:80:   this_mc.icon.gotoAndStop(_loc3_);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:85:      this_mc.hex_flash_mc.gotoAndPlay("flash");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:88:function peekIn(swf_id)
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:99:         loadSWF(swf_id);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:108:function loadSWF(swf_id)
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:149:   _loc3_.loadClip("resources/" + swf_id + ".swf",_loc4_);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:153:   screen.gotoAndStop(games_labels[num]);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:154:   screen.viewer_mc.gotoAndStop(games_labels[num]);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:155:   screen.flash_mc.gotoAndPlay("flash");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:183:   var games_labels = new Array("tre","tr","shi");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:187:   var games_labels = new Array("con","ed");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:191:   var games_labels = new Array("mem","inv","blob","flob","tc","db1");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:193:var games_total = games_labels.length;
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:199:hand_mc.onPress = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:203:hand_mc.onRelease = hand_mc.onReleaseOutside = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_223/frame_10/DoAction.as:208:back_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/frame_1/DoAction.as:10:      gotoAndStop("main");
+research/decompiled/DreamWard-games-site/scripts/frame_2/DoAction.as:11:         this._parent.SITE.gotoAndStop(target_frame);
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_45/DoAction.as:1:peekin_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_45/DoAction.as:3:   this._parent._parent.peekIn("memloch");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_10/DoAction.as:1:fb_mc.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_10/DoAction.as:5:play_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_50/DoAction.as:1:play_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_5/DoAction.as:1:fb_mc.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_5/DoAction.as:5:play_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_219/frame_15/DoAction.as:1:play_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_80_embedder/frame_1/DoAction.as:5:close_btn.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_80_embedder/frame_1/DoAction.as:19:back_mc.onRelease = 1;
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_178/frame_1/DoAction.as:10:      _loc3_.onRelease = function()
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_178/frame_1/DoAction.as:30:   _loc2_.gotoAndStop("on");
+research/decompiled/DreamWard-games-site/scripts/DefineSprite_178/frame_1/DoAction.as:39:      _loc3_.gotoAndStop("off");

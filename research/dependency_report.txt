@@ -1,0 +1,68 @@
+===== RRR_2012 =====
+REFERENCES
+data.swf
+http://theroomz.19.forumer.com/
+numbs.html
+INTERESTING CODE
+roomz_ffdec/out/RRR_2012/scripts/frame_1/DoAction.as:1: _global.l = _level0;
+roomz_ffdec/out/RRR_2012/scripts/frame_1/DoAction.as:2: loadMovieNum("data.swf",1,"GET");
+roomz_ffdec/out/RRR_2012/scripts/frame_1/DoAction.as:6: getURL("http://theroomz.19.forumer.com/", "blank");
+
+===== RoomzMain_2007 =====
+REFERENCES
+Intro.swf
+frame.swf
+http://theroomz.yoyo.pl
+http://www.theroomz.yoyo.pl
+loadRoom.swf
+INTERESTING CODE
+roomz_ffdec/out/RoomzMain_2007/scripts/DefineButton2_7/BUTTONCONDACTION on(release).as:2: getURL("http://theroomz.yoyo.pl", "_self");
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:13: if(substring(_root._url,0,23) == "http://theroomz.yoyo.pl" || substring(_root._url,0,27) == "http://www.theroomz.yoyo.pl")
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:15: _level0.zamowienie = "_level105";
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:16: loadMovieNum("loadRoom.swf",107,"GET");
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:17: loadMovieNum("Intro.swf",105,"GET");
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:18: loadMovieNum("frame.swf",110,"GET");
+roomz_ffdec/out/RoomzMain_2007/scripts/frame_1/DoAction.as:23: getURL("http://theroomz.yoyo.pl", "_blank");
+
+===== RoomzMain_2011 =====
+REFERENCES
+Intro.swf
+frame.swf
+http://theroomz.yoyo.pl
+loadRoom.swf
+INTERESTING CODE
+roomz_ffdec/out/RoomzMain_2011/scripts/DefineButton2_7/BUTTONCONDACTION on(release).as:2: getURL("http://theroomz.yoyo.pl", "_self");
+roomz_ffdec/out/RoomzMain_2011/scripts/frame_1/DoAction.as:13: _level0.zamowienie = "_level105";
+roomz_ffdec/out/RoomzMain_2011/scripts/frame_1/DoAction.as:14: loadMovieNum("loadRoom.swf",107,"GET");
+roomz_ffdec/out/RoomzMain_2011/scripts/frame_1/DoAction.as:15: loadMovieNum("Intro.swf",105,"GET");
+roomz_ffdec/out/RoomzMain_2011/scripts/frame_1/DoAction.as:16: loadMovieNum("frame.swf",110,"GET");
+
+===== RoomzMain_2013 =====
+REFERENCES
+Intro.swf
+frame.swf
+http://theroomz.yoyo.pl
+loadRoom.swf
+INTERESTING CODE
+roomz_ffdec/out/RoomzMain_2013/scripts/DefineButton2_7/BUTTONCONDACTION on(release).as:2: getURL("http://theroomz.yoyo.pl", "_self");
+roomz_ffdec/out/RoomzMain_2013/scripts/frame_1/DoAction.as:13: _level0.zamowienie = "_level105";
+roomz_ffdec/out/RoomzMain_2013/scripts/frame_1/DoAction.as:14: loadMovieNum("loadRoom.swf",107,"GET");
+roomz_ffdec/out/RoomzMain_2013/scripts/frame_1/DoAction.as:15: loadMovieNum("Intro.swf",105,"GET");
+roomz_ffdec/out/RoomzMain_2013/scripts/frame_1/DoAction.as:16: loadMovieNum("frame.swf",110,"GET");
+
+===== UnderTR_2011 =====
+REFERENCES
+http://theroomz.19.forumer.com/index.php
+http://theroomz.yoyo.pl/donate/
+http://theroomzeclipse.org
+http://www.facebook.com/theroomzproject
+INTERESTING CODE
+roomz_ffdec/out/UnderTR_2011/scripts/frame_1/DoAction.as:4: getURL("http://theroomz.yoyo.pl/donate/", "_blank");
+roomz_ffdec/out/UnderTR_2011/scripts/frame_1/DoAction.as:8: getURL("http://theroomz.19.forumer.com/index.php", "_blank");
+roomz_ffdec/out/UnderTR_2011/scripts/frame_1/DoAction.as:16: getURL("http://theroomzeclipse.org", "_blank");
+roomz_ffdec/out/UnderTR_2011/scripts/frame_1/DoAction.as:20: getURL("http://www.facebook.com/theroomzproject", "_blank");
+
+===== data_2012 =====
+REFERENCES
+INTERESTING CODE
+roomz_ffdec/out/data_2012/scripts/frame_1/DoAction.as:1: _global.l = _level0;

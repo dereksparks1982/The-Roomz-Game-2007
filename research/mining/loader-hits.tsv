@@ -1,0 +1,42 @@
+source	line	text
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as	13	_level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as	14	loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as	15	loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/55478cbaa7e3_RoomzMain/scripts/frame_1/DoAction.as	16	loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as	15	_level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as	16	loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as	17	loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/61c728f54f95_RoomzMain_2007/scripts/frame_1/DoAction.as	18	loadMovieNum("frame.swf",110,"GET");
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as	21	obj.adressCH();
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as	37	if(_level0.zamowienie != undefined)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as	39	str = _level0.zamowienie;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as	40	_level0.zamowienie = undefined;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	6	_level0.zamowienie = "_level106";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	7	loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	8	loadMovieNum("sciemka.swf",106,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	19	_level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	20	loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	21	loadMovieNum("about.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	44	_level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	45	loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	46	loadMovieNum("check.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	57	loadMovieNum("loadRoom.swf",3,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	58	loadMovieNum("rules.swf",1,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	59	loadMovieNum("interface.swf",100,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	70	_level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	71	loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as	72	loadMovieNum("solutions.swf",10,"GET");
+research/decompiled/recovered-unique/c58a2a373bcc_RRR/scripts/frame_1/DoAction.as	2	loadMovieNum("data.swf",1,"GET");
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as	1	adressCH = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as	20	adressCH();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineButton2_44/BUTTONCONDACTION on(keyPress Enter).as	2	_level1.HSsprawdz(input.toUpperCase());
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	45	if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	81	if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	201	_level1.TenRoom.ZoomIn("Hint" + num);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	310	if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	324	if(_level0.aktualny == _level1.TenRoom)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/DefineSprite_59/frame_1/DoAction.as	352	_level1.HSsprawdz(input.toUpperCase());
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as	13	_level0.zamowienie = "_level105";
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as	14	loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as	15	loadMovieNum("Intro.swf",105,"GET");
+research/decompiled/recovered-unique/d7dd1d01587d_RoomzMain_2011/scripts/frame_1/DoAction.as	16	loadMovieNum("frame.swf",110,"GET");

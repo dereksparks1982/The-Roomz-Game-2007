@@ -1,0 +1,67 @@
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as:1:adressCH = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-2-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-3-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-4-loader.onEnterFrame = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-5-{
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-6-   if(this._alpha == 100)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-7-   {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-8-      this.percent = Math.floor(_root.getBytesLoaded() / _root.getBytesTotal() * 100);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-9-      this.per = String(this.percent) + "%";
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-10-      this.pas._width = 3 * this.percent;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-11-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-12-   if(_root.getBytesLoaded() / _root.getBytesTotal() >= 1)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-13-   {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-14-      this._alpha -= 8;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-15-      if(this._alpha <= 0)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-16-      {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-17-         this._alpha = 0;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-18-         this._visible = false;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-19-         _root.gotoAndStop(2);
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as:20:         adressCH();
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-21-         ZcpXX.onEnterFrame = function()
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-22-         {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-23-            if(this._alpha <= 0)
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-24-            {
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-25-               this._alpha = 0;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-26-               this._visible = false;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-27-               this.onEnterFrame = undefined;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-28-            }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-29-            this._alpha -= 8;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-30-         };
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-31-         delete this.onEnterFrame;
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-32-      }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-33-   }
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-34-};
+research/decompiled/recovered-unique/ce0585181bf6_interface/scripts/frame_1/DoAction.as-35-stop();
+--
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-6-      this.tt2._rotation -= 5;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-7-      if(this._alpha == 100)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-8-      {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-9-         this.percent = Math.floor(obj.getBytesLoaded() / obj.getBytesTotal() * 100);
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-10-         this.per = String(this.percent) + "%";
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-11-         this.pas._width = 3 * this.percent;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-12-      }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-13-      if(obj.getBytesLoaded() / obj.getBytesTotal() >= 1)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-14-      {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-15-         this._alpha -= 8;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-16-         if(this._alpha <= 0)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-17-         {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-18-            this._alpha = 0;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-19-            this._visible = false;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-20-            obj.gotoAndStop(2);
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as:21:            obj.adressCH();
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-22-            obj.ZcpXX.onEnterFrame = function()
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-23-            {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-24-               if(this._alpha <= 0)
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-25-               {
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-26-                  this._alpha = 0;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-27-                  this._visible = false;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-28-                  this.onEnterFrame = undefined;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-29-               }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-30-               this._alpha -= 8;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-31-            };
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-32-            delete this.onEnterFrame;
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-33-         }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-34-      }
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-35-   };
+research/decompiled/recovered-unique/b3710c350c39_loadRoom/scripts/frame_1/DoAction.as-36-};

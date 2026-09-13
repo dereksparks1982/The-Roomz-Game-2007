@@ -1,0 +1,156 @@
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:1:JPEXS Free Flash Decompiler v.26.2.1
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log-2-------------------------------------
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log-3-Exporting scripts...
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:4:Exported script 10/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_227/frame_1/DoAction.as, 00:00.029
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:5:Exported script 4/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_192/frame_30/DoAction.as, 00:00.029
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:6:Exported script 11/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_231/frame_1/DoAction.as, 00:00.027
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:7:Exported script 2/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_15/DoAction.as, 00:00.029
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:8:Exported script 3/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_128/frame_358/DoAction.as, 00:00.029
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:9:Exported script 14/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_1/DoAction.as, 00:00.001
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:10:Exported script 1/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as, 00:00.030
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:11:Exported script 13/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_231/frame_45/DoAction.as, 00:00.001
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:12:Exported script 12/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_231/frame_20/DoAction.as, 00:00.001
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:13:Exported script 9/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_389/DoAction.as, 00:00.030
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:14:Exported script 6/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_1/DoAction.as, 00:00.031
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:15:Exported script 7/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_123/DoAction.as, 00:00.033
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:16:Exported script 15/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as, 00:00.007
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:17:Exported script 5/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as, 00:00.042
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:18:Exported script 8/15 /home/dereksparks1982/DKLab/Projects/The-Roomz-Game-2007/research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as, 00:00.047
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log:19:Export finished. Total export time: 00:00.183
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/_ffdec.log-20-OK
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as:1:loadVariables("ile.txt",_root);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as:2:loadVariables("bonus.txt",_root);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-3-var t = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-4-onEnterFrame = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-5-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-6-   t++;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as:7:   if(koniec != undefined)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-8-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as:9:      _root.showRtotal = true;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-10-      delete onEnterFrame;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-11-   }
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-12-   else if(t > 500)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-13-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-14-      delete onEnterFrame;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-15-   }
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/frame_2/DoAction.as-16-};
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-2-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-3-   var _loc1_ = new Date();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-4-   min = _loc1_.getMinutes();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-5-   hour = _loc1_.getHours();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-6-   sec = _loc1_.getSeconds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-7-   s1._rotation = sec * 6;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-8-   m1._rotation = min * 6 + sec / 10;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-9-   h1._rotation = hour * 30 + min / 2;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-10-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-11-var intCzas = setInterval(aktualizujCzas,100);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-12-aktualizujCzas();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-13-j = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as:14:while(j <= 59)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-15-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-16-   attachMovie("krs","krops" + j,j);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-17-   eval("krops" + j)._x = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-18-   eval("krops" + j)._y = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-19-   eval("krops" + j)._rotation = j * 6;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-20-   j++;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-21-}
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-22-k = 60;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as:23:while(k <= 71)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-24-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-25-   attachMovie("krb","kropb" + k,k);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-26-   eval("kropb" + k)._x = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-27-   eval("kropb" + k)._y = 0;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-28-   eval("kropb" + k)._rotation = k * 30;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-29-   k++;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_193/frame_1/DoAction.as-30-}
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as-1-stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as:2:if(_root.showRtotal == true)
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as-3-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as-4-   play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_105/frame_1/DoAction.as-5-}
+--
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-1-stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-2-st.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-3-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-4-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-5-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-6-      _level0.zamowienie = "_level106";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:7:      loadMovieNum("loadRoom.swf",107,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-8-      loadMovieNum("sciemka.swf",106,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-9-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-10-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-11-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-12-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-13-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-14-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-15-cred.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-16-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-17-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-18-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-19-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:20:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-21-      loadMovieNum("about.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-22-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-23-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-24-   _root.sciema.gotoAndPlay(1);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-25-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-26-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-27-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-28-forum.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-29-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:30:   getURL("http://theroomz.19.forumer.com", "_blank");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-31-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-32-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-33-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-34-hof.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-35-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:36:   getURL("http://dreamward.home.pl/theroomz/hof.htm", "_blank");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-37-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-38-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-39-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-40-go.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-41-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-42-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-43-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-44-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:45:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-46-      loadMovieNum("check.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-47-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-48-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-49-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-50-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-51-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-52-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-53-rules.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-54-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-55-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-56-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:57:      loadMovieNum("loadRoom.swf",3,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-58-      loadMovieNum("rules.swf",1,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-59-      loadMovieNum("interface.swf",100,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-60-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-61-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-62-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-63-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-64-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-65-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-66-solutions.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-67-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-68-   _root.zaladuj = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-69-   {
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-70-      _level0.zamowienie = "_level10";
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as:71:      loadMovieNum("loadRoom.swf",11,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-72-      loadMovieNum("solutions.swf",10,"GET");
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-73-      _root.intro._visible = false;
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-74-   };
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-75-   _root.sciema.play();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-76-   stopAllSounds();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-77-   dzwiek.stop();
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-78-};
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-79-gbook.onRelease = function()
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-80-{
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-81-   getURL("http://users4.smartgb.com/g/g.php?a=s&i=g40-04528-7a",_blank);
+research/decompiled/recovered-unique/b6f0e021fab2_Intro/scripts/DefineSprite_225_intro/frame_388/DoAction.as-82-};
