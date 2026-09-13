@@ -215,3 +215,35 @@ Phase 3 intentionally suppressed transient query exceptions, so its lack of hits
 Raw results are preserved under:
 
 `research/manual-wayback-deep-recheck/`
+
+## ImageShack full-game mirror trail
+
+Archived EscapeJuegos material led to a separate Blogger play page:
+
+`http://jugarjuegosescape.blogspot.com/2008/11/room.html`
+
+A recovered 2010-12-05 snapshot of that Blogger page contains an actual Flash object/embed pointing directly to:
+
+`http://img256.imageshack.us/img256/3198/theroomz0707ih0.swf`
+
+The object is 698x480 and references the same SWF in both the `<param name="movie">` and `<embed src>` fields.
+
+This strengthens the provenance of the previously known ImageShack filename considerably. It was not merely mentioned in a forum or later recollection. It was directly embedded by a historical game-play page associated with EscapeJuegos, whose Roomz article described a 29-room version.
+
+Wayback recovery attempts for the ImageShack SWF produced:
+
+- exact HTTP URL: no CDX rows
+- exact HTTPS URL: no CDX rows
+- replay at the Blogger parent capture timestamp: 404
+- wildcard `*theroomz*` ImageShack searches: no rows
+- directory inventory for `/img256/3198/`: several unrelated archived files but no Roomz SWF
+
+No SWF payload was recovered.
+
+The filename contains `0707`, which is preserved as potentially meaningful historical metadata, but no date interpretation is asserted without further evidence.
+
+Raw evidence:
+
+- `research/escapejuegos-roomz/`
+- `research/jugarjuegosescape-roomz/`
+- `research/imageshack-parent-capture-probe/`
