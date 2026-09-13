@@ -173,6 +173,10 @@ Until that material is recovered, this repository serves as:
 
 The original creator has also been contacted regarding surviving original files.
 
+## Did you play The Roomz years ago?
+
+Your old PC, hard drive, backup, or browser cache may still contain files that public web archives missed. Please see **[RECOVERY_APPEAL.md](RECOVERY_APPEAL.md)** for the missing filenames, old browser cache locations, and step-by-step instructions for checking safely.
+
 For detailed evidence, see:
 
 - `research/FINDINGS.md`
