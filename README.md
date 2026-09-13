@@ -1,4 +1,4 @@
-# The Roomz Game 2006 Preservation and Reconstruction Project
+# The Roomz Game 2006 Reconstruction & Preservation Project
 
 Preservation and reconstruction research for **The Roomz**, the Flash browser puzzle game created by **Stachu & Ralfi** and first released in 2006.
 
