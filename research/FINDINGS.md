@@ -247,3 +247,19 @@ Raw evidence:
 - `research/escapejuegos-roomz/`
 - `research/jugarjuegosescape-roomz/`
 - `research/imageshack-parent-capture-probe/`
+
+## ImageShack archive follow-up
+
+The historical ImageShack mirror coordinate:
+
+`http://img256.imageshack.us/img256/3198/theroomz0707ih0.swf`
+
+was pursued beyond Wayback.
+
+Common Crawl was queried across its available index collection list. Many initial responses were definitive 404 no-capture responses, while some were transient 502/504 responses. The historically important 2008-2009, 2009-2010, 2012, 2013-20, and 2013-48 indexes were then manually retested at a low request rate. The relevant exact HTTP-era queries returned explicit `No Captures found` responses. No SWF payload was recovered.
+
+Arquivo.pt was also queried directly for the exact ImageShack URL. Its version-history API reported zero results and its CDX query returned no capture.
+
+The former public Memento Time Travel hostname did not resolve during the follow-up attempt. This is recorded as an unavailable service, not as evidence that no memento ever existed.
+
+Combined with the archived Blogger embed, the current evidence establishes that the ImageShack SWF really was historically embedded as a playable Roomz object, but no surviving copy has yet been recovered from the archives checked.
